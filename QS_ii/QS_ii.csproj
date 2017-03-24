@@ -36,6 +36,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Liang_function\function\bin\Debug\function.dll</HintPath>
     </Reference>
+    <Reference Include="LOGIN">
+      <HintPath>..\..\實驗室_文件管理系統\LOGIN\bin\Debug\LOGIN.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
