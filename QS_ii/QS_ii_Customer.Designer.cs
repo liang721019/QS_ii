@@ -68,6 +68,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,6 +81,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button4);
@@ -159,7 +161,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(8, 70);
+            this.panel2.Location = new System.Drawing.Point(8, 61);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(986, 51);
             this.panel2.TabIndex = 3;
@@ -206,7 +208,7 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(6, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(574, 323);
+            this.panel3.Size = new System.Drawing.Size(820, 323);
             this.panel3.TabIndex = 4;
             // 
             // tabControl1
@@ -216,10 +218,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(8, 127);
+            this.tabControl1.Location = new System.Drawing.Point(8, 118);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(986, 437);
+            this.tabControl1.Size = new System.Drawing.Size(986, 446);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -230,7 +232,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(978, 404);
+            this.tabPage1.Size = new System.Drawing.Size(978, 413);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "資料明細";
             // 
@@ -240,7 +242,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(978, 460);
+            this.tabPage2.Size = new System.Drawing.Size(978, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "歷史報價紀錄";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -256,7 +258,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(460, 13);
+            this.label5.Location = new System.Drawing.Point(464, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 20);
             this.label5.TabIndex = 31;
@@ -264,7 +266,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(543, 10);
+            this.textBox4.Location = new System.Drawing.Point(547, 10);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(138, 29);
             this.textBox4.TabIndex = 30;
@@ -303,7 +305,7 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(372, 10);
+            this.textBox14.Location = new System.Drawing.Point(372, 7);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(138, 29);
             this.textBox14.TabIndex = 91;
@@ -311,7 +313,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(289, 13);
+            this.label13.Location = new System.Drawing.Point(289, 10);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 20);
             this.label13.TabIndex = 90;
@@ -452,6 +454,15 @@
             this.label4.TabIndex = 73;
             this.label4.Text = "連絡人:";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(247, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(104, 45);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "引入報價單";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // QS_ii_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -520,6 +531,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button5;
 
     }
 }
