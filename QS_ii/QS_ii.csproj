@@ -63,6 +63,12 @@
     <Compile Include="QS_ii_Customer.Designer.cs">
       <DependentUpon>QS_ii_Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="QS_ii_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QS_ii_Product.Designer.cs">
+      <DependentUpon>QS_ii_Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="QS_ii_Quotes_add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </Compile>
     <EmbeddedResource Include="QS_ii_Customer.resx">
       <DependentUpon>QS_ii_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QS_ii_Product.resx">
+      <DependentUpon>QS_ii_Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QS_ii_Quotes_add.resx">
       <DependentUpon>QS_ii_Quotes_add.cs</DependentUpon>

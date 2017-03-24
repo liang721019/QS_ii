@@ -41,5 +41,16 @@ namespace QS_ii
             QS_C.ShowDialog(); 
         }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+            QS_ii_Product QS_P = new QS_ii_Product();
+
+            //設定init_Staff 新視窗的相對位置#############
+            QS_P.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################
+            QS_P.ShowDialog(); 
+
+        }
+
     }
 }
