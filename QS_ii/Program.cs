@@ -8,12 +8,11 @@ namespace QS_ii
 {
     static class Program 
     {
-        private class UILOG : Login_main
+        private class UILOG :Login_main  
         {
-            
-            public override void Vlogin()
-            {
 
+            public override void V_login()
+            {
                 QS_ii_Quotes_add QiQ = new QS_ii_Quotes_add();
                 //QiQ.DMS_Service_ENV = Login_ServerCB.Text;       //server
                 //QiQ.DMS_UID = Login_ID_tb.Text;          //使用者ID
@@ -21,7 +20,6 @@ namespace QS_ii
                 QiQ.ShowDialog(this);
                 this.Close();
             }
-
         }
         
         /// <summary>
@@ -32,7 +30,7 @@ namespace QS_ii
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UILOG());
+            Application.Run(new QS_ii_Quotes_add());
         }
     }
 }

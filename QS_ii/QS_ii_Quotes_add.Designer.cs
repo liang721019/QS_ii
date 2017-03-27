@@ -103,20 +103,20 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label29 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -231,6 +231,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "新增";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -836,6 +837,15 @@
             this.panel5.Size = new System.Drawing.Size(1289, 394);
             this.panel5.TabIndex = 4;
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(7, 45);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(36, 36);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "...";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(7, 129);
@@ -888,17 +898,6 @@
             this.tabPage2.Text = "其他";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label29.Location = new System.Drawing.Point(1252, 879);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(41, 20);
-            this.label29.TabIndex = 5;
-            this.label29.Text = "測試";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.panel7);
@@ -925,14 +924,28 @@
             this.panel7.Size = new System.Drawing.Size(1214, 42);
             this.panel7.TabIndex = 0;
             // 
-            // label31
+            // button11
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(243, 6);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(77, 20);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "商品編號:";
+            this.button11.Location = new System.Drawing.Point(512, 2);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(122, 29);
+            this.button11.TabIndex = 4;
+            this.button11.Text = "查詢";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // textBox31
+            // 
+            this.textBox31.Location = new System.Drawing.Point(326, 3);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(147, 29);
+            this.textBox31.TabIndex = 3;
+            // 
+            // textBox30
+            // 
+            this.textBox30.Location = new System.Drawing.Point(99, 3);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(129, 29);
+            this.textBox30.TabIndex = 2;
             // 
             // label32
             // 
@@ -943,37 +956,25 @@
             this.label32.TabIndex = 1;
             this.label32.Text = "客戶編號:";
             // 
-            // textBox30
+            // label31
             // 
-            this.textBox30.Location = new System.Drawing.Point(99, 3);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(129, 29);
-            this.textBox30.TabIndex = 2;
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(243, 6);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(77, 20);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "商品編號:";
             // 
-            // textBox31
+            // label29
             // 
-            this.textBox31.Location = new System.Drawing.Point(326, 3);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(147, 29);
-            this.textBox31.TabIndex = 3;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(512, 2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(122, 29);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "查詢";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(7, 45);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(36, 36);
-            this.button12.TabIndex = 4;
-            this.button12.Text = "...";
-            this.button12.UseVisualStyleBackColor = true;
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label29.Location = new System.Drawing.Point(1252, 879);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(41, 20);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "測試";
             // 
             // QS_ii_Quotes_add
             // 
