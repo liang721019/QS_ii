@@ -28,271 +28,246 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.QS_ii_Customer_panel1 = new System.Windows.Forms.Panel();
+            this.QS_ii_Customer_引入Button = new System.Windows.Forms.Button();
+            this.QS_ii_Customer_取消Button = new System.Windows.Forms.Button();
+            this.QS_ii_Customer_儲存Button = new System.Windows.Forms.Button();
+            this.QS_ii_Customer_查詢Button = new System.Windows.Forms.Button();
+            this.QS_ii_Customer_刪除Button = new System.Windows.Forms.Button();
+            this.QS_ii_Customer_修改Button = new System.Windows.Forms.Button();
+            this.QS_ii_Customer_新增Button = new System.Windows.Forms.Button();
+            this.QS_ii_Customer_panel2 = new System.Windows.Forms.Panel();
+            this.tb_CUST_NO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.tb_CUST_NAME = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tb_VAT_NO = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.QS_ii_Customer_panel3 = new System.Windows.Forms.Panel();
+            this.tb_CUST_TYPE = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_CHAIN_NAME = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tb_DELI_ADDR_NO = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tb_PAY_METH = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tb_DELI_ADDR = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tb_CUST_MAIL = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tb_FAX = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tb_CONT_TEL = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_CUST_ADDR = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_CONT_TITLE = new System.Windows.Forms.TextBox();
+            this.tb_CONTACT = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.Server_ENV = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.USER_ID = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Customer_Status_info = new System.Windows.Forms.Label();
+            this.QS_ii_Customer_panel1.SuspendLayout();
+            this.QS_ii_Customer_panel2.SuspendLayout();
+            this.QS_ii_Customer_panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // QS_ii_Customer_panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.QS_ii_Customer_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panel1.Location = new System.Drawing.Point(8, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(986, 55);
-            this.panel1.TabIndex = 2;
+            this.QS_ii_Customer_panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_引入Button);
+            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_取消Button);
+            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_儲存Button);
+            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_查詢Button);
+            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_刪除Button);
+            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_修改Button);
+            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_新增Button);
+            this.QS_ii_Customer_panel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.QS_ii_Customer_panel1.Location = new System.Drawing.Point(8, 0);
+            this.QS_ii_Customer_panel1.Name = "QS_ii_Customer_panel1";
+            this.QS_ii_Customer_panel1.Size = new System.Drawing.Size(808, 55);
+            this.QS_ii_Customer_panel1.TabIndex = 2;
             // 
-            // button8
+            // QS_ii_Customer_引入Button
             // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button8.Location = new System.Drawing.Point(922, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(54, 44);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "取消";
-            this.button8.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_引入Button.Location = new System.Drawing.Point(247, 3);
+            this.QS_ii_Customer_引入Button.Name = "QS_ii_Customer_引入Button";
+            this.QS_ii_Customer_引入Button.Size = new System.Drawing.Size(104, 45);
+            this.QS_ii_Customer_引入Button.TabIndex = 6;
+            this.QS_ii_Customer_引入Button.Text = "引入報價單";
+            this.QS_ii_Customer_引入Button.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // QS_ii_Customer_取消Button
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.Location = new System.Drawing.Point(861, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(55, 45);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "儲存";
-            this.button7.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_取消Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.QS_ii_Customer_取消Button.Location = new System.Drawing.Point(744, 3);
+            this.QS_ii_Customer_取消Button.Name = "QS_ii_Customer_取消Button";
+            this.QS_ii_Customer_取消Button.Size = new System.Drawing.Size(54, 44);
+            this.QS_ii_Customer_取消Button.TabIndex = 5;
+            this.QS_ii_Customer_取消Button.Text = "取消";
+            this.QS_ii_Customer_取消Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_取消Button.Click += new System.EventHandler(this.QS_ii_Customer_取消Button_Click);
             // 
-            // button4
+            // QS_ii_Customer_儲存Button
             // 
-            this.button4.Location = new System.Drawing.Point(186, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 45);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "查詢";
-            this.button4.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_儲存Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.QS_ii_Customer_儲存Button.Location = new System.Drawing.Point(683, 3);
+            this.QS_ii_Customer_儲存Button.Name = "QS_ii_Customer_儲存Button";
+            this.QS_ii_Customer_儲存Button.Size = new System.Drawing.Size(55, 45);
+            this.QS_ii_Customer_儲存Button.TabIndex = 4;
+            this.QS_ii_Customer_儲存Button.Text = "儲存";
+            this.QS_ii_Customer_儲存Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_儲存Button.Click += new System.EventHandler(this.QS_ii_Customer_儲存Button_Click);
             // 
-            // button3
+            // QS_ii_Customer_查詢Button
             // 
-            this.button3.Location = new System.Drawing.Point(125, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 45);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "刪除";
-            this.button3.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_查詢Button.Location = new System.Drawing.Point(186, 3);
+            this.QS_ii_Customer_查詢Button.Name = "QS_ii_Customer_查詢Button";
+            this.QS_ii_Customer_查詢Button.Size = new System.Drawing.Size(55, 45);
+            this.QS_ii_Customer_查詢Button.TabIndex = 3;
+            this.QS_ii_Customer_查詢Button.Text = "查詢";
+            this.QS_ii_Customer_查詢Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_查詢Button.Click += new System.EventHandler(this.QS_ii_Customer_查詢Button_Click);
             // 
-            // button2
+            // QS_ii_Customer_刪除Button
             // 
-            this.button2.Location = new System.Drawing.Point(64, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 45);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "修改";
-            this.button2.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_刪除Button.Location = new System.Drawing.Point(125, 3);
+            this.QS_ii_Customer_刪除Button.Name = "QS_ii_Customer_刪除Button";
+            this.QS_ii_Customer_刪除Button.Size = new System.Drawing.Size(55, 45);
+            this.QS_ii_Customer_刪除Button.TabIndex = 2;
+            this.QS_ii_Customer_刪除Button.Text = "刪除";
+            this.QS_ii_Customer_刪除Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_刪除Button.Click += new System.EventHandler(this.QS_ii_Customer_刪除Button_Click);
             // 
-            // button1
+            // QS_ii_Customer_修改Button
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 45);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "新增";
-            this.button1.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_修改Button.Location = new System.Drawing.Point(64, 3);
+            this.QS_ii_Customer_修改Button.Name = "QS_ii_Customer_修改Button";
+            this.QS_ii_Customer_修改Button.Size = new System.Drawing.Size(55, 45);
+            this.QS_ii_Customer_修改Button.TabIndex = 1;
+            this.QS_ii_Customer_修改Button.Text = "修改";
+            this.QS_ii_Customer_修改Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_修改Button.Click += new System.EventHandler(this.QS_ii_Customer_修改Button_Click);
             // 
-            // panel2
+            // QS_ii_Customer_新增Button
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.QS_ii_Customer_新增Button.Location = new System.Drawing.Point(3, 3);
+            this.QS_ii_Customer_新增Button.Name = "QS_ii_Customer_新增Button";
+            this.QS_ii_Customer_新增Button.Size = new System.Drawing.Size(55, 45);
+            this.QS_ii_Customer_新增Button.TabIndex = 0;
+            this.QS_ii_Customer_新增Button.Text = "新增";
+            this.QS_ii_Customer_新增Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_新增Button.Click += new System.EventHandler(this.QS_ii_Customer_新增Button_Click);
+            // 
+            // QS_ii_Customer_panel2
+            // 
+            this.QS_ii_Customer_panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(8, 61);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(986, 51);
-            this.panel2.TabIndex = 3;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.QS_ii_Customer_panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_Customer_panel2.Controls.Add(this.tb_CUST_NO);
+            this.QS_ii_Customer_panel2.Controls.Add(this.label1);
+            this.QS_ii_Customer_panel2.Controls.Add(this.tb_CUST_NAME);
+            this.QS_ii_Customer_panel2.Controls.Add(this.label3);
+            this.QS_ii_Customer_panel2.Controls.Add(this.tb_VAT_NO);
+            this.QS_ii_Customer_panel2.Controls.Add(this.label5);
+            this.QS_ii_Customer_panel2.Location = new System.Drawing.Point(8, 61);
+            this.QS_ii_Customer_panel2.Name = "QS_ii_Customer_panel2";
+            this.QS_ii_Customer_panel2.Size = new System.Drawing.Size(808, 45);
+            this.QS_ii_Customer_panel2.TabIndex = 3;
             // 
-            // textBox1
+            // tb_CUST_NO
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 29);
-            this.textBox1.TabIndex = 1;
+            this.tb_CUST_NO.Location = new System.Drawing.Point(92, 3);
+            this.tb_CUST_NO.Name = "tb_CUST_NO";
+            this.tb_CUST_NO.Size = new System.Drawing.Size(122, 29);
+            this.tb_CUST_NO.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(9, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "客戶編號:";
             // 
-            // panel3
+            // tb_CUST_NAME
             // 
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.textBox14);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.textBox13);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.textBox12);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.textBox10);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.textBox8);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.textBox7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(6, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(820, 323);
-            this.panel3.TabIndex = 4;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(8, 118);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(986, 446);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(978, 413);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "資料明細";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(978, 413);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "歷史報價紀錄";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 567);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1006, 22);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(464, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "統一編號:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(547, 10);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 29);
-            this.textBox4.TabIndex = 30;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(321, 10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 29);
-            this.textBox3.TabIndex = 28;
+            this.tb_CUST_NAME.Location = new System.Drawing.Point(317, 3);
+            this.tb_CUST_NAME.Name = "tb_CUST_NAME";
+            this.tb_CUST_NAME.Size = new System.Drawing.Size(122, 29);
+            this.tb_CUST_NAME.TabIndex = 28;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(238, 13);
+            this.label3.Location = new System.Drawing.Point(234, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 27;
             this.label3.Text = "客戶名稱:";
             // 
-            // textBox2
+            // tb_VAT_NO
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 7);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 29);
-            this.textBox2.TabIndex = 72;
+            this.tb_VAT_NO.Location = new System.Drawing.Point(543, 3);
+            this.tb_VAT_NO.Name = "tb_VAT_NO";
+            this.tb_VAT_NO.Size = new System.Drawing.Size(138, 29);
+            this.tb_VAT_NO.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(460, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "統一編號:";
+            // 
+            // QS_ii_Customer_panel3
+            // 
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_CUST_TYPE);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label2);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_CHAIN_NAME);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label13);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_DELI_ADDR_NO);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label12);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_PAY_METH);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label11);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_DELI_ADDR);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label10);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_CUST_MAIL);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label9);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_FAX);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label8);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_CONT_TEL);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label7);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_CUST_ADDR);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label6);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_CONT_TITLE);
+            this.QS_ii_Customer_panel3.Controls.Add(this.tb_CONTACT);
+            this.QS_ii_Customer_panel3.Controls.Add(this.label4);
+            this.QS_ii_Customer_panel3.Location = new System.Drawing.Point(6, 6);
+            this.QS_ii_Customer_panel3.Name = "QS_ii_Customer_panel3";
+            this.QS_ii_Customer_panel3.Size = new System.Drawing.Size(774, 323);
+            this.QS_ii_Customer_panel3.TabIndex = 4;
+            // 
+            // tb_CUST_TYPE
+            // 
+            this.tb_CUST_TYPE.Location = new System.Drawing.Point(115, 7);
+            this.tb_CUST_TYPE.Name = "tb_CUST_TYPE";
+            this.tb_CUST_TYPE.Size = new System.Drawing.Size(152, 29);
+            this.tb_CUST_TYPE.TabIndex = 72;
             // 
             // label2
             // 
@@ -303,12 +278,12 @@
             this.label2.TabIndex = 71;
             this.label2.Text = "客戶類別:";
             // 
-            // textBox14
+            // tb_CHAIN_NAME
             // 
-            this.textBox14.Location = new System.Drawing.Point(372, 7);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(138, 29);
-            this.textBox14.TabIndex = 91;
+            this.tb_CHAIN_NAME.Location = new System.Drawing.Point(372, 7);
+            this.tb_CHAIN_NAME.Name = "tb_CHAIN_NAME";
+            this.tb_CHAIN_NAME.Size = new System.Drawing.Size(138, 29);
+            this.tb_CHAIN_NAME.TabIndex = 91;
             // 
             // label13
             // 
@@ -319,12 +294,12 @@
             this.label13.TabIndex = 90;
             this.label13.Text = "通路名稱:";
             // 
-            // textBox13
+            // tb_DELI_ADDR_NO
             // 
-            this.textBox13.Location = new System.Drawing.Point(116, 217);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(88, 29);
-            this.textBox13.TabIndex = 89;
+            this.tb_DELI_ADDR_NO.Location = new System.Drawing.Point(116, 217);
+            this.tb_DELI_ADDR_NO.Name = "tb_DELI_ADDR_NO";
+            this.tb_DELI_ADDR_NO.Size = new System.Drawing.Size(88, 29);
+            this.tb_DELI_ADDR_NO.TabIndex = 89;
             // 
             // label12
             // 
@@ -335,12 +310,12 @@
             this.label12.TabIndex = 88;
             this.label12.Text = "付款方式:";
             // 
-            // textBox12
+            // tb_PAY_METH
             // 
-            this.textBox12.Location = new System.Drawing.Point(115, 112);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(152, 29);
-            this.textBox12.TabIndex = 87;
+            this.tb_PAY_METH.Location = new System.Drawing.Point(115, 112);
+            this.tb_PAY_METH.Name = "tb_PAY_METH";
+            this.tb_PAY_METH.Size = new System.Drawing.Size(152, 29);
+            this.tb_PAY_METH.TabIndex = 87;
             // 
             // label11
             // 
@@ -351,12 +326,12 @@
             this.label11.TabIndex = 86;
             this.label11.Text = "送貨地址:";
             // 
-            // textBox11
+            // tb_DELI_ADDR
             // 
-            this.textBox11.Location = new System.Drawing.Point(210, 217);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(300, 29);
-            this.textBox11.TabIndex = 85;
+            this.tb_DELI_ADDR.Location = new System.Drawing.Point(210, 217);
+            this.tb_DELI_ADDR.Name = "tb_DELI_ADDR";
+            this.tb_DELI_ADDR.Size = new System.Drawing.Size(300, 29);
+            this.tb_DELI_ADDR.TabIndex = 85;
             // 
             // label10
             // 
@@ -367,12 +342,12 @@
             this.label10.TabIndex = 84;
             this.label10.Text = "客戶mail:";
             // 
-            // textBox10
+            // tb_CUST_MAIL
             // 
-            this.textBox10.Location = new System.Drawing.Point(115, 147);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(395, 29);
-            this.textBox10.TabIndex = 83;
+            this.tb_CUST_MAIL.Location = new System.Drawing.Point(115, 147);
+            this.tb_CUST_MAIL.Name = "tb_CUST_MAIL";
+            this.tb_CUST_MAIL.Size = new System.Drawing.Size(395, 29);
+            this.tb_CUST_MAIL.TabIndex = 83;
             // 
             // label9
             // 
@@ -383,12 +358,12 @@
             this.label9.TabIndex = 82;
             this.label9.Text = "傳真:";
             // 
-            // textBox9
+            // tb_FAX
             // 
-            this.textBox9.Location = new System.Drawing.Point(372, 77);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(138, 29);
-            this.textBox9.TabIndex = 81;
+            this.tb_FAX.Location = new System.Drawing.Point(372, 77);
+            this.tb_FAX.Name = "tb_FAX";
+            this.tb_FAX.Size = new System.Drawing.Size(138, 29);
+            this.tb_FAX.TabIndex = 81;
             // 
             // label8
             // 
@@ -399,12 +374,12 @@
             this.label8.TabIndex = 80;
             this.label8.Text = "電話:";
             // 
-            // textBox8
+            // tb_CONT_TEL
             // 
-            this.textBox8.Location = new System.Drawing.Point(115, 77);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(152, 29);
-            this.textBox8.TabIndex = 79;
+            this.tb_CONT_TEL.Location = new System.Drawing.Point(115, 77);
+            this.tb_CONT_TEL.Name = "tb_CONT_TEL";
+            this.tb_CONT_TEL.Size = new System.Drawing.Size(152, 29);
+            this.tb_CONT_TEL.TabIndex = 79;
             // 
             // label7
             // 
@@ -415,12 +390,12 @@
             this.label7.TabIndex = 78;
             this.label7.Text = "客戶地址:";
             // 
-            // textBox7
+            // tb_CUST_ADDR
             // 
-            this.textBox7.Location = new System.Drawing.Point(115, 182);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(395, 29);
-            this.textBox7.TabIndex = 77;
+            this.tb_CUST_ADDR.Location = new System.Drawing.Point(115, 182);
+            this.tb_CUST_ADDR.Name = "tb_CUST_ADDR";
+            this.tb_CUST_ADDR.Size = new System.Drawing.Size(395, 29);
+            this.tb_CUST_ADDR.TabIndex = 77;
             // 
             // label6
             // 
@@ -431,19 +406,19 @@
             this.label6.TabIndex = 76;
             this.label6.Text = "連絡人職稱:";
             // 
-            // textBox6
+            // tb_CONT_TITLE
             // 
-            this.textBox6.Location = new System.Drawing.Point(115, 42);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(152, 29);
-            this.textBox6.TabIndex = 75;
+            this.tb_CONT_TITLE.Location = new System.Drawing.Point(115, 42);
+            this.tb_CONT_TITLE.Name = "tb_CONT_TITLE";
+            this.tb_CONT_TITLE.Size = new System.Drawing.Size(152, 29);
+            this.tb_CONT_TITLE.TabIndex = 75;
             // 
-            // textBox5
+            // tb_CONTACT
             // 
-            this.textBox5.Location = new System.Drawing.Point(372, 42);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(138, 29);
-            this.textBox5.TabIndex = 74;
+            this.tb_CONTACT.Location = new System.Drawing.Point(372, 42);
+            this.tb_CONTACT.Name = "tb_CONTACT";
+            this.tb_CONTACT.Size = new System.Drawing.Size(138, 29);
+            this.tb_CONTACT.TabIndex = 74;
             // 
             // label4
             // 
@@ -454,36 +429,113 @@
             this.label4.TabIndex = 73;
             this.label4.Text = "連絡人:";
             // 
-            // button5
+            // tabControl1
             // 
-            this.button5.Location = new System.Drawing.Point(247, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 45);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "引入報價單";
-            this.button5.UseVisualStyleBackColor = true;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(8, 112);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(808, 381);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.QS_ii_Customer_panel3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(800, 348);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "資料明細";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(800, 348);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "歷史報價紀錄";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.White;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Server_ENV,
+            this.toolStripStatusLabel1,
+            this.USER_ID});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 496);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(828, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // Server_ENV
+            // 
+            this.Server_ENV.BackColor = System.Drawing.Color.Transparent;
+            this.Server_ENV.Name = "Server_ENV";
+            this.Server_ENV.Size = new System.Drawing.Size(73, 17);
+            this.Server_ENV.Text = "Server_ENV";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 17);
+            this.toolStripStatusLabel1.Text = "UID :";
+            // 
+            // USER_ID
+            // 
+            this.USER_ID.BackColor = System.Drawing.Color.Transparent;
+            this.USER_ID.Name = "USER_ID";
+            this.USER_ID.Size = new System.Drawing.Size(56, 17);
+            this.USER_ID.Text = "USER_ID";
+            // 
+            // Customer_Status_info
+            // 
+            this.Customer_Status_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Customer_Status_info.AutoSize = true;
+            this.Customer_Status_info.BackColor = System.Drawing.Color.White;
+            this.Customer_Status_info.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Customer_Status_info.Location = new System.Drawing.Point(768, 498);
+            this.Customer_Status_info.Name = "Customer_Status_info";
+            this.Customer_Status_info.Size = new System.Drawing.Size(41, 20);
+            this.Customer_Status_info.TabIndex = 92;
+            this.Customer_Status_info.Text = "測試";
             // 
             // QS_ii_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1006, 589);
+            this.ClientSize = new System.Drawing.Size(828, 518);
+            this.Controls.Add(this.Customer_Status_info);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.QS_ii_Customer_panel2);
+            this.Controls.Add(this.QS_ii_Customer_panel1);
             this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "QS_ii_Customer";
             this.Text = "QS_ii_Customer";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Load += new System.EventHandler(this.QS_ii_Customer_Load);
+            this.QS_ii_Customer_panel1.ResumeLayout(false);
+            this.QS_ii_Customer_panel2.ResumeLayout(false);
+            this.QS_ii_Customer_panel2.PerformLayout();
+            this.QS_ii_Customer_panel3.ResumeLayout(false);
+            this.QS_ii_Customer_panel3.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,47 +543,51 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel QS_ii_Customer_panel1;
+        private System.Windows.Forms.Button QS_ii_Customer_取消Button;
+        private System.Windows.Forms.Button QS_ii_Customer_儲存Button;
+        private System.Windows.Forms.Button QS_ii_Customer_查詢Button;
+        private System.Windows.Forms.Button QS_ii_Customer_刪除Button;
+        private System.Windows.Forms.Button QS_ii_Customer_修改Button;
+        private System.Windows.Forms.Button QS_ii_Customer_新增Button;
+        private System.Windows.Forms.Panel QS_ii_Customer_panel2;
+        private System.Windows.Forms.TextBox tb_CUST_NO;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel QS_ii_Customer_panel3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_CUST_NAME;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_VAT_NO;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_CUST_TYPE;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox tb_CHAIN_NAME;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tb_PAY_METH;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tb_DELI_ADDR;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tb_CUST_MAIL;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tb_FAX;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tb_CONT_TEL;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tb_CUST_ADDR;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tb_CONT_TITLE;
+        private System.Windows.Forms.TextBox tb_CONTACT;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button QS_ii_Customer_引入Button;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Label Customer_Status_info;
+        public System.Windows.Forms.ToolStripStatusLabel Server_ENV;
+        public System.Windows.Forms.ToolStripStatusLabel USER_ID;
 
     }
 }

@@ -8,18 +8,25 @@ namespace QS_ii
 {
     static class Program 
     {
-        private class UILOG :Login_main  
-        {
+        private class UILOG :Login_main 
+        {            
+            public override void V_login_Default()      //設定LOGIN變數
+            {
+                base.V_login_Default();
+                base.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_Asset_Login] '" +
+                                ID_Login + @"','" + App_LoginPW + "'";
+            }
 
-            public override void V_login()
+            public override void V_login()      //開窗
             {
                 QS_ii_Quotes_add QiQ = new QS_ii_Quotes_add();
-                //QiQ.DMS_Service_ENV = Login_ServerCB.Text;       //server
-                //QiQ.DMS_UID = Login_ID_tb.Text;          //使用者ID
+                QiQ.QS_ii_Server_ENV.Text = ServerName;
+                QiQ.USER_ID.Text = UID;                
                 this.Hide();
                 QiQ.ShowDialog(this);
                 this.Close();
             }
+
         }
         
         /// <summary>
@@ -30,7 +37,8 @@ namespace QS_ii
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QS_ii_Quotes_add());
+            //Application.Run(new QS_ii_Quotes_add());
+            Application.Run(new UILOG());
         }
     }
 }
