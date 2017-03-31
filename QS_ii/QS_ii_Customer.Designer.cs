@@ -192,6 +192,7 @@
             this.tb_CUST_NO.Name = "tb_CUST_NO";
             this.tb_CUST_NO.Size = new System.Drawing.Size(122, 29);
             this.tb_CUST_NO.TabIndex = 1;
+            this.tb_CUST_NO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_CUST_NO_KeyDown);
             // 
             // label1
             // 
@@ -551,43 +552,43 @@
         private System.Windows.Forms.Button QS_ii_Customer_修改Button;
         private System.Windows.Forms.Button QS_ii_Customer_新增Button;
         private System.Windows.Forms.Panel QS_ii_Customer_panel2;
-        private System.Windows.Forms.TextBox tb_CUST_NO;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel QS_ii_Customer_panel3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.TextBox tb_CUST_NAME;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tb_VAT_NO;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tb_CUST_TYPE;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_CHAIN_NAME;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox tb_PAY_METH;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tb_DELI_ADDR;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_CUST_MAIL;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tb_FAX;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tb_CONT_TEL;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tb_CUST_ADDR;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tb_CONT_TITLE;
-        private System.Windows.Forms.TextBox tb_CONTACT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button QS_ii_Customer_引入Button;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Label Customer_Status_info;
         public System.Windows.Forms.ToolStripStatusLabel Server_ENV;
         public System.Windows.Forms.ToolStripStatusLabel USER_ID;
+        public System.Windows.Forms.TextBox tb_CUST_NO;
+        public System.Windows.Forms.TextBox tb_CUST_NAME;
+        public System.Windows.Forms.TextBox tb_VAT_NO;
+        public System.Windows.Forms.TextBox tb_CUST_TYPE;
+        public System.Windows.Forms.TextBox tb_CHAIN_NAME;
+        public System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
+        public System.Windows.Forms.TextBox tb_PAY_METH;
+        public System.Windows.Forms.TextBox tb_DELI_ADDR;
+        public System.Windows.Forms.TextBox tb_CUST_MAIL;
+        public System.Windows.Forms.TextBox tb_FAX;
+        public System.Windows.Forms.TextBox tb_CONT_TEL;
+        public System.Windows.Forms.TextBox tb_CUST_ADDR;
+        public System.Windows.Forms.TextBox tb_CONT_TITLE;
+        public System.Windows.Forms.TextBox tb_CONTACT;
 
     }
 }
