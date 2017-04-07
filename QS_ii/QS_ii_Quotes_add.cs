@@ -89,6 +89,15 @@ namespace QS_ii
             fun.Format_Panel_dTP(QS_ii_Head_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(QS_ii_Head_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀
             fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);       //QS_ii_Head_panel內的DateTimePicker設定唯讀
+            QS_ii_新增button.Enabled = true;
+            QS_ii_產品button.Enabled = true;
+            QS_ii_刪除button.Enabled = true;
+            QS_ii_查詢button.Enabled = true;
+            QS_ii_儲存button.Visible = false;
+            QS_ii_取消button.Visible = false;
+            QS_ii_儲存button.Enabled = false;
+            QS_ii_取消button.Enabled = false;
+            
             Status_info.Visible = false;
 
         }
@@ -97,7 +106,68 @@ namespace QS_ii
         {
             if (x == QS_ii_新增button)
             {
+                Status_info.Text = "新增";
+                Status_info.Visible = true;
+                QS_ii_新增button.Enabled = false;
+                QS_ii_產品button.Enabled = false;
+                QS_ii_刪除button.Enabled = false;
+                QS_ii_查詢button.Enabled = false;
+                QS_ii_儲存button.Visible = true;
+                QS_ii_取消button.Visible = true;
+                QS_ii_儲存button.Enabled = true;
+                QS_ii_取消button.Enabled = true;
 
+            }
+            else if (x == QS_ii_修改button)
+            {
+                Status_info.Text = "修改";
+                Status_info.Visible = true;
+                QS_ii_新增button.Enabled = false;
+                QS_ii_產品button.Enabled = false;
+                QS_ii_刪除button.Enabled = false;
+                QS_ii_查詢button.Enabled = false;
+                QS_ii_儲存button.Visible = true;
+                QS_ii_取消button.Visible = true;
+                QS_ii_儲存button.Enabled = true;
+                QS_ii_取消button.Enabled = true;
+
+            }
+            else if (x == QS_ii_刪除button)
+            {
+
+            }
+            else if (x == QS_ii_查詢button)
+            {
+                Status_info.Text = "";
+                Status_info.Visible = false;
+
+            }
+            else if(x == QS_ii_儲存button)
+            {
+                Status_info.Text = "";
+                Status_info.Visible = false;
+                QS_ii_新增button.Enabled = true;
+                QS_ii_產品button.Enabled = true;
+                QS_ii_刪除button.Enabled = true;
+                QS_ii_查詢button.Enabled = true;
+                QS_ii_儲存button.Visible = false;
+                QS_ii_取消button.Visible = false;
+                QS_ii_儲存button.Enabled = false;
+                QS_ii_取消button.Enabled = false;
+
+            }
+            else if(x == QS_ii_取消button)
+            {
+                Status_info.Text = "";
+                Status_info.Visible = false;
+                QS_ii_新增button.Enabled = true;
+                QS_ii_產品button.Enabled = true;
+                QS_ii_刪除button.Enabled = true;
+                QS_ii_查詢button.Enabled = true;
+                QS_ii_儲存button.Visible = false;
+                QS_ii_取消button.Visible = false;
+                QS_ii_儲存button.Enabled = false;
+                QS_ii_取消button.Enabled = false;
 
             }
 
@@ -147,10 +217,7 @@ namespace QS_ii
         private void QS_ii_main_Load(object sender, EventArgs e)
         {
             default_status();
-            
         }
-
-        
 
         #region button
         //==============================================================================================================
@@ -211,22 +278,35 @@ namespace QS_ii
         private void QS_ii_客戶button_Click(object sender, EventArgs e)
         {
 
-            QS_ii_Customer inSea = new QS_ii_Customer();
+            QS_ii_TCustomer inSea = new QS_ii_TCustomer(this);
+            //QS_ii_Customer inSea = new QS_ii_Customer(this);
             //設定init_Staff 新視窗的相對位置#############
             inSea.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
-            inSea.Server_ENV.Text = QS_ii_Server_ENV.Text;
-            inSea.USER_ID.Text = USER_ID.Text;
+            inSea.Server_ENV.Text = QS_ii_Server_ENV.Text;      //server
+            inSea.USER_ID.Text = USER_ID.Text;      //UID
             inSea.ShowDialog();
         }
 
         private void QS_ii_產品button_Click(object sender, EventArgs e)
         {
-            QS_ii_Product inSea = new QS_ii_Product();
+            QS_ii_Product inQS_Product = new QS_ii_Product();
             //設定init_Staff 新視窗的相對位置#############
-            inSea.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            inQS_Product.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
-            inSea.ShowDialog();
+            inQS_Product.Server_ENV.Text = QS_ii_Server_ENV.Text;      //server
+            inQS_Product.USER_ID.Text = USER_ID.Text;      //UID
+            inQS_Product.ShowDialog();
+        }
+
+        private void QS_ii_查詢button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QS_ii_修改button_Click(object sender, EventArgs e)
+        {
+
         }
 
         //==============================================================================================================
@@ -238,9 +318,34 @@ namespace QS_ii
         //==============================================================================================================
         #endregion
 
-        
-        
-        
-
     }
+
+    public class QS_ii_TCustomer : QS_ii_Customer        
+    {
+        QS_ii_Quotes_add QS_iiQ_add;
+
+        public QS_ii_TCustomer(QS_ii_Quotes_add x)
+        {
+            this.QS_iiQ_add = x;
+        }
+
+        public override void Customer_import_Head()         //引入到報價單主檔表頭
+        {
+            QS_iiQ_add.tb_PROD_TYPE.Text = tb_CUST_TYPE.Text;       //客戶類別
+            QS_iiQ_add.tb_CUST_NO.Text = tb_CUST_NO.Text;           //客戶編號
+            QS_iiQ_add.tb_CUST_NAME.Text = tb_CUST_NAME.Text;       //客戶名稱
+            QS_iiQ_add.tb_VAT_NO.Text = tb_VAT_NO.Text;             //統一編號
+            QS_iiQ_add.tb_CHAIN_NO.Text = tb_CHAIN_NAME.Text;       //通路名稱
+            QS_iiQ_add.tb_CONT_TITLE.Text = tb_CONT_TITLE.Text;     //連絡人職稱
+            QS_iiQ_add.tb_CONTACT.Text = tb_CONTACT.Text;           //連絡人
+            QS_iiQ_add.tb_CONT_TEL.Text = tb_CONT_TEL.Text;         //連絡人電話
+            QS_iiQ_add.tb_FAX.Text = tb_FAX.Text;                   //傳真
+            QS_iiQ_add.tb_CUST_MAIL.Text = tb_CUST_MAIL.Text;       //客戶MAIL
+            QS_iiQ_add.tb_CUST_ADDR.Text = tb_CUST_ADDR.Text;       //公司地址
+            QS_iiQ_add.tb_DELI_ADDR_NO.Text = tb_DELI_ADDR_NO.Text;       //郵地區號
+            QS_iiQ_add.tb_DELI_ADDR.Text = tb_DELI_ADDR.Text;             //送貨地址
+            QS_iiQ_add.tb_PAY_METH.Text = tb_PAY_METH.Text;             //付款方式
+        }
+    }
+
 }

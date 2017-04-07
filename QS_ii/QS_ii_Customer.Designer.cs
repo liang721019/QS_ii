@@ -73,6 +73,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.USER_ID = new System.Windows.Forms.ToolStripStatusLabel();
             this.Customer_Status_info = new System.Windows.Forms.Label();
+            this.QS_ii_Customer_清空Button = new System.Windows.Forms.Button();
             this.QS_ii_Customer_panel1.SuspendLayout();
             this.QS_ii_Customer_panel2.SuspendLayout();
             this.QS_ii_Customer_panel3.SuspendLayout();
@@ -86,6 +87,7 @@
             this.QS_ii_Customer_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.QS_ii_Customer_panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_清空Button);
             this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_引入Button);
             this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_取消Button);
             this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_儲存Button);
@@ -101,12 +103,13 @@
             // 
             // QS_ii_Customer_引入Button
             // 
-            this.QS_ii_Customer_引入Button.Location = new System.Drawing.Point(247, 3);
+            this.QS_ii_Customer_引入Button.Location = new System.Drawing.Point(310, 3);
             this.QS_ii_Customer_引入Button.Name = "QS_ii_Customer_引入Button";
             this.QS_ii_Customer_引入Button.Size = new System.Drawing.Size(104, 45);
             this.QS_ii_Customer_引入Button.TabIndex = 6;
-            this.QS_ii_Customer_引入Button.Text = "引入報價單";
+            this.QS_ii_Customer_引入Button.Text = "匯至報價單";
             this.QS_ii_Customer_引入Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_引入Button.Click += new System.EventHandler(this.QS_ii_Customer_引入Button_Click);
             // 
             // QS_ii_Customer_取消Button
             // 
@@ -208,7 +211,8 @@
             this.tb_CUST_NAME.Location = new System.Drawing.Point(317, 3);
             this.tb_CUST_NAME.Name = "tb_CUST_NAME";
             this.tb_CUST_NAME.Size = new System.Drawing.Size(122, 29);
-            this.tb_CUST_NAME.TabIndex = 28;
+            this.tb_CUST_NAME.TabIndex = 2;
+            this.tb_CUST_NAME.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_CUST_NAME_KeyDown);
             // 
             // label3
             // 
@@ -224,7 +228,8 @@
             this.tb_VAT_NO.Location = new System.Drawing.Point(543, 3);
             this.tb_VAT_NO.Name = "tb_VAT_NO";
             this.tb_VAT_NO.Size = new System.Drawing.Size(138, 29);
-            this.tb_VAT_NO.TabIndex = 30;
+            this.tb_VAT_NO.TabIndex = 3;
+            this.tb_VAT_NO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_VAT_NO_KeyDown);
             // 
             // label5
             // 
@@ -268,7 +273,7 @@
             this.tb_CUST_TYPE.Location = new System.Drawing.Point(115, 7);
             this.tb_CUST_TYPE.Name = "tb_CUST_TYPE";
             this.tb_CUST_TYPE.Size = new System.Drawing.Size(152, 29);
-            this.tb_CUST_TYPE.TabIndex = 72;
+            this.tb_CUST_TYPE.TabIndex = 5;
             // 
             // label2
             // 
@@ -284,7 +289,7 @@
             this.tb_CHAIN_NAME.Location = new System.Drawing.Point(372, 7);
             this.tb_CHAIN_NAME.Name = "tb_CHAIN_NAME";
             this.tb_CHAIN_NAME.Size = new System.Drawing.Size(138, 29);
-            this.tb_CHAIN_NAME.TabIndex = 91;
+            this.tb_CHAIN_NAME.TabIndex = 6;
             // 
             // label13
             // 
@@ -300,7 +305,7 @@
             this.tb_DELI_ADDR_NO.Location = new System.Drawing.Point(116, 217);
             this.tb_DELI_ADDR_NO.Name = "tb_DELI_ADDR_NO";
             this.tb_DELI_ADDR_NO.Size = new System.Drawing.Size(88, 29);
-            this.tb_DELI_ADDR_NO.TabIndex = 89;
+            this.tb_DELI_ADDR_NO.TabIndex = 14;
             // 
             // label12
             // 
@@ -316,7 +321,7 @@
             this.tb_PAY_METH.Location = new System.Drawing.Point(115, 112);
             this.tb_PAY_METH.Name = "tb_PAY_METH";
             this.tb_PAY_METH.Size = new System.Drawing.Size(152, 29);
-            this.tb_PAY_METH.TabIndex = 87;
+            this.tb_PAY_METH.TabIndex = 11;
             // 
             // label11
             // 
@@ -332,7 +337,7 @@
             this.tb_DELI_ADDR.Location = new System.Drawing.Point(210, 217);
             this.tb_DELI_ADDR.Name = "tb_DELI_ADDR";
             this.tb_DELI_ADDR.Size = new System.Drawing.Size(300, 29);
-            this.tb_DELI_ADDR.TabIndex = 85;
+            this.tb_DELI_ADDR.TabIndex = 15;
             // 
             // label10
             // 
@@ -348,7 +353,7 @@
             this.tb_CUST_MAIL.Location = new System.Drawing.Point(115, 147);
             this.tb_CUST_MAIL.Name = "tb_CUST_MAIL";
             this.tb_CUST_MAIL.Size = new System.Drawing.Size(395, 29);
-            this.tb_CUST_MAIL.TabIndex = 83;
+            this.tb_CUST_MAIL.TabIndex = 12;
             // 
             // label9
             // 
@@ -364,7 +369,7 @@
             this.tb_FAX.Location = new System.Drawing.Point(372, 77);
             this.tb_FAX.Name = "tb_FAX";
             this.tb_FAX.Size = new System.Drawing.Size(138, 29);
-            this.tb_FAX.TabIndex = 81;
+            this.tb_FAX.TabIndex = 10;
             // 
             // label8
             // 
@@ -380,7 +385,7 @@
             this.tb_CONT_TEL.Location = new System.Drawing.Point(115, 77);
             this.tb_CONT_TEL.Name = "tb_CONT_TEL";
             this.tb_CONT_TEL.Size = new System.Drawing.Size(152, 29);
-            this.tb_CONT_TEL.TabIndex = 79;
+            this.tb_CONT_TEL.TabIndex = 9;
             // 
             // label7
             // 
@@ -396,7 +401,7 @@
             this.tb_CUST_ADDR.Location = new System.Drawing.Point(115, 182);
             this.tb_CUST_ADDR.Name = "tb_CUST_ADDR";
             this.tb_CUST_ADDR.Size = new System.Drawing.Size(395, 29);
-            this.tb_CUST_ADDR.TabIndex = 77;
+            this.tb_CUST_ADDR.TabIndex = 13;
             // 
             // label6
             // 
@@ -412,14 +417,14 @@
             this.tb_CONT_TITLE.Location = new System.Drawing.Point(115, 42);
             this.tb_CONT_TITLE.Name = "tb_CONT_TITLE";
             this.tb_CONT_TITLE.Size = new System.Drawing.Size(152, 29);
-            this.tb_CONT_TITLE.TabIndex = 75;
+            this.tb_CONT_TITLE.TabIndex = 7;
             // 
             // tb_CONTACT
             // 
             this.tb_CONTACT.Location = new System.Drawing.Point(372, 42);
             this.tb_CONTACT.Name = "tb_CONTACT";
             this.tb_CONTACT.Size = new System.Drawing.Size(138, 29);
-            this.tb_CONTACT.TabIndex = 74;
+            this.tb_CONTACT.TabIndex = 8;
             // 
             // label4
             // 
@@ -512,6 +517,16 @@
             this.Customer_Status_info.TabIndex = 92;
             this.Customer_Status_info.Text = "測試";
             // 
+            // QS_ii_Customer_清空Button
+            // 
+            this.QS_ii_Customer_清空Button.Location = new System.Drawing.Point(247, 3);
+            this.QS_ii_Customer_清空Button.Name = "QS_ii_Customer_清空Button";
+            this.QS_ii_Customer_清空Button.Size = new System.Drawing.Size(57, 44);
+            this.QS_ii_Customer_清空Button.TabIndex = 7;
+            this.QS_ii_Customer_清空Button.Text = "清空";
+            this.QS_ii_Customer_清空Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_清空Button.Click += new System.EventHandler(this.QS_ii_Customer_清空Button_Click);
+            // 
             // QS_ii_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -589,6 +604,7 @@
         public System.Windows.Forms.TextBox tb_CUST_ADDR;
         public System.Windows.Forms.TextBox tb_CONT_TITLE;
         public System.Windows.Forms.TextBox tb_CONTACT;
+        private System.Windows.Forms.Button QS_ii_Customer_清空Button;
 
     }
 }

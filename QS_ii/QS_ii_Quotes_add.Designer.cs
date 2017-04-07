@@ -52,7 +52,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.tb_CUST_ADDR = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.tb_CONACT = new System.Windows.Forms.TextBox();
+            this.tb_CONTACT = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tb_FAX = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -236,6 +236,7 @@
             this.QS_ii_查詢button.TabIndex = 3;
             this.QS_ii_查詢button.Text = "查詢";
             this.QS_ii_查詢button.UseVisualStyleBackColor = true;
+            this.QS_ii_查詢button.Click += new System.EventHandler(this.QS_ii_查詢button_Click);
             // 
             // QS_ii_刪除button
             // 
@@ -254,6 +255,7 @@
             this.QS_ii_修改button.TabIndex = 1;
             this.QS_ii_修改button.Text = "修改";
             this.QS_ii_修改button.UseVisualStyleBackColor = true;
+            this.QS_ii_修改button.Click += new System.EventHandler(this.QS_ii_修改button_Click);
             // 
             // QS_ii_新增button
             // 
@@ -278,7 +280,7 @@
             this.QS_ii_Head_panel.Controls.Add(this.label27);
             this.QS_ii_Head_panel.Controls.Add(this.tb_CUST_ADDR);
             this.QS_ii_Head_panel.Controls.Add(this.label26);
-            this.QS_ii_Head_panel.Controls.Add(this.tb_CONACT);
+            this.QS_ii_Head_panel.Controls.Add(this.tb_CONTACT);
             this.QS_ii_Head_panel.Controls.Add(this.label25);
             this.QS_ii_Head_panel.Controls.Add(this.tb_FAX);
             this.QS_ii_Head_panel.Controls.Add(this.label24);
@@ -395,12 +397,12 @@
             this.label26.TabIndex = 44;
             this.label26.Text = "公司地址:";
             // 
-            // tb_CONACT
+            // tb_CONTACT
             // 
-            this.tb_CONACT.Location = new System.Drawing.Point(717, 12);
-            this.tb_CONACT.Name = "tb_CONACT";
-            this.tb_CONACT.Size = new System.Drawing.Size(135, 29);
-            this.tb_CONACT.TabIndex = 43;
+            this.tb_CONTACT.Location = new System.Drawing.Point(717, 12);
+            this.tb_CONTACT.Name = "tb_CONTACT";
+            this.tb_CONTACT.Size = new System.Drawing.Size(135, 29);
+            this.tb_CONTACT.TabIndex = 43;
             // 
             // label25
             // 
@@ -1060,10 +1062,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_PROD_TYPE;
-        private System.Windows.Forms.TextBox tb_CUST_NO;
         private System.Windows.Forms.TextBox tb_EFF_DATE;
-        private System.Windows.Forms.TextBox tb_CUST_NAME;
         private System.Windows.Forms.TextBox tb_SALESMAN;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
@@ -1093,12 +1092,9 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tb_APPR_DATE;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox tb_DELI_ADDR;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox tb_PAY_METH;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox tb_CONT_TITLE;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1106,24 +1102,16 @@
         private System.Windows.Forms.Button Product_刪除button;
         private System.Windows.Forms.Button Product_新增button;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox tb_FAX;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox tb_CONT_TEL;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox tb_CUST_ADDR;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox tb_CONACT;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox tb_VAT_NO;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
-        private System.Windows.Forms.TextBox tb_CHAIN_NO;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button QS_ii_取消button;
         private System.Windows.Forms.Button QS_ii_儲存button;
         private System.Windows.Forms.Button QS_ii_客戶button;
         private System.Windows.Forms.Label Status_info;
-        private System.Windows.Forms.TextBox tb_CUST_MAIL;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button QS_ii_產品button;
         private System.Windows.Forms.TabPage tabPage3;
@@ -1138,5 +1126,19 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         public System.Windows.Forms.ToolStripStatusLabel QS_ii_Server_ENV;
         public System.Windows.Forms.ToolStripStatusLabel USER_ID;
+        public System.Windows.Forms.TextBox tb_PROD_TYPE;
+        public System.Windows.Forms.TextBox tb_CUST_NO;
+        public System.Windows.Forms.TextBox tb_CUST_NAME;
+        public System.Windows.Forms.TextBox tb_CONT_TITLE;
+        public System.Windows.Forms.TextBox tb_FAX;
+        public System.Windows.Forms.TextBox tb_CONT_TEL;
+        public System.Windows.Forms.TextBox tb_CONTACT;
+        public System.Windows.Forms.TextBox tb_VAT_NO;
+        public System.Windows.Forms.TextBox tb_CHAIN_NO;
+        public System.Windows.Forms.TextBox tb_CUST_MAIL;
+        public System.Windows.Forms.TextBox tb_DELI_ADDR;
+        public System.Windows.Forms.TextBox tb_PAY_METH;
+        public System.Windows.Forms.TextBox tb_CUST_ADDR;
+        public System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
     }
 }

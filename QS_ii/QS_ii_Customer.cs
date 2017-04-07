@@ -15,10 +15,12 @@ namespace QS_ii
     public partial class QS_ii_Customer : Form
     {
         QS_ii_function fun = new QS_ii_function();
+        
 
         public QS_ii_Customer()
         {
             InitializeComponent();
+            
         }
 
         #region 變數
@@ -59,11 +61,11 @@ namespace QS_ii
             get;
         }   
         //=====================================================================
-        #endregion
-        
+        #endregion        
 
-        public void GetSQL(string x)        //DB語法
+        private void GetSQL(string x)        //DB語法
         {
+            QueryDB = "";
             if (x == "新增")
             {
                 #region 內容
@@ -112,7 +114,7 @@ namespace QS_ii
             }
         }
 
-        public void default_status()
+        private void default_status()       //預設
         {
             this.Text = "客戶主檔";
             Customer_Status_info.Text = "";     //狀態文字
@@ -127,19 +129,25 @@ namespace QS_ii
             QS_ii_Customer_取消Button.Visible = false;
             Customer_Status_info.Visible = false;
 
-        }       //預設        
+        }             
 
-        public void start_status(Button x)      //啟動狀態
+        private void start_status(Button x)      //啟動狀態
         {
             if (x == QS_ii_Customer_新增Button)
             {
                 Customer_Status_info.Visible = true;
-                Customer_Status_info.Text = "新增";
-                tb_CUST_NO.ReadOnly = true;
+                Customer_Status_info.Text = "新增";                
                 fun.clearAir(QS_ii_Customer_panel2);
                 fun.clearAir(QS_ii_Customer_panel3);
-                fun.EoD_Panel_txt(QS_ii_Customer_panel3, false);     //QS_ii_Head_panel內的TextBox設定可讀寫
-                fun.EoD_Panel_btn(QS_ii_Customer_panel1, false);      //QS_ii_Customer_panel1內的button設定關
+                fun.EoD_Panel_txt(QS_ii_Customer_panel2, false);     //QS_ii_Customer_panel2內的TextBox設定可讀寫  
+                fun.EoD_Panel_txt(QS_ii_Customer_panel3, false);     //QS_ii_Customer_panel3內的TextBox設定可讀寫
+                tb_CUST_NO.ReadOnly = true;
+                QS_ii_Customer_新增Button.Enabled = false;
+                QS_ii_Customer_修改Button.Enabled = false;
+                QS_ii_Customer_刪除Button.Enabled = false;
+                QS_ii_Customer_查詢Button.Enabled = false;
+                QS_ii_Customer_引入Button.Enabled = false;
+
                 QS_ii_Customer_儲存Button.Visible = true;
                 QS_ii_Customer_取消Button.Visible = true;
                 QS_ii_Customer_儲存Button.Enabled = true;
@@ -148,10 +156,16 @@ namespace QS_ii
             else if (x == QS_ii_Customer_修改Button)
             {
                 Customer_Status_info.Visible = true;
-                Customer_Status_info.Text = "修改";
+                Customer_Status_info.Text = "修改";                
+                fun.EoD_Panel_txt(QS_ii_Customer_panel2, false);     //QS_ii_Customer_panel2內的TextBox設定可讀寫  
+                fun.EoD_Panel_txt(QS_ii_Customer_panel3, false);     //QS_ii_Customer_panel3內的TextBox設定可讀寫
                 tb_CUST_NO.ReadOnly = true;
-                fun.EoD_Panel_txt(QS_ii_Customer_panel3, false);     //QS_ii_Head_panel內的TextBox設定唯讀
-                fun.EoD_Panel_btn(QS_ii_Customer_panel1, false);      //QS_ii_Customer_panel1內的button設定關
+                QS_ii_Customer_新增Button.Enabled = false;
+                QS_ii_Customer_修改Button.Enabled = false;
+                QS_ii_Customer_刪除Button.Enabled = false;
+                QS_ii_Customer_查詢Button.Enabled = false;
+                QS_ii_Customer_引入Button.Enabled = false;
+
                 QS_ii_Customer_儲存Button.Visible = true;
                 QS_ii_Customer_取消Button.Visible = true;
                 QS_ii_Customer_儲存Button.Enabled = true;
@@ -165,6 +179,7 @@ namespace QS_ii
             {
                 fun.clearAir(QS_ii_Customer_panel2);
                 fun.clearAir(QS_ii_Customer_panel3);
+                tb_CUST_NO.Focus();
 
             }
             else if (x == QS_ii_Customer_儲存Button)
@@ -173,8 +188,16 @@ namespace QS_ii
                 Customer_Status_info.Visible = false;
                 fun.clearAir(QS_ii_Customer_panel2);
                 fun.clearAir(QS_ii_Customer_panel3);
-                fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);
-                fun.EoD_Panel_btn(QS_ii_Customer_panel1, true);      //QS_ii_Customer_panel1內的button設定關
+                fun.EoD_Panel_txt(QS_ii_Customer_panel2, false);         //QS_ii_Customer_panel2內的TextBox設定可讀寫
+                fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);         //QS_ii_Customer_panel3內的TextBox設定唯讀
+                tb_CUST_NO.ReadOnly = false;
+
+                QS_ii_Customer_新增Button.Enabled = true;
+                QS_ii_Customer_修改Button.Enabled = true;
+                QS_ii_Customer_刪除Button.Enabled = true;
+                QS_ii_Customer_查詢Button.Enabled = true;
+                QS_ii_Customer_引入Button.Enabled = true;
+
                 QS_ii_Customer_儲存Button.Visible = false;
                 QS_ii_Customer_取消Button.Visible = false;
 
@@ -182,10 +205,15 @@ namespace QS_ii
             else if (x == QS_ii_Customer_取消Button)
             {
                 Customer_Status_info.Text = "";
-                Customer_Status_info.Visible = false;
-                tb_CUST_NO.ReadOnly = false;
-                fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);     //QS_ii_Head_panel內的TextBox設定唯讀
-                fun.EoD_Panel_btn(QS_ii_Customer_panel1, true);      //QS_ii_Customer_panel1內的button設定開
+                Customer_Status_info.Visible = false;                
+                fun.EoD_Panel_txt(QS_ii_Customer_panel2, false);     //QS_ii_Customer_panel2內的TextBox設定可讀寫  
+                fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);     //QS_ii_Customer_panel3內的TextBox設定唯讀                
+                QS_ii_Customer_新增Button.Enabled = true;
+                QS_ii_Customer_修改Button.Enabled = true;
+                QS_ii_Customer_刪除Button.Enabled = true;
+                QS_ii_Customer_查詢Button.Enabled = true;
+                QS_ii_Customer_引入Button.Enabled = true;
+
                 QS_ii_Customer_儲存Button.Visible = false;
                 QS_ii_Customer_取消Button.Visible = false;
             }
@@ -212,18 +240,26 @@ namespace QS_ii
         private void Customer_Modify()        //客戶主檔修改
         {
             #region 內容
-            if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (tb_CUST_NO.Text != "")
             {
-                fun.Check_error = false;
-                GetSQL("修改");
-                fun.QS_ii_insert(QueryDB);
-                if (fun.Check_error == false)
+                if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("資料《修改》成功!!", this.Text);
-                    start_status(QS_ii_Customer_儲存Button);
+                    fun.Check_error = false;
+                    GetSQL("修改");
+                    fun.QS_ii_insert(QueryDB);
+                    if (fun.Check_error == false)
+                    {
+                        MessageBox.Show("資料《修改》成功!!", this.Text);
+                        start_status(QS_ii_Customer_儲存Button);
+                    }
+
                 }
+            }
+            else
+            {
 
             }
+            
 
 
             #endregion
@@ -237,14 +273,16 @@ namespace QS_ii
 
         private void Customer_Query(DataGridView dgv)         //客戶主檔查詢
         {
+            
             GetSQL("查詢");    //語法丟進QueryDB
             Customer_Query_conditions();      //查詢客戶主檔的條件
             fun.xxx_DB(QueryDB + QueryOLOD, dgv);         //連接DB-執行DB指令
 
         }
 
-        public void Customer_Query_conditions()      //查詢客戶主檔的條件
+        private void Customer_Query_conditions()      //查詢客戶主檔的條件
         {
+            QueryOLOD = "";
             if (tb_CUST_NO.Text != "")       //客戶編號
             {
                 QueryOLOD += @"and [客戶編號] = N'" + tb_CUST_NO.Text.Trim() + "'";
@@ -255,11 +293,27 @@ namespace QS_ii
             }
             if (tb_VAT_NO.Text != "")       //統一編號
             {
-                QueryOLOD += @"and [統一編號] like N'%" + tb_VAT_NO.Text.Trim() + "%'";
+                QueryOLOD += @"and [統一編號] = N'" + tb_VAT_NO.Text.Trim() + "'";
             }
 
         }
 
+        public virtual void Customer_import_Head()         //引入到報價單主檔表頭
+        {
+            
+        }
+
+        public virtual void Customer_Query_Enter()            //按enter後的方法
+        {
+            #region  按enter之後執行
+            QS_ii_Customer_T QSQDGV = new QS_ii_Customer_T(this);
+            //設定init_Staff 新視窗的相對位置#############
+            QSQDGV.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################
+            Customer_Query(QSQDGV.QS_ii_DGView1);           //客戶主檔查詢
+            QSQDGV.ShowDialog();
+            #endregion           
+        }
 
         private void QS_ii_Customer_Load(object sender, EventArgs e)
         {
@@ -280,6 +334,7 @@ namespace QS_ii
         private void QS_ii_Customer_刪除Button_Click(object sender, EventArgs e)
         {
             start_status(QS_ii_Customer_刪除Button);
+            MessageBox.Show("目前沒有權限!!",this.Text);
         }
 
         private void QS_ii_Customer_查詢Button_Click(object sender, EventArgs e)
@@ -308,42 +363,74 @@ namespace QS_ii
             start_status(QS_ii_Customer_取消Button);
         }
 
-        private void tb_CUST_NO_KeyDown(object sender, KeyEventArgs e)
+        private void QS_ii_Customer_引入Button_Click(object sender, EventArgs e)
+        {
+            Customer_import_Head();         //引入到報價單主檔表頭
+            this.Close();
+        }
+
+        private void QS_ii_Customer_清空Button_Click(object sender, EventArgs e)
+        {
+            fun.clearAir(QS_ii_Customer_panel2);
+            fun.clearAir(QS_ii_Customer_panel3);
+        }
+
+        #region 事件
+
+        private void tb_CUST_NO_KeyDown(object sender, KeyEventArgs e)      //客戶編號按enter後的查詢事件
         {
             if (Customer_Status_info.Text == "")
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    #region  按Tab之後執行
-                    //QS_ii_QueryDGV QSQDGV = new QS_ii_QueryDGV(this);
-                    QS_ii_Customer_T QSQDGV = new QS_ii_Customer_T(this);
-                    //設定init_Staff 新視窗的相對位置#############
-                    QSQDGV.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-                    //############################################
-                    Customer_Query(QSQDGV.QS_ii_DGView1);
-                    QSQDGV.ShowDialog();
-                    #endregion
+                    Customer_Query_Enter();
+                }
+            }
+            
+        }
+
+        private void tb_CUST_NAME_KeyDown(object sender, KeyEventArgs e)        //客戶名稱按enter後的查詢事件
+        {
+            if (Customer_Status_info.Text == "")
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    Customer_Query_Enter();
                 }
             }
 
         }
+
+        private void tb_VAT_NO_KeyDown(object sender, KeyEventArgs e)           //統一編號按enter後的查詢事件
+        {
+            if (Customer_Status_info.Text == "")
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    Customer_Query_Enter();
+                }
+            }
+
+        }
+
+        #endregion
         
     }
 
     public class QS_ii_Customer_T : QS_ii_QueryDGV
     {
-        public QS_ii_Customer QSii ;
+        QS_ii_Customer QSii;
 
         public QS_ii_Customer_T(QS_ii_Customer x)
-        {            
+        {
             this.QSii = x;
         }
 
         public override void QS_ii_QueryDGV_DGView1()       //把選取資料對應到TextBox
-        {            
+        {
             QSii.tb_CUST_NO.Text = QS_ii_DGView1.CurrentRow.Cells["客戶編號"].Value.ToString();
             QSii.tb_CUST_NAME.Text = QS_ii_DGView1.CurrentRow.Cells["客戶名稱"].Value.ToString();
-            QSii.tb_VAT_NO.Text = QS_ii_DGView1.CurrentRow.Cells["統一編號"].Value.ToString();           
+            QSii.tb_VAT_NO.Text = QS_ii_DGView1.CurrentRow.Cells["統一編號"].Value.ToString();
             QSii.tb_CUST_TYPE.Text = QS_ii_DGView1.CurrentRow.Cells["客戶類別"].Value.ToString();
             QSii.tb_CHAIN_NAME.Text = QS_ii_DGView1.CurrentRow.Cells["主要通路"].Value.ToString();
             QSii.tb_CONT_TITLE.Text = QS_ii_DGView1.CurrentRow.Cells["連絡人職稱"].Value.ToString();

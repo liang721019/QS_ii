@@ -9,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace QS_ii
 {
     public partial class QS_ii_QueryDGV : Form 
     {
-        
+
         public QS_ii_QueryDGV()
         {
             InitializeComponent();            
         }
-       
 
         private void QS_ii_QueryDGV_Load(object sender, EventArgs e)
         {
@@ -37,6 +37,7 @@ namespace QS_ii
 
         public virtual void QS_ii_QueryDGV_DGView1()        //DGView1資料呼叫方法
         {
+            
             
         }
         
