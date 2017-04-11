@@ -15,6 +15,8 @@ namespace QS_ii
     {
         QS_ii_function fun = new QS_ii_function();
 
+        public QS_ii_DB QSiiDB = new QS_ii_DB();
+
         public QS_ii_Quotes_add()
         {
             InitializeComponent();
@@ -85,7 +87,12 @@ namespace QS_ii
             //this.MinimizeBox = true;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
             this.AutoSize = false;          //自動調整大小
-            //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小
+            //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小    
+
+            
+            Product_DGV_SetColumns();           //QS_ii_Product_DGV自定顯示欄位
+            QS_ii_Product_DGV.DataSource = QSiiDB.QS_ii_Product;
+
             fun.Format_Panel_dTP(QS_ii_Head_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(QS_ii_Head_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀
             fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);       //QS_ii_Head_panel內的DateTimePicker設定唯讀
@@ -97,7 +104,6 @@ namespace QS_ii
             QS_ii_取消button.Visible = false;
             QS_ii_儲存button.Enabled = false;
             QS_ii_取消button.Enabled = false;
-            
             Status_info.Visible = false;
 
         }
@@ -211,6 +217,18 @@ namespace QS_ii
             #endregion
         }
 
+        public void Product_DGV_SetColumns()           //QS_ii_Product_DGV自定顯示欄位
+        {
+            QS_ii_Product_DGV.AutoGenerateColumns = false;
+            QS_ii_Product_DGV_Column1.DataPropertyName = "Check";
+            QS_ii_Product_DGV_Column2.DataPropertyName = "item_NO";
+            QS_ii_Product_DGV_Column3.DataPropertyName = "item_NAME";
+            QS_ii_Product_DGV_Column4.DataPropertyName = "SPEC";
+            QS_ii_Product_DGV_Column5.DataPropertyName = "UNIT";
+            QS_ii_Product_DGV_Column6.DataPropertyName = "QTY";
+            QS_ii_Product_DGV_Column7.DataPropertyName = "UNIT_PRICE";
+        }
+
         //==============================================================================================================
         #endregion
 
@@ -224,7 +242,7 @@ namespace QS_ii
 
         private void QS_ii_新增button_Click(object sender, EventArgs e)
         {
-            Status_info.Text = "新增";
+            start_status(QS_ii_新增button);
         }
 
         private void QS_ii_儲存button_Click(object sender, EventArgs e)
@@ -278,19 +296,20 @@ namespace QS_ii
         private void QS_ii_客戶button_Click(object sender, EventArgs e)
         {
 
-            QS_ii_TCustomer inSea = new QS_ii_TCustomer(this);
-            //QS_ii_Customer inSea = new QS_ii_Customer(this);
+            QS_ii_TCustomer inSea = new QS_ii_TCustomer(this);            
             //設定init_Staff 新視窗的相對位置#############
             inSea.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
             inSea.Server_ENV.Text = QS_ii_Server_ENV.Text;      //server
-            inSea.USER_ID.Text = USER_ID.Text;      //UID
+            inSea.USER_ID.Text = USER_ID.Text;          //UID
             inSea.ShowDialog();
+
         }
 
         private void QS_ii_產品button_Click(object sender, EventArgs e)
         {
-            QS_ii_Product inQS_Product = new QS_ii_Product();
+            //QS_ii_Product inQS_Product = new QS_ii_Product();
+            QS_ii_TProduct inQS_Product = new QS_ii_TProduct(this);
             //設定init_Staff 新視窗的相對位置#############
             inQS_Product.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
@@ -309,18 +328,73 @@ namespace QS_ii
 
         }
 
+        private void Product_新增button_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Product_刪除button_Click(object sender, EventArgs e)
+        {
+            #region 內容
+            for (int i = 0; i < this.QS_ii_Product_DGV.Rows.Count; i++)
+            {
+                if (QS_ii_Product_DGV.Rows[i].Cells[0].Value.ToString() == "1")
+                {
+                    this.QS_ii_Product_DGV.Rows.Remove(this.QS_ii_Product_DGV.Rows[i]);
+                    i = -1;
+                }
+            }
+            #endregion
+        }
+
+        private void Product_多選button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QS_ii_Product_DGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
         //==============================================================================================================
         #endregion
 
         #region 事件
         //==============================================================================================================
 
+        private void QS_ii_Product_DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)         //QS_ii_Product_DGV中的Checkbox
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex != -1)
+            {
+                #region 內容
+                 
+                DataGridViewCheckBoxCell checkCell = (DataGridViewCheckBoxCell)QS_ii_Product_DGV.Rows[e.RowIndex].Cells[0];
+                //DataGridViewCheckBoxCell checkCell = (DataGridViewCheckBoxCell)QS_ii_Product_DGV.Rows[e.RowIndex].Cells[0];
+                //Boolean flag = Convert.ToBoolean(QS_ii_Product_DGV.Rows[e.RowIndex].Cells[0].Value);
+                string flag = QS_ii_Product_DGV.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (flag == "1")     //被選取的資料行
+                {                    
+                    checkCell.Value = "0";
+                }
+                else
+                {                    
+                    checkCell.Value = "1";
+                }
+                #endregion
+            }
+
+        }
+
+        
+        
         //==============================================================================================================
         #endregion
 
     }
 
-    public class QS_ii_TCustomer : QS_ii_Customer        
+    public class QS_ii_TCustomer : QS_ii_Customer
     {
         QS_ii_Quotes_add QS_iiQ_add;
 
@@ -346,6 +420,35 @@ namespace QS_ii
             QS_iiQ_add.tb_DELI_ADDR.Text = tb_DELI_ADDR.Text;             //送貨地址
             QS_iiQ_add.tb_PAY_METH.Text = tb_PAY_METH.Text;             //付款方式
         }
+    }
+
+    public class QS_ii_TProduct : QS_ii_Product
+    {
+        QS_ii_Quotes_add QS_iiQ_add;
+
+        public QS_ii_TProduct(QS_ii_Quotes_add x)
+        {
+            QS_iiQ_add = x;
+            QS_Quotes_DGV = QS_iiQ_add.QS_ii_Product_DGV;
+        }
+        
+
+        public override void QS_ii_Add_Product_Detail()     //增加至報價單商品明細
+        {
+            #region 內容
+
+            DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_Product.NewRow();
+            QS_ii_dr["Check"] = "0";
+            QS_ii_dr["item_NO"] = tb_item_NO.Text.Trim();
+            QS_ii_dr["item_NAME"] = tb_item_NAME.Text.Trim();
+            QS_ii_dr["UNIT"] = tb_UNIT.Text.Trim();
+            QS_ii_dr["QTY"] = "1";
+            QS_ii_dr["UNIT_PRICE"] = tb_UNIT_PRICE.Text.Trim();
+            QS_iiQ_add.QSiiDB.QS_ii_Product.Rows.Add(QS_ii_dr);
+
+            #endregion
+        }
+        
     }
 
 }

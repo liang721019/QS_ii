@@ -63,6 +63,8 @@ namespace QS_ii
         //=====================================================================
         #endregion        
 
+        #region 方法
+
         private void GetSQL(string x)        //DB語法
         {
             QueryDB = "";
@@ -315,6 +317,10 @@ namespace QS_ii
             #endregion           
         }
 
+        #endregion
+
+        #region 按鈕
+
         private void QS_ii_Customer_Load(object sender, EventArgs e)
         {
             default_status();
@@ -375,8 +381,10 @@ namespace QS_ii
             fun.clearAir(QS_ii_Customer_panel3);
         }
 
-        #region 事件
+        #endregion
 
+        #region 事件
+        //=====================================================================
         private void tb_CUST_NO_KeyDown(object sender, KeyEventArgs e)      //客戶編號按enter後的查詢事件
         {
             if (Customer_Status_info.Text == "")
@@ -412,7 +420,7 @@ namespace QS_ii
             }
 
         }
-
+        //=====================================================================
         #endregion
         
     }

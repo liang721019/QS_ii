@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using function.lib;
 
+
 namespace QS_ii
 {
     public partial class QS_ii_Product : Form
     {
 
         QS_ii_function fun = new QS_ii_function();
+        //public QS_ii_DB QSiiDB = new QS_ii_DB();
        
         public QS_ii_Product()
         {
@@ -36,6 +38,11 @@ namespace QS_ii
             get;
         }
 
+        public DataGridView QS_Quotes_DGV       //報價單主檔中的DGV
+        {
+            set;
+            get;
+        }
 
         //=============================================
         #endregion
@@ -64,7 +71,7 @@ namespace QS_ii
             else if (x == "修改")
             {
                 #region 內容
-                QueryDB = @"EXEC [TEST_SLSYHI].[dbo].[SLS_QS_CUST_Update] '" + tb_item_NO.Text +           //商品代號                         
+                QueryDB = @"EXEC [TEST_SLSYHI].[dbo].[SLS_QS_Product_Update] '" + tb_item_NO.Text +           //商品代號                         
                          @"','" + tb_item_NAME.Text +                //商品名稱 
                          @"','" + tb_EN_NAME.Text.Trim() +           //商品英文名稱
                          @"','" + tb_item_TYPE.Text.Trim() +         //商品類別
@@ -80,8 +87,14 @@ namespace QS_ii
             {
                 #region 內容
                 QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
-
                 #endregion
+            }
+            else if (x == "增加至報價單")
+            {
+                #region 內容
+                QueryDB = @"select [商品編號] from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N' and [商品編號] = '" + tb_item_NO.Text + "'";
+                #endregion
+
             }
 
         }
@@ -94,7 +107,7 @@ namespace QS_ii
             //this.MinimizeBox = true;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
             this.AutoSize = false;          //自動調整大小
-            //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小
+            //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小            
             fun.Format_Panel_dTP(Product_Detail_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(Product_Detail_panel, true);     //Product_Detail_panel內的TextBox設定唯讀
             fun.EoD_Panel_btnVisible(Product_panel1, true);      //Product_panel1內的button設定顯示
@@ -171,8 +184,11 @@ namespace QS_ii
                 #region 儲存
                 Product_Status_info.Visible = false;
                 Product_Status_info.Text = "";
+                fun.clearAir(Product_panel2);
+                fun.clearAir(Product_Detail_panel);
                 fun.EoD_Panel_txt(Product_panel2, false);     //Product_panel2內的TextBox設定可讀寫
-                fun.EoD_Panel_txt(Product_Detail_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀                
+                fun.EoD_Panel_txt(Product_Detail_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀
+
                 //tb_item_NO.ReadOnly = true;     //商品編號
 
                 QS_ii_Product_新增Button.Enabled = true;
@@ -193,7 +209,7 @@ namespace QS_ii
                 Product_Status_info.Text = "";
                 fun.EoD_Panel_txt(Product_panel2, false);     //Product_panel2內的TextBox設定可讀寫
                 fun.EoD_Panel_txt(Product_Detail_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀                
-                //tb_item_NO.ReadOnly = true;     //商品編號
+                tb_item_NO.ReadOnly = true;     //商品編號                
 
                 QS_ii_Product_新增Button.Enabled = true;
                 QS_ii_Product_修改Button.Enabled = true;
@@ -219,8 +235,7 @@ namespace QS_ii
                 fun.QS_ii_insert(QueryDB);
                 if (fun.Check_error == false)
                 {
-                    MessageBox.Show("資料《新增》成功!!", this.Text);
-                    start_status(QS_ii_Product_儲存Button);
+                    MessageBox.Show("資料《新增》成功!!", this.Text);                    
                 }
             }
             #endregion
@@ -238,8 +253,7 @@ namespace QS_ii
                     fun.QS_ii_insert(QueryDB);
                     if (fun.Check_error == false)
                     {
-                        MessageBox.Show("資料《修改》成功!!", this.Text);
-                        start_status(QS_ii_Product_儲存Button);
+                        MessageBox.Show("資料《修改》成功!!", this.Text);                        
                     }
 
                 }
@@ -251,7 +265,7 @@ namespace QS_ii
         private void Product_delete()           //商品主檔刪除
         {
             #region 內容
-
+            MessageBox.Show("目前沒有權限!!", this.Text);
             #endregion
         }
 
@@ -272,24 +286,51 @@ namespace QS_ii
             }
             if (tb_item_TYPE.Text != "")       //商品類別
             {
-                QueryOLOD += @"and [產品類別] like N'%" + tb_item_TYPE.Text.Trim() + "%'";
+                QueryOLOD += @"and [產品分類] like N'%" + tb_item_TYPE.Text.Trim() + "%'";
             }
             if (tb_item_NAME.Text != "")       //商品名稱
             {
-                QueryOLOD += @"and [商品名稱] = like N'%" + tb_item_NAME.Text.Trim() + "%'";
+                QueryOLOD += @"and [商品名稱] like N'%" + tb_item_NAME.Text.Trim() + "%'";
             }
+            QueryOLOD += @"order by 1";
 
         }
 
-        public virtual void Product_Query_Enter()           //客戶編號按enter後的方法
+        public void Product_Query_Enter()           //客戶編號按enter後的方法
         {
             #region  按enter之後執行
             QS_ii_Product_T QSQDGV = new QS_ii_Product_T(this);
             //設定init_Staff 新視窗的相對位置#############
             QSQDGV.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
-            Product_Query(QSQDGV.QS_ii_DGView1);           //客戶主檔查詢
+            Product_Query(QSQDGV.QS_ii_DGView1);           //商品主檔查詢
             QSQDGV.ShowDialog();
+            #endregion
+        }
+
+        public virtual void QS_ii_Add_Product_Detail()         //增加至報價單商品明細
+        {
+            #region 內容
+            
+            //QS_Quotes_DGV.DataSource = QSiiDB.QS_ii_Product;
+            //DataView view = new DataView(QSiiDB.QS_ii_Product);
+            ////view.RowFilter = "Item='" + "table" + "'";
+            //DataTable table = view.ToTable();
+            //QS_Quotes_DGV.DataSource = table; 
+
+            //QSiiDB.QS_ii_Product.AcceptChanges();
+            //DataRow QS_ii_dr = QSiiDB.QS_ii_Product.TableNewRow;
+            
+            //QSiiDB.QS_ii_Product.Rows[0]["item_NO"] = tb_item_NO.Text.Trim();
+            //QSiiDB.QS_ii_Product.Rows[0]["item_NAME"] = tb_item_NAME.Text.Trim();
+            //QSiiDB.QS_ii_Product.Rows[0]["UNIT"] = tb_UNIT.Text.Trim();
+            //QSiiDB.QS_ii_Product.Rows[0]["QTY"] = "1";
+            //QSiiDB.QS_ii_Product.Rows[0]["UNIT_PRICE"] = tb_UNIT_PRICE.Text.Trim();
+            //QSiiDB.QS_ii_Product.AcceptChanges();
+                        
+            //QSiiDB.QS_ii_Product.Rows.Add(QS_ii_dr);
+            //DGV.DataSource = QSiiDB.QS_ii_Product;
+
             #endregion
         }
 
@@ -308,13 +349,13 @@ namespace QS_ii
             if (Product_Status_info.Text == "新增")
             {
 
-                Product_add();         //商品主檔新增
-                //MessageBox.Show(tb_EFF_DATE_dTP1.Text);
-
+                Product_add();         //商品主檔新增                
+                start_status(QS_ii_Product_儲存Button);       //啟動狀態
             }
             else if (Product_Status_info.Text == "修改")
             {
                 Product_Modify();        //商品主檔修改
+                start_status(QS_ii_Product_儲存Button);       //啟動狀態
 
             }
         }
@@ -336,6 +377,7 @@ namespace QS_ii
 
         private void QS_ii_Product_刪除Button_Click(object sender, EventArgs e)
         {
+            Product_delete();
             start_status(QS_ii_Product_刪除Button);
         }
 
@@ -404,6 +446,34 @@ namespace QS_ii
             //}
             e.Handled = !char.IsDigit(e.KeyChar);
         }
+
+        private void QS_ii_Product_Import_Button_Click(object sender, EventArgs e)      //增加至報價單
+        {
+            if (tb_item_NO.Text != "")
+            {
+                //QS_ii_Add_Product_Detail();         //增加至報價單商品明細
+                GetSQL("增加至報價單");
+                fun.ProductDB_ds(QueryDB);
+
+                if (fun.ds_index.Tables[0].Rows.Count != 0)
+                {
+                    QS_ii_Add_Product_Detail();         //增加至報價單商品明細
+                }
+                else
+                {
+                    MessageBox.Show("查無此商品!!", this.Text);
+                }
+            }
+            else
+            {
+                MessageBox.Show("商品編號不能為空白!!", this.Text);
+            }
+            
+
+            //fun.ds_index.Tables[0].Rows[0]["委託單編號"].ToString();
+            //QS_ii_Product.
+            //QSiiDB.Tables.Add
+        }
         //=============================================
         #endregion
     }
@@ -419,10 +489,11 @@ namespace QS_ii
 
         public override void QS_ii_QueryDGV_DGView1()       //把選取資料對應到TextBox
         {
+
             QSiiP.tb_item_NO.Text = QS_ii_DGView1.CurrentRow.Cells["商品編號"].Value.ToString();
-            QSiiP.tb_item_TYPE.Text = QS_ii_DGView1.CurrentRow.Cells["商品類別"].Value.ToString();
+            QSiiP.tb_item_TYPE.Text = QS_ii_DGView1.CurrentRow.Cells["產品分類"].Value.ToString();
             QSiiP.tb_item_NAME.Text = QS_ii_DGView1.CurrentRow.Cells["商品名稱"].Value.ToString();
-            QSiiP.tb_EN_NAME.Text = QS_ii_DGView1.CurrentRow.Cells["英名名稱"].Value.ToString();
+            QSiiP.tb_EN_NAME.Text = QS_ii_DGView1.CurrentRow.Cells["英文名稱"].Value.ToString();
             QSiiP.tb_SPEC.Text = QS_ii_DGView1.CurrentRow.Cells["規格"].Value.ToString();
             QSiiP.tb_CURRENCY.Text = QS_ii_DGView1.CurrentRow.Cells["幣別"].Value.ToString();
             QSiiP.tb_UNIT.Text = QS_ii_DGView1.CurrentRow.Cells["單位"].Value.ToString();

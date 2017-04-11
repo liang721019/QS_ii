@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Product_panel1 = new System.Windows.Forms.Panel();
+            this.QS_ii_Product_Import_Button = new System.Windows.Forms.Button();
             this.QS_ii_Product_取消Button = new System.Windows.Forms.Button();
             this.QS_ii_Product_儲存Button = new System.Windows.Forms.Button();
             this.QS_ii_Product_查詢Button = new System.Windows.Forms.Button();
@@ -76,6 +77,7 @@
             this.Product_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Product_panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Product_panel1.Controls.Add(this.QS_ii_Product_Import_Button);
             this.Product_panel1.Controls.Add(this.QS_ii_Product_取消Button);
             this.Product_panel1.Controls.Add(this.QS_ii_Product_儲存Button);
             this.Product_panel1.Controls.Add(this.QS_ii_Product_查詢Button);
@@ -87,6 +89,16 @@
             this.Product_panel1.Name = "Product_panel1";
             this.Product_panel1.Size = new System.Drawing.Size(756, 55);
             this.Product_panel1.TabIndex = 3;
+            // 
+            // QS_ii_Product_Import_Button
+            // 
+            this.QS_ii_Product_Import_Button.Location = new System.Drawing.Point(247, 3);
+            this.QS_ii_Product_Import_Button.Name = "QS_ii_Product_Import_Button";
+            this.QS_ii_Product_Import_Button.Size = new System.Drawing.Size(125, 44);
+            this.QS_ii_Product_Import_Button.TabIndex = 6;
+            this.QS_ii_Product_Import_Button.Text = "增加至報價單";
+            this.QS_ii_Product_Import_Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Product_Import_Button.Click += new System.EventHandler(this.QS_ii_Product_Import_Button_Click);
             // 
             // QS_ii_Product_取消Button
             // 
@@ -258,7 +270,7 @@
             this.Product_Detail_panel.Controls.Add(this.label16);
             this.Product_Detail_panel.Location = new System.Drawing.Point(6, 6);
             this.Product_Detail_panel.Name = "Product_Detail_panel";
-            this.Product_Detail_panel.Size = new System.Drawing.Size(528, 261);
+            this.Product_Detail_panel.Size = new System.Drawing.Size(513, 261);
             this.Product_Detail_panel.TabIndex = 0;
             // 
             // tb_EFF_DATE_dTP1
@@ -357,7 +369,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(77, 20);
             this.label16.TabIndex = 22;
-            this.label16.Text = "英名名稱:";
+            this.label16.Text = "英文名稱:";
             // 
             // tabPage2
             // 
@@ -481,6 +493,7 @@
         public System.Windows.Forms.TextBox tb_SPEC;
         public System.Windows.Forms.TextBox tb_EN_NAME;
         public System.Windows.Forms.DateTimePicker tb_EFF_DATE_dTP1;
+        private System.Windows.Forms.Button QS_ii_Product_Import_Button;
 
     }
 }
