@@ -20,6 +20,9 @@ namespace QS_ii
             public override void V_login()      //開窗
             {
                 QS_ii_Quotes_add QiQ = new QS_ii_Quotes_add();
+                //設定init_Staff 新視窗的相對位置#############
+                QiQ.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+                //############################################
                 QiQ.QS_ii_Server_ENV.Text = ServerName;
                 QiQ.USER_ID.Text = UID;                
                 this.Hide();

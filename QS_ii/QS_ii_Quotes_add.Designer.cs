@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.QS_ii_Server_ENV = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -42,6 +43,7 @@
             this.QS_ii_修改button = new System.Windows.Forms.Button();
             this.QS_ii_新增button = new System.Windows.Forms.Button();
             this.QS_ii_Head_panel = new System.Windows.Forms.Panel();
+            this.QT_EFF_DATE_dTP = new System.Windows.Forms.DateTimePicker();
             this.QT_DATE_dTP = new System.Windows.Forms.DateTimePicker();
             this.tb_CUST_MAIL = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -82,14 +84,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tb_SALESMAN = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tb_EFF_DATE = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_BPM_NO = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tb_REMARK = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.QS_ii_Check_panel = new System.Windows.Forms.Panel();
             this.tb_APPR_DATE = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.tb_APPROVE = new System.Windows.Forms.TextBox();
@@ -104,7 +105,7 @@
             this.tb_AMT_NOTAX = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.QS_ii_money_panel = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Product_多選button = new System.Windows.Forms.Button();
             this.Product_刪除button = new System.Windows.Forms.Button();
@@ -120,6 +121,7 @@
             this.QS_ii_Product_DGV_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QS_ii_Product_DGV_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
@@ -128,18 +130,24 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.Status_info = new System.Windows.Forms.Label();
+            this.qS_ii_DB = new QS_ii.QS_ii_DB();
+            this.qSiiQProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.QS_ii_Head_panel.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.QS_ii_Check_panel.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.QS_ii_money_panel.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -226,6 +234,7 @@
             this.QS_ii_取消button.TabIndex = 5;
             this.QS_ii_取消button.Text = "取消";
             this.QS_ii_取消button.UseVisualStyleBackColor = true;
+            this.QS_ii_取消button.Click += new System.EventHandler(this.QS_ii_取消button_Click);
             // 
             // QS_ii_儲存button
             // 
@@ -280,6 +289,7 @@
             // QS_ii_Head_panel
             // 
             this.QS_ii_Head_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_Head_panel.Controls.Add(this.QT_EFF_DATE_dTP);
             this.QS_ii_Head_panel.Controls.Add(this.QT_DATE_dTP);
             this.QS_ii_Head_panel.Controls.Add(this.tb_CUST_MAIL);
             this.QS_ii_Head_panel.Controls.Add(this.label30);
@@ -320,7 +330,6 @@
             this.QS_ii_Head_panel.Controls.Add(this.label11);
             this.QS_ii_Head_panel.Controls.Add(this.tb_SALESMAN);
             this.QS_ii_Head_panel.Controls.Add(this.label7);
-            this.QS_ii_Head_panel.Controls.Add(this.tb_EFF_DATE);
             this.QS_ii_Head_panel.Controls.Add(this.label6);
             this.QS_ii_Head_panel.Controls.Add(this.label2);
             this.QS_ii_Head_panel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -328,6 +337,13 @@
             this.QS_ii_Head_panel.Name = "QS_ii_Head_panel";
             this.QS_ii_Head_panel.Size = new System.Drawing.Size(1181, 234);
             this.QS_ii_Head_panel.TabIndex = 2;
+            // 
+            // QT_EFF_DATE_dTP
+            // 
+            this.QT_EFF_DATE_dTP.Location = new System.Drawing.Point(979, 190);
+            this.QT_EFF_DATE_dTP.Name = "QT_EFF_DATE_dTP";
+            this.QT_EFF_DATE_dTP.Size = new System.Drawing.Size(161, 29);
+            this.QT_EFF_DATE_dTP.TabIndex = 54;
             // 
             // QT_DATE_dTP
             // 
@@ -605,6 +621,7 @@
             this.tb_EXC_RATE.Name = "tb_EXC_RATE";
             this.tb_EXC_RATE.Size = new System.Drawing.Size(161, 29);
             this.tb_EXC_RATE.TabIndex = 23;
+            this.tb_EXC_RATE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_EXC_RATE_KeyPress);
             // 
             // label12
             // 
@@ -646,13 +663,6 @@
             this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 12;
             this.label7.Text = "報價業務:";
-            // 
-            // tb_EFF_DATE
-            // 
-            this.tb_EFF_DATE.Location = new System.Drawing.Point(979, 188);
-            this.tb_EFF_DATE.Name = "tb_EFF_DATE";
-            this.tb_EFF_DATE.Size = new System.Drawing.Size(161, 29);
-            this.tb_EFF_DATE.TabIndex = 11;
             // 
             // label6
             // 
@@ -705,23 +715,23 @@
             this.label20.TabIndex = 28;
             this.label20.Text = "備註:";
             // 
-            // panel4
+            // QS_ii_Check_panel
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.tb_APPR_DATE);
-            this.panel4.Controls.Add(this.label19);
-            this.panel4.Controls.Add(this.tb_APPROVE);
-            this.panel4.Controls.Add(this.label18);
-            this.panel4.Controls.Add(this.tb_BPM_NO);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.ALLOW_QT_NO);
-            this.panel4.Controls.Add(this.ALLOW_QT_YES);
-            this.panel4.Location = new System.Drawing.Point(634, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(244, 151);
-            this.panel4.TabIndex = 27;
+            this.QS_ii_Check_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.QS_ii_Check_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_Check_panel.Controls.Add(this.tb_APPR_DATE);
+            this.QS_ii_Check_panel.Controls.Add(this.label19);
+            this.QS_ii_Check_panel.Controls.Add(this.tb_APPROVE);
+            this.QS_ii_Check_panel.Controls.Add(this.label18);
+            this.QS_ii_Check_panel.Controls.Add(this.tb_BPM_NO);
+            this.QS_ii_Check_panel.Controls.Add(this.label13);
+            this.QS_ii_Check_panel.Controls.Add(this.label14);
+            this.QS_ii_Check_panel.Controls.Add(this.ALLOW_QT_NO);
+            this.QS_ii_Check_panel.Controls.Add(this.ALLOW_QT_YES);
+            this.QS_ii_Check_panel.Location = new System.Drawing.Point(634, 6);
+            this.QS_ii_Check_panel.Name = "QS_ii_Check_panel";
+            this.QS_ii_Check_panel.Size = new System.Drawing.Size(244, 151);
+            this.QS_ii_Check_panel.TabIndex = 27;
             // 
             // tb_APPR_DATE
             // 
@@ -840,30 +850,30 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.QS_ii_money_panel);
             this.panel3.Controls.Add(this.label20);
             this.panel3.Controls.Add(this.tb_REMARK);
-            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.QS_ii_Check_panel);
             this.panel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.panel3.Location = new System.Drawing.Point(12, 703);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1181, 172);
             this.panel3.TabIndex = 3;
             // 
-            // panel6
+            // QS_ii_money_panel
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.label8);
-            this.panel6.Controls.Add(this.tb_TOT_AMT);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Controls.Add(this.tb_AMT_NOTAX);
-            this.panel6.Controls.Add(this.tb_TAX_AMT);
-            this.panel6.Controls.Add(this.label9);
-            this.panel6.Location = new System.Drawing.Point(884, 6);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(281, 151);
-            this.panel6.TabIndex = 30;
+            this.QS_ii_money_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.QS_ii_money_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_money_panel.Controls.Add(this.label8);
+            this.QS_ii_money_panel.Controls.Add(this.tb_TOT_AMT);
+            this.QS_ii_money_panel.Controls.Add(this.label10);
+            this.QS_ii_money_panel.Controls.Add(this.tb_AMT_NOTAX);
+            this.QS_ii_money_panel.Controls.Add(this.tb_TAX_AMT);
+            this.QS_ii_money_panel.Controls.Add(this.label9);
+            this.QS_ii_money_panel.Location = new System.Drawing.Point(884, 6);
+            this.QS_ii_money_panel.Name = "QS_ii_money_panel";
+            this.QS_ii_money_panel.Size = new System.Drawing.Size(281, 151);
+            this.QS_ii_money_panel.TabIndex = 30;
             // 
             // panel5
             // 
@@ -951,7 +961,6 @@
             this.QS_ii_Product_DGV_Column7});
             this.QS_ii_Product_DGV.Location = new System.Drawing.Point(6, 6);
             this.QS_ii_Product_DGV.Name = "QS_ii_Product_DGV";
-            this.QS_ii_Product_DGV.ReadOnly = true;
             this.QS_ii_Product_DGV.RowTemplate.Height = 24;
             this.QS_ii_Product_DGV.Size = new System.Drawing.Size(823, 314);
             this.QS_ii_Product_DGV.TabIndex = 0;
@@ -997,7 +1006,6 @@
             // 
             this.QS_ii_Product_DGV_Column6.HeaderText = "數量";
             this.QS_ii_Product_DGV_Column6.Name = "QS_ii_Product_DGV_Column6";
-            this.QS_ii_Product_DGV_Column6.ReadOnly = true;
             // 
             // QS_ii_Product_DGV_Column7
             // 
@@ -1008,12 +1016,22 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1112, 326);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "其他";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(748, 314);
+            this.dataGridView1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -1093,6 +1111,16 @@
             this.Status_info.TabIndex = 5;
             this.Status_info.Text = "測試";
             // 
+            // qS_ii_DB
+            // 
+            this.qS_ii_DB.DataSetName = "QS_ii_DB";
+            this.qS_ii_DB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // qSiiQProductBindingSource
+            // 
+            this.qSiiQProductBindingSource.DataMember = "QS_ii_QProduct";
+            this.qSiiQProductBindingSource.DataSource = this.qS_ii_DB;
+            // 
             // QS_ii_Quotes_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1113,19 +1141,23 @@
             this.panel1.ResumeLayout(false);
             this.QS_ii_Head_panel.ResumeLayout(false);
             this.QS_ii_Head_panel.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.QS_ii_Check_panel.ResumeLayout(false);
+            this.QS_ii_Check_panel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.QS_ii_money_panel.ResumeLayout(false);
+            this.QS_ii_money_panel.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1147,7 +1179,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_EFF_DATE;
         private System.Windows.Forms.TextBox tb_SALESMAN;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
@@ -1161,7 +1192,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tb_EXC_RATE;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel QS_ii_Check_panel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RadioButton ALLOW_QT_NO;
         private System.Windows.Forms.RadioButton ALLOW_QT_YES;
@@ -1186,7 +1217,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button Product_刪除button;
         private System.Windows.Forms.Button Product_新增button;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel QS_ii_money_panel;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label26;
@@ -1226,6 +1257,7 @@
         public System.Windows.Forms.TextBox tb_CUST_ADDR;
         public System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
         public System.Windows.Forms.DataGridView QS_ii_Product_DGV;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_Product_DGV_Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column3;
@@ -1233,5 +1265,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column7;
+        private System.Windows.Forms.DateTimePicker QT_EFF_DATE_dTP;
+        private QS_ii_DB qS_ii_DB;
+        private System.Windows.Forms.BindingSource qSiiQProductBindingSource;
     }
 }

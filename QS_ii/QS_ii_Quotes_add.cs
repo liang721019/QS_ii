@@ -30,11 +30,13 @@ namespace QS_ii
             get;
         }
 
-        private string ALLOW_QT     //是不核准報價
+        private string ALLOW_QS     //是不核准報價的變數
         {
             set;
             get;
         }
+
+        
         
         //==============================================================================================================
         #endregion
@@ -46,56 +48,66 @@ namespace QS_ii
         {
             if (ALLOW_QT_YES.Checked)
             {
-                ALLOW_QT = "Y";                
+                ALLOW_QS = "Y";                
             }
             if (ALLOW_QT_NO.Checked)
             {
-                ALLOW_QT = "N";
+                ALLOW_QS = "N";
             }
-        }
+        }        
 
         public void GetSQL(string x)
         {
-            if(x == "新增")
+            if (x == "新增")
             {
                 ALL_RB();
                 QueryDB = @"EXEC [TEST_SLSYHI].[dbo].[SLS_QS_Insert] '" + QT_DATE_dTP.Text +       //--報價日期
                          @"','" + tb_CUST_NO.Text.Trim() +           //--客戶編號
                          @"','" + tb_CHAIN_NO.Text.Trim() +         //通路編號
-                         @"','" + tb_EFF_DATE.Text.Trim() +         //報價有效日期(期限)
+                         @"','" + QT_EFF_DATE_dTP.Text +         //報價有效日期(期限)
                          @"','" + tb_SALESMAN.Text.Trim() +         //報價人(業務員)
-                         @"','" + tb_AMT_NOTAX.Text.Trim() +        //總金額 (未稅)
+                         @"','" + tb_AMT_NOTAX.Text.Trim() +        //總金額 (未稅)int.Parse(textBox1.Text)
                          @"','" + tb_TAX_AMT.Text.Trim() +          //稅額
                          @"','" + tb_TOT_AMT.Text.Trim() +          //含稅金額
                          @"','" + tb_CURRENCY.Text.Trim() +          //幣別
-                         @"','" + tb_TAX_AMT.Text.Trim() +          //匯率
-                         @"','" + ALLOW_QT +                        //是否核准報價
+                         @"','" + tb_EXC_RATE.Text.Trim() +          //匯率
+                         @"','" + ALLOW_QS +                        //是否核准報價
                          @"','" + tb_BPM_NO.Text.Trim() +           //簽核單號
                          @"','" + tb_DELI_MODE.Text.Trim() +          //交貨方式 
                          @"','" + tb_RECEIVE.Text.Trim() +          //收貨人                                                 
                          @"','" + tb_APPROVE.Text.Trim() +          //核准人員
-                         @"','" + tb_APPR_DATE.Text.Trim() +          //核准日期
+                         @"','" + tb_APPR_DATE.Text +          //核准日期
                          @"','" + tb_REMARK.Text.Trim() +          //備註
+                         //@"','" + USER_ID.Text +                 //附件
                          @"','" + USER_ID.Text + "'";                //使用者ID 
+            }
+            else if(x == "表身新增")
+            {
+                QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Insert_Detail] 'P010001',@AA1,@AA2,@AA3,@AA4,@AA5,@AA6,'" + USER_ID.Text + "'";
+                //QueryDB = @"insert into [TEST_SLSYHI].[dbo].[SLS_QT02] values('P010001',@AA1,@AA2,@AA3,@AA4,@AA5,@AA6,'','','105070',null,null,null,null,null)";
+
+
             }
         }
         
-        public void default_status()
+        public void default_status()            //預設狀態
         {
             this.Text = "報價系統";
             //this.MaximizeBox = true;       //最大化
             //this.MinimizeBox = true;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
             this.AutoSize = false;          //自動調整大小
-            //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小    
-
-            
+            //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小
+ 
             Product_DGV_SetColumns();           //QS_ii_Product_DGV自定顯示欄位
-            QS_ii_Product_DGV.DataSource = QSiiDB.QS_ii_Product;
-
+            QS_ii_Product_DGV.DataSource = QSiiDB.QS_ii_QProduct;
             fun.Format_Panel_dTP(QS_ii_Head_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(QS_ii_Head_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀
             fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);       //QS_ii_Head_panel內的DateTimePicker設定唯讀
+            //fun.EoD_Panel_txt(QS_ii_Check_panel, true);             //QS_ii_Check_panel內的TextBox設定唯讀
+            fun.EoD_Panel_RadioButton(QS_ii_Check_panel, false);    //QS_ii_Check_panel內的RadioButton設定唯讀
+            fun.EoD_Panel_txt(QS_ii_money_panel, true);     //QS_ii_money_panel內的TextBox設定唯讀            
+
             QS_ii_新增button.Enabled = true;
             QS_ii_產品button.Enabled = true;
             QS_ii_刪除button.Enabled = true;
@@ -114,8 +126,11 @@ namespace QS_ii
             {
                 Status_info.Text = "新增";
                 Status_info.Visible = true;
+                fun.EoD_Panel_txt(QS_ii_Head_panel, false);                 //QS_ii_Head_panel內的TextBox設定可讀寫
+                fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, true);      //QS_ii_Head_panel內的DateTimePicker設定可讀寫   
                 QS_ii_新增button.Enabled = false;
-                QS_ii_產品button.Enabled = false;
+                QS_ii_修改button.Enabled = false;
+                //QS_ii_產品button.Enabled = false;
                 QS_ii_刪除button.Enabled = false;
                 QS_ii_查詢button.Enabled = false;
                 QS_ii_儲存button.Visible = true;
@@ -129,7 +144,8 @@ namespace QS_ii
                 Status_info.Text = "修改";
                 Status_info.Visible = true;
                 QS_ii_新增button.Enabled = false;
-                QS_ii_產品button.Enabled = false;
+                QS_ii_修改button.Enabled = false;
+                //QS_ii_產品button.Enabled = false;
                 QS_ii_刪除button.Enabled = false;
                 QS_ii_查詢button.Enabled = false;
                 QS_ii_儲存button.Visible = true;
@@ -153,7 +169,8 @@ namespace QS_ii
                 Status_info.Text = "";
                 Status_info.Visible = false;
                 QS_ii_新增button.Enabled = true;
-                QS_ii_產品button.Enabled = true;
+                QS_ii_修改button.Enabled = true;
+                //QS_ii_產品button.Enabled = true;
                 QS_ii_刪除button.Enabled = true;
                 QS_ii_查詢button.Enabled = true;
                 QS_ii_儲存button.Visible = false;
@@ -166,8 +183,11 @@ namespace QS_ii
             {
                 Status_info.Text = "";
                 Status_info.Visible = false;
+                fun.EoD_Panel_txt(QS_ii_Head_panel, true);                 //QS_ii_Head_panel內的TextBox設定唯讀
+                fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);      //QS_ii_Head_panel內的DateTimePicker設定唯讀
                 QS_ii_新增button.Enabled = true;
-                QS_ii_產品button.Enabled = true;
+                QS_ii_修改button.Enabled = true;
+                //QS_ii_產品button.Enabled = true;
                 QS_ii_刪除button.Enabled = true;
                 QS_ii_查詢button.Enabled = true;
                 QS_ii_儲存button.Visible = false;
@@ -175,6 +195,18 @@ namespace QS_ii
                 QS_ii_儲存button.Enabled = false;
                 QS_ii_取消button.Enabled = false;
 
+            }
+
+        }
+
+        private void Product_Add()
+        {
+            GetSQL("表身新增");
+            fun.QS_ii_Product_ds(QueryDB, QSiiDB.QS_ii_QProduct);
+
+            if (fun.Check_error == false)
+            {
+                MessageBox.Show("資料《新增》成功!!", this.Text);
             }
 
         }
@@ -187,6 +219,9 @@ namespace QS_ii
                 fun.Check_error = false;
                 GetSQL("新增");
                 fun.QS_ii_insert(QueryDB);
+                GetSQL("表身新增");
+                fun.QS_ii_Product_ds(QueryDB, QSiiDB.QS_ii_QProduct);
+
                 if (fun.Check_error == false)
                 {
                     MessageBox.Show("資料《新增》成功!!", this.Text);
@@ -229,6 +264,7 @@ namespace QS_ii
             QS_ii_Product_DGV_Column7.DataPropertyName = "UNIT_PRICE";
         }
 
+        
         //==============================================================================================================
         #endregion
 
@@ -245,52 +281,9 @@ namespace QS_ii
             start_status(QS_ii_新增button);
         }
 
-        private void QS_ii_儲存button_Click(object sender, EventArgs e)
+        private void QS_ii_修改button_Click(object sender, EventArgs e)
         {
-            if (Status_info.Text == "新增")
-            {
-                #region 內容
-                if (MessageBox.Show("確定要新增？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    fun.Check_error = false;
-                    GetSQL("新增");
-                    fun.QS_ii_insert(QueryDB);                    
-                    if (fun.Check_error == false)
-                    {
-                        MessageBox.Show("資料《新增》成功!!", this.Text);
-                    }
-
-                }
-                #endregion
-            }
-            else if (Status_info.Text == "修改")
-            {
-                #region 內容
-                //if (tb_DMS_DOC_NO.Text != "")
-                //{
-                //    if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                //    {
-                //        fun.Check_error = false;
-                //        GetSQL("修改", null);
-                //        fun.DMS_modify(Query_DB);
-                //        sample_items_other_text(tb_DMS_DOC_NO.Text.Trim());     //把其他檢驗項目的Text存到DB中
-                //        //db_sum = SQL語法            
-                //        //mBox = 成功執行後的訊息
-                //        //FText = MessageBox.form.Text
-                //        if (fun.Check_error == false)
-                //        {
-                //            MessageBox.Show("資料《修改》成功!!", "DMS");
-                //        }
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("沒有文件編號!!不能修改", "DMS");
-                //}
-
-                #endregion
-            }
-            
+            start_status(QS_ii_修改button);
         }
 
         private void QS_ii_客戶button_Click(object sender, EventArgs e)
@@ -307,8 +300,7 @@ namespace QS_ii
         }
 
         private void QS_ii_產品button_Click(object sender, EventArgs e)
-        {
-            //QS_ii_Product inQS_Product = new QS_ii_Product();
+        {            
             QS_ii_TProduct inQS_Product = new QS_ii_TProduct(this);
             //設定init_Staff 新視窗的相對位置#############
             inQS_Product.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -320,11 +312,31 @@ namespace QS_ii
 
         private void QS_ii_查詢button_Click(object sender, EventArgs e)
         {
+            start_status(QS_ii_查詢button);
+        }
+
+        private void QS_ii_儲存button_Click(object sender, EventArgs e)
+        {
+            if (Status_info.Text == "新增")
+            {
+                #region 內容
+                Product_Add();
+                //Quotes_Add();       //報價單新增
+                #endregion
+            }
+            else if (Status_info.Text == "修改")
+            {
+                #region 內容
+                Quotes_Modify();        //報價單修改
+
+                #endregion
+            }
 
         }
 
-        private void QS_ii_修改button_Click(object sender, EventArgs e)
+        private void QS_ii_取消button_Click(object sender, EventArgs e)
         {
+            start_status(QS_ii_取消button);
 
         }
 
@@ -349,7 +361,7 @@ namespace QS_ii
 
         private void Product_多選button_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = QSiiDB.QS_ii_QProduct;
         }
 
         private void QS_ii_Product_DGV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -384,8 +396,14 @@ namespace QS_ii
                 }
                 #endregion
             }
+        }        
 
+        private void tb_EXC_RATE_KeyPress(object sender, KeyPressEventArgs e)           //限制tb_EXC_RATE只能輸入數字
+        {
+            fun.TxTLimit_input_money(e);       //限制Text只能輸入數字
         }
+
+        
 
         
         
@@ -436,15 +454,17 @@ namespace QS_ii
         public override void QS_ii_Add_Product_Detail()     //增加至報價單商品明細
         {
             #region 內容
-
-            DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_Product.NewRow();
+            DataColumn Amount = QS_iiQ_add.QSiiDB.QS_ii_QProduct.AMOUNTColumn;
+            Amount.Expression = "QTY*UNIT_PRICE";
+            
+            DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_QProduct.NewRow();
             QS_ii_dr["Check"] = "0";
             QS_ii_dr["item_NO"] = tb_item_NO.Text.Trim();
             QS_ii_dr["item_NAME"] = tb_item_NAME.Text.Trim();
             QS_ii_dr["UNIT"] = tb_UNIT.Text.Trim();
-            QS_ii_dr["QTY"] = "1";
-            QS_ii_dr["UNIT_PRICE"] = tb_UNIT_PRICE.Text.Trim();
-            QS_iiQ_add.QSiiDB.QS_ii_Product.Rows.Add(QS_ii_dr);
+            QS_ii_dr["QTY"] = 1;
+            QS_ii_dr["UNIT_PRICE"] = Convert.ToSingle(tb_UNIT_PRICE.Text.Trim());            
+            QS_iiQ_add.QSiiDB.QS_ii_QProduct.Rows.Add(QS_ii_dr);
 
             #endregion
         }

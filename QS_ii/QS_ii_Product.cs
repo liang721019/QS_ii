@@ -429,22 +429,7 @@ namespace QS_ii
 
         private void tb_UNIT_PRICE_KeyPress(object sender, KeyPressEventArgs e)         //限制tb_UNIT_PRICE只能輸入數字
         {
-            // 使用 Char.IsDigit 方法 : 指示指定的 Unicode 字元是否分類為十進位數字。
-            // e.KeyChar == (Char)48 ~ 57 -----> 0~9
-
-            // Char.IsControl 方法 : 指示指定的 Unicode 字元是否分類為控制字元。
-            // e.KeyChar == (Char)8 -----------> Backpace
-            // e.KeyChar == (Char)13-----------> Enter
-
-            //if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
-            //{
-            //    e.Handled = false;
-            //}
-            //else
-            //{
-            //    e.Handled = true;
-            //}
-            e.Handled = !char.IsDigit(e.KeyChar);
+            fun.TxTLimit_input_money(e);       //限制Text只能輸入數字            
         }
 
         private void QS_ii_Product_Import_Button_Click(object sender, EventArgs e)      //增加至報價單
