@@ -24,7 +24,7 @@ namespace QS_ii
                 QiQ.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                 //############################################
                 QiQ.QS_ii_Server_ENV.Text = ServerName;
-                QiQ.USER_ID.Text = UID;                
+                QiQ.USER_ID.Text = UID;
                 this.Hide();
                 QiQ.ShowDialog(this);
                 this.Close();

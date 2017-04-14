@@ -36,7 +36,11 @@ namespace QS_ii
             get;
         }
 
-        
+        public string QS_ii_QuotesNO       //報價單號變數
+        {
+            set;
+            get;
+        }        
         
         //==============================================================================================================
         #endregion
@@ -79,11 +83,14 @@ namespace QS_ii
                          @"','" + tb_APPR_DATE.Text +          //核准日期
                          @"','" + tb_REMARK.Text.Trim() +          //備註
                          //@"','" + USER_ID.Text +                 //附件
-                         @"','" + USER_ID.Text + "'";                //使用者ID 
+                         @"','" + USER_ID.Text +                //使用者ID
+                         "',@QS_ii_QuotesNO  output";                 //報價單號
+
+                            
             }
             else if(x == "表身新增")
             {
-                QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Insert_Detail] 'P010001',@AA1,@AA2,@AA3,@AA4,@AA5,@AA6,'" + USER_ID.Text + "'";
+                QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Insert_Detail] '" + fun.QS_ii_QuotesNO + "',@AA1,@AA2,@AA3,@AA4,@AA5,@AA6,'" + USER_ID.Text + "'";
                 //QueryDB = @"insert into [TEST_SLSYHI].[dbo].[SLS_QT02] values('P010001',@AA1,@AA2,@AA3,@AA4,@AA5,@AA6,'','','105070',null,null,null,null,null)";
 
 
@@ -106,7 +113,12 @@ namespace QS_ii
             fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);       //QS_ii_Head_panel內的DateTimePicker設定唯讀
             //fun.EoD_Panel_txt(QS_ii_Check_panel, true);             //QS_ii_Check_panel內的TextBox設定唯讀
             fun.EoD_Panel_RadioButton(QS_ii_Check_panel, false);    //QS_ii_Check_panel內的RadioButton設定唯讀
-            fun.EoD_Panel_txt(QS_ii_money_panel, true);     //QS_ii_money_panel內的TextBox設定唯讀            
+            fun.EoD_Panel_txt(QS_ii_money_panel, true);     //QS_ii_money_panel內的TextBox設定唯讀  
+
+            
+            tb_AMT_NOTAX.DataBindings.Add("Text", QSiiDB.QS_ii_QProduct, "SubTotal", true);     //總金額 (未稅)綁定資料
+            tb_TAX_AMT.DataBindings.Add("Text", QSiiDB.QS_ii_QProduct, "ColTax", true);     //稅額 綁定資料
+            tb_TOT_AMT.DataBindings.Add("Text", QSiiDB.QS_ii_QProduct, "TOT_AMT", true);     //含稅總額 綁定資料            
 
             QS_ii_新增button.Enabled = true;
             QS_ii_產品button.Enabled = true;
@@ -126,8 +138,9 @@ namespace QS_ii
             {
                 Status_info.Text = "新增";
                 Status_info.Visible = true;
-                fun.EoD_Panel_txt(QS_ii_Head_panel, false);                 //QS_ii_Head_panel內的TextBox設定可讀寫
-                fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, true);      //QS_ii_Head_panel內的DateTimePicker設定可讀寫   
+                //fun.EoD_Panel_txt(QS_ii_Head_panel, false);                 //QS_ii_Head_panel內的TextBox設定可讀寫
+                //fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, true);      //QS_ii_Head_panel內的DateTimePicker設定可讀寫
+                tb_SALESMAN.Text = USER_ID.Text;        //報價業務
                 QS_ii_新增button.Enabled = false;
                 QS_ii_修改button.Enabled = false;
                 //QS_ii_產品button.Enabled = false;
@@ -168,6 +181,12 @@ namespace QS_ii
             {
                 Status_info.Text = "";
                 Status_info.Visible = false;
+                fun.EoD_Panel_txt(QS_ii_Head_panel, true);                 //QS_ii_Head_panel內的TextBox設定唯讀
+                fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);      //QS_ii_Head_panel內的DateTimePicker設定唯讀
+                tb_SALESMAN.Text = "";        //報價業務
+                QSiiDB.QS_ii_QProduct.Clear();      //清空DATATable
+                fun.clearAir(QS_ii_Head_panel);
+
                 QS_ii_新增button.Enabled = true;
                 QS_ii_修改button.Enabled = true;
                 //QS_ii_產品button.Enabled = true;
@@ -185,6 +204,7 @@ namespace QS_ii
                 Status_info.Visible = false;
                 fun.EoD_Panel_txt(QS_ii_Head_panel, true);                 //QS_ii_Head_panel內的TextBox設定唯讀
                 fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);      //QS_ii_Head_panel內的DateTimePicker設定唯讀
+                tb_SALESMAN.Text = "";        //報價業務
                 QS_ii_新增button.Enabled = true;
                 QS_ii_修改button.Enabled = true;
                 //QS_ii_產品button.Enabled = true;
@@ -218,7 +238,7 @@ namespace QS_ii
             {
                 fun.Check_error = false;
                 GetSQL("新增");
-                fun.QS_ii_insert(QueryDB);
+                fun.QS_ii_Qinsert(QueryDB);
                 GetSQL("表身新增");
                 fun.QS_ii_Product_ds(QueryDB, QSiiDB.QS_ii_QProduct);
 
@@ -320,15 +340,16 @@ namespace QS_ii
             if (Status_info.Text == "新增")
             {
                 #region 內容
-                Product_Add();
-                //Quotes_Add();       //報價單新增
+                //Product_Add();
+                Quotes_Add();       //報價單新增
+                start_status(QS_ii_儲存button);
                 #endregion
             }
             else if (Status_info.Text == "修改")
             {
                 #region 內容
                 Quotes_Modify();        //報價單修改
-
+                start_status(QS_ii_儲存button);
                 #endregion
             }
 
@@ -404,9 +425,6 @@ namespace QS_ii
         }
 
         
-
-        
-        
         //==============================================================================================================
         #endregion
 
@@ -454,8 +472,16 @@ namespace QS_ii
         public override void QS_ii_Add_Product_Detail()     //增加至報價單商品明細
         {
             #region 內容
-            DataColumn Amount = QS_iiQ_add.QSiiDB.QS_ii_QProduct.AMOUNTColumn;
+            DataColumn Amount = QS_iiQ_add.QSiiDB.QS_ii_QProduct.AMOUNTColumn;      //單價*數量
             Amount.Expression = "QTY*UNIT_PRICE";
+            DataColumn SubTotal = QS_iiQ_add.QSiiDB.QS_ii_QProduct.SubTotalColumn;      //SUM(單價*數量)
+            SubTotal.Expression = "SUM(AMOUNT)";
+            DataColumn ColTax = QS_iiQ_add.QSiiDB.QS_ii_QProduct.ColTaxColumn;          //SUM(單價*數量)*0.05 =>稅額
+            ColTax.Expression = "SUM(AMOUNT)*0.05";
+            DataColumn TOT_AMT = QS_iiQ_add.QSiiDB.QS_ii_QProduct.TOT_AMTColumn;        //SUM(單價*數量)*1.05 =>稅後總額
+            TOT_AMT.Expression = "SUM(AMOUNT)*1.05";
+            //QS_iiQ_add.tb_AMT_NOTAX.Text = QS_iiQ_add.QSiiDB.QS_ii_QProduct.Compute("sum(AMOUNT)", "").ToString();
+            
             
             DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_QProduct.NewRow();
             QS_ii_dr["Check"] = "0";

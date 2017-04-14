@@ -1063,7 +1063,7 @@
             // 
             this.button11.Location = new System.Drawing.Point(512, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(122, 29);
+            this.button11.Size = new System.Drawing.Size(80, 29);
             this.button11.TabIndex = 4;
             this.button11.Text = "查詢";
             this.button11.UseVisualStyleBackColor = true;
@@ -1182,11 +1182,8 @@
         private System.Windows.Forms.TextBox tb_SALESMAN;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox tb_TOT_AMT;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_TAX_AMT;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tb_AMT_NOTAX;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tb_CURRENCY;
         private System.Windows.Forms.Label label11;
@@ -1266,7 +1263,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column7;
         private System.Windows.Forms.DateTimePicker QT_EFF_DATE_dTP;
-        private QS_ii_DB qS_ii_DB;
+        internal System.Windows.Forms.TextBox tb_TAX_AMT;
+        internal System.Windows.Forms.TextBox tb_TOT_AMT;
+        internal System.Windows.Forms.TextBox tb_AMT_NOTAX;
         private System.Windows.Forms.BindingSource qSiiQProductBindingSource;
+        private QS_ii_DB qS_ii_DB;
     }
 }

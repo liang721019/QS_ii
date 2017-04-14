@@ -311,25 +311,6 @@ namespace QS_ii
         public virtual void QS_ii_Add_Product_Detail()         //增加至報價單商品明細
         {
             #region 內容
-            
-            //QS_Quotes_DGV.DataSource = QSiiDB.QS_ii_Product;
-            //DataView view = new DataView(QSiiDB.QS_ii_Product);
-            ////view.RowFilter = "Item='" + "table" + "'";
-            //DataTable table = view.ToTable();
-            //QS_Quotes_DGV.DataSource = table; 
-
-            //QSiiDB.QS_ii_Product.AcceptChanges();
-            //DataRow QS_ii_dr = QSiiDB.QS_ii_Product.TableNewRow;
-            
-            //QSiiDB.QS_ii_Product.Rows[0]["item_NO"] = tb_item_NO.Text.Trim();
-            //QSiiDB.QS_ii_Product.Rows[0]["item_NAME"] = tb_item_NAME.Text.Trim();
-            //QSiiDB.QS_ii_Product.Rows[0]["UNIT"] = tb_UNIT.Text.Trim();
-            //QSiiDB.QS_ii_Product.Rows[0]["QTY"] = "1";
-            //QSiiDB.QS_ii_Product.Rows[0]["UNIT_PRICE"] = tb_UNIT_PRICE.Text.Trim();
-            //QSiiDB.QS_ii_Product.AcceptChanges();
-                        
-            //QSiiDB.QS_ii_Product.Rows.Add(QS_ii_dr);
-            //DGV.DataSource = QSiiDB.QS_ii_Product;
 
             #endregion
         }
@@ -443,6 +424,7 @@ namespace QS_ii
                 if (fun.ds_index.Tables[0].Rows.Count != 0)
                 {
                     QS_ii_Add_Product_Detail();         //增加至報價單商品明細
+                    this.Close();
                 }
                 else
                 {
@@ -453,11 +435,6 @@ namespace QS_ii
             {
                 MessageBox.Show("商品編號不能為空白!!", this.Text);
             }
-            
-
-            //fun.ds_index.Tables[0].Rows[0]["委託單編號"].ToString();
-            //QS_ii_Product.
-            //QSiiDB.Tables.Add
         }
         //=============================================
         #endregion
