@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.QS_ii_Customer_panel1 = new System.Windows.Forms.Panel();
+            this.QS_ii_Customer_清空Button = new System.Windows.Forms.Button();
             this.QS_ii_Customer_引入Button = new System.Windows.Forms.Button();
             this.QS_ii_Customer_取消Button = new System.Windows.Forms.Button();
             this.QS_ii_Customer_儲存Button = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.USER_ID = new System.Windows.Forms.ToolStripStatusLabel();
             this.Customer_Status_info = new System.Windows.Forms.Label();
-            this.QS_ii_Customer_清空Button = new System.Windows.Forms.Button();
             this.QS_ii_Customer_panel1.SuspendLayout();
             this.QS_ii_Customer_panel2.SuspendLayout();
             this.QS_ii_Customer_panel3.SuspendLayout();
@@ -100,6 +100,16 @@
             this.QS_ii_Customer_panel1.Name = "QS_ii_Customer_panel1";
             this.QS_ii_Customer_panel1.Size = new System.Drawing.Size(808, 55);
             this.QS_ii_Customer_panel1.TabIndex = 2;
+            // 
+            // QS_ii_Customer_清空Button
+            // 
+            this.QS_ii_Customer_清空Button.Location = new System.Drawing.Point(247, 3);
+            this.QS_ii_Customer_清空Button.Name = "QS_ii_Customer_清空Button";
+            this.QS_ii_Customer_清空Button.Size = new System.Drawing.Size(57, 44);
+            this.QS_ii_Customer_清空Button.TabIndex = 7;
+            this.QS_ii_Customer_清空Button.Text = "清空";
+            this.QS_ii_Customer_清空Button.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_清空Button.Click += new System.EventHandler(this.QS_ii_Customer_清空Button_Click);
             // 
             // QS_ii_Customer_引入Button
             // 
@@ -468,7 +478,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(800, 348);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "歷史報價紀錄";
+            this.tabPage2.Text = "歷史報價記錄";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // statusStrip1
@@ -516,16 +526,6 @@
             this.Customer_Status_info.Size = new System.Drawing.Size(41, 20);
             this.Customer_Status_info.TabIndex = 92;
             this.Customer_Status_info.Text = "測試";
-            // 
-            // QS_ii_Customer_清空Button
-            // 
-            this.QS_ii_Customer_清空Button.Location = new System.Drawing.Point(247, 3);
-            this.QS_ii_Customer_清空Button.Name = "QS_ii_Customer_清空Button";
-            this.QS_ii_Customer_清空Button.Size = new System.Drawing.Size(57, 44);
-            this.QS_ii_Customer_清空Button.TabIndex = 7;
-            this.QS_ii_Customer_清空Button.Text = "清空";
-            this.QS_ii_Customer_清空Button.UseVisualStyleBackColor = true;
-            this.QS_ii_Customer_清空Button.Click += new System.EventHandler(this.QS_ii_Customer_清空Button_Click);
             // 
             // QS_ii_Customer
             // 

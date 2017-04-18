@@ -28,6 +28,14 @@ namespace QS_ii {
         
         private QS_ii_QProduct_totalDataTable tableQS_ii_QProduct_total;
         
+        private QS_ii_HQT01DataTable tableQS_ii_HQT01;
+        
+        private QS_ii_HQProductDataTable tableQS_ii_HQProduct;
+        
+        private QS_ii_HQProduct_totalDataTable tableQS_ii_HQProduct_total;
+        
+        private QS_ii_HQCustomerDataTable tableQS_ii_HQCustomer;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61,6 +69,18 @@ namespace QS_ii {
                 }
                 if ((ds.Tables["QS_ii_QProduct_total"] != null)) {
                     base.Tables.Add(new QS_ii_QProduct_totalDataTable(ds.Tables["QS_ii_QProduct_total"]));
+                }
+                if ((ds.Tables["QS_ii_HQT01"] != null)) {
+                    base.Tables.Add(new QS_ii_HQT01DataTable(ds.Tables["QS_ii_HQT01"]));
+                }
+                if ((ds.Tables["QS_ii_HQProduct"] != null)) {
+                    base.Tables.Add(new QS_ii_HQProductDataTable(ds.Tables["QS_ii_HQProduct"]));
+                }
+                if ((ds.Tables["QS_ii_HQProduct_total"] != null)) {
+                    base.Tables.Add(new QS_ii_HQProduct_totalDataTable(ds.Tables["QS_ii_HQProduct_total"]));
+                }
+                if ((ds.Tables["QS_ii_HQCustomer"] != null)) {
+                    base.Tables.Add(new QS_ii_HQCustomerDataTable(ds.Tables["QS_ii_HQCustomer"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -97,6 +117,46 @@ namespace QS_ii {
         public QS_ii_QProduct_totalDataTable QS_ii_QProduct_total {
             get {
                 return this.tableQS_ii_QProduct_total;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public QS_ii_HQT01DataTable QS_ii_HQT01 {
+            get {
+                return this.tableQS_ii_HQT01;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public QS_ii_HQProductDataTable QS_ii_HQProduct {
+            get {
+                return this.tableQS_ii_HQProduct;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public QS_ii_HQProduct_totalDataTable QS_ii_HQProduct_total {
+            get {
+                return this.tableQS_ii_HQProduct_total;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public QS_ii_HQCustomerDataTable QS_ii_HQCustomer {
+            get {
+                return this.tableQS_ii_HQCustomer;
             }
         }
         
@@ -173,6 +233,18 @@ namespace QS_ii {
                 if ((ds.Tables["QS_ii_QProduct_total"] != null)) {
                     base.Tables.Add(new QS_ii_QProduct_totalDataTable(ds.Tables["QS_ii_QProduct_total"]));
                 }
+                if ((ds.Tables["QS_ii_HQT01"] != null)) {
+                    base.Tables.Add(new QS_ii_HQT01DataTable(ds.Tables["QS_ii_HQT01"]));
+                }
+                if ((ds.Tables["QS_ii_HQProduct"] != null)) {
+                    base.Tables.Add(new QS_ii_HQProductDataTable(ds.Tables["QS_ii_HQProduct"]));
+                }
+                if ((ds.Tables["QS_ii_HQProduct_total"] != null)) {
+                    base.Tables.Add(new QS_ii_HQProduct_totalDataTable(ds.Tables["QS_ii_HQProduct_total"]));
+                }
+                if ((ds.Tables["QS_ii_HQCustomer"] != null)) {
+                    base.Tables.Add(new QS_ii_HQCustomerDataTable(ds.Tables["QS_ii_HQCustomer"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -218,6 +290,30 @@ namespace QS_ii {
                     this.tableQS_ii_QProduct_total.InitVars();
                 }
             }
+            this.tableQS_ii_HQT01 = ((QS_ii_HQT01DataTable)(base.Tables["QS_ii_HQT01"]));
+            if ((initTable == true)) {
+                if ((this.tableQS_ii_HQT01 != null)) {
+                    this.tableQS_ii_HQT01.InitVars();
+                }
+            }
+            this.tableQS_ii_HQProduct = ((QS_ii_HQProductDataTable)(base.Tables["QS_ii_HQProduct"]));
+            if ((initTable == true)) {
+                if ((this.tableQS_ii_HQProduct != null)) {
+                    this.tableQS_ii_HQProduct.InitVars();
+                }
+            }
+            this.tableQS_ii_HQProduct_total = ((QS_ii_HQProduct_totalDataTable)(base.Tables["QS_ii_HQProduct_total"]));
+            if ((initTable == true)) {
+                if ((this.tableQS_ii_HQProduct_total != null)) {
+                    this.tableQS_ii_HQProduct_total.InitVars();
+                }
+            }
+            this.tableQS_ii_HQCustomer = ((QS_ii_HQCustomerDataTable)(base.Tables["QS_ii_HQCustomer"]));
+            if ((initTable == true)) {
+                if ((this.tableQS_ii_HQCustomer != null)) {
+                    this.tableQS_ii_HQCustomer.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +328,14 @@ namespace QS_ii {
             base.Tables.Add(this.tableQS_ii_QProduct);
             this.tableQS_ii_QProduct_total = new QS_ii_QProduct_totalDataTable();
             base.Tables.Add(this.tableQS_ii_QProduct_total);
+            this.tableQS_ii_HQT01 = new QS_ii_HQT01DataTable();
+            base.Tables.Add(this.tableQS_ii_HQT01);
+            this.tableQS_ii_HQProduct = new QS_ii_HQProductDataTable();
+            base.Tables.Add(this.tableQS_ii_HQProduct);
+            this.tableQS_ii_HQProduct_total = new QS_ii_HQProduct_totalDataTable();
+            base.Tables.Add(this.tableQS_ii_HQProduct_total);
+            this.tableQS_ii_HQCustomer = new QS_ii_HQCustomerDataTable();
+            base.Tables.Add(this.tableQS_ii_HQCustomer);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -243,6 +347,30 @@ namespace QS_ii {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeQS_ii_QProduct_total() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeQS_ii_HQT01() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeQS_ii_HQProduct() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeQS_ii_HQProduct_total() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeQS_ii_HQCustomer() {
             return false;
         }
         
@@ -306,6 +434,18 @@ namespace QS_ii {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void QS_ii_QProduct_totalRowChangeEventHandler(object sender, QS_ii_QProduct_totalRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void QS_ii_HQT01RowChangeEventHandler(object sender, QS_ii_HQT01RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void QS_ii_HQProductRowChangeEventHandler(object sender, QS_ii_HQProductRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void QS_ii_HQProduct_totalRowChangeEventHandler(object sender, QS_ii_HQProduct_totalRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void QS_ii_HQCustomerRowChangeEventHandler(object sender, QS_ii_HQCustomerRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1000,6 +1140,1570 @@ namespace QS_ii {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class QS_ii_HQT01DataTable : global::System.Data.TypedTableBase<QS_ii_HQT01Row> {
+            
+            private global::System.Data.DataColumn columnQT_NO;
+            
+            private global::System.Data.DataColumn columnQT_DATE;
+            
+            private global::System.Data.DataColumn columnCUST_NO;
+            
+            private global::System.Data.DataColumn columnCHAIN_NO;
+            
+            private global::System.Data.DataColumn columnEFF_DATE;
+            
+            private global::System.Data.DataColumn columnSALESMAN;
+            
+            private global::System.Data.DataColumn columnAMT_NOTAX;
+            
+            private global::System.Data.DataColumn columnTAX_AMT;
+            
+            private global::System.Data.DataColumn columnTOT_AMT;
+            
+            private global::System.Data.DataColumn columnCURRENCY;
+            
+            private global::System.Data.DataColumn columnEXC_RATE;
+            
+            private global::System.Data.DataColumn columnALLOW_QT;
+            
+            private global::System.Data.DataColumn columnBPM_NO;
+            
+            private global::System.Data.DataColumn columnDELI_MODE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQT01DataTable() {
+                this.TableName = "QS_ii_HQT01";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QS_ii_HQT01DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected QS_ii_HQT01DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QT_NOColumn {
+                get {
+                    return this.columnQT_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QT_DATEColumn {
+                get {
+                    return this.columnQT_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CUST_NOColumn {
+                get {
+                    return this.columnCUST_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CHAIN_NOColumn {
+                get {
+                    return this.columnCHAIN_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EFF_DATEColumn {
+                get {
+                    return this.columnEFF_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SALESMANColumn {
+                get {
+                    return this.columnSALESMAN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AMT_NOTAXColumn {
+                get {
+                    return this.columnAMT_NOTAX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TAX_AMTColumn {
+                get {
+                    return this.columnTAX_AMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TOT_AMTColumn {
+                get {
+                    return this.columnTOT_AMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CURRENCYColumn {
+                get {
+                    return this.columnCURRENCY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EXC_RATEColumn {
+                get {
+                    return this.columnEXC_RATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ALLOW_QTColumn {
+                get {
+                    return this.columnALLOW_QT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BPM_NOColumn {
+                get {
+                    return this.columnBPM_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DELI_MODEColumn {
+                get {
+                    return this.columnDELI_MODE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQT01Row this[int index] {
+                get {
+                    return ((QS_ii_HQT01Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQT01RowChangeEventHandler QS_ii_HQT01RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQT01RowChangeEventHandler QS_ii_HQT01RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQT01RowChangeEventHandler QS_ii_HQT01RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQT01RowChangeEventHandler QS_ii_HQT01RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddQS_ii_HQT01Row(QS_ii_HQT01Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQT01Row AddQS_ii_HQT01Row(string QT_NO, string QT_DATE, string CUST_NO, string CHAIN_NO, string EFF_DATE, string SALESMAN, string AMT_NOTAX, string TAX_AMT, string TOT_AMT, string CURRENCY, string EXC_RATE, string ALLOW_QT, string BPM_NO, string DELI_MODE) {
+                QS_ii_HQT01Row rowQS_ii_HQT01Row = ((QS_ii_HQT01Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        QT_NO,
+                        QT_DATE,
+                        CUST_NO,
+                        CHAIN_NO,
+                        EFF_DATE,
+                        SALESMAN,
+                        AMT_NOTAX,
+                        TAX_AMT,
+                        TOT_AMT,
+                        CURRENCY,
+                        EXC_RATE,
+                        ALLOW_QT,
+                        BPM_NO,
+                        DELI_MODE};
+                rowQS_ii_HQT01Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowQS_ii_HQT01Row);
+                return rowQS_ii_HQT01Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                QS_ii_HQT01DataTable cln = ((QS_ii_HQT01DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new QS_ii_HQT01DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnQT_NO = base.Columns["QT_NO"];
+                this.columnQT_DATE = base.Columns["QT_DATE"];
+                this.columnCUST_NO = base.Columns["CUST_NO"];
+                this.columnCHAIN_NO = base.Columns["CHAIN_NO"];
+                this.columnEFF_DATE = base.Columns["EFF_DATE"];
+                this.columnSALESMAN = base.Columns["SALESMAN"];
+                this.columnAMT_NOTAX = base.Columns["AMT_NOTAX"];
+                this.columnTAX_AMT = base.Columns["TAX_AMT"];
+                this.columnTOT_AMT = base.Columns["TOT_AMT"];
+                this.columnCURRENCY = base.Columns["CURRENCY"];
+                this.columnEXC_RATE = base.Columns["EXC_RATE"];
+                this.columnALLOW_QT = base.Columns["ALLOW_QT"];
+                this.columnBPM_NO = base.Columns["BPM_NO"];
+                this.columnDELI_MODE = base.Columns["DELI_MODE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnQT_NO = new global::System.Data.DataColumn("QT_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQT_NO);
+                this.columnQT_DATE = new global::System.Data.DataColumn("QT_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQT_DATE);
+                this.columnCUST_NO = new global::System.Data.DataColumn("CUST_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUST_NO);
+                this.columnCHAIN_NO = new global::System.Data.DataColumn("CHAIN_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCHAIN_NO);
+                this.columnEFF_DATE = new global::System.Data.DataColumn("EFF_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEFF_DATE);
+                this.columnSALESMAN = new global::System.Data.DataColumn("SALESMAN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSALESMAN);
+                this.columnAMT_NOTAX = new global::System.Data.DataColumn("AMT_NOTAX", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAMT_NOTAX);
+                this.columnTAX_AMT = new global::System.Data.DataColumn("TAX_AMT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTAX_AMT);
+                this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTOT_AMT);
+                this.columnCURRENCY = new global::System.Data.DataColumn("CURRENCY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCURRENCY);
+                this.columnEXC_RATE = new global::System.Data.DataColumn("EXC_RATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEXC_RATE);
+                this.columnALLOW_QT = new global::System.Data.DataColumn("ALLOW_QT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnALLOW_QT);
+                this.columnBPM_NO = new global::System.Data.DataColumn("BPM_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBPM_NO);
+                this.columnDELI_MODE = new global::System.Data.DataColumn("DELI_MODE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELI_MODE);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQT01Row NewQS_ii_HQT01Row() {
+                return ((QS_ii_HQT01Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new QS_ii_HQT01Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(QS_ii_HQT01Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.QS_ii_HQT01RowChanged != null)) {
+                    this.QS_ii_HQT01RowChanged(this, new QS_ii_HQT01RowChangeEvent(((QS_ii_HQT01Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.QS_ii_HQT01RowChanging != null)) {
+                    this.QS_ii_HQT01RowChanging(this, new QS_ii_HQT01RowChangeEvent(((QS_ii_HQT01Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.QS_ii_HQT01RowDeleted != null)) {
+                    this.QS_ii_HQT01RowDeleted(this, new QS_ii_HQT01RowChangeEvent(((QS_ii_HQT01Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.QS_ii_HQT01RowDeleting != null)) {
+                    this.QS_ii_HQT01RowDeleting(this, new QS_ii_HQT01RowChangeEvent(((QS_ii_HQT01Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveQS_ii_HQT01Row(QS_ii_HQT01Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                QS_ii_DB ds = new QS_ii_DB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "QS_ii_HQT01DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class QS_ii_HQProductDataTable : global::System.Data.TypedTableBase<QS_ii_HQProductRow> {
+            
+            private global::System.Data.DataColumn columnCheck;
+            
+            private global::System.Data.DataColumn columnQT_NO;
+            
+            private global::System.Data.DataColumn columnitem_NO;
+            
+            private global::System.Data.DataColumn columnitem_NAME;
+            
+            private global::System.Data.DataColumn columnSPEC;
+            
+            private global::System.Data.DataColumn columnUNIT;
+            
+            private global::System.Data.DataColumn columnQTY;
+            
+            private global::System.Data.DataColumn columnUNIT_PRICE;
+            
+            private global::System.Data.DataColumn columnAMOUNT;
+            
+            private global::System.Data.DataColumn columnSubTotal;
+            
+            private global::System.Data.DataColumn columnColTax;
+            
+            private global::System.Data.DataColumn columnTOT_AMT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProductDataTable() {
+                this.TableName = "QS_ii_HQProduct";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QS_ii_HQProductDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected QS_ii_HQProductDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CheckColumn {
+                get {
+                    return this.columnCheck;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QT_NOColumn {
+                get {
+                    return this.columnQT_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn item_NOColumn {
+                get {
+                    return this.columnitem_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn item_NAMEColumn {
+                get {
+                    return this.columnitem_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SPECColumn {
+                get {
+                    return this.columnSPEC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UNITColumn {
+                get {
+                    return this.columnUNIT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QTYColumn {
+                get {
+                    return this.columnQTY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UNIT_PRICEColumn {
+                get {
+                    return this.columnUNIT_PRICE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AMOUNTColumn {
+                get {
+                    return this.columnAMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SubTotalColumn {
+                get {
+                    return this.columnSubTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ColTaxColumn {
+                get {
+                    return this.columnColTax;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TOT_AMTColumn {
+                get {
+                    return this.columnTOT_AMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProductRow this[int index] {
+                get {
+                    return ((QS_ii_HQProductRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQProductRowChangeEventHandler QS_ii_HQProductRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQProductRowChangeEventHandler QS_ii_HQProductRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQProductRowChangeEventHandler QS_ii_HQProductRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQProductRowChangeEventHandler QS_ii_HQProductRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddQS_ii_HQProductRow(QS_ii_HQProductRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProductRow AddQS_ii_HQProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float AMOUNT, string SubTotal, string ColTax, string TOT_AMT) {
+                QS_ii_HQProductRow rowQS_ii_HQProductRow = ((QS_ii_HQProductRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Check,
+                        QT_NO,
+                        item_NO,
+                        item_NAME,
+                        SPEC,
+                        UNIT,
+                        QTY,
+                        UNIT_PRICE,
+                        AMOUNT,
+                        SubTotal,
+                        ColTax,
+                        TOT_AMT};
+                rowQS_ii_HQProductRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowQS_ii_HQProductRow);
+                return rowQS_ii_HQProductRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                QS_ii_HQProductDataTable cln = ((QS_ii_HQProductDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new QS_ii_HQProductDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnCheck = base.Columns["Check"];
+                this.columnQT_NO = base.Columns["QT_NO"];
+                this.columnitem_NO = base.Columns["item_NO"];
+                this.columnitem_NAME = base.Columns["item_NAME"];
+                this.columnSPEC = base.Columns["SPEC"];
+                this.columnUNIT = base.Columns["UNIT"];
+                this.columnQTY = base.Columns["QTY"];
+                this.columnUNIT_PRICE = base.Columns["UNIT_PRICE"];
+                this.columnAMOUNT = base.Columns["AMOUNT"];
+                this.columnSubTotal = base.Columns["SubTotal"];
+                this.columnColTax = base.Columns["ColTax"];
+                this.columnTOT_AMT = base.Columns["TOT_AMT"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnCheck = new global::System.Data.DataColumn("Check", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCheck);
+                this.columnQT_NO = new global::System.Data.DataColumn("QT_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQT_NO);
+                this.columnitem_NO = new global::System.Data.DataColumn("item_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitem_NO);
+                this.columnitem_NAME = new global::System.Data.DataColumn("item_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnitem_NAME);
+                this.columnSPEC = new global::System.Data.DataColumn("SPEC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSPEC);
+                this.columnUNIT = new global::System.Data.DataColumn("UNIT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUNIT);
+                this.columnQTY = new global::System.Data.DataColumn("QTY", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQTY);
+                this.columnUNIT_PRICE = new global::System.Data.DataColumn("UNIT_PRICE", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUNIT_PRICE);
+                this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAMOUNT);
+                this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubTotal);
+                this.columnColTax = new global::System.Data.DataColumn("ColTax", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColTax);
+                this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTOT_AMT);
+                this.columnCheck.Caption = "DataColumn1";
+                this.columnAMOUNT.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProductRow NewQS_ii_HQProductRow() {
+                return ((QS_ii_HQProductRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new QS_ii_HQProductRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(QS_ii_HQProductRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.QS_ii_HQProductRowChanged != null)) {
+                    this.QS_ii_HQProductRowChanged(this, new QS_ii_HQProductRowChangeEvent(((QS_ii_HQProductRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.QS_ii_HQProductRowChanging != null)) {
+                    this.QS_ii_HQProductRowChanging(this, new QS_ii_HQProductRowChangeEvent(((QS_ii_HQProductRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.QS_ii_HQProductRowDeleted != null)) {
+                    this.QS_ii_HQProductRowDeleted(this, new QS_ii_HQProductRowChangeEvent(((QS_ii_HQProductRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.QS_ii_HQProductRowDeleting != null)) {
+                    this.QS_ii_HQProductRowDeleting(this, new QS_ii_HQProductRowChangeEvent(((QS_ii_HQProductRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveQS_ii_HQProductRow(QS_ii_HQProductRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                QS_ii_DB ds = new QS_ii_DB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "QS_ii_HQProductDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class QS_ii_HQProduct_totalDataTable : global::System.Data.TypedTableBase<QS_ii_HQProduct_totalRow> {
+            
+            private global::System.Data.DataColumn columnQT_NO;
+            
+            private global::System.Data.DataColumn columnSubTotal;
+            
+            private global::System.Data.DataColumn columnColTax;
+            
+            private global::System.Data.DataColumn columnTOT_AMT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProduct_totalDataTable() {
+                this.TableName = "QS_ii_HQProduct_total";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QS_ii_HQProduct_totalDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected QS_ii_HQProduct_totalDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QT_NOColumn {
+                get {
+                    return this.columnQT_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SubTotalColumn {
+                get {
+                    return this.columnSubTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ColTaxColumn {
+                get {
+                    return this.columnColTax;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TOT_AMTColumn {
+                get {
+                    return this.columnTOT_AMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProduct_totalRow this[int index] {
+                get {
+                    return ((QS_ii_HQProduct_totalRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQProduct_totalRowChangeEventHandler QS_ii_HQProduct_totalRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQProduct_totalRowChangeEventHandler QS_ii_HQProduct_totalRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQProduct_totalRowChangeEventHandler QS_ii_HQProduct_totalRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQProduct_totalRowChangeEventHandler QS_ii_HQProduct_totalRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddQS_ii_HQProduct_totalRow(QS_ii_HQProduct_totalRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProduct_totalRow AddQS_ii_HQProduct_totalRow(string QT_NO, float SubTotal, float ColTax, float TOT_AMT) {
+                QS_ii_HQProduct_totalRow rowQS_ii_HQProduct_totalRow = ((QS_ii_HQProduct_totalRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        QT_NO,
+                        SubTotal,
+                        ColTax,
+                        TOT_AMT};
+                rowQS_ii_HQProduct_totalRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowQS_ii_HQProduct_totalRow);
+                return rowQS_ii_HQProduct_totalRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                QS_ii_HQProduct_totalDataTable cln = ((QS_ii_HQProduct_totalDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new QS_ii_HQProduct_totalDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnQT_NO = base.Columns["QT_NO"];
+                this.columnSubTotal = base.Columns["SubTotal"];
+                this.columnColTax = base.Columns["ColTax"];
+                this.columnTOT_AMT = base.Columns["TOT_AMT"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnQT_NO = new global::System.Data.DataColumn("QT_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQT_NO);
+                this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubTotal);
+                this.columnColTax = new global::System.Data.DataColumn("ColTax", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnColTax);
+                this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTOT_AMT);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProduct_totalRow NewQS_ii_HQProduct_totalRow() {
+                return ((QS_ii_HQProduct_totalRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new QS_ii_HQProduct_totalRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(QS_ii_HQProduct_totalRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.QS_ii_HQProduct_totalRowChanged != null)) {
+                    this.QS_ii_HQProduct_totalRowChanged(this, new QS_ii_HQProduct_totalRowChangeEvent(((QS_ii_HQProduct_totalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.QS_ii_HQProduct_totalRowChanging != null)) {
+                    this.QS_ii_HQProduct_totalRowChanging(this, new QS_ii_HQProduct_totalRowChangeEvent(((QS_ii_HQProduct_totalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.QS_ii_HQProduct_totalRowDeleted != null)) {
+                    this.QS_ii_HQProduct_totalRowDeleted(this, new QS_ii_HQProduct_totalRowChangeEvent(((QS_ii_HQProduct_totalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.QS_ii_HQProduct_totalRowDeleting != null)) {
+                    this.QS_ii_HQProduct_totalRowDeleting(this, new QS_ii_HQProduct_totalRowChangeEvent(((QS_ii_HQProduct_totalRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveQS_ii_HQProduct_totalRow(QS_ii_HQProduct_totalRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                QS_ii_DB ds = new QS_ii_DB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "QS_ii_HQProduct_totalDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class QS_ii_HQCustomerDataTable : global::System.Data.TypedTableBase<QS_ii_HQCustomerRow> {
+            
+            private global::System.Data.DataColumn columnCUST_NO;
+            
+            private global::System.Data.DataColumn columnCUST_NAME;
+            
+            private global::System.Data.DataColumn columnCUST_TYPE;
+            
+            private global::System.Data.DataColumn columnCONTACT;
+            
+            private global::System.Data.DataColumn columnCONT_TITLE;
+            
+            private global::System.Data.DataColumn columnCONT_TEL;
+            
+            private global::System.Data.DataColumn columnFAX;
+            
+            private global::System.Data.DataColumn columnVAT_NO;
+            
+            private global::System.Data.DataColumn columnCUST_ADDR;
+            
+            private global::System.Data.DataColumn columnCUST_MAIL;
+            
+            private global::System.Data.DataColumn columnDELI_ADDR_NO;
+            
+            private global::System.Data.DataColumn columnDELI_ADDR;
+            
+            private global::System.Data.DataColumn columnPAY_METH;
+            
+            private global::System.Data.DataColumn columnCHAIN_NO;
+            
+            private global::System.Data.DataColumn columnDEL_FALG;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQCustomerDataTable() {
+                this.TableName = "QS_ii_HQCustomer";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QS_ii_HQCustomerDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected QS_ii_HQCustomerDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CUST_NOColumn {
+                get {
+                    return this.columnCUST_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CUST_NAMEColumn {
+                get {
+                    return this.columnCUST_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CUST_TYPEColumn {
+                get {
+                    return this.columnCUST_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONTACTColumn {
+                get {
+                    return this.columnCONTACT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONT_TITLEColumn {
+                get {
+                    return this.columnCONT_TITLE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONT_TELColumn {
+                get {
+                    return this.columnCONT_TEL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FAXColumn {
+                get {
+                    return this.columnFAX;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VAT_NOColumn {
+                get {
+                    return this.columnVAT_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CUST_ADDRColumn {
+                get {
+                    return this.columnCUST_ADDR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CUST_MAILColumn {
+                get {
+                    return this.columnCUST_MAIL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DELI_ADDR_NOColumn {
+                get {
+                    return this.columnDELI_ADDR_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DELI_ADDRColumn {
+                get {
+                    return this.columnDELI_ADDR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAY_METHColumn {
+                get {
+                    return this.columnPAY_METH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CHAIN_NOColumn {
+                get {
+                    return this.columnCHAIN_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DEL_FALGColumn {
+                get {
+                    return this.columnDEL_FALG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQCustomerRow this[int index] {
+                get {
+                    return ((QS_ii_HQCustomerRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQCustomerRowChangeEventHandler QS_ii_HQCustomerRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQCustomerRowChangeEventHandler QS_ii_HQCustomerRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQCustomerRowChangeEventHandler QS_ii_HQCustomerRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event QS_ii_HQCustomerRowChangeEventHandler QS_ii_HQCustomerRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddQS_ii_HQCustomerRow(QS_ii_HQCustomerRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQCustomerRow AddQS_ii_HQCustomerRow(string CUST_NO, string CUST_NAME, string CUST_TYPE, string CONTACT, string CONT_TITLE, string CONT_TEL, string FAX, string VAT_NO, string CUST_ADDR, string CUST_MAIL, string DELI_ADDR_NO, string DELI_ADDR, string PAY_METH, string CHAIN_NO, string DEL_FALG) {
+                QS_ii_HQCustomerRow rowQS_ii_HQCustomerRow = ((QS_ii_HQCustomerRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        CUST_NO,
+                        CUST_NAME,
+                        CUST_TYPE,
+                        CONTACT,
+                        CONT_TITLE,
+                        CONT_TEL,
+                        FAX,
+                        VAT_NO,
+                        CUST_ADDR,
+                        CUST_MAIL,
+                        DELI_ADDR_NO,
+                        DELI_ADDR,
+                        PAY_METH,
+                        CHAIN_NO,
+                        DEL_FALG};
+                rowQS_ii_HQCustomerRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowQS_ii_HQCustomerRow);
+                return rowQS_ii_HQCustomerRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                QS_ii_HQCustomerDataTable cln = ((QS_ii_HQCustomerDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new QS_ii_HQCustomerDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnCUST_NO = base.Columns["CUST_NO"];
+                this.columnCUST_NAME = base.Columns["CUST_NAME"];
+                this.columnCUST_TYPE = base.Columns["CUST_TYPE"];
+                this.columnCONTACT = base.Columns["CONTACT"];
+                this.columnCONT_TITLE = base.Columns["CONT_TITLE"];
+                this.columnCONT_TEL = base.Columns["CONT_TEL"];
+                this.columnFAX = base.Columns["FAX"];
+                this.columnVAT_NO = base.Columns["VAT_NO"];
+                this.columnCUST_ADDR = base.Columns["CUST_ADDR"];
+                this.columnCUST_MAIL = base.Columns["CUST_MAIL"];
+                this.columnDELI_ADDR_NO = base.Columns["DELI_ADDR_NO"];
+                this.columnDELI_ADDR = base.Columns["DELI_ADDR"];
+                this.columnPAY_METH = base.Columns["PAY_METH"];
+                this.columnCHAIN_NO = base.Columns["CHAIN_NO"];
+                this.columnDEL_FALG = base.Columns["DEL_FALG"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnCUST_NO = new global::System.Data.DataColumn("CUST_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUST_NO);
+                this.columnCUST_NAME = new global::System.Data.DataColumn("CUST_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUST_NAME);
+                this.columnCUST_TYPE = new global::System.Data.DataColumn("CUST_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUST_TYPE);
+                this.columnCONTACT = new global::System.Data.DataColumn("CONTACT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONTACT);
+                this.columnCONT_TITLE = new global::System.Data.DataColumn("CONT_TITLE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONT_TITLE);
+                this.columnCONT_TEL = new global::System.Data.DataColumn("CONT_TEL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONT_TEL);
+                this.columnFAX = new global::System.Data.DataColumn("FAX", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFAX);
+                this.columnVAT_NO = new global::System.Data.DataColumn("VAT_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVAT_NO);
+                this.columnCUST_ADDR = new global::System.Data.DataColumn("CUST_ADDR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUST_ADDR);
+                this.columnCUST_MAIL = new global::System.Data.DataColumn("CUST_MAIL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCUST_MAIL);
+                this.columnDELI_ADDR_NO = new global::System.Data.DataColumn("DELI_ADDR_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELI_ADDR_NO);
+                this.columnDELI_ADDR = new global::System.Data.DataColumn("DELI_ADDR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDELI_ADDR);
+                this.columnPAY_METH = new global::System.Data.DataColumn("PAY_METH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAY_METH);
+                this.columnCHAIN_NO = new global::System.Data.DataColumn("CHAIN_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCHAIN_NO);
+                this.columnDEL_FALG = new global::System.Data.DataColumn("DEL_FALG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDEL_FALG);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQCustomerRow NewQS_ii_HQCustomerRow() {
+                return ((QS_ii_HQCustomerRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new QS_ii_HQCustomerRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(QS_ii_HQCustomerRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.QS_ii_HQCustomerRowChanged != null)) {
+                    this.QS_ii_HQCustomerRowChanged(this, new QS_ii_HQCustomerRowChangeEvent(((QS_ii_HQCustomerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.QS_ii_HQCustomerRowChanging != null)) {
+                    this.QS_ii_HQCustomerRowChanging(this, new QS_ii_HQCustomerRowChangeEvent(((QS_ii_HQCustomerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.QS_ii_HQCustomerRowDeleted != null)) {
+                    this.QS_ii_HQCustomerRowDeleted(this, new QS_ii_HQCustomerRowChangeEvent(((QS_ii_HQCustomerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.QS_ii_HQCustomerRowDeleting != null)) {
+                    this.QS_ii_HQCustomerRowDeleting(this, new QS_ii_HQCustomerRowChangeEvent(((QS_ii_HQCustomerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveQS_ii_HQCustomerRow(QS_ii_HQCustomerRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                QS_ii_DB ds = new QS_ii_DB();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "QS_ii_HQCustomerDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class QS_ii_QProductRow : global::System.Data.DataRow {
@@ -1478,6 +3182,1326 @@ namespace QS_ii {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class QS_ii_HQT01Row : global::System.Data.DataRow {
+            
+            private QS_ii_HQT01DataTable tableQS_ii_HQT01;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QS_ii_HQT01Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableQS_ii_HQT01 = ((QS_ii_HQT01DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string QT_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.QT_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'QT_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.QT_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string QT_DATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.QT_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'QT_DATE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.QT_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CUST_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.CUST_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'CUST_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.CUST_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CHAIN_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.CHAIN_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'CHAIN_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.CHAIN_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EFF_DATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.EFF_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'EFF_DATE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.EFF_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SALESMAN {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.SALESMANColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'SALESMAN\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.SALESMANColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AMT_NOTAX {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.AMT_NOTAXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'AMT_NOTAX\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.AMT_NOTAXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TAX_AMT {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.TAX_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'TAX_AMT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.TAX_AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TOT_AMT {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.TOT_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'TOT_AMT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.TOT_AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CURRENCY {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.CURRENCYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'CURRENCY\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.CURRENCYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EXC_RATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.EXC_RATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'EXC_RATE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.EXC_RATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ALLOW_QT {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.ALLOW_QTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'ALLOW_QT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.ALLOW_QTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BPM_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.BPM_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'BPM_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.BPM_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DELI_MODE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.DELI_MODEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'DELI_MODE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.DELI_MODEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQT_NONull() {
+                return this.IsNull(this.tableQS_ii_HQT01.QT_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQT_NONull() {
+                this[this.tableQS_ii_HQT01.QT_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQT_DATENull() {
+                return this.IsNull(this.tableQS_ii_HQT01.QT_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQT_DATENull() {
+                this[this.tableQS_ii_HQT01.QT_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCUST_NONull() {
+                return this.IsNull(this.tableQS_ii_HQT01.CUST_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCUST_NONull() {
+                this[this.tableQS_ii_HQT01.CUST_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCHAIN_NONull() {
+                return this.IsNull(this.tableQS_ii_HQT01.CHAIN_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCHAIN_NONull() {
+                this[this.tableQS_ii_HQT01.CHAIN_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEFF_DATENull() {
+                return this.IsNull(this.tableQS_ii_HQT01.EFF_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEFF_DATENull() {
+                this[this.tableQS_ii_HQT01.EFF_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSALESMANNull() {
+                return this.IsNull(this.tableQS_ii_HQT01.SALESMANColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSALESMANNull() {
+                this[this.tableQS_ii_HQT01.SALESMANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAMT_NOTAXNull() {
+                return this.IsNull(this.tableQS_ii_HQT01.AMT_NOTAXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAMT_NOTAXNull() {
+                this[this.tableQS_ii_HQT01.AMT_NOTAXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTAX_AMTNull() {
+                return this.IsNull(this.tableQS_ii_HQT01.TAX_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTAX_AMTNull() {
+                this[this.tableQS_ii_HQT01.TAX_AMTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTOT_AMTNull() {
+                return this.IsNull(this.tableQS_ii_HQT01.TOT_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTOT_AMTNull() {
+                this[this.tableQS_ii_HQT01.TOT_AMTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCURRENCYNull() {
+                return this.IsNull(this.tableQS_ii_HQT01.CURRENCYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCURRENCYNull() {
+                this[this.tableQS_ii_HQT01.CURRENCYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEXC_RATENull() {
+                return this.IsNull(this.tableQS_ii_HQT01.EXC_RATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEXC_RATENull() {
+                this[this.tableQS_ii_HQT01.EXC_RATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsALLOW_QTNull() {
+                return this.IsNull(this.tableQS_ii_HQT01.ALLOW_QTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetALLOW_QTNull() {
+                this[this.tableQS_ii_HQT01.ALLOW_QTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBPM_NONull() {
+                return this.IsNull(this.tableQS_ii_HQT01.BPM_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBPM_NONull() {
+                this[this.tableQS_ii_HQT01.BPM_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDELI_MODENull() {
+                return this.IsNull(this.tableQS_ii_HQT01.DELI_MODEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDELI_MODENull() {
+                this[this.tableQS_ii_HQT01.DELI_MODEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class QS_ii_HQProductRow : global::System.Data.DataRow {
+            
+            private QS_ii_HQProductDataTable tableQS_ii_HQProduct;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QS_ii_HQProductRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableQS_ii_HQProduct = ((QS_ii_HQProductDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Check {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.CheckColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'Check\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.CheckColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string QT_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.QT_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'QT_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.QT_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string item_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.item_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'item_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.item_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string item_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.item_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'item_NAME\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.item_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SPEC {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.SPECColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'SPEC\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.SPECColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string UNIT {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.UNITColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'UNIT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.UNITColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int QTY {
+                get {
+                    try {
+                        return ((int)(this[this.tableQS_ii_HQProduct.QTYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'QTY\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.QTYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float UNIT_PRICE {
+                get {
+                    try {
+                        return ((float)(this[this.tableQS_ii_HQProduct.UNIT_PRICEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'UNIT_PRICE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.UNIT_PRICEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float AMOUNT {
+                get {
+                    try {
+                        return ((float)(this[this.tableQS_ii_HQProduct.AMOUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'AMOUNT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.AMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SubTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.SubTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'SubTotal\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.SubTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ColTax {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.ColTaxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'ColTax\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.ColTaxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TOT_AMT {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct.TOT_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'TOT_AMT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct.TOT_AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCheckNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.CheckColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCheckNull() {
+                this[this.tableQS_ii_HQProduct.CheckColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQT_NONull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.QT_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQT_NONull() {
+                this[this.tableQS_ii_HQProduct.QT_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isitem_NONull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.item_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setitem_NONull() {
+                this[this.tableQS_ii_HQProduct.item_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isitem_NAMENull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.item_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setitem_NAMENull() {
+                this[this.tableQS_ii_HQProduct.item_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSPECNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.SPECColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSPECNull() {
+                this[this.tableQS_ii_HQProduct.SPECColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUNITNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.UNITColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUNITNull() {
+                this[this.tableQS_ii_HQProduct.UNITColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQTYNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.QTYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQTYNull() {
+                this[this.tableQS_ii_HQProduct.QTYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUNIT_PRICENull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.UNIT_PRICEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUNIT_PRICENull() {
+                this[this.tableQS_ii_HQProduct.UNIT_PRICEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAMOUNTNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.AMOUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAMOUNTNull() {
+                this[this.tableQS_ii_HQProduct.AMOUNTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSubTotalNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.SubTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSubTotalNull() {
+                this[this.tableQS_ii_HQProduct.SubTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsColTaxNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.ColTaxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetColTaxNull() {
+                this[this.tableQS_ii_HQProduct.ColTaxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTOT_AMTNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.TOT_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTOT_AMTNull() {
+                this[this.tableQS_ii_HQProduct.TOT_AMTColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class QS_ii_HQProduct_totalRow : global::System.Data.DataRow {
+            
+            private QS_ii_HQProduct_totalDataTable tableQS_ii_HQProduct_total;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QS_ii_HQProduct_totalRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableQS_ii_HQProduct_total = ((QS_ii_HQProduct_totalDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string QT_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQProduct_total.QT_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct_total\' 中資料行 \'QT_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct_total.QT_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float SubTotal {
+                get {
+                    try {
+                        return ((float)(this[this.tableQS_ii_HQProduct_total.SubTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct_total\' 中資料行 \'SubTotal\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct_total.SubTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float ColTax {
+                get {
+                    try {
+                        return ((float)(this[this.tableQS_ii_HQProduct_total.ColTaxColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct_total\' 中資料行 \'ColTax\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct_total.ColTaxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float TOT_AMT {
+                get {
+                    try {
+                        return ((float)(this[this.tableQS_ii_HQProduct_total.TOT_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct_total\' 中資料行 \'TOT_AMT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQProduct_total.TOT_AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQT_NONull() {
+                return this.IsNull(this.tableQS_ii_HQProduct_total.QT_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQT_NONull() {
+                this[this.tableQS_ii_HQProduct_total.QT_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSubTotalNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct_total.SubTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSubTotalNull() {
+                this[this.tableQS_ii_HQProduct_total.SubTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsColTaxNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct_total.ColTaxColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetColTaxNull() {
+                this[this.tableQS_ii_HQProduct_total.ColTaxColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTOT_AMTNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct_total.TOT_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTOT_AMTNull() {
+                this[this.tableQS_ii_HQProduct_total.TOT_AMTColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class QS_ii_HQCustomerRow : global::System.Data.DataRow {
+            
+            private QS_ii_HQCustomerDataTable tableQS_ii_HQCustomer;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal QS_ii_HQCustomerRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableQS_ii_HQCustomer = ((QS_ii_HQCustomerDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CUST_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CUST_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CUST_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CUST_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CUST_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CUST_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CUST_NAME\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CUST_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CUST_TYPE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CUST_TYPEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CUST_TYPE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CUST_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CONTACT {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CONTACTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CONTACT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CONTACTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CONT_TITLE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CONT_TITLEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CONT_TITLE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CONT_TITLEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CONT_TEL {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CONT_TELColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CONT_TEL\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CONT_TELColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FAX {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.FAXColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'FAX\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.FAXColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VAT_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.VAT_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'VAT_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.VAT_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CUST_ADDR {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CUST_ADDRColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CUST_ADDR\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CUST_ADDRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CUST_MAIL {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CUST_MAILColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CUST_MAIL\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CUST_MAILColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DELI_ADDR_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.DELI_ADDR_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'DELI_ADDR_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.DELI_ADDR_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DELI_ADDR {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.DELI_ADDRColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'DELI_ADDR\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.DELI_ADDRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PAY_METH {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.PAY_METHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'PAY_METH\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.PAY_METHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CHAIN_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.CHAIN_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'CHAIN_NO\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.CHAIN_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DEL_FALG {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQCustomer.DEL_FALGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQCustomer\' 中資料行 \'DEL_FALG\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQCustomer.DEL_FALGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCUST_NONull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CUST_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCUST_NONull() {
+                this[this.tableQS_ii_HQCustomer.CUST_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCUST_NAMENull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CUST_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCUST_NAMENull() {
+                this[this.tableQS_ii_HQCustomer.CUST_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCUST_TYPENull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CUST_TYPEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCUST_TYPENull() {
+                this[this.tableQS_ii_HQCustomer.CUST_TYPEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCONTACTNull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CONTACTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCONTACTNull() {
+                this[this.tableQS_ii_HQCustomer.CONTACTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCONT_TITLENull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CONT_TITLEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCONT_TITLENull() {
+                this[this.tableQS_ii_HQCustomer.CONT_TITLEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCONT_TELNull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CONT_TELColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCONT_TELNull() {
+                this[this.tableQS_ii_HQCustomer.CONT_TELColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFAXNull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.FAXColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFAXNull() {
+                this[this.tableQS_ii_HQCustomer.FAXColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVAT_NONull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.VAT_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVAT_NONull() {
+                this[this.tableQS_ii_HQCustomer.VAT_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCUST_ADDRNull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CUST_ADDRColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCUST_ADDRNull() {
+                this[this.tableQS_ii_HQCustomer.CUST_ADDRColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCUST_MAILNull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CUST_MAILColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCUST_MAILNull() {
+                this[this.tableQS_ii_HQCustomer.CUST_MAILColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDELI_ADDR_NONull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.DELI_ADDR_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDELI_ADDR_NONull() {
+                this[this.tableQS_ii_HQCustomer.DELI_ADDR_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDELI_ADDRNull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.DELI_ADDRColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDELI_ADDRNull() {
+                this[this.tableQS_ii_HQCustomer.DELI_ADDRColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPAY_METHNull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.PAY_METHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPAY_METHNull() {
+                this[this.tableQS_ii_HQCustomer.PAY_METHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCHAIN_NONull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.CHAIN_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCHAIN_NONull() {
+                this[this.tableQS_ii_HQCustomer.CHAIN_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDEL_FALGNull() {
+                return this.IsNull(this.tableQS_ii_HQCustomer.DEL_FALGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDEL_FALGNull() {
+                this[this.tableQS_ii_HQCustomer.DEL_FALGColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1531,6 +4555,142 @@ namespace QS_ii {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public QS_ii_QProduct_totalRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class QS_ii_HQT01RowChangeEvent : global::System.EventArgs {
+            
+            private QS_ii_HQT01Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQT01RowChangeEvent(QS_ii_HQT01Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQT01Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class QS_ii_HQProductRowChangeEvent : global::System.EventArgs {
+            
+            private QS_ii_HQProductRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProductRowChangeEvent(QS_ii_HQProductRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProductRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class QS_ii_HQProduct_totalRowChangeEvent : global::System.EventArgs {
+            
+            private QS_ii_HQProduct_totalRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProduct_totalRowChangeEvent(QS_ii_HQProduct_totalRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQProduct_totalRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class QS_ii_HQCustomerRowChangeEvent : global::System.EventArgs {
+            
+            private QS_ii_HQCustomerRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQCustomerRowChangeEvent(QS_ii_HQCustomerRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public QS_ii_HQCustomerRow Row {
                 get {
                     return this.eventRow;
                 }

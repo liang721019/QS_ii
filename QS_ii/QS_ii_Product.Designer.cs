@@ -377,7 +377,7 @@
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(748, 277);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "歷史報價紀錄";
+            this.tabPage2.Text = "歷史報價記錄";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // statusStrip1
