@@ -644,7 +644,7 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_QProductRow AddQS_ii_QProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float AMOUNT, string SubTotal, string ColTax, string TOT_AMT) {
+            public QS_ii_QProductRow AddQS_ii_QProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float AMOUNT, float SubTotal, float ColTax, float TOT_AMT) {
                 QS_ii_QProductRow rowQS_ii_QProductRow = ((QS_ii_QProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Check,
@@ -716,11 +716,11 @@ namespace QS_ii {
                 base.Columns.Add(this.columnUNIT_PRICE);
                 this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAMOUNT);
-                this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubTotal);
-                this.columnColTax = new global::System.Data.DataColumn("ColTax", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnColTax = new global::System.Data.DataColumn("ColTax", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnColTax);
-                this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOT_AMT);
                 this.columnCheck.Caption = "DataColumn1";
                 this.columnAMOUNT.ReadOnly = true;
@@ -2863,10 +2863,10 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SubTotal {
+            public float SubTotal {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_QProduct.SubTotalColumn]));
+                        return ((float)(this[this.tableQS_ii_QProduct.SubTotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'SubTotal\' 的值是 DBNull。", e);
@@ -2879,10 +2879,10 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ColTax {
+            public float ColTax {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_QProduct.ColTaxColumn]));
+                        return ((float)(this[this.tableQS_ii_QProduct.ColTaxColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'ColTax\' 的值是 DBNull。", e);
@@ -2895,10 +2895,10 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TOT_AMT {
+            public float TOT_AMT {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_QProduct.TOT_AMTColumn]));
+                        return ((float)(this[this.tableQS_ii_QProduct.TOT_AMTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'TOT_AMT\' 的值是 DBNull。", e);
