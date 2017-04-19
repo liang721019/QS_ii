@@ -2,6 +2,10 @@
     
     
     public partial class QS_ii_DB {
+        partial class QS_ii_HQT01DataTable
+        {
+        }
+    
         partial class QS_ii_QProduct_totalDataTable
         {
         }

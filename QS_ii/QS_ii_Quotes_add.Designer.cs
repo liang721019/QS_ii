@@ -146,6 +146,7 @@
             this.Status_info = new System.Windows.Forms.Label();
             this.qS_ii_DB = new QS_ii.QS_ii_DB();
             this.qSiiQProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.QS_ii_Head_panel.SuspendLayout();
@@ -163,6 +164,7 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -822,11 +824,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 114);
+            this.label10.Location = new System.Drawing.Point(17, 116);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 20);
+            this.label10.Size = new System.Drawing.Size(103, 20);
             this.label10.TabIndex = 18;
-            this.label10.Text = "含稅總金額:";
+            this.label10.Text = "總金額(含稅):";
             // 
             // tb_TAX_AMT
             // 
@@ -1035,6 +1037,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -1049,7 +1052,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(748, 314);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 314);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage3
@@ -1086,7 +1089,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.QS_ii_HQuery_DGV.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.QS_ii_HQuery_DGV.RowTemplate.Height = 24;
-            this.QS_ii_HQuery_DGV.Size = new System.Drawing.Size(849, 258);
+            this.QS_ii_HQuery_DGV.Size = new System.Drawing.Size(995, 272);
             this.QS_ii_HQuery_DGV.TabIndex = 1;
             this.QS_ii_HQuery_DGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QS_ii_HQuery_DGV_CellDoubleClick);
             // 
@@ -1159,7 +1162,7 @@
             this.panel7.Controls.Add(this.label31);
             this.panel7.Location = new System.Drawing.Point(3, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1214, 42);
+            this.panel7.Size = new System.Drawing.Size(1106, 42);
             this.panel7.TabIndex = 0;
             // 
             // QS_ii_歷史查詢button
@@ -1226,6 +1229,15 @@
             this.qSiiQProductBindingSource.DataMember = "QS_ii_QProduct";
             this.qSiiQProductBindingSource.DataSource = this.qS_ii_DB;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(589, 7);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(509, 313);
+            this.dataGridView2.TabIndex = 1;
+            // 
             // QS_ii_Quotes_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1264,6 +1276,7 @@
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1384,5 +1397,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column9;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

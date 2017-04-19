@@ -472,9 +472,9 @@ namespace QS_ii {
             
             private global::System.Data.DataColumn columnAMOUNT;
             
-            private global::System.Data.DataColumn columnSubTotal;
+            private global::System.Data.DataColumn columnAMT_NOTAX;
             
-            private global::System.Data.DataColumn columnColTax;
+            private global::System.Data.DataColumn columnTAX_AMT;
             
             private global::System.Data.DataColumn columnTOT_AMT;
             
@@ -585,17 +585,17 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SubTotalColumn {
+            public global::System.Data.DataColumn AMT_NOTAXColumn {
                 get {
-                    return this.columnSubTotal;
+                    return this.columnAMT_NOTAX;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ColTaxColumn {
+            public global::System.Data.DataColumn TAX_AMTColumn {
                 get {
-                    return this.columnColTax;
+                    return this.columnTAX_AMT;
                 }
             }
             
@@ -644,7 +644,7 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_QProductRow AddQS_ii_QProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float AMOUNT, float SubTotal, float ColTax, float TOT_AMT) {
+            public QS_ii_QProductRow AddQS_ii_QProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float AMOUNT, float AMT_NOTAX, float TAX_AMT, float TOT_AMT) {
                 QS_ii_QProductRow rowQS_ii_QProductRow = ((QS_ii_QProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Check,
@@ -656,8 +656,8 @@ namespace QS_ii {
                         QTY,
                         UNIT_PRICE,
                         AMOUNT,
-                        SubTotal,
-                        ColTax,
+                        AMT_NOTAX,
+                        TAX_AMT,
                         TOT_AMT};
                 rowQS_ii_QProductRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowQS_ii_QProductRow);
@@ -690,8 +690,8 @@ namespace QS_ii {
                 this.columnQTY = base.Columns["QTY"];
                 this.columnUNIT_PRICE = base.Columns["UNIT_PRICE"];
                 this.columnAMOUNT = base.Columns["AMOUNT"];
-                this.columnSubTotal = base.Columns["SubTotal"];
-                this.columnColTax = base.Columns["ColTax"];
+                this.columnAMT_NOTAX = base.Columns["AMT_NOTAX"];
+                this.columnTAX_AMT = base.Columns["TAX_AMT"];
                 this.columnTOT_AMT = base.Columns["TOT_AMT"];
             }
             
@@ -716,10 +716,10 @@ namespace QS_ii {
                 base.Columns.Add(this.columnUNIT_PRICE);
                 this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAMOUNT);
-                this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSubTotal);
-                this.columnColTax = new global::System.Data.DataColumn("ColTax", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnColTax);
+                this.columnAMT_NOTAX = new global::System.Data.DataColumn("AMT_NOTAX", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAMT_NOTAX);
+                this.columnTAX_AMT = new global::System.Data.DataColumn("TAX_AMT", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTAX_AMT);
                 this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOT_AMT);
                 this.columnCheck.Caption = "DataColumn1";
@@ -1174,6 +1174,16 @@ namespace QS_ii {
             
             private global::System.Data.DataColumn columnDELI_MODE;
             
+            private global::System.Data.DataColumn columnRECEIVE;
+            
+            private global::System.Data.DataColumn columnAPPROVE;
+            
+            private global::System.Data.DataColumn columnAPPR_DATE;
+            
+            private global::System.Data.DataColumn columnREMARK;
+            
+            private global::System.Data.DataColumn columnATTACH;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public QS_ii_HQT01DataTable() {
@@ -1321,6 +1331,46 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RECEIVEColumn {
+                get {
+                    return this.columnRECEIVE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn APPROVEColumn {
+                get {
+                    return this.columnAPPROVE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn APPR_DATEColumn {
+                get {
+                    return this.columnAPPR_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn REMARKColumn {
+                get {
+                    return this.columnREMARK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATTACHColumn {
+                get {
+                    return this.columnATTACH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1356,7 +1406,26 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_HQT01Row AddQS_ii_HQT01Row(string QT_NO, string QT_DATE, string CUST_NO, string CHAIN_NO, string EFF_DATE, string SALESMAN, string AMT_NOTAX, string TAX_AMT, string TOT_AMT, string CURRENCY, string EXC_RATE, string ALLOW_QT, string BPM_NO, string DELI_MODE) {
+            public QS_ii_HQT01Row AddQS_ii_HQT01Row(
+                        string QT_NO, 
+                        string QT_DATE, 
+                        string CUST_NO, 
+                        string CHAIN_NO, 
+                        string EFF_DATE, 
+                        string SALESMAN, 
+                        float AMT_NOTAX, 
+                        float TAX_AMT, 
+                        float TOT_AMT, 
+                        string CURRENCY, 
+                        float EXC_RATE, 
+                        string ALLOW_QT, 
+                        string BPM_NO, 
+                        string DELI_MODE, 
+                        string RECEIVE, 
+                        string APPROVE, 
+                        string APPR_DATE, 
+                        string REMARK, 
+                        string ATTACH) {
                 QS_ii_HQT01Row rowQS_ii_HQT01Row = ((QS_ii_HQT01Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         QT_NO,
@@ -1372,7 +1441,12 @@ namespace QS_ii {
                         EXC_RATE,
                         ALLOW_QT,
                         BPM_NO,
-                        DELI_MODE};
+                        DELI_MODE,
+                        RECEIVE,
+                        APPROVE,
+                        APPR_DATE,
+                        REMARK,
+                        ATTACH};
                 rowQS_ii_HQT01Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowQS_ii_HQT01Row);
                 return rowQS_ii_HQT01Row;
@@ -1409,6 +1483,11 @@ namespace QS_ii {
                 this.columnALLOW_QT = base.Columns["ALLOW_QT"];
                 this.columnBPM_NO = base.Columns["BPM_NO"];
                 this.columnDELI_MODE = base.Columns["DELI_MODE"];
+                this.columnRECEIVE = base.Columns["RECEIVE"];
+                this.columnAPPROVE = base.Columns["APPROVE"];
+                this.columnAPPR_DATE = base.Columns["APPR_DATE"];
+                this.columnREMARK = base.Columns["REMARK"];
+                this.columnATTACH = base.Columns["ATTACH"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1426,15 +1505,15 @@ namespace QS_ii {
                 base.Columns.Add(this.columnEFF_DATE);
                 this.columnSALESMAN = new global::System.Data.DataColumn("SALESMAN", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSALESMAN);
-                this.columnAMT_NOTAX = new global::System.Data.DataColumn("AMT_NOTAX", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnAMT_NOTAX = new global::System.Data.DataColumn("AMT_NOTAX", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAMT_NOTAX);
-                this.columnTAX_AMT = new global::System.Data.DataColumn("TAX_AMT", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTAX_AMT = new global::System.Data.DataColumn("TAX_AMT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTAX_AMT);
-                this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOT_AMT);
                 this.columnCURRENCY = new global::System.Data.DataColumn("CURRENCY", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCURRENCY);
-                this.columnEXC_RATE = new global::System.Data.DataColumn("EXC_RATE", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEXC_RATE = new global::System.Data.DataColumn("EXC_RATE", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEXC_RATE);
                 this.columnALLOW_QT = new global::System.Data.DataColumn("ALLOW_QT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnALLOW_QT);
@@ -1442,6 +1521,16 @@ namespace QS_ii {
                 base.Columns.Add(this.columnBPM_NO);
                 this.columnDELI_MODE = new global::System.Data.DataColumn("DELI_MODE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDELI_MODE);
+                this.columnRECEIVE = new global::System.Data.DataColumn("RECEIVE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRECEIVE);
+                this.columnAPPROVE = new global::System.Data.DataColumn("APPROVE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAPPROVE);
+                this.columnAPPR_DATE = new global::System.Data.DataColumn("APPR_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAPPR_DATE);
+                this.columnREMARK = new global::System.Data.DataColumn("REMARK", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREMARK);
+                this.columnATTACH = new global::System.Data.DataColumn("ATTACH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATTACH);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2863,33 +2952,33 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float SubTotal {
+            public float AMT_NOTAX {
                 get {
                     try {
-                        return ((float)(this[this.tableQS_ii_QProduct.SubTotalColumn]));
+                        return ((float)(this[this.tableQS_ii_QProduct.AMT_NOTAXColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'SubTotal\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'AMT_NOTAX\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_QProduct.SubTotalColumn] = value;
+                    this[this.tableQS_ii_QProduct.AMT_NOTAXColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float ColTax {
+            public float TAX_AMT {
                 get {
                     try {
-                        return ((float)(this[this.tableQS_ii_QProduct.ColTaxColumn]));
+                        return ((float)(this[this.tableQS_ii_QProduct.TAX_AMTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'ColTax\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'TAX_AMT\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_QProduct.ColTaxColumn] = value;
+                    this[this.tableQS_ii_QProduct.TAX_AMTColumn] = value;
                 }
             }
             
@@ -3019,26 +3108,26 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSubTotalNull() {
-                return this.IsNull(this.tableQS_ii_QProduct.SubTotalColumn);
+            public bool IsAMT_NOTAXNull() {
+                return this.IsNull(this.tableQS_ii_QProduct.AMT_NOTAXColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSubTotalNull() {
-                this[this.tableQS_ii_QProduct.SubTotalColumn] = global::System.Convert.DBNull;
+            public void SetAMT_NOTAXNull() {
+                this[this.tableQS_ii_QProduct.AMT_NOTAXColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsColTaxNull() {
-                return this.IsNull(this.tableQS_ii_QProduct.ColTaxColumn);
+            public bool IsTAX_AMTNull() {
+                return this.IsNull(this.tableQS_ii_QProduct.TAX_AMTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetColTaxNull() {
-                this[this.tableQS_ii_QProduct.ColTaxColumn] = global::System.Convert.DBNull;
+            public void SetTAX_AMTNull() {
+                this[this.tableQS_ii_QProduct.TAX_AMTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3293,10 +3382,10 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AMT_NOTAX {
+            public float AMT_NOTAX {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_HQT01.AMT_NOTAXColumn]));
+                        return ((float)(this[this.tableQS_ii_HQT01.AMT_NOTAXColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'AMT_NOTAX\' 的值是 DBNull。", e);
@@ -3309,10 +3398,10 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TAX_AMT {
+            public float TAX_AMT {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_HQT01.TAX_AMTColumn]));
+                        return ((float)(this[this.tableQS_ii_HQT01.TAX_AMTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'TAX_AMT\' 的值是 DBNull。", e);
@@ -3325,10 +3414,10 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TOT_AMT {
+            public float TOT_AMT {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_HQT01.TOT_AMTColumn]));
+                        return ((float)(this[this.tableQS_ii_HQT01.TOT_AMTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'TOT_AMT\' 的值是 DBNull。", e);
@@ -3357,10 +3446,10 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EXC_RATE {
+            public float EXC_RATE {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_HQT01.EXC_RATEColumn]));
+                        return ((float)(this[this.tableQS_ii_HQT01.EXC_RATEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'EXC_RATE\' 的值是 DBNull。", e);
@@ -3416,6 +3505,86 @@ namespace QS_ii {
                 }
                 set {
                     this[this.tableQS_ii_HQT01.DELI_MODEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string RECEIVE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.RECEIVEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'RECEIVE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.RECEIVEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string APPROVE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.APPROVEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'APPROVE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.APPROVEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string APPR_DATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.APPR_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'APPR_DATE\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.APPR_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string REMARK {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.REMARKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'REMARK\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.REMARKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ATTACH {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_HQT01.ATTACHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQT01\' 中資料行 \'ATTACH\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_HQT01.ATTACHColumn] = value;
                 }
             }
             
@@ -3585,6 +3754,66 @@ namespace QS_ii {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDELI_MODENull() {
                 this[this.tableQS_ii_HQT01.DELI_MODEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRECEIVENull() {
+                return this.IsNull(this.tableQS_ii_HQT01.RECEIVEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRECEIVENull() {
+                this[this.tableQS_ii_HQT01.RECEIVEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAPPROVENull() {
+                return this.IsNull(this.tableQS_ii_HQT01.APPROVEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAPPROVENull() {
+                this[this.tableQS_ii_HQT01.APPROVEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAPPR_DATENull() {
+                return this.IsNull(this.tableQS_ii_HQT01.APPR_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAPPR_DATENull() {
+                this[this.tableQS_ii_HQT01.APPR_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsREMARKNull() {
+                return this.IsNull(this.tableQS_ii_HQT01.REMARKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetREMARKNull() {
+                this[this.tableQS_ii_HQT01.REMARKColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATTACHNull() {
+                return this.IsNull(this.tableQS_ii_HQT01.ATTACHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATTACHNull() {
+                this[this.tableQS_ii_HQT01.ATTACHColumn] = global::System.Convert.DBNull;
             }
         }
         
