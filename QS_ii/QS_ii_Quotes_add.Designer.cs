@@ -38,6 +38,7 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.USER_ID = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.QS_ii_通路button = new System.Windows.Forms.Button();
             this.QS_ii_產品button = new System.Windows.Forms.Button();
             this.QS_ii_客戶button = new System.Windows.Forms.Button();
             this.QS_ii_取消button = new System.Windows.Forms.Button();
@@ -125,6 +126,7 @@
             this.QS_ii_Product_DGV_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QS_ii_Product_DGV_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.QS_ii_HQuery_DGV = new System.Windows.Forms.DataGridView();
@@ -146,7 +148,6 @@
             this.Status_info = new System.Windows.Forms.Label();
             this.qS_ii_DB = new QS_ii.QS_ii_DB();
             this.qSiiQProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.QS_ii_Head_panel.SuspendLayout();
@@ -158,13 +159,13 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -208,6 +209,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.QS_ii_通路button);
             this.panel1.Controls.Add(this.QS_ii_產品button);
             this.panel1.Controls.Add(this.QS_ii_客戶button);
             this.panel1.Controls.Add(this.QS_ii_取消button);
@@ -221,6 +223,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1181, 55);
             this.panel1.TabIndex = 1;
+            // 
+            // QS_ii_通路button
+            // 
+            this.QS_ii_通路button.Location = new System.Drawing.Point(365, 3);
+            this.QS_ii_通路button.Name = "QS_ii_通路button";
+            this.QS_ii_通路button.Size = new System.Drawing.Size(55, 45);
+            this.QS_ii_通路button.TabIndex = 8;
+            this.QS_ii_通路button.Text = "通路";
+            this.QS_ii_通路button.UseVisualStyleBackColor = true;
+            this.QS_ii_通路button.Click += new System.EventHandler(this.QS_ii_通路button_Click);
             // 
             // QS_ii_產品button
             // 
@@ -266,7 +278,7 @@
             // 
             // QS_ii_查詢button
             // 
-            this.QS_ii_查詢button.Location = new System.Drawing.Point(186, 2);
+            this.QS_ii_查詢button.Location = new System.Drawing.Point(186, 3);
             this.QS_ii_查詢button.Name = "QS_ii_查詢button";
             this.QS_ii_查詢button.Size = new System.Drawing.Size(55, 45);
             this.QS_ii_查詢button.TabIndex = 3;
@@ -1046,6 +1058,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "其他";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(589, 7);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(509, 313);
+            this.dataGridView2.TabIndex = 1;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1217,7 +1238,7 @@
             this.Status_info.Name = "Status_info";
             this.Status_info.Size = new System.Drawing.Size(41, 20);
             this.Status_info.TabIndex = 5;
-            this.Status_info.Text = "測試";
+            this.Status_info.Text = "瀏覽";
             // 
             // qS_ii_DB
             // 
@@ -1228,15 +1249,6 @@
             // 
             this.qSiiQProductBindingSource.DataMember = "QS_ii_QProduct";
             this.qSiiQProductBindingSource.DataSource = this.qS_ii_DB;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(589, 7);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(509, 313);
-            this.dataGridView2.TabIndex = 1;
             // 
             // QS_ii_Quotes_add
             // 
@@ -1269,6 +1281,7 @@
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).EndInit();
@@ -1276,7 +1289,6 @@
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1291,7 +1303,6 @@
         private System.Windows.Forms.Button QS_ii_查詢button;
         private System.Windows.Forms.Button QS_ii_刪除button;
         private System.Windows.Forms.Panel QS_ii_Head_panel;
-        private System.Windows.Forms.TextBox tb_QT_NO;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -1372,13 +1383,6 @@
         public System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
         public System.Windows.Forms.DataGridView QS_ii_Product_DGV;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_Product_DGV_Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column7;
         private System.Windows.Forms.DateTimePicker QT_EFF_DATE_dTP;
         internal System.Windows.Forms.TextBox tb_TAX_AMT;
         internal System.Windows.Forms.TextBox tb_TOT_AMT;
@@ -1398,5 +1402,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column9;
         private System.Windows.Forms.DataGridView dataGridView2;
+        internal System.Windows.Forms.TextBox tb_QT_NO;
+        private System.Windows.Forms.Button QS_ii_通路button;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_Product_DGV_Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column7;
     }
 }

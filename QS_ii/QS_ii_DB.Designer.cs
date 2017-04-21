@@ -470,6 +470,8 @@ namespace QS_ii {
             
             private global::System.Data.DataColumn columnUNIT_PRICE;
             
+            private global::System.Data.DataColumn columnItem_AMT;
+            
             private global::System.Data.DataColumn columnAMOUNT;
             
             private global::System.Data.DataColumn columnAMT_NOTAX;
@@ -577,6 +579,14 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Item_AMTColumn {
+                get {
+                    return this.columnItem_AMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn AMOUNTColumn {
                 get {
                     return this.columnAMOUNT;
@@ -644,7 +654,7 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_QProductRow AddQS_ii_QProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float AMOUNT, float AMT_NOTAX, float TAX_AMT, float TOT_AMT) {
+            public QS_ii_QProductRow AddQS_ii_QProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float Item_AMT, float AMOUNT, float AMT_NOTAX, float TAX_AMT, float TOT_AMT) {
                 QS_ii_QProductRow rowQS_ii_QProductRow = ((QS_ii_QProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Check,
@@ -655,6 +665,7 @@ namespace QS_ii {
                         UNIT,
                         QTY,
                         UNIT_PRICE,
+                        Item_AMT,
                         AMOUNT,
                         AMT_NOTAX,
                         TAX_AMT,
@@ -689,6 +700,7 @@ namespace QS_ii {
                 this.columnUNIT = base.Columns["UNIT"];
                 this.columnQTY = base.Columns["QTY"];
                 this.columnUNIT_PRICE = base.Columns["UNIT_PRICE"];
+                this.columnItem_AMT = base.Columns["Item_AMT"];
                 this.columnAMOUNT = base.Columns["AMOUNT"];
                 this.columnAMT_NOTAX = base.Columns["AMT_NOTAX"];
                 this.columnTAX_AMT = base.Columns["TAX_AMT"];
@@ -714,6 +726,8 @@ namespace QS_ii {
                 base.Columns.Add(this.columnQTY);
                 this.columnUNIT_PRICE = new global::System.Data.DataColumn("UNIT_PRICE", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUNIT_PRICE);
+                this.columnItem_AMT = new global::System.Data.DataColumn("Item_AMT", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_AMT);
                 this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAMOUNT);
                 this.columnAMT_NOTAX = new global::System.Data.DataColumn("AMT_NOTAX", typeof(float), null, global::System.Data.MappingType.Element);
@@ -722,8 +736,7 @@ namespace QS_ii {
                 base.Columns.Add(this.columnTAX_AMT);
                 this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOT_AMT);
-                this.columnCheck.Caption = "DataColumn1";
-                this.columnAMOUNT.ReadOnly = true;
+                this.columnItem_AMT.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1680,7 +1693,7 @@ namespace QS_ii {
             
             private global::System.Data.DataColumn columnUNIT_PRICE;
             
-            private global::System.Data.DataColumn columnAMOUNT;
+            private global::System.Data.DataColumn columnItem_AMT;
             
             private global::System.Data.DataColumn columnSubTotal;
             
@@ -1787,9 +1800,9 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AMOUNTColumn {
+            public global::System.Data.DataColumn Item_AMTColumn {
                 get {
-                    return this.columnAMOUNT;
+                    return this.columnItem_AMT;
                 }
             }
             
@@ -1854,7 +1867,7 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_HQProductRow AddQS_ii_HQProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float AMOUNT, string SubTotal, string ColTax, string TOT_AMT) {
+            public QS_ii_HQProductRow AddQS_ii_HQProductRow(string Check, string QT_NO, string item_NO, string item_NAME, string SPEC, string UNIT, int QTY, float UNIT_PRICE, float Item_AMT, string SubTotal, string ColTax, string TOT_AMT) {
                 QS_ii_HQProductRow rowQS_ii_HQProductRow = ((QS_ii_HQProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Check,
@@ -1865,7 +1878,7 @@ namespace QS_ii {
                         UNIT,
                         QTY,
                         UNIT_PRICE,
-                        AMOUNT,
+                        Item_AMT,
                         SubTotal,
                         ColTax,
                         TOT_AMT};
@@ -1899,7 +1912,7 @@ namespace QS_ii {
                 this.columnUNIT = base.Columns["UNIT"];
                 this.columnQTY = base.Columns["QTY"];
                 this.columnUNIT_PRICE = base.Columns["UNIT_PRICE"];
-                this.columnAMOUNT = base.Columns["AMOUNT"];
+                this.columnItem_AMT = base.Columns["Item_AMT"];
                 this.columnSubTotal = base.Columns["SubTotal"];
                 this.columnColTax = base.Columns["ColTax"];
                 this.columnTOT_AMT = base.Columns["TOT_AMT"];
@@ -1924,8 +1937,8 @@ namespace QS_ii {
                 base.Columns.Add(this.columnQTY);
                 this.columnUNIT_PRICE = new global::System.Data.DataColumn("UNIT_PRICE", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUNIT_PRICE);
-                this.columnAMOUNT = new global::System.Data.DataColumn("AMOUNT", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAMOUNT);
+                this.columnItem_AMT = new global::System.Data.DataColumn("Item_AMT", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_AMT);
                 this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubTotal);
                 this.columnColTax = new global::System.Data.DataColumn("ColTax", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1933,7 +1946,7 @@ namespace QS_ii {
                 this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOT_AMT);
                 this.columnCheck.Caption = "DataColumn1";
-                this.columnAMOUNT.ReadOnly = true;
+                this.columnItem_AMT.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2936,6 +2949,22 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float Item_AMT {
+                get {
+                    try {
+                        return ((float)(this[this.tableQS_ii_QProduct.Item_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'Item_AMT\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_QProduct.Item_AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public float AMOUNT {
                 get {
                     try {
@@ -3092,6 +3121,18 @@ namespace QS_ii {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetUNIT_PRICENull() {
                 this[this.tableQS_ii_QProduct.UNIT_PRICEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsItem_AMTNull() {
+                return this.IsNull(this.tableQS_ii_QProduct.Item_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetItem_AMTNull() {
+                this[this.tableQS_ii_QProduct.Item_AMTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3961,17 +4002,17 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float AMOUNT {
+            public float Item_AMT {
                 get {
                     try {
-                        return ((float)(this[this.tableQS_ii_HQProduct.AMOUNTColumn]));
+                        return ((float)(this[this.tableQS_ii_HQProduct.Item_AMTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'AMOUNT\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_HQProduct\' 中資料行 \'Item_AMT\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_HQProduct.AMOUNTColumn] = value;
+                    this[this.tableQS_ii_HQProduct.Item_AMTColumn] = value;
                 }
             }
             
@@ -4121,14 +4162,14 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAMOUNTNull() {
-                return this.IsNull(this.tableQS_ii_HQProduct.AMOUNTColumn);
+            public bool IsItem_AMTNull() {
+                return this.IsNull(this.tableQS_ii_HQProduct.Item_AMTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAMOUNTNull() {
-                this[this.tableQS_ii_HQProduct.AMOUNTColumn] = global::System.Convert.DBNull;
+            public void SetItem_AMTNull() {
+                this[this.tableQS_ii_HQProduct.Item_AMTColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
