@@ -109,9 +109,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tb_AMT_NOTAX = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.QS_ii_Other_panel = new System.Windows.Forms.Panel();
             this.QS_ii_money_panel = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.QS_ii_Detail_panel = new System.Windows.Forms.Panel();
             this.Product_多選button = new System.Windows.Forms.Button();
             this.Product_刪除button = new System.Windows.Forms.Button();
             this.Product_新增button = new System.Windows.Forms.Button();
@@ -152,9 +152,9 @@
             this.panel1.SuspendLayout();
             this.QS_ii_Head_panel.SuspendLayout();
             this.QS_ii_Check_panel.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.QS_ii_Other_panel.SuspendLayout();
             this.QS_ii_money_panel.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.QS_ii_Detail_panel.SuspendLayout();
             this.QS_ii_tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).BeginInit();
@@ -874,20 +874,20 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "總金額 (未稅):";
             // 
-            // panel3
+            // QS_ii_Other_panel
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.QS_ii_Other_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.QS_ii_money_panel);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.tb_REMARK);
-            this.panel3.Controls.Add(this.QS_ii_Check_panel);
-            this.panel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panel3.Location = new System.Drawing.Point(12, 703);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1181, 172);
-            this.panel3.TabIndex = 3;
+            this.QS_ii_Other_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_Other_panel.Controls.Add(this.QS_ii_money_panel);
+            this.QS_ii_Other_panel.Controls.Add(this.label20);
+            this.QS_ii_Other_panel.Controls.Add(this.tb_REMARK);
+            this.QS_ii_Other_panel.Controls.Add(this.QS_ii_Check_panel);
+            this.QS_ii_Other_panel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.QS_ii_Other_panel.Location = new System.Drawing.Point(12, 703);
+            this.QS_ii_Other_panel.Name = "QS_ii_Other_panel";
+            this.QS_ii_Other_panel.Size = new System.Drawing.Size(1181, 172);
+            this.QS_ii_Other_panel.TabIndex = 3;
             // 
             // QS_ii_money_panel
             // 
@@ -904,21 +904,21 @@
             this.QS_ii_money_panel.Size = new System.Drawing.Size(281, 151);
             this.QS_ii_money_panel.TabIndex = 30;
             // 
-            // panel5
+            // QS_ii_Detail_panel
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.QS_ii_Detail_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.Product_多選button);
-            this.panel5.Controls.Add(this.Product_刪除button);
-            this.panel5.Controls.Add(this.Product_新增button);
-            this.panel5.Controls.Add(this.QS_ii_tabControl1);
-            this.panel5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.panel5.Location = new System.Drawing.Point(12, 302);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1181, 395);
-            this.panel5.TabIndex = 4;
+            this.QS_ii_Detail_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_Detail_panel.Controls.Add(this.Product_多選button);
+            this.QS_ii_Detail_panel.Controls.Add(this.Product_刪除button);
+            this.QS_ii_Detail_panel.Controls.Add(this.Product_新增button);
+            this.QS_ii_Detail_panel.Controls.Add(this.QS_ii_tabControl1);
+            this.QS_ii_Detail_panel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.QS_ii_Detail_panel.Location = new System.Drawing.Point(12, 302);
+            this.QS_ii_Detail_panel.Name = "QS_ii_Detail_panel";
+            this.QS_ii_Detail_panel.Size = new System.Drawing.Size(1181, 395);
+            this.QS_ii_Detail_panel.TabIndex = 4;
             // 
             // Product_多選button
             // 
@@ -981,6 +981,9 @@
             this.QS_ii_Product_DGV.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.QS_ii_Product_DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.QS_ii_Product_DGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.QS_ii_Product_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QS_ii_Product_DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.QS_ii_Product_DGV_Column1,
@@ -1093,6 +1096,9 @@
             this.QS_ii_HQuery_DGV.AllowUserToDeleteRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.QS_ii_HQuery_DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.QS_ii_HQuery_DGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.QS_ii_HQuery_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QS_ii_HQuery_DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.QS_ii_HQuery_DGV_Column1,
@@ -1257,8 +1263,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1205, 900);
             this.Controls.Add(this.Status_info);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.QS_ii_Detail_panel);
+            this.Controls.Add(this.QS_ii_Other_panel);
             this.Controls.Add(this.QS_ii_Head_panel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
@@ -1272,11 +1278,11 @@
             this.QS_ii_Head_panel.PerformLayout();
             this.QS_ii_Check_panel.ResumeLayout(false);
             this.QS_ii_Check_panel.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.QS_ii_Other_panel.ResumeLayout(false);
+            this.QS_ii_Other_panel.PerformLayout();
             this.QS_ii_money_panel.ResumeLayout(false);
             this.QS_ii_money_panel.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            this.QS_ii_Detail_panel.ResumeLayout(false);
             this.QS_ii_tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).EndInit();
@@ -1311,7 +1317,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_SALESMAN;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel QS_ii_Other_panel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -1338,7 +1344,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel QS_ii_Detail_panel;
         private System.Windows.Forms.TabControl QS_ii_tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;

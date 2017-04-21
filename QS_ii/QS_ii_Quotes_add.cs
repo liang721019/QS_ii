@@ -104,6 +104,15 @@ namespace QS_ii
             {
                 #region 內容
                 QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Update] @QT_NO,@QT_DATE,@EFF_DATE,@AMT_NOTAX,@TAX_AMT,@TOT_AMT,@REMARK,'" + USER_ID.Text + "'";
+                //QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Update] '" + tb_QT_NO.Text+
+                //            @"','" + QT_DATE_dTP.Text+ 
+                //            @"','" + QT_EFF_DATE_dTP.Text +
+                //            @"','"+tb_AMT_NOTAX.Text+
+                //            @"','"+tb_TAX_AMT.Text+
+                //            @"','"+tb_TOT_AMT.Text+
+                //            @"','"+tb_REMARK.Text+
+                //            @"','" + USER_ID.Text + "'";
+                             
                 #endregion
 
             }
@@ -195,8 +204,10 @@ namespace QS_ii
             QS_ii_Product_DGV_Column1.Visible = false;      //報價單明細<選取>關閉
             QS_ii_Product_DGV_Column6.ReadOnly = true;      //報價單明細<數量>唯讀
 
+            tb_REMARK.ReadOnly = true;
+
             QS_ii_查詢button.Visible = false;
-            Product_多選button.Visible = false;
+            Product_多選button.Visible = true;
             Product_新增button.Visible = false;
             Product_刪除button.Visible = false;
 
@@ -221,12 +232,14 @@ namespace QS_ii
         {
             if (x == QS_ii_新增button)
             {
+                #region 內容
                 Status_info.Text = "新增";
                 Status_info.Visible = true;
                 tb_QT_NO.Text = "";
 
                 //fun.EoD_Panel_txt(QS_ii_Head_panel, false);                 //QS_ii_Head_panel內的TextBox設定可讀寫
                 //fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, true);      //QS_ii_Head_panel內的DateTimePicker設定可讀寫
+                tb_REMARK.ReadOnly = false;
                 Product_多選button.Visible = true;
                 Product_新增button.Visible = true;
                 Product_刪除button.Visible = true;
@@ -243,7 +256,7 @@ namespace QS_ii
                 QS_ii_取消button.Visible = true;
                 QS_ii_儲存button.Enabled = true;
                 QS_ii_取消button.Enabled = true;
-
+                #endregion
             }
             else if (x == QS_ii_修改button)
             {
@@ -251,6 +264,7 @@ namespace QS_ii
                 Status_info.Visible = true;
                 QS_ii_新增button.Enabled = false;
                 QS_ii_修改button.Enabled = false;
+                tb_REMARK.ReadOnly = false;
                 //QS_ii_產品button.Enabled = false;
                 Product_多選button.Visible = true;
                 Product_新增button.Visible = true;
@@ -283,9 +297,16 @@ namespace QS_ii
                 fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);      //QS_ii_Head_panel內的DateTimePicker設定唯讀
                 tb_SALESMAN.Text = "";        //報價業務
                 QSiiDB.QS_ii_QProduct.Clear();      //清空DATATable
-                fun.clearAir(QS_ii_Head_panel);     //清空報價單表頭
+                QSiiDB.QS_ii_HQT01.Clear();      //清空DATATable
 
-                Product_多選button.Visible = false;
+                fun.clearAir(QS_ii_Head_panel);     //清空報價單-表頭
+                fun.clearAir(QS_ii_Other_panel);     //清空報價單-其他
+                fun.clearAir(QS_ii_Check_panel);     //清空報價單-簽核
+                fun.clearAir(QS_ii_money_panel);     //清空報價單-金額
+
+
+                tb_REMARK.ReadOnly = true;
+                Product_多選button.Visible = true;
                 Product_新增button.Visible = false;
                 Product_刪除button.Visible = false;
                 QS_ii_Product_DGV_Column1.Visible = false;          //報價單明細<選取>關閉
@@ -310,7 +331,8 @@ namespace QS_ii
                 fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);      //QS_ii_Head_panel內的DateTimePicker設定唯讀
                 tb_SALESMAN.Text = "";        //報價業務
 
-                Product_多選button.Visible = false;
+                tb_REMARK.ReadOnly = true;
+                Product_多選button.Visible = true;
                 Product_新增button.Visible = false;
                 Product_刪除button.Visible = false;
                 QS_ii_新增button.Enabled = true;
@@ -339,7 +361,11 @@ namespace QS_ii
             }
 
         }
-        
+
+        private void Quotes_Text()
+        {
+
+        }
         private void Quotes_Add()       //報價單新增
         {
             #region 內容
@@ -367,15 +393,15 @@ namespace QS_ii
             #region 內容
             if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                fun.Check_error = false;
-                GetSQL("表頭修改");
-                fun.QS_ii_QUpdate(QueryDB, QSiiDB.QS_ii_HQT01);
+                fun.Check_error = false;                
                 GetSQL("表身修改");
                 fun.QS_ii_ModifyProductMODIFY_ds(QueryDB, QSiiDB.QS_ii_QProduct);
                 GetSQL("表身刪除");
                 fun.QS_ii_ModifyProductDEL_ds(QueryDB, QSiiDB.QS_ii_QProduct);
                 GetSQL("表身新增");
                 fun.QS_ii_ModifyProductADD_ds(QueryDB, QSiiDB.QS_ii_QProduct);
+                GetSQL("表頭修改");
+                fun.QS_ii_QUpdate(QueryDB, QSiiDB.QS_ii_HQT01);
                 //fun.QS_ii_QText(QSiiDB.QS_ii_QProduct);
 
                 //QSiiDB.QS_ii_QProduct.AcceptChanges();      //****重要****要加這行才算是更新DataTable
@@ -510,6 +536,7 @@ namespace QS_ii
             tb_AMT_NOTAX.Text = QSiiDB.Tables["QS_ii_HQT01"].Rows[0]["AMT_NOTAX"].ToString();           //總金額(未稅)
             tb_TAX_AMT.Text = QSiiDB.Tables["QS_ii_HQT01"].Rows[0]["TAX_AMT"].ToString();               //稅額
             tb_TOT_AMT.Text = QSiiDB.Tables["QS_ii_HQT01"].Rows[0]["TOT_AMT"].ToString();               //總金額(含稅)
+            //tb_REMARK.Text = QSiiDB.Tables["QS_ii_HQT01"].Rows[0]["REMARK"].ToString();                 //備註
             #endregion
         }
         
@@ -728,12 +755,7 @@ namespace QS_ii
         //==============================================================================================================
         #endregion
 
-    }
-
-    public class QProduct : DataView
-    {
-        
-    }
+    }    
 
     public class QS_ii_TCustomer : QS_ii_Customer       //客戶主檔
     {
