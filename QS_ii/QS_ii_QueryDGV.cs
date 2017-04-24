@@ -30,11 +30,16 @@ namespace QS_ii
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void QS_ii_查詢button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            QS_ii_QueryDGV_QueryButton();
         }
 
+        public virtual void QS_ii_QueryDGV_QueryButton()        //查詢Button
+        {
+
+        }
+        
         public virtual void QS_ii_QueryDGV_DGView1()        //DGView1資料呼叫方法
         {
             
@@ -50,7 +55,7 @@ namespace QS_ii
             }
 
         }
-        
+
     }
     
 }

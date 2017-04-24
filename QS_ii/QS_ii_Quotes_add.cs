@@ -103,15 +103,15 @@ namespace QS_ii
             else if(x== "表頭修改")
             {
                 #region 內容
-                QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Update] @QT_NO,@QT_DATE,@EFF_DATE,@AMT_NOTAX,@TAX_AMT,@TOT_AMT,@REMARK,'" + USER_ID.Text + "'";
-                //QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Update] '" + tb_QT_NO.Text+
-                //            @"','" + QT_DATE_dTP.Text+ 
-                //            @"','" + QT_EFF_DATE_dTP.Text +
-                //            @"','"+tb_AMT_NOTAX.Text+
-                //            @"','"+tb_TAX_AMT.Text+
-                //            @"','"+tb_TOT_AMT.Text+
-                //            @"','"+tb_REMARK.Text+
-                //            @"','" + USER_ID.Text + "'";
+                //QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Update] @QT_NO,@QT_DATE,@EFF_DATE,@AMT_NOTAX,@TAX_AMT,@TOT_AMT,@REMARK,'" + USER_ID.Text + "'";
+                QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Update] '" + tb_QT_NO.Text +
+                            @"','" + QT_DATE_dTP.Text +
+                            @"','" + QT_EFF_DATE_dTP.Text +
+                            @"','" + tb_AMT_NOTAX.Text +
+                            @"','" + tb_TAX_AMT.Text +
+                            @"','" + tb_TOT_AMT.Text +
+                            @"','" + tb_REMARK.Text +
+                            @"','" + USER_ID.Text + "'";
                              
                 #endregion
 
@@ -207,7 +207,7 @@ namespace QS_ii
             tb_REMARK.ReadOnly = true;
 
             QS_ii_查詢button.Visible = false;
-            Product_多選button.Visible = true;
+            Product_多選button.Visible = false;
             Product_新增button.Visible = false;
             Product_刪除button.Visible = false;
 
@@ -221,10 +221,9 @@ namespace QS_ii
             QS_ii_取消button.Enabled = false;
             Status_info.Visible = false;
 
-
             //*****在綁定資料後的敘述不會啟動*****
-            QS_ii_Head_DataBinding(QSiiDB.QS_ii_HQT01);           //datatable的欄位與Text綁定資料-報價單表頭
-            //QS_ii_DataBinding(QSiiDB.QS_ii_QProduct);           //datatable的欄位與Text綁定資料-金額欄位
+            QS_ii_Head_DataBinding(QSiiDB.QS_ii_HQT01);           //datatable的欄位與Text綁定資料-報價單表頭            
+            QS_ii_PriceDataBinding(QSiiDB.QS_ii_QProduct);     //datatable的欄位與Text綁定資料-金額欄位
 
         }        
 
@@ -256,10 +255,14 @@ namespace QS_ii
                 QS_ii_取消button.Visible = true;
                 QS_ii_儲存button.Enabled = true;
                 QS_ii_取消button.Enabled = true;
+                //******清除DataTable******
+                QSiiDB.QS_ii_QProduct.Clear();      //清除DataTable
+
                 #endregion
             }
             else if (x == QS_ii_修改button)
             {
+                #region 內容
                 Status_info.Text = "修改";
                 Status_info.Visible = true;
                 QS_ii_新增button.Enabled = false;
@@ -277,7 +280,7 @@ namespace QS_ii
                 QS_ii_取消button.Visible = true;
                 QS_ii_儲存button.Enabled = true;
                 QS_ii_取消button.Enabled = true;
-
+                #endregion
             }
             else if (x == QS_ii_刪除button)
             {
@@ -291,6 +294,7 @@ namespace QS_ii
             }
             else if(x == QS_ii_儲存button)
             {
+                #region 內容
                 Status_info.Text = "瀏覽";
                 Status_info.Visible = false;
                 fun.EoD_Panel_txt(QS_ii_Head_panel, true);                 //QS_ii_Head_panel內的TextBox設定唯讀
@@ -306,7 +310,7 @@ namespace QS_ii
 
 
                 tb_REMARK.ReadOnly = true;
-                Product_多選button.Visible = true;
+                Product_多選button.Visible = false;
                 Product_新增button.Visible = false;
                 Product_刪除button.Visible = false;
                 QS_ii_Product_DGV_Column1.Visible = false;          //報價單明細<選取>關閉
@@ -320,11 +324,11 @@ namespace QS_ii
                 QS_ii_取消button.Visible = false;
                 QS_ii_儲存button.Enabled = false;
                 QS_ii_取消button.Enabled = false;
-
+                #endregion
             }
             else if(x == QS_ii_取消button)
             {
-                
+                #region 內容
                 Status_info.Text = "瀏覽";
                 Status_info.Visible = false;
                 fun.EoD_Panel_txt(QS_ii_Head_panel, true);                 //QS_ii_Head_panel內的TextBox設定唯讀
@@ -332,7 +336,7 @@ namespace QS_ii
                 tb_SALESMAN.Text = "";        //報價業務
 
                 tb_REMARK.ReadOnly = true;
-                Product_多選button.Visible = true;
+                Product_多選button.Visible = false;
                 Product_新增button.Visible = false;
                 Product_刪除button.Visible = false;
                 QS_ii_新增button.Enabled = true;
@@ -348,6 +352,7 @@ namespace QS_ii
                 QS_ii_取消button.Enabled = false;
 
                 QSiiDB.QS_ii_QProduct.RejectChanges();
+                #endregion
 
             }
             else if (x == QS_ii_歷史查詢button)
@@ -361,11 +366,7 @@ namespace QS_ii
             }
 
         }
-
-        private void Quotes_Text()
-        {
-
-        }
+                
         private void Quotes_Add()       //報價單新增
         {
             #region 內容
@@ -373,7 +374,7 @@ namespace QS_ii
             {
                 fun.Check_error = false;
                 GetSQL("新增");
-                fun.QS_ii_Qinsert(QueryDB);
+                fun.QS_ii_QT01_insert(QueryDB);
                 GetSQL("表身新增");
                 fun.QS_ii_Product_ds(QueryDB, QSiiDB.QS_ii_QProduct);
                 
@@ -401,7 +402,7 @@ namespace QS_ii
                 GetSQL("表身新增");
                 fun.QS_ii_ModifyProductADD_ds(QueryDB, QSiiDB.QS_ii_QProduct);
                 GetSQL("表頭修改");
-                fun.QS_ii_QUpdate(QueryDB, QSiiDB.QS_ii_HQT01);
+                fun.QS_ii_ModifyQT01_ds(QueryDB);
                 //fun.QS_ii_QText(QSiiDB.QS_ii_QProduct);
 
                 //QSiiDB.QS_ii_QProduct.AcceptChanges();      //****重要****要加這行才算是更新DataTable
@@ -467,12 +468,7 @@ namespace QS_ii
             inQS_Product.ShowDialog();
 
         }
-
-        private void HQuery()
-        {
-
-        }
-
+                
         private void Product_Query(DataGridView dgv)            //商品主檔查詢
         {
             GetSQL("商品主檔查詢");    //語法丟進QueryDB            
@@ -488,15 +484,16 @@ namespace QS_ii
 
         public void QS_ii_PriceDataBinding(DataTable x)     //datatable的欄位與Text綁定資料-金額欄位
         {
+            tb_AMT_NOTAX.DataBindings.Clear();
+            tb_TAX_AMT.DataBindings.Clear();
+            tb_TOT_AMT.DataBindings.Clear();
             if (Status_info.Text == "新增" || Status_info.Text == "修改")
-            {
-                tb_AMT_NOTAX.DataBindings.Clear();
-                tb_TAX_AMT.DataBindings.Clear();
-                tb_TOT_AMT.DataBindings.Clear();
+            {                
                 tb_AMT_NOTAX.DataBindings.Add("Text", x, "AMT_NOTAX", true);     //總金額 (未稅)綁定資料
                 tb_TAX_AMT.DataBindings.Add("Text", x, "TAX_AMT", true);     //稅額 綁定資料
                 tb_TOT_AMT.DataBindings.Add("Text", x, "TOT_AMT", true);     //含稅總額 綁定資料
             }
+            
             
         }
 
@@ -860,7 +857,11 @@ namespace QS_ii
             }
             
             #endregion          
+        }
 
+        public override void QS_ii_QueryDGV_QueryButton()       //查詢Button
+        {
+            
         }
     }
 

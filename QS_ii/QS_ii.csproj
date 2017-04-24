@@ -24,7 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\192.168.100.210\exe_update\QS_ii\PRD\</UpdateUrl>
     <PublisherName>SLS</PublisherName>
-    <MinimumRequiredVersion>1.0.0.9</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.10</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
     <ApplicationRevision>10</ApplicationRevision>
