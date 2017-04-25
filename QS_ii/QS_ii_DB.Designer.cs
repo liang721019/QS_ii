@@ -3878,23 +3878,25 @@ namespace QS_ii {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class QS_ii_ProductDataTable : global::System.Data.TypedTableBase<QS_ii_ProductRow> {
             
-            private global::System.Data.DataColumn columnitem_NO;
+            private global::System.Data.DataColumn columnCheck;
             
-            private global::System.Data.DataColumn columnitem_NAME;
+            private global::System.Data.DataColumn column商品編號;
             
-            private global::System.Data.DataColumn columnEN_NAME;
+            private global::System.Data.DataColumn column商品名稱;
             
-            private global::System.Data.DataColumn columnitem_TYPE;
+            private global::System.Data.DataColumn column英文名稱;
             
-            private global::System.Data.DataColumn columnSPEC;
+            private global::System.Data.DataColumn column產品分類;
             
-            private global::System.Data.DataColumn columnUNIT;
+            private global::System.Data.DataColumn column規格;
             
-            private global::System.Data.DataColumn columnUNIT_PRICE;
+            private global::System.Data.DataColumn column單位;
             
-            private global::System.Data.DataColumn columnCURRENCY;
+            private global::System.Data.DataColumn column單價;
             
-            private global::System.Data.DataColumn columnEFF_DATE;
+            private global::System.Data.DataColumn column幣別;
+            
+            private global::System.Data.DataColumn column變動生效日;
             
             private global::System.Data.DataColumn columnDEL_FALG;
             
@@ -3933,73 +3935,81 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn item_NOColumn {
+            public global::System.Data.DataColumn CheckColumn {
                 get {
-                    return this.columnitem_NO;
+                    return this.columnCheck;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn item_NAMEColumn {
+            public global::System.Data.DataColumn 商品編號Column {
                 get {
-                    return this.columnitem_NAME;
+                    return this.column商品編號;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EN_NAMEColumn {
+            public global::System.Data.DataColumn 商品名稱Column {
                 get {
-                    return this.columnEN_NAME;
+                    return this.column商品名稱;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn item_TYPEColumn {
+            public global::System.Data.DataColumn 英文名稱Column {
                 get {
-                    return this.columnitem_TYPE;
+                    return this.column英文名稱;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SPECColumn {
+            public global::System.Data.DataColumn 產品分類Column {
                 get {
-                    return this.columnSPEC;
+                    return this.column產品分類;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UNITColumn {
+            public global::System.Data.DataColumn 規格Column {
                 get {
-                    return this.columnUNIT;
+                    return this.column規格;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UNIT_PRICEColumn {
+            public global::System.Data.DataColumn 單位Column {
                 get {
-                    return this.columnUNIT_PRICE;
+                    return this.column單位;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CURRENCYColumn {
+            public global::System.Data.DataColumn 單價Column {
                 get {
-                    return this.columnCURRENCY;
+                    return this.column單價;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EFF_DATEColumn {
+            public global::System.Data.DataColumn 幣別Column {
                 get {
-                    return this.columnEFF_DATE;
+                    return this.column幣別;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 變動生效日Column {
+                get {
+                    return this.column變動生效日;
                 }
             }
             
@@ -4048,18 +4058,19 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_ProductRow AddQS_ii_ProductRow(string item_NO, string item_NAME, string EN_NAME, string item_TYPE, string SPEC, string UNIT, string UNIT_PRICE, string CURRENCY, string EFF_DATE, string DEL_FALG) {
+            public QS_ii_ProductRow AddQS_ii_ProductRow(string Check, string 商品編號, string 商品名稱, string 英文名稱, string 產品分類, string 規格, string 單位, float 單價, string 幣別, string 變動生效日, string DEL_FALG) {
                 QS_ii_ProductRow rowQS_ii_ProductRow = ((QS_ii_ProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        item_NO,
-                        item_NAME,
-                        EN_NAME,
-                        item_TYPE,
-                        SPEC,
-                        UNIT,
-                        UNIT_PRICE,
-                        CURRENCY,
-                        EFF_DATE,
+                        Check,
+                        商品編號,
+                        商品名稱,
+                        英文名稱,
+                        產品分類,
+                        規格,
+                        單位,
+                        單價,
+                        幣別,
+                        變動生效日,
                         DEL_FALG};
                 rowQS_ii_ProductRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowQS_ii_ProductRow);
@@ -4083,39 +4094,42 @@ namespace QS_ii {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnitem_NO = base.Columns["item_NO"];
-                this.columnitem_NAME = base.Columns["item_NAME"];
-                this.columnEN_NAME = base.Columns["EN_NAME"];
-                this.columnitem_TYPE = base.Columns["item_TYPE"];
-                this.columnSPEC = base.Columns["SPEC"];
-                this.columnUNIT = base.Columns["UNIT"];
-                this.columnUNIT_PRICE = base.Columns["UNIT_PRICE"];
-                this.columnCURRENCY = base.Columns["CURRENCY"];
-                this.columnEFF_DATE = base.Columns["EFF_DATE"];
+                this.columnCheck = base.Columns["Check"];
+                this.column商品編號 = base.Columns["商品編號"];
+                this.column商品名稱 = base.Columns["商品名稱"];
+                this.column英文名稱 = base.Columns["英文名稱"];
+                this.column產品分類 = base.Columns["產品分類"];
+                this.column規格 = base.Columns["規格"];
+                this.column單位 = base.Columns["單位"];
+                this.column單價 = base.Columns["單價"];
+                this.column幣別 = base.Columns["幣別"];
+                this.column變動生效日 = base.Columns["變動生效日"];
                 this.columnDEL_FALG = base.Columns["DEL_FALG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnitem_NO = new global::System.Data.DataColumn("item_NO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnitem_NO);
-                this.columnitem_NAME = new global::System.Data.DataColumn("item_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnitem_NAME);
-                this.columnEN_NAME = new global::System.Data.DataColumn("EN_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEN_NAME);
-                this.columnitem_TYPE = new global::System.Data.DataColumn("item_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnitem_TYPE);
-                this.columnSPEC = new global::System.Data.DataColumn("SPEC", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSPEC);
-                this.columnUNIT = new global::System.Data.DataColumn("UNIT", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUNIT);
-                this.columnUNIT_PRICE = new global::System.Data.DataColumn("UNIT_PRICE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUNIT_PRICE);
-                this.columnCURRENCY = new global::System.Data.DataColumn("CURRENCY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCURRENCY);
-                this.columnEFF_DATE = new global::System.Data.DataColumn("EFF_DATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEFF_DATE);
+                this.columnCheck = new global::System.Data.DataColumn("Check", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCheck);
+                this.column商品編號 = new global::System.Data.DataColumn("商品編號", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column商品編號);
+                this.column商品名稱 = new global::System.Data.DataColumn("商品名稱", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column商品名稱);
+                this.column英文名稱 = new global::System.Data.DataColumn("英文名稱", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column英文名稱);
+                this.column產品分類 = new global::System.Data.DataColumn("產品分類", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column產品分類);
+                this.column規格 = new global::System.Data.DataColumn("規格", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column規格);
+                this.column單位 = new global::System.Data.DataColumn("單位", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column單位);
+                this.column單價 = new global::System.Data.DataColumn("單價", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column單價);
+                this.column幣別 = new global::System.Data.DataColumn("幣別", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column幣別);
+                this.column變動生效日 = new global::System.Data.DataColumn("變動生效日", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column變動生效日);
                 this.columnDEL_FALG = new global::System.Data.DataColumn("DEL_FALG", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDEL_FALG);
             }
@@ -7208,145 +7222,161 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string item_NO {
+            public string Check {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.item_NOColumn]));
+                        return ((string)(this[this.tableQS_ii_Product.CheckColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'item_NO\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'Check\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.item_NOColumn] = value;
+                    this[this.tableQS_ii_Product.CheckColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string item_NAME {
+            public string 商品編號 {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.item_NAMEColumn]));
+                        return ((string)(this[this.tableQS_ii_Product.商品編號Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'item_NAME\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'商品編號\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.item_NAMEColumn] = value;
+                    this[this.tableQS_ii_Product.商品編號Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EN_NAME {
+            public string 商品名稱 {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.EN_NAMEColumn]));
+                        return ((string)(this[this.tableQS_ii_Product.商品名稱Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'EN_NAME\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'商品名稱\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.EN_NAMEColumn] = value;
+                    this[this.tableQS_ii_Product.商品名稱Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string item_TYPE {
+            public string 英文名稱 {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.item_TYPEColumn]));
+                        return ((string)(this[this.tableQS_ii_Product.英文名稱Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'item_TYPE\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'英文名稱\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.item_TYPEColumn] = value;
+                    this[this.tableQS_ii_Product.英文名稱Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SPEC {
+            public string 產品分類 {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.SPECColumn]));
+                        return ((string)(this[this.tableQS_ii_Product.產品分類Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'SPEC\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'產品分類\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.SPECColumn] = value;
+                    this[this.tableQS_ii_Product.產品分類Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string UNIT {
+            public string 規格 {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.UNITColumn]));
+                        return ((string)(this[this.tableQS_ii_Product.規格Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'UNIT\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'規格\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.UNITColumn] = value;
+                    this[this.tableQS_ii_Product.規格Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string UNIT_PRICE {
+            public string 單位 {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.UNIT_PRICEColumn]));
+                        return ((string)(this[this.tableQS_ii_Product.單位Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'UNIT_PRICE\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'單位\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.UNIT_PRICEColumn] = value;
+                    this[this.tableQS_ii_Product.單位Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CURRENCY {
+            public float 單價 {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.CURRENCYColumn]));
+                        return ((float)(this[this.tableQS_ii_Product.單價Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'CURRENCY\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'單價\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.CURRENCYColumn] = value;
+                    this[this.tableQS_ii_Product.單價Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EFF_DATE {
+            public string 幣別 {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_Product.EFF_DATEColumn]));
+                        return ((string)(this[this.tableQS_ii_Product.幣別Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'EFF_DATE\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'幣別\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_Product.EFF_DATEColumn] = value;
+                    this[this.tableQS_ii_Product.幣別Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 變動生效日 {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_Product.變動生效日Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_Product\' 中資料行 \'變動生效日\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_Product.變動生效日Column] = value;
                 }
             }
             
@@ -7368,110 +7398,122 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isitem_NONull() {
-                return this.IsNull(this.tableQS_ii_Product.item_NOColumn);
+            public bool IsCheckNull() {
+                return this.IsNull(this.tableQS_ii_Product.CheckColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setitem_NONull() {
-                this[this.tableQS_ii_Product.item_NOColumn] = global::System.Convert.DBNull;
+            public void SetCheckNull() {
+                this[this.tableQS_ii_Product.CheckColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isitem_NAMENull() {
-                return this.IsNull(this.tableQS_ii_Product.item_NAMEColumn);
+            public bool Is商品編號Null() {
+                return this.IsNull(this.tableQS_ii_Product.商品編號Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setitem_NAMENull() {
-                this[this.tableQS_ii_Product.item_NAMEColumn] = global::System.Convert.DBNull;
+            public void Set商品編號Null() {
+                this[this.tableQS_ii_Product.商品編號Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEN_NAMENull() {
-                return this.IsNull(this.tableQS_ii_Product.EN_NAMEColumn);
+            public bool Is商品名稱Null() {
+                return this.IsNull(this.tableQS_ii_Product.商品名稱Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEN_NAMENull() {
-                this[this.tableQS_ii_Product.EN_NAMEColumn] = global::System.Convert.DBNull;
+            public void Set商品名稱Null() {
+                this[this.tableQS_ii_Product.商品名稱Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isitem_TYPENull() {
-                return this.IsNull(this.tableQS_ii_Product.item_TYPEColumn);
+            public bool Is英文名稱Null() {
+                return this.IsNull(this.tableQS_ii_Product.英文名稱Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setitem_TYPENull() {
-                this[this.tableQS_ii_Product.item_TYPEColumn] = global::System.Convert.DBNull;
+            public void Set英文名稱Null() {
+                this[this.tableQS_ii_Product.英文名稱Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSPECNull() {
-                return this.IsNull(this.tableQS_ii_Product.SPECColumn);
+            public bool Is產品分類Null() {
+                return this.IsNull(this.tableQS_ii_Product.產品分類Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSPECNull() {
-                this[this.tableQS_ii_Product.SPECColumn] = global::System.Convert.DBNull;
+            public void Set產品分類Null() {
+                this[this.tableQS_ii_Product.產品分類Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUNITNull() {
-                return this.IsNull(this.tableQS_ii_Product.UNITColumn);
+            public bool Is規格Null() {
+                return this.IsNull(this.tableQS_ii_Product.規格Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUNITNull() {
-                this[this.tableQS_ii_Product.UNITColumn] = global::System.Convert.DBNull;
+            public void Set規格Null() {
+                this[this.tableQS_ii_Product.規格Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUNIT_PRICENull() {
-                return this.IsNull(this.tableQS_ii_Product.UNIT_PRICEColumn);
+            public bool Is單位Null() {
+                return this.IsNull(this.tableQS_ii_Product.單位Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUNIT_PRICENull() {
-                this[this.tableQS_ii_Product.UNIT_PRICEColumn] = global::System.Convert.DBNull;
+            public void Set單位Null() {
+                this[this.tableQS_ii_Product.單位Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCURRENCYNull() {
-                return this.IsNull(this.tableQS_ii_Product.CURRENCYColumn);
+            public bool Is單價Null() {
+                return this.IsNull(this.tableQS_ii_Product.單價Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCURRENCYNull() {
-                this[this.tableQS_ii_Product.CURRENCYColumn] = global::System.Convert.DBNull;
+            public void Set單價Null() {
+                this[this.tableQS_ii_Product.單價Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEFF_DATENull() {
-                return this.IsNull(this.tableQS_ii_Product.EFF_DATEColumn);
+            public bool Is幣別Null() {
+                return this.IsNull(this.tableQS_ii_Product.幣別Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEFF_DATENull() {
-                this[this.tableQS_ii_Product.EFF_DATEColumn] = global::System.Convert.DBNull;
+            public void Set幣別Null() {
+                this[this.tableQS_ii_Product.幣別Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is變動生效日Null() {
+                return this.IsNull(this.tableQS_ii_Product.變動生效日Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set變動生效日Null() {
+                this[this.tableQS_ii_Product.變動生效日Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

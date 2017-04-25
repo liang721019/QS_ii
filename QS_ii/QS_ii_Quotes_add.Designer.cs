@@ -148,6 +148,7 @@
             this.Status_info = new System.Windows.Forms.Label();
             this.qS_ii_DB = new QS_ii.QS_ii_DB();
             this.qSiiQProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.QS_ii_Head_panel.SuspendLayout();
@@ -166,6 +167,7 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -1052,6 +1054,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage2.Controls.Add(this.dataGridView3);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -1076,7 +1079,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(6, 6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(558, 314);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 160);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage3
@@ -1256,6 +1259,15 @@
             this.qSiiQProductBindingSource.DataMember = "QS_ii_QProduct";
             this.qSiiQProductBindingSource.DataSource = this.qS_ii_DB;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(7, 173);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(557, 147);
+            this.dataGridView3.TabIndex = 2;
+            // 
             // QS_ii_Quotes_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1295,6 +1307,7 @@
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1417,5 +1430,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column7;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }

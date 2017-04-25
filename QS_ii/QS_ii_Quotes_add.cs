@@ -175,7 +175,7 @@ namespace QS_ii
             else if(x == "商品主檔查詢")
             {
                 #region 內容
-                QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
+                QueryDB = @"select [Check] = '0',* from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
                 #endregion
             }
             
@@ -280,6 +280,8 @@ namespace QS_ii
                 QS_ii_取消button.Visible = true;
                 QS_ii_儲存button.Enabled = true;
                 QS_ii_取消button.Enabled = true;
+                           
+                QS_ii_PriceDataBinding(QSiiDB.QS_ii_QProduct);     //datatable的欄位與Text綁定資料-金額欄位
                 #endregion
             }
             else if (x == QS_ii_刪除button)
@@ -468,7 +470,20 @@ namespace QS_ii
             inQS_Product.ShowDialog();
 
         }
-                
+
+        public void Product_Query(TextBox tx ,DataTable Dx, DataGridView dgv )        //商品主檔查詢
+        {
+            
+            GetSQL("商品主檔查詢");    //語法丟進QueryDB
+            if (tx.Text != "")
+            {
+                QueryDB += @"and [商品編號] like '" + tx.Text.Trim() + "%'";
+            }
+
+            fun.QS_ii_ProductM_ds(QueryDB,Dx,dgv);         //連接DB-執行DB指令
+
+        }
+
         private void Product_Query(DataGridView dgv)            //商品主檔查詢
         {
             GetSQL("商品主檔查詢");    //語法丟進QueryDB            
@@ -659,23 +674,28 @@ namespace QS_ii
             {
                 if (QS_ii_Product_DGV.Rows[i].Cells[0].Value.ToString() == "1")
                 {
-                    this.QS_ii_Product_DGV.Rows.Remove(this.QS_ii_Product_DGV.Rows[i]);
-                    //QSiiDB.QS_ii_QProduct.Rows.Remove(this.QSiiDB.QS_ii_QProduct.Rows[i]);
-                    //QSiiDB.QS_ii_QProduct.Rows[i].Delete();                 
+                    this.QS_ii_Product_DGV.Rows.Remove(this.QS_ii_Product_DGV.Rows[i]);                                    
                     i = QS_ii_Product_DGV.Rows.Count;
                 }
             }
-            //QSiiDB.QS_ii_QProduct.AcceptChanges();      //****重要****要加這行才算是更新DataTable
-            
             #endregion
         }
 
         private void Product_多選button_Click(object sender, EventArgs e)
         {
-            //dataGridView1.DataSource = QSiiDB.QS_ii_QProduct;
-            dataGridView1.DataSource = QSiiDB.QS_ii_QProduct;
-            dataGridView2.DataSource = QSiiDB.QS_ii_HQT01;            
+            #region  內容
+            QS_ii_TQueryDGV ProductADD = new QS_ii_TQueryDGV(this);
+            ProductADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示
+            ProductADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check"; 
+            //Product_Query(ProductADD.QS_ii_DGView1);        //商品主檔查詢
+            Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
+            //ProductADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check"; 
             
+            //設定init_Staff 新視窗的相對位置#############
+            ProductADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################
+            ProductADD.ShowDialog();
+            #endregion            
         }
 
         private void QS_ii_歷史查詢button_Click(object sender, EventArgs e)
@@ -861,6 +881,43 @@ namespace QS_ii
 
         public override void QS_ii_QueryDGV_QueryButton()       //查詢Button
         {
+            //DataTable ProductM_dt = new DataTable();
+            //ProductM_dt.Columns.Add("Check");
+            QS_ii_QueryDGV_Column1.Visible = true;
+            QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+            QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
+            
+        }       
+
+        
+        public override void QS_ii_QueryDGV_加入button()
+        {            
+            DataView QS_ii_DView = new DataView(QS_iiQ_add.QSiiDB.QS_ii_Product);
+            DataView QS_ii_QDView = new DataView(QS_iiQ_add.QSiiDB.QS_ii_QProduct);
+            QS_ii_DView.RowFilter = "Check = '1'";
+            foreach (DataRowView DView in QS_ii_DView)
+            {
+                DataTable myDT = QS_iiQ_add.QSiiDB.QS_ii_Product.DefaultView.ToTable(true, new string[] { "名字" });
+                DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_QProduct.NewRow();
+                QS_ii_dr["Check"] = "0";
+                QS_ii_dr["QT_NO"] = QS_iiQ_add.tb_QT_NO.Text;
+                QS_ii_dr["item_NO"] = DView["商品編號"];
+                QS_ii_dr["item_NAME"] = DView["商品名稱"];
+                QS_ii_dr["SPEC"] = DView["規格"];
+                QS_ii_dr["UNIT"] = DView["單位"];
+                QS_ii_dr["QTY"] = 1;
+                QS_ii_dr["UNIT_PRICE"] = DView["單價"];
+                QS_iiQ_add.QSiiDB.QS_ii_QProduct.Rows.Add(QS_ii_dr);
+
+                //for (int x = 0; x < QS_iiQ_add.QSiiDB.QS_ii_QProduct.Rows.Count; x++)
+                //{
+                //    if (DView.Row["商品編號"] != QS_iiQ_add.QSiiDB.QS_ii_QProduct.Rows[x]["商品編號"])
+                //    {
+
+                //    }
+                //}
+                                
+            }
             
         }
     }

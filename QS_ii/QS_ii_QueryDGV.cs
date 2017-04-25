@@ -27,7 +27,6 @@ namespace QS_ii
             this.MinimizeBox = false;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
             this.AutoSize = false;          //自動調整大小
-            
         }
 
         private void QS_ii_查詢button_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace QS_ii
         {
             
             
-        }
+        }               
         
         private void QS_ii_DGView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)        //DGV雙擊左鍵二下
         {
@@ -55,6 +54,38 @@ namespace QS_ii
             }
 
         }
+
+        public void QS_ii_DGView1_CellContentClick(object sender, DataGridViewCellEventArgs e)          //QS_ii_DGView1中的Checkbox
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex != -1)
+            {
+                #region 內容
+                //QS_ii_QS_ii_DGView1_CellContentClick();
+                DataGridViewCheckBoxCell checkCell = (DataGridViewCheckBoxCell)QS_ii_DGView1.Rows[e.RowIndex].Cells[0];
+                string flag = QS_ii_DGView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (flag == "1")     //被選取的資料行
+                {
+                    checkCell.Value = "0";
+                }
+                else
+                {
+                    checkCell.Value = "1";
+                }
+                #endregion
+            }
+        }
+
+        public virtual void QS_ii_QueryDGV_加入button()           //加入Button
+        {
+
+        }
+
+        private void QS_ii_加入button_Click(object sender, EventArgs e)
+        {
+            QS_ii_QueryDGV_加入button();
+        }
+
+        
 
     }
     
