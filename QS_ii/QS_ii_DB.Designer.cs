@@ -841,6 +841,7 @@ namespace QS_ii {
                 base.Columns.Add(this.columnTAX_AMT);
                 this.columnTOT_AMT = new global::System.Data.DataColumn("TOT_AMT", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTOT_AMT);
+                this.columnitem_NO.AllowDBNull = false;
                 this.columnItem_AMT.ReadOnly = true;
             }
             
@@ -4308,12 +4309,7 @@ namespace QS_ii {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string item_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableQS_ii_QProduct.item_NOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_QProduct\' 中資料行 \'item_NO\' 的值是 DBNull。", e);
-                    }
+                    return ((string)(this[this.tableQS_ii_QProduct.item_NOColumn]));
                 }
                 set {
                     this[this.tableQS_ii_QProduct.item_NOColumn] = value;
@@ -4502,18 +4498,6 @@ namespace QS_ii {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetQT_NONull() {
                 this[this.tableQS_ii_QProduct.QT_NOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isitem_NONull() {
-                return this.IsNull(this.tableQS_ii_QProduct.item_NOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setitem_NONull() {
-                this[this.tableQS_ii_QProduct.item_NOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

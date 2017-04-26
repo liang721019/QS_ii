@@ -85,8 +85,6 @@ namespace QS_ii
             QS_ii_QueryDGV_加入button();
         }
 
-        
-
     }
     
 }
