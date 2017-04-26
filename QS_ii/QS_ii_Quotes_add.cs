@@ -896,7 +896,7 @@ namespace QS_ii
             
         }       
         
-        public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button/
+        public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button
         {
             QS_iiQ_add.QS_ii_PriceDataBinding(QS_iiQ_add.QSiiDB.QS_ii_QProduct);           //datatable的欄位與Text綁定資料
             QS_iiQ_add.DataTable_SETColumnExpression();                 //設定DataTable的Column.Expression
