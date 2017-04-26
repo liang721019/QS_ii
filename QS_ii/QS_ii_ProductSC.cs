@@ -21,5 +21,10 @@ namespace QS_ii
         {
 
         }
+
+        private void QS_ii_ProductSC_儲存Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

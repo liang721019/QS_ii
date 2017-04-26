@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.QS_ii_ProductSC多選button = new System.Windows.Forms.Button();
+            this.QS_ii_ProductSC刪除button = new System.Windows.Forms.Button();
+            this.QS_ii_ProductSC新增button = new System.Windows.Forms.Button();
+            this.QS_ii_ProductSC_DGV1 = new System.Windows.Forms.DataGridView();
+            this.QS_ii_ProductSC_CHAIN_NAME = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.QS_ii_ProductSC_CHAIN_NO = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Product_panel1 = new System.Windows.Forms.Panel();
             this.QS_ii_ProductSC_取消Button = new System.Windows.Forms.Button();
@@ -38,19 +47,10 @@
             this.QS_ii_ProductSC_修改Button = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC_新增Button = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.QS_ii_ProductSC_CHAIN_NO = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.QS_ii_ProductSC_CHAIN_NAME = new System.Windows.Forms.TextBox();
-            this.QS_ii_ProductSC_DGV1 = new System.Windows.Forms.DataGridView();
-            this.QS_ii_ProductSC新增button = new System.Windows.Forms.Button();
-            this.QS_ii_ProductSC刪除button = new System.Windows.Forms.Button();
-            this.QS_ii_ProductSC多選button = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.Product_panel1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_ProductSC_DGV1)).BeginInit();
+            this.Product_panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -61,17 +61,111 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 64);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(553, 328);
             this.tabControl1.TabIndex = 7;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.QS_ii_ProductSC多選button);
+            this.tabPage1.Controls.Add(this.QS_ii_ProductSC刪除button);
+            this.tabPage1.Controls.Add(this.QS_ii_ProductSC新增button);
+            this.tabPage1.Controls.Add(this.QS_ii_ProductSC_DGV1);
+            this.tabPage1.Controls.Add(this.QS_ii_ProductSC_CHAIN_NAME);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.QS_ii_ProductSC_CHAIN_NO);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(5);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
+            this.tabPage1.Size = new System.Drawing.Size(545, 295);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "通路資訊";
+            // 
+            // QS_ii_ProductSC多選button
+            // 
+            this.QS_ii_ProductSC多選button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.QS_ii_ProductSC多選button.Location = new System.Drawing.Point(478, 68);
+            this.QS_ii_ProductSC多選button.Name = "QS_ii_ProductSC多選button";
+            this.QS_ii_ProductSC多選button.Size = new System.Drawing.Size(35, 35);
+            this.QS_ii_ProductSC多選button.TabIndex = 7;
+            this.QS_ii_ProductSC多選button.Text = "...";
+            this.QS_ii_ProductSC多選button.UseVisualStyleBackColor = true;
+            // 
+            // QS_ii_ProductSC刪除button
+            // 
+            this.QS_ii_ProductSC刪除button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.QS_ii_ProductSC刪除button.Location = new System.Drawing.Point(478, 150);
+            this.QS_ii_ProductSC刪除button.Name = "QS_ii_ProductSC刪除button";
+            this.QS_ii_ProductSC刪除button.Size = new System.Drawing.Size(35, 35);
+            this.QS_ii_ProductSC刪除button.TabIndex = 6;
+            this.QS_ii_ProductSC刪除button.Text = "-";
+            this.QS_ii_ProductSC刪除button.UseVisualStyleBackColor = true;
+            // 
+            // QS_ii_ProductSC新增button
+            // 
+            this.QS_ii_ProductSC新增button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.QS_ii_ProductSC新增button.Location = new System.Drawing.Point(478, 109);
+            this.QS_ii_ProductSC新增button.Name = "QS_ii_ProductSC新增button";
+            this.QS_ii_ProductSC新增button.Size = new System.Drawing.Size(35, 35);
+            this.QS_ii_ProductSC新增button.TabIndex = 5;
+            this.QS_ii_ProductSC新增button.Text = "+";
+            this.QS_ii_ProductSC新增button.UseVisualStyleBackColor = true;
+            // 
+            // QS_ii_ProductSC_DGV1
+            // 
+            this.QS_ii_ProductSC_DGV1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.QS_ii_ProductSC_DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QS_ii_ProductSC_DGV1.Location = new System.Drawing.Point(12, 68);
+            this.QS_ii_ProductSC_DGV1.Name = "QS_ii_ProductSC_DGV1";
+            this.QS_ii_ProductSC_DGV1.RowTemplate.Height = 24;
+            this.QS_ii_ProductSC_DGV1.Size = new System.Drawing.Size(462, 215);
+            this.QS_ii_ProductSC_DGV1.TabIndex = 4;
+            // 
+            // QS_ii_ProductSC_CHAIN_NAME
+            // 
+            this.QS_ii_ProductSC_CHAIN_NAME.Location = new System.Drawing.Point(344, 17);
+            this.QS_ii_ProductSC_CHAIN_NAME.Name = "QS_ii_ProductSC_CHAIN_NAME";
+            this.QS_ii_ProductSC_CHAIN_NAME.Size = new System.Drawing.Size(130, 29);
+            this.QS_ii_ProductSC_CHAIN_NAME.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(261, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "通路名稱:";
+            // 
+            // QS_ii_ProductSC_CHAIN_NO
+            // 
+            this.QS_ii_ProductSC_CHAIN_NO.Location = new System.Drawing.Point(91, 17);
+            this.QS_ii_ProductSC_CHAIN_NO.Name = "QS_ii_ProductSC_CHAIN_NO";
+            this.QS_ii_ProductSC_CHAIN_NO.Size = new System.Drawing.Size(130, 29);
+            this.QS_ii_ProductSC_CHAIN_NO.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "通路編號:";
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(545, 295);
             this.tabPage2.TabIndex = 1;
@@ -113,6 +207,7 @@
             this.QS_ii_ProductSC_儲存Button.TabIndex = 4;
             this.QS_ii_ProductSC_儲存Button.Text = "儲存";
             this.QS_ii_ProductSC_儲存Button.UseVisualStyleBackColor = true;
+            this.QS_ii_ProductSC_儲存Button.Click += new System.EventHandler(this.QS_ii_ProductSC_儲存Button_Click);
             // 
             // QS_ii_ProductSC_查詢Button
             // 
@@ -158,100 +253,6 @@
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.QS_ii_ProductSC多選button);
-            this.tabPage1.Controls.Add(this.QS_ii_ProductSC刪除button);
-            this.tabPage1.Controls.Add(this.QS_ii_ProductSC新增button);
-            this.tabPage1.Controls.Add(this.QS_ii_ProductSC_DGV1);
-            this.tabPage1.Controls.Add(this.QS_ii_ProductSC_CHAIN_NAME);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.QS_ii_ProductSC_CHAIN_NO);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(5);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage1.Size = new System.Drawing.Size(545, 295);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "通路資訊";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "通路編號:";
-            // 
-            // QS_ii_ProductSC_CHAIN_NO
-            // 
-            this.QS_ii_ProductSC_CHAIN_NO.Location = new System.Drawing.Point(91, 17);
-            this.QS_ii_ProductSC_CHAIN_NO.Name = "QS_ii_ProductSC_CHAIN_NO";
-            this.QS_ii_ProductSC_CHAIN_NO.Size = new System.Drawing.Size(130, 29);
-            this.QS_ii_ProductSC_CHAIN_NO.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(261, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "通路名稱:";
-            // 
-            // QS_ii_ProductSC_CHAIN_NAME
-            // 
-            this.QS_ii_ProductSC_CHAIN_NAME.Location = new System.Drawing.Point(344, 17);
-            this.QS_ii_ProductSC_CHAIN_NAME.Name = "QS_ii_ProductSC_CHAIN_NAME";
-            this.QS_ii_ProductSC_CHAIN_NAME.Size = new System.Drawing.Size(130, 29);
-            this.QS_ii_ProductSC_CHAIN_NAME.TabIndex = 3;
-            // 
-            // QS_ii_ProductSC_DGV1
-            // 
-            this.QS_ii_ProductSC_DGV1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC_DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.QS_ii_ProductSC_DGV1.Location = new System.Drawing.Point(12, 68);
-            this.QS_ii_ProductSC_DGV1.Name = "QS_ii_ProductSC_DGV1";
-            this.QS_ii_ProductSC_DGV1.RowTemplate.Height = 24;
-            this.QS_ii_ProductSC_DGV1.Size = new System.Drawing.Size(462, 215);
-            this.QS_ii_ProductSC_DGV1.TabIndex = 4;
-            // 
-            // QS_ii_ProductSC新增button
-            // 
-            this.QS_ii_ProductSC新增button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC新增button.Location = new System.Drawing.Point(478, 109);
-            this.QS_ii_ProductSC新增button.Name = "QS_ii_ProductSC新增button";
-            this.QS_ii_ProductSC新增button.Size = new System.Drawing.Size(35, 35);
-            this.QS_ii_ProductSC新增button.TabIndex = 5;
-            this.QS_ii_ProductSC新增button.Text = "+";
-            this.QS_ii_ProductSC新增button.UseVisualStyleBackColor = true;
-            // 
-            // QS_ii_ProductSC刪除button
-            // 
-            this.QS_ii_ProductSC刪除button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC刪除button.Location = new System.Drawing.Point(478, 150);
-            this.QS_ii_ProductSC刪除button.Name = "QS_ii_ProductSC刪除button";
-            this.QS_ii_ProductSC刪除button.Size = new System.Drawing.Size(35, 35);
-            this.QS_ii_ProductSC刪除button.TabIndex = 6;
-            this.QS_ii_ProductSC刪除button.Text = "-";
-            this.QS_ii_ProductSC刪除button.UseVisualStyleBackColor = true;
-            // 
-            // QS_ii_ProductSC多選button
-            // 
-            this.QS_ii_ProductSC多選button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC多選button.Location = new System.Drawing.Point(478, 68);
-            this.QS_ii_ProductSC多選button.Name = "QS_ii_ProductSC多選button";
-            this.QS_ii_ProductSC多選button.Size = new System.Drawing.Size(35, 35);
-            this.QS_ii_ProductSC多選button.TabIndex = 7;
-            this.QS_ii_ProductSC多選button.Text = "...";
-            this.QS_ii_ProductSC多選button.UseVisualStyleBackColor = true;
-            // 
             // QS_ii_ProductSC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -262,15 +263,15 @@
             this.Controls.Add(this.Product_panel1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "QS_ii_ProductSC";
             this.Text = "QS_ii_ProductSC";
             this.Load += new System.EventHandler(this.QS_ii_ProductSC_Load);
             this.tabControl1.ResumeLayout(false);
-            this.Product_panel1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_ProductSC_DGV1)).EndInit();
+            this.Product_panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
