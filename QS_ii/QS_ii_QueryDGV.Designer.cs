@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.QS_ii_DGView1 = new System.Windows.Forms.DataGridView();
             this.QS_ii_QueryDGV_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -38,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.init_panel = new System.Windows.Forms.Panel();
             this.QS_ii_加入button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_DGView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.init_panel.SuspendLayout();
@@ -48,8 +47,8 @@
             // 
             this.QS_ii_DGView1.AllowUserToAddRows = false;
             this.QS_ii_DGView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.QS_ii_DGView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.QS_ii_DGView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.QS_ii_DGView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.QS_ii_DGView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QS_ii_DGView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -59,8 +58,8 @@
             this.QS_ii_DGView1.Margin = new System.Windows.Forms.Padding(5);
             this.QS_ii_DGView1.Name = "QS_ii_DGView1";
             this.QS_ii_DGView1.ReadOnly = true;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.QS_ii_DGView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QS_ii_DGView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.QS_ii_DGView1.RowTemplate.Height = 24;
             this.QS_ii_DGView1.Size = new System.Drawing.Size(618, 376);
             this.QS_ii_DGView1.TabIndex = 0;
@@ -120,7 +119,6 @@
             // 
             this.init_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.init_panel.Controls.Add(this.button1);
             this.init_panel.Controls.Add(this.QS_ii_加入button);
             this.init_panel.Controls.Add(this.QS_ii_查詢button);
             this.init_panel.Controls.Add(this.label1);
@@ -139,15 +137,6 @@
             this.QS_ii_加入button.Text = "加入";
             this.QS_ii_加入button.UseVisualStyleBackColor = true;
             this.QS_ii_加入button.Click += new System.EventHandler(this.QS_ii_加入button_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(279, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 28);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // QS_ii_QueryDGV
             // 
@@ -180,6 +169,5 @@
         internal System.Windows.Forms.DataGridView QS_ii_DGView1;
         internal System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_QueryDGV_Column1;
         private System.Windows.Forms.Button QS_ii_加入button;
-        private System.Windows.Forms.Button button1;
     }
 }
