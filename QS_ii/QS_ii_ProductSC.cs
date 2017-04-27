@@ -46,14 +46,15 @@ namespace QS_ii
             this.AutoSize = false;          //自動調整大小
             QS_ii_ProductSC_DGV1_SetColumns();      //ProductSC_DGV1自定顯示欄位
             QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
-            
             fun.EoD_Panel_btn(ProductSC_panel1, true);
+
+            QS_ii_ProductSC_DGV1_Column1.Visible = false;
             ProductSC_Status_info.Visible = false;
             QS_ii_ProductSC_儲存Button.Visible = false;
             QS_ii_ProductSC_取消Button.Visible = false;
-            QS_ii_Product多選.Visible = false;
-            QS_ii_Product新增.Visible = false;
-            QS_ii_Product刪除.Visible = false;
+            QS_ii_ProductSC多選.Visible = false;
+            QS_ii_ProductSC新增.Visible = false;
+            QS_ii_ProductSC刪除.Visible = false;
 
         }
 
@@ -64,13 +65,14 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "新增";
                 ProductSC_Status_info.Visible = true;
                 fun.EoD_Panel_btn(ProductSC_panel1, false);
+                QS_ii_ProductSC_DGV1_Column1.Visible = true;
                 QS_ii_ProductSC_儲存Button.Visible = true;
                 QS_ii_ProductSC_儲存Button.Enabled = true;
                 QS_ii_ProductSC_取消Button.Visible = true;
                 QS_ii_ProductSC_取消Button.Enabled = true;
-                QS_ii_Product多選.Visible = true;
-                QS_ii_Product新增.Visible = true;
-                QS_ii_Product刪除.Visible = true;
+                QS_ii_ProductSC多選.Visible = true;
+                QS_ii_ProductSC新增.Visible = true;
+                QS_ii_ProductSC刪除.Visible = true;
 
 
             }
@@ -79,13 +81,14 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "修改";
                 ProductSC_Status_info.Visible = true;
                 fun.EoD_Panel_btn(ProductSC_panel1, false);
+                QS_ii_ProductSC_DGV1_Column1.Visible = true;
                 QS_ii_ProductSC_儲存Button.Visible = true;
                 QS_ii_ProductSC_儲存Button.Enabled = true;
                 QS_ii_ProductSC_取消Button.Visible = true;
                 QS_ii_ProductSC_取消Button.Enabled = true;
-                QS_ii_Product多選.Visible = true;
-                QS_ii_Product新增.Visible = true;
-                QS_ii_Product刪除.Visible = true;
+                QS_ii_ProductSC多選.Visible = true;
+                QS_ii_ProductSC新增.Visible = true;
+                QS_ii_ProductSC刪除.Visible = true;
 
 
             }
@@ -99,6 +102,18 @@ namespace QS_ii
             }
             else if (x == QS_ii_ProductSC_儲存Button)
             {
+                ProductSC_Status_info.Text = "瀏覽";
+                ProductSC_Status_info.Visible = false;
+                fun.EoD_Panel_btn(ProductSC_panel1, true);
+                QS_ii_ProductSC_DGV1_Column1.Visible = false;
+                QS_ii_ProductSC_儲存Button.Visible = false;
+                QS_ii_ProductSC_儲存Button.Enabled = false;
+                QS_ii_ProductSC_取消Button.Visible = false;
+                QS_ii_ProductSC_取消Button.Enabled = false;
+                QS_ii_ProductSC多選.Visible = false;
+                QS_ii_ProductSC新增.Visible = false;
+                QS_ii_ProductSC刪除.Visible = false;
+                QS_iiQ_add.QSiiDB.QS_ii_ProductSC.AcceptChanges();
 
             }
             else if (x == QS_ii_ProductSC_取消Button)
@@ -106,13 +121,14 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "瀏覽";
                 ProductSC_Status_info.Visible = false;
                 fun.EoD_Panel_btn(ProductSC_panel1, true);
+                QS_ii_ProductSC_DGV1_Column1.Visible = false;
                 QS_ii_ProductSC_儲存Button.Visible = false;
                 QS_ii_ProductSC_儲存Button.Enabled = false;
                 QS_ii_ProductSC_取消Button.Visible = false;
                 QS_ii_ProductSC_取消Button.Enabled = false;
-                QS_ii_Product多選.Visible = false;
-                QS_ii_Product新增.Visible = false;
-                QS_ii_Product刪除.Visible = false;
+                QS_ii_ProductSC多選.Visible = false;
+                QS_ii_ProductSC新增.Visible = false;
+                QS_ii_ProductSC刪除.Visible = false;
                 QS_iiQ_add.QSiiDB.QS_ii_ProductSC.RejectChanges();
 
             }
@@ -147,30 +163,56 @@ namespace QS_ii
             start_status(QS_ii_ProductSC_取消Button);
         }
 
-        private void QS_ii_Product新增_Open()         //明細新增的方法
+        private void QS_ii_ProductSC_Detail_Modify(Button x)        //明細新增資料的方法(多選or單選)
         {
             #region 內容
             QS_ii_ProductSC_T ProductSC_ADD = new QS_ii_ProductSC_T(this);
-            ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示
-            QS_iiQ_add.Product_Query(ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢            
+            ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+            if (x == QS_ii_ProductSC多選)
+            {
+                ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
+            }
+            else if (x == QS_ii_ProductSC新增)
+            {
+                ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
+            }
+
+            QS_iiQ_add.Product_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢
+            //QS_iiQ_add.Product_Query(ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢  
             //設定init_Staff 新視窗的相對位置#############
             ProductSC_ADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################            
             ProductSC_ADD.ShowDialog();
             #endregion
-
         }
 
-        private void QS_ii_Product刪除_Open()         //明細刪除的方法
+        private void QS_ii_ProductSC新增_Open()         //明細新增的方法
         {
             #region 內容
+            QS_ii_ProductSC_Detail_Modify(QS_ii_ProductSC新增);
+            #endregion
+        }
+
+        private void QS_ii_ProductSC刪除_Open()         //明細刪除的方法
+        {
+            #region 內容
+            //***************DataTable刪除選取的資料*****************
+            for (int i = QS_ii_ProductSC_DGV1.Rows.Count - 1; i >= 0; i--)
+            {
+                if (QS_ii_ProductSC_DGV1.Rows[i].Cells[0].Value.ToString() == "1")
+                {
+                    this.QS_ii_ProductSC_DGV1.Rows.Remove(this.QS_ii_ProductSC_DGV1.Rows[i]);
+                    i = QS_ii_ProductSC_DGV1.Rows.Count;
+                }
+            }            
 
             #endregion
         }
 
-        private void QS_ii_Product多選_Open()         //明細多選的方法
+        private void QS_ii_ProductSC多選_Open()         //明細多選的方法
         {
             #region 內容
+            QS_ii_ProductSC_Detail_Modify(QS_ii_ProductSC多選);
 
             #endregion
         }
@@ -183,6 +225,8 @@ namespace QS_ii
             QS_ii_ProductSC_DGV1_Column3.DataPropertyName = "item_NO";
             QS_ii_ProductSC_DGV1_Column4.DataPropertyName = "item_NAME";
             QS_ii_ProductSC_DGV1_Column5.DataPropertyName = "EN_NAME";
+            QS_ii_ProductSC_DGV1_Column6.DataPropertyName = "SPEC";
+
 
         }
 
@@ -221,23 +265,23 @@ namespace QS_ii
             QS_ii_ProductSC_Cancel();            
         }
 
-        private void QS_ii_Product多選_Click(object sender, EventArgs e)
+        private void QS_ii_ProductSC多選_Click(object sender, EventArgs e)
         {
-            QS_ii_Product多選_Open();
+            QS_ii_ProductSC多選_Open();
         }
 
-        private void QS_ii_Product新增_Click(object sender, EventArgs e)
+        private void QS_ii_ProductSC新增_Click_1(object sender, EventArgs e)
         {
             #region  內容
-            QS_ii_Product新增_Open();           
+            QS_ii_ProductSC新增_Open();
             #endregion
-        }
 
-        private void QS_ii_Product刪除_Click(object sender, EventArgs e)
+        }       
+
+        private void QS_ii_ProductSC刪除_Click(object sender, EventArgs e)
         {
-            QS_ii_Product刪除_Open();
+            QS_ii_ProductSC刪除_Open();
         }
-
 
         #endregion
 
@@ -245,7 +289,7 @@ namespace QS_ii
 
         #region 事件
         //====================================================
-        private void QS_ii_ProductSC_DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void QS_ii_ProductSC_DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)      //QS_ii_Product_DGV中的Checkbox
         {
             if (e.ColumnIndex == 0 && e.RowIndex != -1)
             {
@@ -263,6 +307,12 @@ namespace QS_ii
                 #endregion
             }
         }
+
+        
+
+                
+
+
 
         //====================================================
         #endregion
@@ -291,6 +341,7 @@ namespace QS_ii
                 QS_ii_dr["item_NO"] = QS_ii_DGView1.CurrentRow.Cells["商品編號"].Value.ToString();
                 QS_ii_dr["item_NAME"] = QS_ii_DGView1.CurrentRow.Cells["商品名稱"].Value.ToString();
                 QS_ii_dr["EN_NAME"] = QS_ii_DGView1.CurrentRow.Cells["英文名稱"].Value.ToString();
+                QS_ii_dr["SPEC"] = QS_ii_DGView1.CurrentRow.Cells["規格"].Value.ToString();
                 QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
             }
             catch (Exception x)
@@ -299,6 +350,49 @@ namespace QS_ii
             }
 
             #endregion
+        }
+
+        public override void QS_ii_QueryDGV_QueryButton()       //查詢Button
+        {
+            //DataTable ProductM_dt = new DataTable();
+            //ProductM_dt.Columns.Add("Check");
+            //QS_ii_QueryDGV_Column1.Visible = true;
+            QSiiSC.QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
+            
+        }
+
+        public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button
+        {
+            DataView QS_ii_DViewPSC = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_Product);
+            DataView QS_ii_QDView = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+            QS_ii_DViewPSC.RowFilter = "Check = '1'";
+
+            foreach (DataRowView DViewPSC in QS_ii_DViewPSC)
+            {
+                DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.NewRow();
+                QS_ii_dr["Check"] = "0";
+                QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
+                QS_ii_dr["item_NO"] = DViewPSC["商品編號"];
+                QS_ii_dr["item_NAME"] = DViewPSC["商品名稱"];
+                QS_ii_dr["EN_NAME"] = DViewPSC["英文名稱"];
+                QS_ii_dr["SPEC"] = DViewPSC["規格"];
+                QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
+            }
+            this.Close();
+
+            //foreach (DataRowView DView in QS_ii_DView)
+            //{
+            //    DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_QProduct.NewRow();
+            //    QS_ii_dr["Check"] = "0";
+            //    QS_ii_dr["QT_NO"] = QS_iiQ_add.tb_QT_NO.Text;
+            //    QS_ii_dr["item_NO"] = DView["商品編號"];
+            //    QS_ii_dr["item_NAME"] = DView["商品名稱"];
+            //    QS_ii_dr["SPEC"] = DView["規格"];
+            //    QS_ii_dr["UNIT"] = DView["單位"];
+            //    QS_ii_dr["QTY"] = 1;
+            //    QS_ii_dr["UNIT_PRICE"] = DView["單價"];
+            //    QS_iiQ_add.QSiiDB.QS_ii_QProduct.Rows.Add(QS_ii_dr);
+            //}
         }
         
     }
