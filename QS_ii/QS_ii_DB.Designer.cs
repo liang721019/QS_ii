@@ -4311,6 +4311,8 @@ namespace QS_ii {
             
             private global::System.Data.DataColumn columnEN_NAME;
             
+            private global::System.Data.DataColumn columnSPEC;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public QS_ii_ProductSCDataTable() {
@@ -4386,6 +4388,14 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SPECColumn {
+                get {
+                    return this.columnSPEC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4421,14 +4431,15 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_ProductSCRow AddQS_ii_ProductSCRow(string Check, string CHAIN_NO, string item_NO, string item_NAME, string EN_NAME) {
+            public QS_ii_ProductSCRow AddQS_ii_ProductSCRow(string Check, string CHAIN_NO, string item_NO, string item_NAME, string EN_NAME, string SPEC) {
                 QS_ii_ProductSCRow rowQS_ii_ProductSCRow = ((QS_ii_ProductSCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Check,
                         CHAIN_NO,
                         item_NO,
                         item_NAME,
-                        EN_NAME};
+                        EN_NAME,
+                        SPEC};
                 rowQS_ii_ProductSCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowQS_ii_ProductSCRow);
                 return rowQS_ii_ProductSCRow;
@@ -4456,6 +4467,7 @@ namespace QS_ii {
                 this.columnitem_NO = base.Columns["item_NO"];
                 this.columnitem_NAME = base.Columns["item_NAME"];
                 this.columnEN_NAME = base.Columns["EN_NAME"];
+                this.columnSPEC = base.Columns["SPEC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4471,6 +4483,8 @@ namespace QS_ii {
                 base.Columns.Add(this.columnitem_NAME);
                 this.columnEN_NAME = new global::System.Data.DataColumn("EN_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEN_NAME);
+                this.columnSPEC = new global::System.Data.DataColumn("SPEC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSPEC);
                 this.columnCHAIN_NO.Caption = "QT_NO";
                 this.columnitem_NO.AllowDBNull = false;
             }
@@ -7944,6 +7958,22 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SPEC {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_ProductSC.SPECColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_ProductSC\' 中資料行 \'SPEC\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_ProductSC.SPECColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCheckNull() {
                 return this.IsNull(this.tableQS_ii_ProductSC.CheckColumn);
             }
@@ -7988,6 +8018,18 @@ namespace QS_ii {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEN_NAMENull() {
                 this[this.tableQS_ii_ProductSC.EN_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSPECNull() {
+                return this.IsNull(this.tableQS_ii_ProductSC.SPECColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSPECNull() {
+                this[this.tableQS_ii_ProductSC.SPECColumn] = global::System.Convert.DBNull;
             }
         }
         
