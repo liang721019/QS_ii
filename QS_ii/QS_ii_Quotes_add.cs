@@ -454,6 +454,29 @@ namespace QS_ii
             
         }
 
+        private void Quotes_Detail_Modify(Button x)          //報價單明細新增資料的方法(多選or單選)
+        {
+            #region  內容
+            QS_ii_TQueryDGV ProductADD = new QS_ii_TQueryDGV(this);
+            ProductADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+            if (x == Product_新增button)
+            {
+                ProductADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
+                //Product_Query(ProductADD.QS_ii_DGView1);        //商品主檔查詢
+                Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
+            }
+            else if (x == Product_多選button)
+            {
+                ProductADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
+                Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
+            }
+            //設定init_Staff 新視窗的相對位置#############
+            ProductADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################            
+            ProductADD.ShowDialog();
+            #endregion
+        }
+
         private void QS_ii_客戶_Open()       //客戶主檔開窗
         {
             QS_ii_TCustomer inSea = new QS_ii_TCustomer(this);
@@ -678,13 +701,7 @@ namespace QS_ii
         private void Product_新增button_Click(object sender, EventArgs e)
         {
             #region  內容
-            QS_ii_TQueryDGV ProductADD = new QS_ii_TQueryDGV(this);
-            ProductADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示
-            Product_Query(ProductADD.QS_ii_DGView1);        //商品主檔查詢            
-            //設定init_Staff 新視窗的相對位置#############
-            ProductADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            //############################################            
-            ProductADD.ShowDialog();
+            Quotes_Detail_Modify(Product_新增button);            
             #endregion
         }
 
@@ -707,17 +724,7 @@ namespace QS_ii
         private void Product_多選button_Click(object sender, EventArgs e)
         {
             #region  內容
-            QS_ii_TQueryDGV ProductADD = new QS_ii_TQueryDGV(this);
-            ProductADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示
-            ProductADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check"; 
-            //Product_Query(ProductADD.QS_ii_DGView1);        //商品主檔查詢
-            Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
-            //ProductADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check"; 
-            
-            //設定init_Staff 新視窗的相對位置#############
-            ProductADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            //############################################
-            ProductADD.ShowDialog();
+            Quotes_Detail_Modify(Product_多選button);            
             #endregion            
         }
 
@@ -904,9 +911,16 @@ namespace QS_ii
             //DataTable ProductM_dt = new DataTable();
             //ProductM_dt.Columns.Add("Check");
             //QS_ii_QueryDGV_Column1.Visible = true;
-            QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
-            QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
-            
+            if (QS_ii_QueryDGV_Column1.Visible)
+            {
+                QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+                QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
+            }
+            else
+            {
+                QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+                QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
+            }
         }       
         
         public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button//

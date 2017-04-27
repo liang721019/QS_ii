@@ -28,17 +28,18 @@ namespace QS_ii
             this.MinimizeBox = false;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
             this.AutoSize = false;          //自動調整大小
+
         }
 
         private void QS_ii_查詢button_Click(object sender, EventArgs e)
-        {            
-            QS_ii_QueryDGV_QueryButton();
+        {
+            QS_ii_QueryDGV_QueryButton();          
         }
 
         public virtual void QS_ii_QueryDGV_QueryButton()        //查詢Button
         {
 
-        }
+        }        
         
         public virtual void QS_ii_QueryDGV_DGView1()        //DGView1資料呼叫方法
         {
