@@ -69,7 +69,7 @@
             this.ProductSC_tabControl1.Margin = new System.Windows.Forms.Padding(5);
             this.ProductSC_tabControl1.Name = "ProductSC_tabControl1";
             this.ProductSC_tabControl1.SelectedIndex = 0;
-            this.ProductSC_tabControl1.Size = new System.Drawing.Size(553, 328);
+            this.ProductSC_tabControl1.Size = new System.Drawing.Size(586, 356);
             this.ProductSC_tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -88,14 +88,14 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage1.Size = new System.Drawing.Size(545, 295);
+            this.tabPage1.Size = new System.Drawing.Size(578, 323);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "通路資訊";
             // 
             // QS_ii_Product多選
             // 
             this.QS_ii_Product多選.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_Product多選.Location = new System.Drawing.Point(478, 68);
+            this.QS_ii_Product多選.Location = new System.Drawing.Point(531, 68);
             this.QS_ii_Product多選.Name = "QS_ii_Product多選";
             this.QS_ii_Product多選.Size = new System.Drawing.Size(35, 35);
             this.QS_ii_Product多選.TabIndex = 7;
@@ -106,7 +106,7 @@
             // QS_ii_Product刪除
             // 
             this.QS_ii_Product刪除.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_Product刪除.Location = new System.Drawing.Point(478, 150);
+            this.QS_ii_Product刪除.Location = new System.Drawing.Point(531, 150);
             this.QS_ii_Product刪除.Name = "QS_ii_Product刪除";
             this.QS_ii_Product刪除.Size = new System.Drawing.Size(35, 35);
             this.QS_ii_Product刪除.TabIndex = 6;
@@ -117,7 +117,7 @@
             // QS_ii_Product新增
             // 
             this.QS_ii_Product新增.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_Product新增.Location = new System.Drawing.Point(478, 109);
+            this.QS_ii_Product新增.Location = new System.Drawing.Point(531, 109);
             this.QS_ii_Product新增.Name = "QS_ii_Product新增";
             this.QS_ii_Product新增.Size = new System.Drawing.Size(35, 35);
             this.QS_ii_Product新增.TabIndex = 5;
@@ -137,7 +137,7 @@
             this.QS_ii_ProductSC_DGV1.Name = "QS_ii_ProductSC_DGV1";
             this.QS_ii_ProductSC_DGV1.ReadOnly = true;
             this.QS_ii_ProductSC_DGV1.RowTemplate.Height = 24;
-            this.QS_ii_ProductSC_DGV1.Size = new System.Drawing.Size(462, 215);
+            this.QS_ii_ProductSC_DGV1.Size = new System.Drawing.Size(513, 243);
             this.QS_ii_ProductSC_DGV1.TabIndex = 4;
             // 
             // QS_ii_ProductSC_CHAIN_NAME
@@ -196,13 +196,13 @@
             this.ProductSC_panel1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ProductSC_panel1.Location = new System.Drawing.Point(12, 1);
             this.ProductSC_panel1.Name = "ProductSC_panel1";
-            this.ProductSC_panel1.Size = new System.Drawing.Size(553, 55);
+            this.ProductSC_panel1.Size = new System.Drawing.Size(586, 55);
             this.ProductSC_panel1.TabIndex = 8;
             // 
             // QS_ii_ProductSC_取消Button
             // 
             this.QS_ii_ProductSC_取消Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.QS_ii_ProductSC_取消Button.Location = new System.Drawing.Point(489, 3);
+            this.QS_ii_ProductSC_取消Button.Location = new System.Drawing.Point(522, 3);
             this.QS_ii_ProductSC_取消Button.Name = "QS_ii_ProductSC_取消Button";
             this.QS_ii_ProductSC_取消Button.Size = new System.Drawing.Size(54, 44);
             this.QS_ii_ProductSC_取消Button.TabIndex = 5;
@@ -213,7 +213,7 @@
             // QS_ii_ProductSC_儲存Button
             // 
             this.QS_ii_ProductSC_儲存Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.QS_ii_ProductSC_儲存Button.Location = new System.Drawing.Point(428, 3);
+            this.QS_ii_ProductSC_儲存Button.Location = new System.Drawing.Point(461, 3);
             this.QS_ii_ProductSC_儲存Button.Name = "QS_ii_ProductSC_儲存Button";
             this.QS_ii_ProductSC_儲存Button.Size = new System.Drawing.Size(55, 45);
             this.QS_ii_ProductSC_儲存Button.TabIndex = 4;
@@ -267,9 +267,9 @@
             this.Server_ENV,
             this.toolStripStatusLabel2,
             this.USER_ID});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 397);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 425);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(577, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(610, 22);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -300,7 +300,7 @@
             this.ProductSC_Status_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ProductSC_Status_info.AutoSize = true;
             this.ProductSC_Status_info.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ProductSC_Status_info.Location = new System.Drawing.Point(516, 399);
+            this.ProductSC_Status_info.Location = new System.Drawing.Point(549, 427);
             this.ProductSC_Status_info.Name = "ProductSC_Status_info";
             this.ProductSC_Status_info.Size = new System.Drawing.Size(41, 20);
             this.ProductSC_Status_info.TabIndex = 6;
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(577, 419);
+            this.ClientSize = new System.Drawing.Size(610, 447);
             this.Controls.Add(this.ProductSC_Status_info);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ProductSC_panel1);

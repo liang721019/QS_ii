@@ -190,6 +190,7 @@ namespace QS_ii
         
         public void default_status()            //預設狀態
         {
+            #region 內容
             this.Text = "報價系統";
             //this.MaximizeBox = true;       //最大化
             //this.MinimizeBox = true;       //最小化
@@ -231,6 +232,7 @@ namespace QS_ii
             QS_ii_Head_DataBinding(QSiiDB.QS_ii_HQT01);           //datatable的欄位與Text綁定資料-報價單表頭            
             QS_ii_PriceDataBinding(QSiiDB.QS_ii_QProduct);     //datatable的欄位與Text綁定資料-金額欄位
 
+            #endregion
         }        
 
         public void start_status(Button x)      //啟動狀態

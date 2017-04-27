@@ -12,7 +12,7 @@
   <xs:element name="QS_ii_DB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QS_ii_DB" msprop:Generator_UserDSName="QS_ii_DB">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="QS_ii_QProduct" msprop:Generator_TableClassName="QS_ii_QProductDataTable" msprop:Generator_TableVarName="tableQS_ii_QProduct" msprop:Generator_TablePropName="QS_ii_QProduct" msprop:Generator_RowDeletingName="QS_ii_QProductRowDeleting" msprop:Generator_RowChangingName="QS_ii_QProductRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_QProductRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_QProductRowDeleted" msprop:Generator_UserTableName="QS_ii_QProduct" msprop:Generator_RowChangedName="QS_ii_QProductRowChanged" msprop:Generator_RowEvArgName="QS_ii_QProductRowChangeEvent" msprop:Generator_RowClassName="QS_ii_QProductRow">
+        <xs:element name="QS_ii_QProduct" msprop:Generator_TableClassName="QS_ii_QProductDataTable" msprop:Generator_TableVarName="tableQS_ii_QProduct" msprop:Generator_RowChangedName="QS_ii_QProductRowChanged" msprop:Generator_TablePropName="QS_ii_QProduct" msprop:Generator_RowDeletingName="QS_ii_QProductRowDeleting" msprop:Generator_RowChangingName="QS_ii_QProductRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_QProductRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_QProductRowDeleted" msprop:Generator_RowClassName="QS_ii_QProductRow" msprop:Generator_UserTableName="QS_ii_QProduct" msprop:Generator_RowEvArgName="QS_ii_QProductRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Check" msprop:Generator_ColumnVarNameInTable="columnCheck" msprop:Generator_ColumnPropNameInRow="Check" msprop:Generator_ColumnPropNameInTable="CheckColumn" msprop:Generator_UserColumnName="Check" type="xs:string" minOccurs="0" />
@@ -31,7 +31,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_QProduct_total" msprop:Generator_TableClassName="QS_ii_QProduct_totalDataTable" msprop:Generator_TableVarName="tableQS_ii_QProduct_total" msprop:Generator_RowChangedName="QS_ii_QProduct_totalRowChanged" msprop:Generator_TablePropName="QS_ii_QProduct_total" msprop:Generator_RowDeletingName="QS_ii_QProduct_totalRowDeleting" msprop:Generator_RowChangingName="QS_ii_QProduct_totalRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_QProduct_totalRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_QProduct_totalRowDeleted" msprop:Generator_RowClassName="QS_ii_QProduct_totalRow" msprop:Generator_UserTableName="QS_ii_QProduct_total" msprop:Generator_RowEvArgName="QS_ii_QProduct_totalRowChangeEvent">
+        <xs:element name="QS_ii_QProduct_total" msprop:Generator_TableClassName="QS_ii_QProduct_totalDataTable" msprop:Generator_TableVarName="tableQS_ii_QProduct_total" msprop:Generator_TablePropName="QS_ii_QProduct_total" msprop:Generator_RowDeletingName="QS_ii_QProduct_totalRowDeleting" msprop:Generator_RowChangingName="QS_ii_QProduct_totalRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_QProduct_totalRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_QProduct_totalRowDeleted" msprop:Generator_UserTableName="QS_ii_QProduct_total" msprop:Generator_RowChangedName="QS_ii_QProduct_totalRowChanged" msprop:Generator_RowEvArgName="QS_ii_QProduct_totalRowChangeEvent" msprop:Generator_RowClassName="QS_ii_QProduct_totalRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="QT_NO" msprop:Generator_ColumnVarNameInTable="columnQT_NO" msprop:Generator_ColumnPropNameInRow="QT_NO" msprop:Generator_ColumnPropNameInTable="QT_NOColumn" msprop:Generator_UserColumnName="QT_NO" type="xs:string" minOccurs="0" />
@@ -41,7 +41,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_HQT01" msprop:Generator_TableClassName="QS_ii_HQT01DataTable" msprop:Generator_TableVarName="tableQS_ii_HQT01" msprop:Generator_TablePropName="QS_ii_HQT01" msprop:Generator_RowDeletingName="QS_ii_HQT01RowDeleting" msprop:Generator_RowChangingName="QS_ii_HQT01RowChanging" msprop:Generator_RowEvHandlerName="QS_ii_HQT01RowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_HQT01RowDeleted" msprop:Generator_UserTableName="QS_ii_HQT01" msprop:Generator_RowChangedName="QS_ii_HQT01RowChanged" msprop:Generator_RowEvArgName="QS_ii_HQT01RowChangeEvent" msprop:Generator_RowClassName="QS_ii_HQT01Row">
+        <xs:element name="QS_ii_HQT01" msprop:Generator_TableClassName="QS_ii_HQT01DataTable" msprop:Generator_TableVarName="tableQS_ii_HQT01" msprop:Generator_RowChangedName="QS_ii_HQT01RowChanged" msprop:Generator_TablePropName="QS_ii_HQT01" msprop:Generator_RowDeletingName="QS_ii_HQT01RowDeleting" msprop:Generator_RowChangingName="QS_ii_HQT01RowChanging" msprop:Generator_RowEvHandlerName="QS_ii_HQT01RowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_HQT01RowDeleted" msprop:Generator_RowClassName="QS_ii_HQT01Row" msprop:Generator_UserTableName="QS_ii_HQT01" msprop:Generator_RowEvArgName="QS_ii_HQT01RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="QT_NO" msprop:Generator_ColumnVarNameInTable="columnQT_NO" msprop:Generator_ColumnPropNameInRow="QT_NO" msprop:Generator_ColumnPropNameInTable="QT_NOColumn" msprop:Generator_UserColumnName="QT_NO" type="xs:string" minOccurs="0" />
@@ -66,7 +66,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_HQProduct" msprop:Generator_TableClassName="QS_ii_HQProductDataTable" msprop:Generator_TableVarName="tableQS_ii_HQProduct" msprop:Generator_TablePropName="QS_ii_HQProduct" msprop:Generator_RowDeletingName="QS_ii_HQProductRowDeleting" msprop:Generator_RowChangingName="QS_ii_HQProductRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_HQProductRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_HQProductRowDeleted" msprop:Generator_UserTableName="QS_ii_HQProduct" msprop:Generator_RowChangedName="QS_ii_HQProductRowChanged" msprop:Generator_RowEvArgName="QS_ii_HQProductRowChangeEvent" msprop:Generator_RowClassName="QS_ii_HQProductRow">
+        <xs:element name="QS_ii_HQProduct" msprop:Generator_TableClassName="QS_ii_HQProductDataTable" msprop:Generator_TableVarName="tableQS_ii_HQProduct" msprop:Generator_RowChangedName="QS_ii_HQProductRowChanged" msprop:Generator_TablePropName="QS_ii_HQProduct" msprop:Generator_RowDeletingName="QS_ii_HQProductRowDeleting" msprop:Generator_RowChangingName="QS_ii_HQProductRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_HQProductRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_HQProductRowDeleted" msprop:Generator_RowClassName="QS_ii_HQProductRow" msprop:Generator_UserTableName="QS_ii_HQProduct" msprop:Generator_RowEvArgName="QS_ii_HQProductRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Check" msdata:Caption="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnCheck" msprop:Generator_ColumnPropNameInRow="Check" msprop:Generator_ColumnPropNameInTable="CheckColumn" msprop:Generator_UserColumnName="Check" type="xs:string" minOccurs="0" />
@@ -84,7 +84,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_HQProduct_total" msprop:Generator_TableClassName="QS_ii_HQProduct_totalDataTable" msprop:Generator_TableVarName="tableQS_ii_HQProduct_total" msprop:Generator_TablePropName="QS_ii_HQProduct_total" msprop:Generator_RowDeletingName="QS_ii_HQProduct_totalRowDeleting" msprop:Generator_RowChangingName="QS_ii_HQProduct_totalRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_HQProduct_totalRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_HQProduct_totalRowDeleted" msprop:Generator_UserTableName="QS_ii_HQProduct_total" msprop:Generator_RowChangedName="QS_ii_HQProduct_totalRowChanged" msprop:Generator_RowEvArgName="QS_ii_HQProduct_totalRowChangeEvent" msprop:Generator_RowClassName="QS_ii_HQProduct_totalRow">
+        <xs:element name="QS_ii_HQProduct_total" msprop:Generator_TableClassName="QS_ii_HQProduct_totalDataTable" msprop:Generator_TableVarName="tableQS_ii_HQProduct_total" msprop:Generator_RowChangedName="QS_ii_HQProduct_totalRowChanged" msprop:Generator_TablePropName="QS_ii_HQProduct_total" msprop:Generator_RowDeletingName="QS_ii_HQProduct_totalRowDeleting" msprop:Generator_RowChangingName="QS_ii_HQProduct_totalRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_HQProduct_totalRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_HQProduct_totalRowDeleted" msprop:Generator_RowClassName="QS_ii_HQProduct_totalRow" msprop:Generator_UserTableName="QS_ii_HQProduct_total" msprop:Generator_RowEvArgName="QS_ii_HQProduct_totalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="QT_NO" msprop:Generator_ColumnVarNameInTable="columnQT_NO" msprop:Generator_ColumnPropNameInRow="QT_NO" msprop:Generator_ColumnPropNameInTable="QT_NOColumn" msprop:Generator_UserColumnName="QT_NO" type="xs:string" minOccurs="0" />
@@ -94,7 +94,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_HQCustomer" msprop:Generator_TableClassName="QS_ii_HQCustomerDataTable" msprop:Generator_TableVarName="tableQS_ii_HQCustomer" msprop:Generator_RowChangedName="QS_ii_HQCustomerRowChanged" msprop:Generator_TablePropName="QS_ii_HQCustomer" msprop:Generator_RowDeletingName="QS_ii_HQCustomerRowDeleting" msprop:Generator_RowChangingName="QS_ii_HQCustomerRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_HQCustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_HQCustomerRowDeleted" msprop:Generator_RowClassName="QS_ii_HQCustomerRow" msprop:Generator_UserTableName="QS_ii_HQCustomer" msprop:Generator_RowEvArgName="QS_ii_HQCustomerRowChangeEvent">
+        <xs:element name="QS_ii_HQCustomer" msprop:Generator_TableClassName="QS_ii_HQCustomerDataTable" msprop:Generator_TableVarName="tableQS_ii_HQCustomer" msprop:Generator_TablePropName="QS_ii_HQCustomer" msprop:Generator_RowDeletingName="QS_ii_HQCustomerRowDeleting" msprop:Generator_RowChangingName="QS_ii_HQCustomerRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_HQCustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_HQCustomerRowDeleted" msprop:Generator_UserTableName="QS_ii_HQCustomer" msprop:Generator_RowChangedName="QS_ii_HQCustomerRowChanged" msprop:Generator_RowEvArgName="QS_ii_HQCustomerRowChangeEvent" msprop:Generator_RowClassName="QS_ii_HQCustomerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CUST_NO" msprop:Generator_ColumnVarNameInTable="columnCUST_NO" msprop:Generator_ColumnPropNameInRow="CUST_NO" msprop:Generator_ColumnPropNameInTable="CUST_NOColumn" msprop:Generator_UserColumnName="CUST_NO" type="xs:string" minOccurs="0" />
@@ -115,7 +115,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_QT01" msprop:Generator_TableClassName="QS_ii_QT01DataTable" msprop:Generator_TableVarName="tableQS_ii_QT01" msprop:Generator_RowChangedName="QS_ii_QT01RowChanged" msprop:Generator_TablePropName="QS_ii_QT01" msprop:Generator_RowDeletingName="QS_ii_QT01RowDeleting" msprop:Generator_RowChangingName="QS_ii_QT01RowChanging" msprop:Generator_RowEvHandlerName="QS_ii_QT01RowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_QT01RowDeleted" msprop:Generator_RowClassName="QS_ii_QT01Row" msprop:Generator_UserTableName="QS_ii_QT01" msprop:Generator_RowEvArgName="QS_ii_QT01RowChangeEvent">
+        <xs:element name="QS_ii_QT01" msprop:Generator_TableClassName="QS_ii_QT01DataTable" msprop:Generator_TableVarName="tableQS_ii_QT01" msprop:Generator_TablePropName="QS_ii_QT01" msprop:Generator_RowDeletingName="QS_ii_QT01RowDeleting" msprop:Generator_RowChangingName="QS_ii_QT01RowChanging" msprop:Generator_RowEvHandlerName="QS_ii_QT01RowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_QT01RowDeleted" msprop:Generator_UserTableName="QS_ii_QT01" msprop:Generator_RowChangedName="QS_ii_QT01RowChanged" msprop:Generator_RowEvArgName="QS_ii_QT01RowChangeEvent" msprop:Generator_RowClassName="QS_ii_QT01Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="QT_NO" msprop:Generator_ColumnVarNameInTable="columnQT_NO" msprop:Generator_ColumnPropNameInRow="QT_NO" msprop:Generator_ColumnPropNameInTable="QT_NOColumn" msprop:Generator_UserColumnName="QT_NO" type="xs:string" minOccurs="0" />
@@ -140,7 +140,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_QCustomer" msprop:Generator_TableClassName="QS_ii_QCustomerDataTable" msprop:Generator_TableVarName="tableQS_ii_QCustomer" msprop:Generator_RowChangedName="QS_ii_QCustomerRowChanged" msprop:Generator_TablePropName="QS_ii_QCustomer" msprop:Generator_RowDeletingName="QS_ii_QCustomerRowDeleting" msprop:Generator_RowChangingName="QS_ii_QCustomerRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_QCustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_QCustomerRowDeleted" msprop:Generator_RowClassName="QS_ii_QCustomerRow" msprop:Generator_UserTableName="QS_ii_QCustomer" msprop:Generator_RowEvArgName="QS_ii_QCustomerRowChangeEvent">
+        <xs:element name="QS_ii_QCustomer" msprop:Generator_TableClassName="QS_ii_QCustomerDataTable" msprop:Generator_TableVarName="tableQS_ii_QCustomer" msprop:Generator_TablePropName="QS_ii_QCustomer" msprop:Generator_RowDeletingName="QS_ii_QCustomerRowDeleting" msprop:Generator_RowChangingName="QS_ii_QCustomerRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_QCustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_QCustomerRowDeleted" msprop:Generator_UserTableName="QS_ii_QCustomer" msprop:Generator_RowChangedName="QS_ii_QCustomerRowChanged" msprop:Generator_RowEvArgName="QS_ii_QCustomerRowChangeEvent" msprop:Generator_RowClassName="QS_ii_QCustomerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CUST_NO" msprop:Generator_ColumnVarNameInTable="columnCUST_NO" msprop:Generator_ColumnPropNameInRow="CUST_NO" msprop:Generator_ColumnPropNameInTable="CUST_NOColumn" msprop:Generator_UserColumnName="CUST_NO" type="xs:string" minOccurs="0" />
@@ -161,7 +161,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_Product" msprop:Generator_TableClassName="QS_ii_ProductDataTable" msprop:Generator_TableVarName="tableQS_ii_Product" msprop:Generator_TablePropName="QS_ii_Product" msprop:Generator_RowDeletingName="QS_ii_ProductRowDeleting" msprop:Generator_RowChangingName="QS_ii_ProductRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_ProductRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_ProductRowDeleted" msprop:Generator_UserTableName="QS_ii_Product" msprop:Generator_RowChangedName="QS_ii_ProductRowChanged" msprop:Generator_RowEvArgName="QS_ii_ProductRowChangeEvent" msprop:Generator_RowClassName="QS_ii_ProductRow">
+        <xs:element name="QS_ii_Product" msprop:Generator_TableClassName="QS_ii_ProductDataTable" msprop:Generator_TableVarName="tableQS_ii_Product" msprop:Generator_RowChangedName="QS_ii_ProductRowChanged" msprop:Generator_TablePropName="QS_ii_Product" msprop:Generator_RowDeletingName="QS_ii_ProductRowDeleting" msprop:Generator_RowChangingName="QS_ii_ProductRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_ProductRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_ProductRowDeleted" msprop:Generator_RowClassName="QS_ii_ProductRow" msprop:Generator_UserTableName="QS_ii_Product" msprop:Generator_RowEvArgName="QS_ii_ProductRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Check" msprop:Generator_ColumnVarNameInTable="columnCheck" msprop:Generator_ColumnPropNameInRow="Check" msprop:Generator_ColumnPropNameInTable="CheckColumn" msprop:Generator_UserColumnName="Check" type="xs:string" minOccurs="0" />
@@ -178,13 +178,14 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="QS_ii_ProductSC" msprop:Generator_TableClassName="QS_ii_ProductSCDataTable" msprop:Generator_TableVarName="tableQS_ii_ProductSC" msprop:Generator_TablePropName="QS_ii_ProductSC" msprop:Generator_RowDeletingName="QS_ii_ProductSCRowDeleting" msprop:Generator_RowChangingName="QS_ii_ProductSCRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_ProductSCRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_ProductSCRowDeleted" msprop:Generator_UserTableName="QS_ii_ProductSC" msprop:Generator_RowChangedName="QS_ii_ProductSCRowChanged" msprop:Generator_RowEvArgName="QS_ii_ProductSCRowChangeEvent" msprop:Generator_RowClassName="QS_ii_ProductSCRow">
+        <xs:element name="QS_ii_ProductSC" msprop:Generator_TableClassName="QS_ii_ProductSCDataTable" msprop:Generator_TableVarName="tableQS_ii_ProductSC" msprop:Generator_RowChangedName="QS_ii_ProductSCRowChanged" msprop:Generator_TablePropName="QS_ii_ProductSC" msprop:Generator_RowDeletingName="QS_ii_ProductSCRowDeleting" msprop:Generator_RowChangingName="QS_ii_ProductSCRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_ProductSCRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_ProductSCRowDeleted" msprop:Generator_RowClassName="QS_ii_ProductSCRow" msprop:Generator_UserTableName="QS_ii_ProductSC" msprop:Generator_RowEvArgName="QS_ii_ProductSCRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Check" msprop:Generator_ColumnVarNameInTable="columnCheck" msprop:Generator_ColumnPropNameInRow="Check" msprop:Generator_ColumnPropNameInTable="CheckColumn" msprop:Generator_UserColumnName="Check" type="xs:string" minOccurs="0" />
               <xs:element name="CHAIN_NO" msdata:Caption="QT_NO" msprop:Generator_ColumnVarNameInTable="columnCHAIN_NO" msprop:Generator_ColumnPropNameInRow="CHAIN_NO" msprop:Generator_ColumnPropNameInTable="CHAIN_NOColumn" msprop:Generator_UserColumnName="CHAIN_NO" type="xs:string" minOccurs="0" />
               <xs:element name="item_NO" msprop:Generator_ColumnVarNameInTable="columnitem_NO" msprop:Generator_ColumnPropNameInRow="item_NO" msprop:Generator_ColumnPropNameInTable="item_NOColumn" msprop:Generator_UserColumnName="item_NO" type="xs:string" />
               <xs:element name="item_NAME" msprop:Generator_ColumnVarNameInTable="columnitem_NAME" msprop:Generator_ColumnPropNameInRow="item_NAME" msprop:Generator_ColumnPropNameInTable="item_NAMEColumn" msprop:Generator_UserColumnName="item_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EN_NAME" msprop:Generator_ColumnVarNameInTable="columnEN_NAME" msprop:Generator_ColumnPropNameInRow="EN_NAME" msprop:Generator_ColumnPropNameInTable="EN_NAMEColumn" msprop:Generator_UserColumnName="EN_NAME" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
