@@ -22,6 +22,14 @@ namespace QS_ii
             InitializeComponent();
         }
 
+        private void QS_ii_main_Load(object sender, EventArgs e)
+        {
+            default_status();
+            //QS_ii_Head_DataBinding(QSiiDB.QS_ii_HQT01);           //datatable的欄位與Text綁定資料-報價單表頭
+            //QS_ii_DataBinding(QSiiDB.QS_ii_QProduct);           //datatable的欄位與Text綁定資料-金額欄位
+
+        }
+
         #region 變數
         //==============================================================================================================
         public string QueryDB       //DB連線字串
@@ -622,15 +630,7 @@ namespace QS_ii
 
         
         //==============================================================================================================
-        #endregion
-
-        private void QS_ii_main_Load(object sender, EventArgs e)
-        {            
-            default_status();
-            //QS_ii_Head_DataBinding(QSiiDB.QS_ii_HQT01);           //datatable的欄位與Text綁定資料-報價單表頭
-            //QS_ii_DataBinding(QSiiDB.QS_ii_QProduct);           //datatable的欄位與Text綁定資料-金額欄位
-            
-        }
+        #endregion        
 
         #region button
         //==============================================================================================================
