@@ -411,9 +411,7 @@ namespace QS_ii
                 fun.QS_ii_ModifyProductADD_ds(QueryDB, QSiiDB.QS_ii_QProduct);
                 GetSQL("表頭修改");
                 fun.QS_ii_ModifyQT01_ds(QueryDB);
-                //fun.QS_ii_QText(QSiiDB.QS_ii_QProduct);
-
-                //QSiiDB.QS_ii_QProduct.AcceptChanges();      //****重要****要加這行才算是更新DataTable
+                //fun.QS_ii_QText(QSiiDB.QS_ii_QProduct);                
                 if (fun.Check_error == false)
                 {
                     start_status(QS_ii_儲存button);
@@ -477,6 +475,18 @@ namespace QS_ii
 
         }
 
+        private void QS_ii_通路_Open()       //通路主檔開窗
+        {
+            QS_ii_ProductSC inQS_ProductSC = new QS_ii_ProductSC(this);
+            //設定init_Staff 新視窗的相對位置#############
+            inQS_ProductSC.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################
+            inQS_ProductSC.Server_ENV.Text = QS_ii_Server_ENV.Text;      //server
+            inQS_ProductSC.USER_ID.Text = USER_ID.Text;      //UID
+            inQS_ProductSC.ShowDialog();
+
+        }
+
         public void Product_Query(TextBox tx ,DataTable Dx, DataGridView dgv )        //商品主檔查詢
         {
             
@@ -490,7 +500,7 @@ namespace QS_ii
 
         }
 
-        private void Product_Query(DataGridView dgv)            //商品主檔查詢
+        public void Product_Query(DataGridView dgv)            //商品主檔查詢
         {
             GetSQL("商品主檔查詢");    //語法丟進QueryDB            
             fun.xxx_DB(QueryDB, dgv);         //連接DB-執行DB指令
@@ -597,7 +607,6 @@ namespace QS_ii
             
         }
 
-
         #region button
         //==============================================================================================================
 
@@ -627,6 +636,11 @@ namespace QS_ii
         private void QS_ii_產品button_Click(object sender, EventArgs e)
         {
             QS_ii_產品_Open();        //商品主檔開窗            
+        }
+
+        private void QS_ii_通路button_Click(object sender, EventArgs e)
+        {
+            QS_ii_通路_Open();       //通路主檔開窗
         }
 
         private void QS_ii_查詢button_Click(object sender, EventArgs e)
@@ -712,10 +726,7 @@ namespace QS_ii
 
         }
 
-        private void QS_ii_通路button_Click(object sender, EventArgs e)
-        {
-            start_status(QS_ii_通路button);
-        }
+        
 
         //==============================================================================================================
         #endregion
@@ -895,7 +906,6 @@ namespace QS_ii
             QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
             
         }       
-
         
         public override void QS_ii_QueryDGV_加入button()
         {   
@@ -903,6 +913,7 @@ namespace QS_ii
             DataView QS_ii_DView = new DataView(QS_iiQ_add.QSiiDB.QS_ii_Product);
             DataView QS_ii_QDView = new DataView(QS_iiQ_add.QSiiDB.QS_ii_QProduct);
             QS_ii_DView.RowFilter = "Check = '1'";
+            
             foreach (DataRowView DView in QS_ii_DView)
             {
                 DataRowView QS_ii_dr = QS_ii_QDView.AddNew();
@@ -914,7 +925,21 @@ namespace QS_ii
                 QS_ii_dr["UNIT"] = DView["單位"];
                 QS_ii_dr["QTY"] = 1;
                 QS_ii_dr["UNIT_PRICE"] = DView["單價"];
-                QS_ii_dr.EndEdit();                      
+                QS_ii_dr.EndEdit();
+                //foreach(DataRowView QDView in QS_ii_QDView)
+                //{
+                    
+                //    if (QDView.Row["item_NO",DataRowVersion.Current] == DView["商品編號"])
+                //    {
+                //        MessageBox.Show("123");
+                //        QS_ii_dr.Delete();                        
+                //    }
+                //    else
+                //    {                        
+                //        QS_ii_dr.EndEdit();
+                //    }
+                //}
+          
             }
             
             //foreach (DataRowView DView in QS_ii_DView)

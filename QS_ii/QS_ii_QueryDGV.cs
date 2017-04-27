@@ -14,6 +14,7 @@ namespace QS_ii
 {
     public partial class QS_ii_QueryDGV : Form 
     {
+        
 
         public QS_ii_QueryDGV()
         {
