@@ -51,6 +51,11 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.USER_ID = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProductSC_Status_info = new System.Windows.Forms.Label();
+            this.QS_ii_ProductSC_DGV1_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.QS_ii_ProductSC_DGV1_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_ProductSC_DGV1_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_ProductSC_DGV1_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_ProductSC_DGV1_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductSC_tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_ProductSC_DGV1)).BeginInit();
@@ -133,12 +138,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.QS_ii_ProductSC_DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QS_ii_ProductSC_DGV1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.QS_ii_ProductSC_DGV1_Column1,
+            this.QS_ii_ProductSC_DGV1_Column2,
+            this.QS_ii_ProductSC_DGV1_Column3,
+            this.QS_ii_ProductSC_DGV1_Column4,
+            this.QS_ii_ProductSC_DGV1_Column5});
             this.QS_ii_ProductSC_DGV1.Location = new System.Drawing.Point(12, 68);
             this.QS_ii_ProductSC_DGV1.Name = "QS_ii_ProductSC_DGV1";
             this.QS_ii_ProductSC_DGV1.ReadOnly = true;
             this.QS_ii_ProductSC_DGV1.RowTemplate.Height = 24;
             this.QS_ii_ProductSC_DGV1.Size = new System.Drawing.Size(513, 243);
             this.QS_ii_ProductSC_DGV1.TabIndex = 4;
+            this.QS_ii_ProductSC_DGV1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QS_ii_ProductSC_DGV1_CellContentClick);
             // 
             // QS_ii_ProductSC_CHAIN_NAME
             // 
@@ -178,7 +190,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(545, 295);
+            this.tabPage2.Size = new System.Drawing.Size(578, 323);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "歷史記錄";
             // 
@@ -306,6 +318,46 @@
             this.ProductSC_Status_info.TabIndex = 6;
             this.ProductSC_Status_info.Text = "瀏覽";
             // 
+            // QS_ii_ProductSC_DGV1_Column1
+            // 
+            this.QS_ii_ProductSC_DGV1_Column1.FalseValue = "0";
+            this.QS_ii_ProductSC_DGV1_Column1.HeaderText = "選取";
+            this.QS_ii_ProductSC_DGV1_Column1.Name = "QS_ii_ProductSC_DGV1_Column1";
+            this.QS_ii_ProductSC_DGV1_Column1.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV1_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QS_ii_ProductSC_DGV1_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.QS_ii_ProductSC_DGV1_Column1.TrueValue = "1";
+            this.QS_ii_ProductSC_DGV1_Column1.Visible = false;
+            this.QS_ii_ProductSC_DGV1_Column1.Width = 80;
+            // 
+            // QS_ii_ProductSC_DGV1_Column2
+            // 
+            this.QS_ii_ProductSC_DGV1_Column2.HeaderText = "通路編號";
+            this.QS_ii_ProductSC_DGV1_Column2.Name = "QS_ii_ProductSC_DGV1_Column2";
+            this.QS_ii_ProductSC_DGV1_Column2.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV1_Column2.Visible = false;
+            // 
+            // QS_ii_ProductSC_DGV1_Column3
+            // 
+            this.QS_ii_ProductSC_DGV1_Column3.HeaderText = "商品編號";
+            this.QS_ii_ProductSC_DGV1_Column3.Name = "QS_ii_ProductSC_DGV1_Column3";
+            this.QS_ii_ProductSC_DGV1_Column3.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV1_Column3.Width = 120;
+            // 
+            // QS_ii_ProductSC_DGV1_Column4
+            // 
+            this.QS_ii_ProductSC_DGV1_Column4.HeaderText = "商品名稱";
+            this.QS_ii_ProductSC_DGV1_Column4.Name = "QS_ii_ProductSC_DGV1_Column4";
+            this.QS_ii_ProductSC_DGV1_Column4.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV1_Column4.Width = 120;
+            // 
+            // QS_ii_ProductSC_DGV1_Column5
+            // 
+            this.QS_ii_ProductSC_DGV1_Column5.HeaderText = "英文名稱";
+            this.QS_ii_ProductSC_DGV1_Column5.Name = "QS_ii_ProductSC_DGV1_Column5";
+            this.QS_ii_ProductSC_DGV1_Column5.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV1_Column5.Width = 130;
+            // 
             // QS_ii_ProductSC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -358,6 +410,11 @@
         private System.Windows.Forms.Label ProductSC_Status_info;
         internal System.Windows.Forms.TextBox QS_ii_ProductSC_CHAIN_NAME;
         internal System.Windows.Forms.TextBox QS_ii_ProductSC_CHAIN_NO;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_ProductSC_DGV1_Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV1_Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV1_Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV1_Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV1_Column5;
 
     }
 }

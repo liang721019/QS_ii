@@ -903,7 +903,7 @@ namespace QS_ii
         {
             //DataTable ProductM_dt = new DataTable();
             //ProductM_dt.Columns.Add("Check");
-            QS_ii_QueryDGV_Column1.Visible = true;
+            //QS_ii_QueryDGV_Column1.Visible = true;
             QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
             QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
             

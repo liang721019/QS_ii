@@ -31,7 +31,7 @@ namespace QS_ii
 
         #region 變數
         //====================================================
-
+        
         //====================================================
         #endregion
 
@@ -42,10 +42,11 @@ namespace QS_ii
             this.Text = "通路";
             this.MaximizeBox = false;       //最大化
             this.MinimizeBox = false;       //最小化
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
-            QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
-
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小            
             this.AutoSize = false;          //自動調整大小
+            QS_ii_ProductSC_DGV1_SetColumns();      //ProductSC_DGV1自定顯示欄位
+            QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
+            
             fun.EoD_Panel_btn(ProductSC_panel1, true);
             ProductSC_Status_info.Visible = false;
             QS_ii_ProductSC_儲存Button.Visible = false;
@@ -174,13 +175,21 @@ namespace QS_ii
             #endregion
         }
 
+        private void QS_ii_ProductSC_DGV1_SetColumns()      //ProductSC_DGV1自定顯示欄位
+        {
+            QS_ii_ProductSC_DGV1.AutoGenerateColumns = false;
+            QS_ii_ProductSC_DGV1_Column1.DataPropertyName = "Check";
+            QS_ii_ProductSC_DGV1_Column2.DataPropertyName = "CHAIN_NO";
+            QS_ii_ProductSC_DGV1_Column3.DataPropertyName = "item_NO";
+            QS_ii_ProductSC_DGV1_Column4.DataPropertyName = "item_NAME";
+            QS_ii_ProductSC_DGV1_Column5.DataPropertyName = "EN_NAME";
 
+        }
 
         //====================================================
         #endregion
 
         #region Button
-
 
         private void QS_ii_ProductSC_新增Button_Click(object sender, EventArgs e)
         {
@@ -201,6 +210,7 @@ namespace QS_ii
         {
             start_status(QS_ii_ProductSC_查詢Button);
         }
+
         private void QS_ii_ProductSC_儲存Button_Click(object sender, EventArgs e)
         {
             QS_ii_ProductSC_Save();
@@ -231,8 +241,28 @@ namespace QS_ii
 
         #endregion
 
+        
+
         #region 事件
         //====================================================
+        private void QS_ii_ProductSC_DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex != -1)
+            {
+                #region 內容
+                DataGridViewCheckBoxCell checkCell = (DataGridViewCheckBoxCell)QS_ii_ProductSC_DGV1.Rows[e.RowIndex].Cells[0];
+                string flag = QS_ii_ProductSC_DGV1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (flag == "1")     //被選取的資料行
+                {
+                    checkCell.Value = "0";
+                }
+                else
+                {
+                    checkCell.Value = "1";
+                }
+                #endregion
+            }
+        }
 
         //====================================================
         #endregion
@@ -261,7 +291,6 @@ namespace QS_ii
                 QS_ii_dr["item_NO"] = QS_ii_DGView1.CurrentRow.Cells["商品編號"].Value.ToString();
                 QS_ii_dr["item_NAME"] = QS_ii_DGView1.CurrentRow.Cells["商品名稱"].Value.ToString();
                 QS_ii_dr["EN_NAME"] = QS_ii_DGView1.CurrentRow.Cells["英文名稱"].Value.ToString();
-
                 QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
             }
             catch (Exception x)

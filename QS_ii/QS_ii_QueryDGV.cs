@@ -31,7 +31,7 @@ namespace QS_ii
         }
 
         private void QS_ii_查詢button_Click(object sender, EventArgs e)
-        {
+        {            
             QS_ii_QueryDGV_QueryButton();
         }
 
