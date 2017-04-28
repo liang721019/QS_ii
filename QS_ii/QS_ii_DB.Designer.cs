@@ -4305,6 +4305,8 @@ namespace QS_ii {
             
             private global::System.Data.DataColumn columnCHAIN_NO;
             
+            private global::System.Data.DataColumn columnCHAIN_NAME;
+            
             private global::System.Data.DataColumn columnitem_NO;
             
             private global::System.Data.DataColumn columnitem_NAME;
@@ -4359,6 +4361,14 @@ namespace QS_ii {
             public global::System.Data.DataColumn CHAIN_NOColumn {
                 get {
                     return this.columnCHAIN_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CHAIN_NAMEColumn {
+                get {
+                    return this.columnCHAIN_NAME;
                 }
             }
             
@@ -4431,11 +4441,12 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_ProductSCRow AddQS_ii_ProductSCRow(string Check, string CHAIN_NO, string item_NO, string item_NAME, string EN_NAME, string SPEC) {
+            public QS_ii_ProductSCRow AddQS_ii_ProductSCRow(string Check, string CHAIN_NO, string CHAIN_NAME, string item_NO, string item_NAME, string EN_NAME, string SPEC) {
                 QS_ii_ProductSCRow rowQS_ii_ProductSCRow = ((QS_ii_ProductSCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Check,
                         CHAIN_NO,
+                        CHAIN_NAME,
                         item_NO,
                         item_NAME,
                         EN_NAME,
@@ -4464,6 +4475,7 @@ namespace QS_ii {
             internal void InitVars() {
                 this.columnCheck = base.Columns["Check"];
                 this.columnCHAIN_NO = base.Columns["CHAIN_NO"];
+                this.columnCHAIN_NAME = base.Columns["CHAIN_NAME"];
                 this.columnitem_NO = base.Columns["item_NO"];
                 this.columnitem_NAME = base.Columns["item_NAME"];
                 this.columnEN_NAME = base.Columns["EN_NAME"];
@@ -4477,6 +4489,8 @@ namespace QS_ii {
                 base.Columns.Add(this.columnCheck);
                 this.columnCHAIN_NO = new global::System.Data.DataColumn("CHAIN_NO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCHAIN_NO);
+                this.columnCHAIN_NAME = new global::System.Data.DataColumn("CHAIN_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCHAIN_NAME);
                 this.columnitem_NO = new global::System.Data.DataColumn("item_NO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitem_NO);
                 this.columnitem_NAME = new global::System.Data.DataColumn("item_NAME", typeof(string), null, global::System.Data.MappingType.Element);
@@ -7915,6 +7929,22 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CHAIN_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableQS_ii_ProductSC.CHAIN_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_ProductSC\' 中資料行 \'CHAIN_NAME\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableQS_ii_ProductSC.CHAIN_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string item_NO {
                 get {
                     return ((string)(this[this.tableQS_ii_ProductSC.item_NOColumn]));
@@ -7994,6 +8024,18 @@ namespace QS_ii {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCHAIN_NONull() {
                 this[this.tableQS_ii_ProductSC.CHAIN_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCHAIN_NAMENull() {
+                return this.IsNull(this.tableQS_ii_ProductSC.CHAIN_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCHAIN_NAMENull() {
+                this[this.tableQS_ii_ProductSC.CHAIN_NAMEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

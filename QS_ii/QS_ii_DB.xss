@@ -15,7 +15,7 @@
     <Shape ID="DesignTable:QS_ii_QT01" ZOrder="4" X="504" Y="22" Height="335" Width="160" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="331" />
     <Shape ID="DesignTable:QS_ii_QCustomer" ZOrder="3" X="691" Y="27" Height="335" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="331" />
     <Shape ID="DesignTable:QS_ii_Product" ZOrder="2" X="929" Y="28" Height="310" Width="180" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
-    <Shape ID="DesignTable:QS_ii_ProductSC" ZOrder="1" X="908" Y="394" Height="186" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="182" />
+    <Shape ID="DesignTable:QS_ii_ProductSC" ZOrder="1" X="908" Y="394" Height="210" Width="201" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="206" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

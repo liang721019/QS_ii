@@ -402,7 +402,6 @@ namespace QS_ii
                     QSiiDB.QS_ii_QProduct.AcceptChanges();      //****重要****要加這行才算是更新DataTable
                     MessageBox.Show("資料《新增》成功!!", this.Text);
                 }
-
             }
             #endregion
         }

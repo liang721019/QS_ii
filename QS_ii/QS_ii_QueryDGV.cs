@@ -51,7 +51,7 @@ namespace QS_ii
         {
             if (e.RowIndex >= 0)
             {
-                QS_ii_QueryDGV_DGView1();       //DGView1資料呼叫方法                
+                QS_ii_QueryDGV_DGView1();       //DGView1資料呼叫方法
                 this.Close();
             }
 
