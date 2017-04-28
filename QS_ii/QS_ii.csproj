@@ -108,10 +108,8 @@
     <Compile Include="QS_ii_DB.cs">
       <DependentUpon>QS_ii_DB.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QS_ii_DB1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QS_ii_DB.xsd</DependentUpon>
+    <Compile Include="QS_ii_DB.Designer.cs">
+      <DependentUpon>QS_ii_DB.cs</DependentUpon>
     </Compile>
     <Compile Include="QS_ii_Product.cs">
       <SubType>Form</SubType>
@@ -161,7 +159,6 @@
     <EmbeddedResource Include="QS_ii_Quotes_add.resx">
       <DependentUpon>QS_ii_Quotes_add.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
