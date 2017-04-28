@@ -364,19 +364,33 @@ namespace QS_ii
         public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button
         {
             DataView QS_ii_DViewPSC = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_Product);
-            DataView QS_ii_QDView = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+            DataView QS_ii_QDViewPSC = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
             QS_ii_DViewPSC.RowFilter = "Check = '1'";
 
             foreach (DataRowView DViewPSC in QS_ii_DViewPSC)
             {
-                DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.NewRow();
-                QS_ii_dr["Check"] = "0";
-                QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
-                QS_ii_dr["item_NO"] = DViewPSC["商品編號"];
-                QS_ii_dr["item_NAME"] = DViewPSC["商品名稱"];
-                QS_ii_dr["EN_NAME"] = DViewPSC["英文名稱"];
-                QS_ii_dr["SPEC"] = DViewPSC["規格"];
-                QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
+
+                QS_ii_QDViewPSC.RowFilter = "item_NO = '" + DViewPSC["商品編號"].ToString() + "'";
+                if (QS_ii_QDViewPSC.Count == 0)
+                {
+                    DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.NewRow();
+                    QS_ii_dr["Check"] = "0";
+                    QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
+                    QS_ii_dr["item_NO"] = DViewPSC["商品編號"];
+                    QS_ii_dr["item_NAME"] = DViewPSC["商品名稱"];
+                    QS_ii_dr["EN_NAME"] = DViewPSC["英文名稱"];
+                    QS_ii_dr["SPEC"] = DViewPSC["規格"];
+                    QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
+                }
+                
+                //DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.NewRow();
+                //QS_ii_dr["Check"] = "0";
+                //QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
+                //QS_ii_dr["item_NO"] = DViewPSC["商品編號"];
+                //QS_ii_dr["item_NAME"] = DViewPSC["商品名稱"];
+                //QS_ii_dr["EN_NAME"] = DViewPSC["英文名稱"];
+                //QS_ii_dr["SPEC"] = DViewPSC["規格"];
+                //QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
             }
             this.Close();
 

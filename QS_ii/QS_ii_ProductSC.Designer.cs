@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ProductSC_tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.QS_ii_ProductSC多選 = new System.Windows.Forms.Button();
@@ -135,6 +137,8 @@
             // 
             this.QS_ii_ProductSC_DGV1.AllowUserToAddRows = false;
             this.QS_ii_ProductSC_DGV1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.QS_ii_ProductSC_DGV1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.QS_ii_ProductSC_DGV1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -149,6 +153,8 @@
             this.QS_ii_ProductSC_DGV1.Location = new System.Drawing.Point(12, 68);
             this.QS_ii_ProductSC_DGV1.Name = "QS_ii_ProductSC_DGV1";
             this.QS_ii_ProductSC_DGV1.ReadOnly = true;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QS_ii_ProductSC_DGV1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.QS_ii_ProductSC_DGV1.RowTemplate.Height = 24;
             this.QS_ii_ProductSC_DGV1.Size = new System.Drawing.Size(650, 288);
             this.QS_ii_ProductSC_DGV1.TabIndex = 4;
@@ -238,7 +244,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(578, 323);
+            this.tabPage2.Size = new System.Drawing.Size(715, 368);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "歷史記錄";
             // 
