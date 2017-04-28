@@ -107,9 +107,12 @@
     </Compile>
     <Compile Include="QS_ii_DB.cs">
       <DependentUpon>QS_ii_DB.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="QS_ii_DB.Designer.cs">
-      <DependentUpon>QS_ii_DB.cs</DependentUpon>
+      <DependentUpon>QS_ii_DB.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="QS_ii_Product.cs">
       <SubType>Form</SubType>
@@ -174,7 +177,7 @@
     <None Include="QS_ii_DB.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QS_ii_DB1.Designer.cs</LastGenOutput>
+      <LastGenOutput>QS_ii_DB.Designer.cs</LastGenOutput>
     </None>
     <None Include="QS_ii_DB.xss">
       <DependentUpon>QS_ii_DB.xsd</DependentUpon>
