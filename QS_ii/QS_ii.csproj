@@ -107,9 +107,8 @@
     </Compile>
     <Compile Include="QS_ii_DB.cs">
       <DependentUpon>QS_ii_DB.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="QS_ii_DB.Designer.cs">
+    <Compile Include="QS_ii_DB1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QS_ii_DB.xsd</DependentUpon>
@@ -162,6 +161,7 @@
     <EmbeddedResource Include="QS_ii_Quotes_add.resx">
       <DependentUpon>QS_ii_Quotes_add.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,7 +177,7 @@
     <None Include="QS_ii_DB.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QS_ii_DB.Designer.cs</LastGenOutput>
+      <LastGenOutput>QS_ii_DB1.Designer.cs</LastGenOutput>
     </None>
     <None Include="QS_ii_DB.xss">
       <DependentUpon>QS_ii_DB.xsd</DependentUpon>

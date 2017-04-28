@@ -919,6 +919,7 @@ namespace QS_ii
             
             foreach (DataRowView DView in QS_ii_DView)
             {
+
                 DataRowView QS_ii_dr = QS_ii_QDView.AddNew();
                 QS_ii_dr["Check"] = "0";
                 QS_ii_dr["QT_NO"] = QS_iiQ_add.tb_QT_NO.Text;
@@ -929,20 +930,6 @@ namespace QS_ii
                 QS_ii_dr["QTY"] = 1;
                 QS_ii_dr["UNIT_PRICE"] = DView["單價"];
                 QS_ii_dr.EndEdit();
-                //foreach(DataRowView QDView in QS_ii_QDView)
-                //{
-                    
-                //    if (QDView.Row["item_NO",DataRowVersion.Current] == DView["商品編號"])
-                //    {
-                //        MessageBox.Show("123");
-                //        QS_ii_dr.Delete();                        
-                //    }
-                //    else
-                //    {                        
-                //        QS_ii_dr.EndEdit();
-                //    }
-                //}
-          
             }
             this.Close();
             
