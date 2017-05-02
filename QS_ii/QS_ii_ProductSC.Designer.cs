@@ -47,6 +47,7 @@
             this.QS_ii_ProductSC_CHAIN_NO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ProductSC_panel1 = new System.Windows.Forms.Panel();
             this.QS_ii_ProductSC_取消Button = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC_儲存Button = new System.Windows.Forms.Button();
@@ -62,6 +63,8 @@
             this.ProductSC_tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_ProductSC_DGV1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ProductSC_panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -241,12 +244,22 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(715, 368);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "歷史記錄";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(549, 183);
+            this.dataGridView1.TabIndex = 0;
             // 
             // ProductSC_panel1
             // 
@@ -391,6 +404,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_ProductSC_DGV1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ProductSC_panel1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -413,7 +428,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView QS_ii_ProductSC_DGV1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button QS_ii_ProductSC刪除;
         private System.Windows.Forms.Button QS_ii_ProductSC新增;
@@ -430,6 +444,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV1_Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV1_Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV1_Column6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView QS_ii_ProductSC_DGV1;
 
     }
 }

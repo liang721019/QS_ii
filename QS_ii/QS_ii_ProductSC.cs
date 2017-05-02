@@ -15,8 +15,8 @@ namespace QS_ii
     {
 
 
-        QS_ii_function fun = new QS_ii_function();
-        public QS_ii_Quotes_add QS_iiQ_add;
+        internal QS_ii_function fun = new QS_ii_function();
+        internal QS_ii_Quotes_add QS_iiQ_add;
 
         public QS_ii_ProductSC(QS_ii_Quotes_add x)
         {
@@ -31,13 +31,13 @@ namespace QS_ii
 
         #region 變數
         //====================================================
-        private string QueryDB      //SQL語法
+        public string QueryDB      //SQL語法
         {
             set;
             get;
         }
 
-        private string PSC_ID       //取得通路編號
+        public string PSC_ID       //取得通路編號
         {
             set;
             get;
@@ -54,7 +54,7 @@ namespace QS_ii
             {
                 #region 內容
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Insert] '"+PSC_ID+"','" + QS_ii_ProductSC_CHAIN_NAME.Text.Trim() +
-                           @"',@ITEM_NO,'"+USER_ID.Text + "'";
+                               @"',@ITEM_NO,'"+USER_ID.Text + "'";
                 #endregion
             }
             else if(x == "取得通路編號")
@@ -63,8 +63,27 @@ namespace QS_ii
             }
             else if(x == "查詢通路")
             {
-                this.QueryDB = @"SELECT distinct [CHAIN_NO],[CHAIN_NAME] FROM [TEST_SLSYHI].[dbo].[SLS_ItemCH]";
+                this.QueryDB = @"select distinct [CHAIN_NO] AS 通路編號,[CHAIN_NAME] AS 通路名稱 from [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_QueryTemp]()";
             }
+            else if(x == "查詢通路明細")
+            {
+                this.QueryDB = @"select [Check] = '0', * from [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_QueryTemp]() where [CHAIN_NO] = '" + PSC_ID + "'";
+            }
+            else if (x == "表身修改")
+            {
+                this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Update] '" + QS_ii_ProductSC_CHAIN_NO.Text + 
+                                @"','"+QS_ii_ProductSC_CHAIN_NAME.Text.Trim()+"','"+USER_ID.Text+"'";
+            }
+            else if (x == "表身刪除")
+            {
+                this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Delete] '" + QS_ii_ProductSC_CHAIN_NO.Text + "',@ITEM_NO";
+            }
+            else if (x == "表身新增")
+            {
+                this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Insert] '" + QS_ii_ProductSC_CHAIN_NO.Text + "','" + QS_ii_ProductSC_CHAIN_NAME.Text.Trim() +
+                               @"',@ITEM_NO,'" + USER_ID.Text + "'";
+            }
+
         }
 
         private void default_status()            //預設狀態
@@ -76,8 +95,11 @@ namespace QS_ii
             this.AutoSize = false;          //自動調整大小
             QS_ii_ProductSC_DGV1_SetColumns();      //ProductSC_DGV1自定顯示欄位
             QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
+            dataGridView1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
             fun.EoD_Panel_btn(ProductSC_panel1, true);
 
+            QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
+            QS_ii_ProductSC_CHAIN_NAME.ReadOnly = true;
             QS_ii_ProductSC_DGV1_Column1.Visible = false;
             ProductSC_Status_info.Visible = false;
             QS_ii_ProductSC_儲存Button.Visible = false;
@@ -95,6 +117,10 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "新增";
                 ProductSC_Status_info.Visible = true;
                 fun.EoD_Panel_btn(ProductSC_panel1, false);
+
+                
+                QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
+                QS_ii_ProductSC_CHAIN_NAME.ReadOnly = false;
                 QS_ii_ProductSC_DGV1_Column1.Visible = true;
                 QS_ii_ProductSC_儲存Button.Visible = true;
                 QS_ii_ProductSC_儲存Button.Enabled = true;
@@ -111,6 +137,9 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "修改";
                 ProductSC_Status_info.Visible = true;
                 fun.EoD_Panel_btn(ProductSC_panel1, false);
+                
+                QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
+                QS_ii_ProductSC_CHAIN_NAME.ReadOnly = false;
                 QS_ii_ProductSC_DGV1_Column1.Visible = true;
                 QS_ii_ProductSC_儲存Button.Visible = true;
                 QS_ii_ProductSC_儲存Button.Enabled = true;
@@ -137,8 +166,12 @@ namespace QS_ii
                 fun.EoD_Panel_btn(ProductSC_panel1, true);
                 QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Clear();      //清空DATATable
 
+
                 QS_ii_ProductSC_CHAIN_NO.Text = "";         //通路編號
                 QS_ii_ProductSC_CHAIN_NAME.Text = "";       //通路名稱
+                                
+                QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
+                QS_ii_ProductSC_CHAIN_NAME.ReadOnly = true;
                 QS_ii_ProductSC_DGV1_Column1.Visible = false;
                 QS_ii_ProductSC_儲存Button.Visible = false;
                 QS_ii_ProductSC_儲存Button.Enabled = false;
@@ -156,6 +189,9 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "瀏覽";
                 ProductSC_Status_info.Visible = false;
                 fun.EoD_Panel_btn(ProductSC_panel1, true);
+                
+                QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
+                QS_ii_ProductSC_CHAIN_NAME.ReadOnly = true;
                 QS_ii_ProductSC_DGV1_Column1.Visible = false;
                 QS_ii_ProductSC_儲存Button.Visible = false;
                 QS_ii_ProductSC_儲存Button.Enabled = false;
@@ -200,12 +236,47 @@ namespace QS_ii
 
         private void QS_ii_ProductSC_Modify()        //修改
         {
-
+            #region 內容
+            if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                fun.Check_error = false;
+                //GetSQL("表身修改");
+                //fun.QS_ii_ModifyProductSCMODIFY_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                GetSQL("表身刪除");
+                fun.QS_ii_ModifyProductSCDEL_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                GetSQL("表身新增");
+                fun.QS_ii_ModifyProductSCADD_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                //fun.QS_ii_QText(QSiiDB.QS_ii_QProduct);                
+                if (fun.Check_error == false)
+                {
+                    start_status(QS_ii_ProductSC_儲存Button);
+                    QS_iiQ_add.QSiiDB.QS_ii_ProductSC.AcceptChanges();      //****重要****要加這行才算是更新DataTable
+                    MessageBox.Show("資料《修改》成功!!", this.Text);
+                }
+            }
+            #endregion
         }
 
         private void QS_ii_ProductSC_Delete()        //刪除
         {
 
+        }
+
+        private void QS_ii_ProductSC_Query()         //查詢
+        {
+            #region 內容
+            QS_ii_ProductSC_Head ProductSC_Query = new QS_ii_ProductSC_Head(this);
+            GetSQL("查詢通路");
+            fun.xxx_DB(this.QueryDB, ProductSC_Query.QS_ii_DGView1);
+            //設定init_Staff 新視窗的相對位置#############
+            ProductSC_Query.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################            
+            ProductSC_Query.ShowDialog();
+            
+
+            //fun.xxx_DB(this.QueryDB,);
+
+            #endregion
         }
 
         private void QS_ii_ProductSC_Save()          //儲存
@@ -280,7 +351,7 @@ namespace QS_ii
             QS_ii_ProductSC_Detail_Modify(QS_ii_ProductSC多選);
 
             #endregion
-        }
+        }        
 
         private void QS_ii_ProductSC_DGV1_SetColumns()      //ProductSC_DGV1自定顯示欄位
         {
@@ -293,6 +364,17 @@ namespace QS_ii
             QS_ii_ProductSC_DGV1_Column6.DataPropertyName = "SPEC";
 
 
+        }
+
+        public void QS_ii_ProductSC_DataBinding(DataTable x)     //datatable的欄位與Text綁定資料-通路編號&通路名稱
+        {
+            QS_ii_ProductSC_CHAIN_NO.DataBindings.Clear();
+            QS_ii_ProductSC_CHAIN_NAME.DataBindings.Clear();
+            if (ProductSC_Status_info.Text == "瀏覽")
+            {
+                QS_ii_ProductSC_CHAIN_NO.DataBindings.Add("Text", x, "CHAIN_NO", true);     //通路編號
+                QS_ii_ProductSC_CHAIN_NAME.DataBindings.Add("Text", x, "CHAIN_NAME", true);     //通路名稱                
+            }
         }
 
         //====================================================
@@ -318,6 +400,7 @@ namespace QS_ii
         private void QS_ii_ProductSC_查詢Button_Click(object sender, EventArgs e)
         {
             start_status(QS_ii_ProductSC_查詢Button);
+            QS_ii_ProductSC_Query();        //查詢
         }
 
         private void QS_ii_ProductSC_儲存Button_Click(object sender, EventArgs e)
@@ -370,12 +453,6 @@ namespace QS_ii
                 #endregion
             }
         }
-
-        
-
-                
-
-
 
         //====================================================
         #endregion
@@ -452,6 +529,7 @@ namespace QS_ii
 
     public class QS_ii_ProductSC_Head : QS_ii_QueryDGV          //表頭查詢
     {
+        
         QS_ii_ProductSC QSiiSC;
 
         public QS_ii_ProductSC_Head(QS_ii_ProductSC x)
@@ -461,8 +539,14 @@ namespace QS_ii
 
         public override void QS_ii_QueryDGV_DGView1()       //DGV雙擊左鍵二下
         {
-            string CHAIN_NO = @"";
+
+            QSiiSC.PSC_ID = QS_ii_DGView1.CurrentRow.Cells["通路編號"].Value.ToString();
+            //QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+            QSiiSC.GetSQL("查詢通路明細");
+            QSiiSC.fun.QS_ii_ProductSC_Query_ds(QSiiSC.QueryDB, QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+            QSiiSC.QS_ii_ProductSC_DataBinding(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);     //datatable的欄位與Text綁定資料-通路編號&通路名稱
             
+            //@"distinct [CHAIN_NO]	AS 通路編號,[CHAIN_NAME]	AS 通路名稱 FROM [TEST_SLSYHI].[dbo].[SLS_ItemCH]";
         }
 
     }

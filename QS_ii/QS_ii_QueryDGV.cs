@@ -45,7 +45,7 @@ namespace QS_ii
         {
             
             
-        }               
+        }
         
         private void QS_ii_DGView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)        //DGV雙擊左鍵二下
         {
