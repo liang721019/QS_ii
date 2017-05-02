@@ -465,16 +465,19 @@ namespace QS_ii
         {
             #region  內容
             QS_ii_TQueryDGV ProductADD = new QS_ii_TQueryDGV(this);
+            
             ProductADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
             if (x == Product_新增button)
             {
                 ProductADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
+                ProductADD.QS_ii_加入button.Visible = false;
                 //Product_Query(ProductADD.QS_ii_DGView1);        //商品主檔查詢
                 Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
             }
             else if (x == Product_多選button)
             {
                 ProductADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
+                ProductADD.QS_ii_加入button.Visible = true;
                 Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
             }
             //設定init_Staff 新視窗的相對位置#############

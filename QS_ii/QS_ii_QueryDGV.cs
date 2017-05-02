@@ -27,26 +27,44 @@ namespace QS_ii
             this.MaximizeBox = false;       //最大化
             this.MinimizeBox = false;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
-            this.AutoSize = false;          //自動調整大小
+            this.AutoSize = false;          //自動調整大小   
+            //this.QS_ii_加入button.Visible = false;
 
         }
 
-        private void QS_ii_查詢button_Click(object sender, EventArgs e)
-        {
-            QS_ii_QueryDGV_QueryButton();          
-        }
+        #region 變數
+        //===========================================
 
+        //===========================================
+        #endregion
+
+        #region 方法
+        //===========================================
         public virtual void QS_ii_QueryDGV_QueryButton()        //查詢Button
         {
 
-        }        
-        
+        }
+
         public virtual void QS_ii_QueryDGV_DGView1()        //DGView1資料呼叫方法
         {
-            
+
+
+        }
+        public virtual void QS_ii_QueryDGV_加入button()           //加入Button
+        {
+
+        }
+
+        public virtual void QS_ii_QueryComboBox()
+        {
             
         }
-        
+
+        //===========================================
+        #endregion
+
+        #region 事件
+        //===========================================
         private void QS_ii_DGView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)        //DGV雙擊左鍵二下
         {
             if (e.RowIndex >= 0)
@@ -77,15 +95,34 @@ namespace QS_ii
             }
         }
 
-        public virtual void QS_ii_QueryDGV_加入button()           //加入Button
-        {
+        //===========================================
+        #endregion
 
+        #region button
+        //===========================================
+        private void QS_ii_查詢button_Click(object sender, EventArgs e)
+        {
+            QS_ii_QueryDGV_QueryButton();
         }
 
         private void QS_ii_加入button_Click(object sender, EventArgs e)
         {
             QS_ii_QueryDGV_加入button();
         }
+
+        //===========================================
+        #endregion
+
+        
+
+        
+        
+        
+        
+        
+        
+
+        
 
     }
     

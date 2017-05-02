@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.QS_ii_DGView1 = new System.Windows.Forms.DataGridView();
+            this.QS_ii_QueryDGV_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.QS_ii_查詢button = new System.Windows.Forms.Button();
             this.QS_ii_QueryDGv_PID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.init_panel = new System.Windows.Forms.Panel();
             this.QS_ii_加入button = new System.Windows.Forms.Button();
-            this.QS_ii_QueryDGV_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_DGView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.init_panel.SuspendLayout();
@@ -47,8 +47,8 @@
             // 
             this.QS_ii_DGView1.AllowUserToAddRows = false;
             this.QS_ii_DGView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.QS_ii_DGView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.QS_ii_DGView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.QS_ii_DGView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.QS_ii_DGView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QS_ii_DGView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -58,13 +58,25 @@
             this.QS_ii_DGView1.Margin = new System.Windows.Forms.Padding(5);
             this.QS_ii_DGView1.Name = "QS_ii_DGView1";
             this.QS_ii_DGView1.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.QS_ii_DGView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QS_ii_DGView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.QS_ii_DGView1.RowTemplate.Height = 24;
             this.QS_ii_DGView1.Size = new System.Drawing.Size(618, 376);
             this.QS_ii_DGView1.TabIndex = 0;
             this.QS_ii_DGView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QS_ii_DGView1_CellContentClick);
             this.QS_ii_DGView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.QS_ii_DGView1_CellMouseDoubleClick);
+            // 
+            // QS_ii_QueryDGV_Column1
+            // 
+            this.QS_ii_QueryDGV_Column1.FalseValue = "0";
+            this.QS_ii_QueryDGV_Column1.HeaderText = "選取";
+            this.QS_ii_QueryDGV_Column1.Name = "QS_ii_QueryDGV_Column1";
+            this.QS_ii_QueryDGV_Column1.ReadOnly = true;
+            this.QS_ii_QueryDGV_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QS_ii_QueryDGV_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.QS_ii_QueryDGV_Column1.TrueValue = "1";
+            this.QS_ii_QueryDGV_Column1.Visible = false;
+            this.QS_ii_QueryDGV_Column1.Width = 80;
             // 
             // panel1
             // 
@@ -127,18 +139,6 @@
             this.QS_ii_加入button.UseVisualStyleBackColor = true;
             this.QS_ii_加入button.Click += new System.EventHandler(this.QS_ii_加入button_Click);
             // 
-            // QS_ii_QueryDGV_Column1
-            // 
-            this.QS_ii_QueryDGV_Column1.FalseValue = "0";
-            this.QS_ii_QueryDGV_Column1.HeaderText = "選取";
-            this.QS_ii_QueryDGV_Column1.Name = "QS_ii_QueryDGV_Column1";
-            this.QS_ii_QueryDGV_Column1.ReadOnly = true;
-            this.QS_ii_QueryDGV_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QS_ii_QueryDGV_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.QS_ii_QueryDGV_Column1.TrueValue = "1";
-            this.QS_ii_QueryDGV_Column1.Visible = false;
-            this.QS_ii_QueryDGV_Column1.Width = 80;
-            // 
             // QS_ii_QueryDGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -167,8 +167,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel init_panel;
         public System.Windows.Forms.TextBox QS_ii_QueryDGv_PID;
-        private System.Windows.Forms.Button QS_ii_加入button;
         public System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_QueryDGV_Column1;
         internal System.Windows.Forms.DataGridView QS_ii_DGView1;
+        internal System.Windows.Forms.Button QS_ii_加入button;
     }
 }

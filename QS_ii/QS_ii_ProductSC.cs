@@ -117,7 +117,9 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "新增";
                 ProductSC_Status_info.Visible = true;
                 fun.EoD_Panel_btn(ProductSC_panel1, false);
-
+                QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Clear();      //清除QS_ii_ProductSC_DGV1的資料源
+                QS_ii_ProductSC_CHAIN_NO.Text = "";         //通路編號
+                QS_ii_ProductSC_CHAIN_NAME.Text = "";       //通路名稱
                 
                 QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
                 QS_ii_ProductSC_CHAIN_NAME.ReadOnly = false;
@@ -237,23 +239,33 @@ namespace QS_ii
         private void QS_ii_ProductSC_Modify()        //修改
         {
             #region 內容
-            if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (QS_ii_ProductSC_CHAIN_NO.Text != "")
             {
-                fun.Check_error = false;
-                //GetSQL("表身修改");
-                //fun.QS_ii_ModifyProductSCMODIFY_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
-                GetSQL("表身刪除");
-                fun.QS_ii_ModifyProductSCDEL_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
-                GetSQL("表身新增");
-                fun.QS_ii_ModifyProductSCADD_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
-                //fun.QS_ii_QText(QSiiDB.QS_ii_QProduct);                
-                if (fun.Check_error == false)
+                #region 內容
+                if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    start_status(QS_ii_ProductSC_儲存Button);
-                    QS_iiQ_add.QSiiDB.QS_ii_ProductSC.AcceptChanges();      //****重要****要加這行才算是更新DataTable
-                    MessageBox.Show("資料《修改》成功!!", this.Text);
+                    fun.Check_error = false;
+                    GetSQL("表身修改");
+                    fun.QS_ii_ModifyQT01_ds(QueryDB);
+                    GetSQL("表身刪除");
+                    fun.QS_ii_ModifyProductSCDEL_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                    GetSQL("表身新增");
+                    fun.QS_ii_ModifyProductSCADD_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                    //fun.QS_ii_QText(QSiiDB.QS_ii_QProduct);                
+                    if (fun.Check_error == false)
+                    {
+                        start_status(QS_ii_ProductSC_儲存Button);
+                        QS_iiQ_add.QSiiDB.QS_ii_ProductSC.AcceptChanges();      //****重要****要加這行才算是更新DataTable
+                        MessageBox.Show("資料《修改》成功!!", this.Text);
+                    }
                 }
+                #endregion
             }
+            else
+            {
+                MessageBox.Show("沒有通路編號!!無法修改",this.Text);
+            }
+            
             #endregion
         }
 
@@ -265,7 +277,7 @@ namespace QS_ii
         private void QS_ii_ProductSC_Query()         //查詢
         {
             #region 內容
-            QS_ii_ProductSC_Head ProductSC_Query = new QS_ii_ProductSC_Head(this);
+            QS_ii_ProductSC_Head ProductSC_Query = new QS_ii_ProductSC_Head(this);            
             GetSQL("查詢通路");
             fun.xxx_DB(this.QueryDB, ProductSC_Query.QS_ii_DGView1);
             //設定init_Staff 新視窗的相對位置#############
@@ -302,15 +314,17 @@ namespace QS_ii
         private void QS_ii_ProductSC_Detail_Modify(Button x)        //明細新增資料的方法(多選or單選)
         {
             #region 內容
-            QS_ii_ProductSC_Detail ProductSC_ADD = new QS_ii_ProductSC_Detail(this);
+            QS_ii_ProductSC_Detail ProductSC_ADD = new QS_ii_ProductSC_Detail(this);            
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
             if (x == QS_ii_ProductSC多選)
             {
                 ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
+                ProductSC_ADD.QS_ii_加入button.Visible = true;
             }
             else if (x == QS_ii_ProductSC新增)
             {
                 ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
+                ProductSC_ADD.QS_ii_加入button.Visible = false;
             }
 
             QS_iiQ_add.Product_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢
@@ -547,6 +561,12 @@ namespace QS_ii
             QSiiSC.QS_ii_ProductSC_DataBinding(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);     //datatable的欄位與Text綁定資料-通路編號&通路名稱
             
             //@"distinct [CHAIN_NO]	AS 通路編號,[CHAIN_NAME]	AS 通路名稱 FROM [TEST_SLSYHI].[dbo].[SLS_ItemCH]";
+        }
+        public override void QS_ii_QueryDGV_QueryButton()        //查詢Button
+        {
+            #region 內容
+
+            #endregion
         }
 
     }
