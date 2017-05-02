@@ -465,17 +465,21 @@ namespace QS_ii
         {
             #region  內容
             QS_ii_TQueryDGV ProductADD = new QS_ii_TQueryDGV(this);
+            
             ProductADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
             if (x == Product_新增button)
             {
                 ProductADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
-                //Product_Query(ProductADD.QS_ii_DGView1);        //商品主檔查詢                
+                ProductADD.QS_ii_加入button.Visible = false;
+                //Product_Query(ProductADD.QS_ii_DGView1);        //商品主檔查詢
+                Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
             }
             else if (x == Product_多選button)
             {
-                ProductADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏                
+                ProductADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
+                ProductADD.QS_ii_加入button.Visible = true;
+                Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
             }
-            Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
             //設定init_Staff 新視窗的相對位置#############
             ProductADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################            
@@ -905,36 +909,71 @@ namespace QS_ii
 
         public override void QS_ii_QueryDGV_QueryButton()       //查詢Button
         {
-            QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
+            //DataTable ProductM_dt = new DataTable();
+            //ProductM_dt.Columns.Add("Check");
+            //QS_ii_QueryDGV_Column1.Visible = true;
+            if (QS_ii_QueryDGV_Column1.Visible)
+            {
+                QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+                QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
+            }
+            else
+            {
+                QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+                QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
+            }
         }       
         
         public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button//
         {
-            #region 內容
             QS_iiQ_add.QS_ii_PriceDataBinding(QS_iiQ_add.QSiiDB.QS_ii_QProduct);           //datatable的欄位與Text綁定資料
             QS_iiQ_add.DataTable_SETColumnExpression();                 //設定DataTable的Column.Expression
             DataView QS_ii_DView = new DataView(QS_iiQ_add.QSiiDB.QS_ii_Product);
             DataView QS_ii_QDView = new DataView(QS_iiQ_add.QSiiDB.QS_ii_QProduct);
-            QS_ii_DView.RowFilter = "Check = '1'";            
+            QS_ii_DView.RowFilter = "Check = '1'";
+            
             foreach (DataRowView DView in QS_ii_DView)
             {
-                QS_ii_QDView.RowFilter = "item_NO = '" + DView["商品編號"].ToString() + "'";
-                if (QS_ii_QDView.Count == 0)
-                {
-                    DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_QProduct.NewRow();
-                    QS_ii_dr["Check"] = "0";
-                    QS_ii_dr["QT_NO"] = QS_iiQ_add.tb_QT_NO.Text;
-                    QS_ii_dr["item_NO"] = DView["商品編號"];
-                    QS_ii_dr["item_NAME"] = DView["商品名稱"];
-                    QS_ii_dr["SPEC"] = DView["規格"];
-                    QS_ii_dr["UNIT"] = DView["單位"];
-                    QS_ii_dr["QTY"] = 1;
-                    QS_ii_dr["UNIT_PRICE"] = DView["單價"];
-                    QS_iiQ_add.QSiiDB.QS_ii_QProduct.Rows.Add(QS_ii_dr);
-                }
+                DataRowView QS_ii_dr = QS_ii_QDView.AddNew();
+                QS_ii_dr["Check"] = "0";
+                QS_ii_dr["QT_NO"] = QS_iiQ_add.tb_QT_NO.Text;
+                QS_ii_dr["item_NO"] = DView["商品編號"];
+                QS_ii_dr["item_NAME"] = DView["商品名稱"];
+                QS_ii_dr["SPEC"] = DView["規格"];
+                QS_ii_dr["UNIT"] = DView["單位"];
+                QS_ii_dr["QTY"] = 1;
+                QS_ii_dr["UNIT_PRICE"] = DView["單價"];
+                QS_ii_dr.EndEdit();
+                //foreach(DataRowView QDView in QS_ii_QDView)
+                //{
+                    
+                //    if (QDView.Row["item_NO",DataRowVersion.Current] == DView["商品編號"])
+                //    {
+                //        MessageBox.Show("123");
+                //        QS_ii_dr.Delete();                        
+                //    }
+                //    else
+                //    {                        
+                //        QS_ii_dr.EndEdit();
+                //    }
+                //}
+          
             }
             this.Close();
-            #endregion
+            
+            //foreach (DataRowView DView in QS_ii_DView)
+            //{
+            //    DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_QProduct.NewRow();
+            //    QS_ii_dr["Check"] = "0";
+            //    QS_ii_dr["QT_NO"] = QS_iiQ_add.tb_QT_NO.Text;
+            //    QS_ii_dr["item_NO"] = DView["商品編號"];
+            //    QS_ii_dr["item_NAME"] = DView["商品名稱"];
+            //    QS_ii_dr["SPEC"] = DView["規格"];
+            //    QS_ii_dr["UNIT"] = DView["單位"];
+            //    QS_ii_dr["QTY"] = 1;
+            //    QS_ii_dr["UNIT_PRICE"] = DView["單價"];
+            //    QS_iiQ_add.QSiiDB.QS_ii_QProduct.Rows.Add(QS_ii_dr);
+            //}
         }
     }
 
