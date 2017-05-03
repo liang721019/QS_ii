@@ -63,7 +63,7 @@ namespace QS_ii
             }
             else if(x == "查詢通路")
             {
-                this.QueryDB = @"select distinct [CHAIN_NO] AS 通路編號,[CHAIN_NAME] AS 通路名稱 from [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_QueryTemp]()";
+                this.QueryDB = @"select [CHAIN_NO] AS 通路編號,[CHAIN_NAME] AS 通路名稱 from [TEST_SLSYHI].[dbo].[SLS_CHAIN]";
             }
             else if(x == "查詢通路明細")
             {
@@ -83,6 +83,10 @@ namespace QS_ii
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Insert] '" + QS_ii_ProductSC_CHAIN_NO.Text + "','" + QS_ii_ProductSC_CHAIN_NAME.Text.Trim() +
                                @"',@ITEM_NO,'" + USER_ID.Text + "'";
             }
+            else if (x == "查詢員工主檔")
+            {
+                this.QueryDB = @"select [Check] = '0',[SALESMAN] AS 員工編號 , [SALESMAN_NAME] AS 員工姓名 from [TEST_SLSYHI].[dbo].[SLS_QS_Employees]()";
+            }
 
         }
 
@@ -94,7 +98,9 @@ namespace QS_ii
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小            
             this.AutoSize = false;          //自動調整大小
             QS_ii_ProductSC_DGV1_SetColumns();      //ProductSC_DGV1自定顯示欄位
+            QS_ii_ProductSC_DGV2_SetColumns();      //ProductSC_DGV2自定顯示欄位
             QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
+            QS_ii_ProductSC_DGV2.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES;
             //dataGridView1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
             fun.EoD_Panel_btn(ProductSC_panel1, true);
 
@@ -107,6 +113,9 @@ namespace QS_ii
             QS_ii_ProductSC多選.Visible = false;
             QS_ii_ProductSC新增.Visible = false;
             QS_ii_ProductSC刪除.Visible = false;
+            QS_ii_ProductSC多選USER.Visible = false;
+            QS_ii_ProductSC新增USER.Visible = false;
+            QS_ii_ProductSC刪除USER.Visible = false;
 
         }
 
@@ -131,6 +140,9 @@ namespace QS_ii
                 QS_ii_ProductSC多選.Visible = true;
                 QS_ii_ProductSC新增.Visible = true;
                 QS_ii_ProductSC刪除.Visible = true;
+                QS_ii_ProductSC多選USER.Visible = true;
+                QS_ii_ProductSC新增USER.Visible = true;
+                QS_ii_ProductSC刪除USER.Visible = true;
 
 
             }
@@ -150,6 +162,9 @@ namespace QS_ii
                 QS_ii_ProductSC多選.Visible = true;
                 QS_ii_ProductSC新增.Visible = true;
                 QS_ii_ProductSC刪除.Visible = true;
+                QS_ii_ProductSC多選USER.Visible = true;
+                QS_ii_ProductSC新增USER.Visible = true;
+                QS_ii_ProductSC刪除USER.Visible = true;
 
 
             }
@@ -182,6 +197,9 @@ namespace QS_ii
                 QS_ii_ProductSC多選.Visible = false;
                 QS_ii_ProductSC新增.Visible = false;
                 QS_ii_ProductSC刪除.Visible = false;
+                QS_ii_ProductSC多選USER.Visible = false;
+                QS_ii_ProductSC新增USER.Visible = false;
+                QS_ii_ProductSC刪除USER.Visible = false;
 
                                 
 
@@ -202,9 +220,26 @@ namespace QS_ii
                 QS_ii_ProductSC多選.Visible = false;
                 QS_ii_ProductSC新增.Visible = false;
                 QS_ii_ProductSC刪除.Visible = false;
+                QS_ii_ProductSC多選USER.Visible = false;
+                QS_ii_ProductSC新增USER.Visible = false;
+                QS_ii_ProductSC刪除USER.Visible = false;
                 QS_iiQ_add.QSiiDB.QS_ii_ProductSC.RejectChanges();
 
             }
+        }
+
+        public void SALES_Query(TextBox tx, DataTable Dx, DataGridView dgv)        //員工主檔查詢
+        {
+            #region 內容
+            GetSQL("查詢員工主檔");
+            if (tx.Text != "")
+            {
+                QueryDB += @"and [SALESMAN] like '%" + tx.Text.Trim() +
+                            "%' or [SALESMAN_NAME] like" + tx.Text.Trim() + "'%";
+            }
+            fun.QS_ii_ProductM_ds(QueryDB, Dx, dgv);         //連接DB-執行DB指令
+
+            #endregion
         }
 
         private void QS_ii_ProductSC_Add()           //新增
@@ -228,10 +263,7 @@ namespace QS_ii
                     QS_iiQ_add.QSiiDB.QS_ii_ProductSC.AcceptChanges();      //****重要****要加這行才算是更新DataTable
                     MessageBox.Show("資料《新增》成功!!", this.Text);
                 }
-                else
-                {
-                    MessageBox.Show("資料《新增》失敗!!", this.Text);
-                }
+                
             }
             #endregion
         }
@@ -312,7 +344,7 @@ namespace QS_ii
         private void QS_ii_ProductSC_Detail_Modify(Button x)        //明細新增資料的方法(多選or單選)
         {
             #region 內容
-            QS_ii_ProductSC_Detail ProductSC_ADD = new QS_ii_ProductSC_Detail(this);            
+            QS_ii_ProductSC_ProductDetail ProductSC_ADD = new QS_ii_ProductSC_ProductDetail(this);            
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
             if (x == QS_ii_ProductSC多選)
             {
@@ -333,6 +365,34 @@ namespace QS_ii
             ProductSC_ADD.ShowDialog();
             #endregion
         }
+
+        private void QS_ii_ProductSC_inSALES_Modify(Button x)       //通路業務新增資料的方法(多選or單選)
+        {
+            #region 內容
+            QS_ii_ProductSC_SALESDetail ProductSC_ADD = new QS_ii_ProductSC_SALESDetail(this);
+            ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+
+            if (x == QS_ii_ProductSC多選USER)
+            {
+                ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
+                ProductSC_ADD.QS_ii_加入button.Visible = true;
+            }
+            else if (x == QS_ii_ProductSC新增USER)
+            {
+                ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
+                ProductSC_ADD.QS_ii_加入button.Visible = false;
+            }
+
+            SALES_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_ProductSC_Employees, ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢
+            //QS_iiQ_add.Product_Query(ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢  
+            //設定init_Staff 新視窗的相對位置#############
+            ProductSC_ADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################            
+            ProductSC_ADD.ShowDialog();
+
+            #endregion
+
+        }        
 
         private void QS_ii_ProductSC新增_Open()         //明細新增的方法
         {
@@ -363,7 +423,37 @@ namespace QS_ii
             QS_ii_ProductSC_Detail_Modify(QS_ii_ProductSC多選);
 
             #endregion
-        }        
+        }
+
+        private void QS_ii_ProductSC新增USER_Open()       //通路業務新增的方法
+        {
+            #region 內容
+            QS_ii_ProductSC_inSALES_Modify(QS_ii_ProductSC新增USER);          //通路業務新增資料的方法(多選or單選)
+            #endregion
+        }
+
+        private void QS_ii_ProductSC刪除USER_Open()       //通路業務刪除的方法
+        {
+            #region 內容
+            //***************DataTable刪除選取的資料*****************
+            for (int i = QS_ii_ProductSC_DGV2.Rows.Count - 1; i >= 0; i--)
+            {
+                if (QS_ii_ProductSC_DGV2.Rows[i].Cells[0].Value.ToString() == "1")
+                {
+                    this.QS_ii_ProductSC_DGV2.Rows.Remove(this.QS_ii_ProductSC_DGV2.Rows[i]);
+                    i = QS_ii_ProductSC_DGV2.Rows.Count;
+                }
+            }
+
+            #endregion
+        }
+
+        private void QS_ii_ProductSC多選USER_Open()       //通路業務多選的方法
+        {
+            #region 內容
+            QS_ii_ProductSC_inSALES_Modify(QS_ii_ProductSC多選USER);          //通路業務新增資料的方法(多選or單選)
+            #endregion
+        }
 
         private void QS_ii_ProductSC_DGV1_SetColumns()      //ProductSC_DGV1自定顯示欄位
         {
@@ -375,6 +465,18 @@ namespace QS_ii
             QS_ii_ProductSC_DGV1_Column5.DataPropertyName = "EN_NAME";
             QS_ii_ProductSC_DGV1_Column6.DataPropertyName = "SPEC";
 
+        }
+
+        private void QS_ii_ProductSC_DGV2_SetColumns()      //ProductSC_DGV2自定顯示欄位
+        {
+            #region 內容
+            QS_ii_ProductSC_DGV2.AutoGenerateColumns = false;
+            QS_ii_ProductSC_DGV2_Column1.DataPropertyName = "Check";
+            QS_ii_ProductSC_DGV2_Column2.DataPropertyName = "SALESMAN";
+            QS_ii_ProductSC_DGV2_Column3.DataPropertyName = "SALESMAN_NAME";
+            QS_ii_ProductSC_DGV2_Column4.DataPropertyName = "START_DATE";
+
+            #endregion
         }
 
         public void QS_ii_ProductSC_DataBinding(DataTable x)     //datatable的欄位與Text綁定資料-通路編號&通路名稱
@@ -442,11 +544,26 @@ namespace QS_ii
             QS_ii_ProductSC刪除_Open();
         }
 
+        private void QS_ii_ProductSC多選USER_Click(object sender, EventArgs e)
+        {
+            QS_ii_ProductSC多選USER_Open();       //通路業務多選的方法
+        }
+
+        private void QS_ii_ProductSC新增USER_Click(object sender, EventArgs e)
+        {
+            QS_ii_ProductSC新增USER_Open();       //通路業務新增的方法
+        }
+
+        private void QS_ii_ProductSC刪除USER_Click(object sender, EventArgs e)
+        {
+            QS_ii_ProductSC刪除USER_Open();       //通路業務刪除的方法
+        }
+
         #endregion        
 
         #region 事件
         //====================================================
-        private void QS_ii_ProductSC_DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)      //QS_ii_Product_DGV中的Checkbox
+        private void QS_ii_ProductSC_DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)      //QS_ii_Product_DGV1中的Checkbox
         {
             if (e.ColumnIndex == 0 && e.RowIndex != -1)
             {
@@ -465,18 +582,39 @@ namespace QS_ii
             }
         }
 
+        private void QS_ii_ProductSC_DGV2_CellContentClick(object sender, DataGridViewCellEventArgs e)      //QS_ii_Product_DGV2中的Checkbox
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex != -1)
+            {
+                #region 內容
+                DataGridViewCheckBoxCell checkCell = (DataGridViewCheckBoxCell)QS_ii_ProductSC_DGV2.Rows[e.RowIndex].Cells[0];
+                string flag = QS_ii_ProductSC_DGV2.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (flag == "1")     //被選取的資料行
+                {
+                    checkCell.Value = "0";
+                }
+                else
+                {
+                    checkCell.Value = "1";
+                }
+                #endregion
+            }
+        }
+
+        
+
         //====================================================
         #endregion
 
     }
 
-    public class QS_ii_ProductSC_Detail : QS_ii_QueryDGV         //明細
+    public class QS_ii_ProductSC_ProductDetail : QS_ii_QueryDGV         //明細
     {
 
         QS_ii_ProductSC QSiiSC;
         //QS_ii_DB QSiiPSC = new QS_ii_DB();
 
-        public QS_ii_ProductSC_Detail(QS_ii_ProductSC x)
+        public QS_ii_ProductSC_ProductDetail(QS_ii_ProductSC x)
         {
             this.QSiiSC = x;
         }
@@ -543,6 +681,77 @@ namespace QS_ii
             }
             #endregion
         }        
+    }
+
+    public class QS_ii_ProductSC_SALESDetail : QS_ii_QueryDGV         //員工明細
+    {
+
+        QS_ii_ProductSC QSiiSC;
+        //QS_ii_DB QSiiPSC = new QS_ii_DB();
+
+        public QS_ii_ProductSC_SALESDetail(QS_ii_ProductSC x)
+        {
+            this.QSiiSC = x;
+        }
+
+        public override void QS_ii_QueryDGV_DGView1()       //DataGridView雙擊後把選取資料對應到datatable
+        {
+            #region 內容
+            try
+            {
+                DataView QS_ii_QDViewSALSE = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES);
+                QS_ii_QDViewSALSE.RowFilter = "SALESMAN = '" + QS_ii_DGView1.CurrentRow.Cells["員工編號"].Value.ToString() + "'";
+                if (QS_ii_QDViewSALSE.Count == 0)
+                {
+                    DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.NewRow();
+                    QS_ii_dr["Check"] = "0";
+                    QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
+                    QS_ii_dr["SALESMAN"] = QS_ii_DGView1.CurrentRow.Cells["員工編號"].Value.ToString();
+                    QS_ii_dr["SALESMAN_NAME"] = QS_ii_DGView1.CurrentRow.Cells["員工姓名"].Value.ToString();
+                    QS_ii_dr["START_DATE"] = DateTime.Now.ToString("yyyy-MM-dd");                   
+                    QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Rows.Add(QS_ii_dr);
+                }
+
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+
+            #endregion
+        }
+
+        public override void QS_ii_QueryDGV_QueryButton()       //查詢Button
+        {
+            //DataTable ProductM_dt = new DataTable();
+            //ProductM_dt.Columns.Add("Check");
+            //QS_ii_QueryDGV_Column1.Visible = true;
+            QSiiSC.SALES_Query(QS_ii_QueryDGv_PID, QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_Employees, QS_ii_DGView1);        //商品主檔查詢
+
+        }
+
+        public override void QS_ii_QueryDGV_加入button()      //明細檔多選的加入button
+        {
+            #region 內容
+            DataView QS_ii_DViewEm = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_Employees);
+            DataView QS_ii_QDViewSALES = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES);
+            QS_ii_DViewEm.RowFilter = "Check = '1'";
+            foreach (DataRowView DViewPSC in QS_ii_DViewEm)
+            {
+                QS_ii_QDViewSALES.RowFilter = "SALESMAN = '" + DViewPSC["員工編號"].ToString() + "'";
+                if (QS_ii_QDViewSALES.Count == 0)
+                {
+                    DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.NewRow();
+                    QS_ii_dr["Check"] = "0";
+                    QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
+                    QS_ii_dr["SALESMAN"] = DViewPSC["員工編號"];
+                    QS_ii_dr["SALESMAN_NAME"] = DViewPSC["員工姓名"];
+                    QS_ii_dr["START_DATE"] = DateTime.Now.ToString("yyyy-MM-dd");
+                    QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Rows.Add(QS_ii_dr);
+                }
+            }
+            #endregion
+        }
     }
 
     public class QS_ii_ProductSC_Head : QS_ii_QueryDGV          //表頭查詢

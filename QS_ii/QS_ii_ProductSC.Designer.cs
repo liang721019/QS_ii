@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ProductSC_tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.QS_ii_ProductSC多選 = new System.Windows.Forms.Button();
@@ -47,6 +49,10 @@
             this.QS_ii_ProductSC新增USER = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC多選USER = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC_DGV2 = new System.Windows.Forms.DataGridView();
+            this.QS_ii_ProductSC_DGV2_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.QS_ii_ProductSC_DGV2_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_ProductSC_DGV2_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_ProductSC_DGV2_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.QS_ii_ProductSC_CHAIN_NAME = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -235,6 +241,7 @@
             this.QS_ii_ProductSC刪除USER.TabIndex = 10;
             this.QS_ii_ProductSC刪除USER.Text = "-";
             this.QS_ii_ProductSC刪除USER.UseVisualStyleBackColor = true;
+            this.QS_ii_ProductSC刪除USER.Click += new System.EventHandler(this.QS_ii_ProductSC刪除USER_Click);
             // 
             // QS_ii_ProductSC新增USER
             // 
@@ -245,6 +252,7 @@
             this.QS_ii_ProductSC新增USER.TabIndex = 9;
             this.QS_ii_ProductSC新增USER.Text = "+";
             this.QS_ii_ProductSC新增USER.UseVisualStyleBackColor = true;
+            this.QS_ii_ProductSC新增USER.Click += new System.EventHandler(this.QS_ii_ProductSC新增USER_Click);
             // 
             // QS_ii_ProductSC多選USER
             // 
@@ -255,16 +263,62 @@
             this.QS_ii_ProductSC多選USER.TabIndex = 8;
             this.QS_ii_ProductSC多選USER.Text = "...";
             this.QS_ii_ProductSC多選USER.UseVisualStyleBackColor = true;
+            this.QS_ii_ProductSC多選USER.Click += new System.EventHandler(this.QS_ii_ProductSC多選USER_Click);
             // 
             // QS_ii_ProductSC_DGV2
             // 
+            this.QS_ii_ProductSC_DGV2.AllowUserToAddRows = false;
+            this.QS_ii_ProductSC_DGV2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.QS_ii_ProductSC_DGV2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.QS_ii_ProductSC_DGV2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.QS_ii_ProductSC_DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.QS_ii_ProductSC_DGV2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.QS_ii_ProductSC_DGV2_Column1,
+            this.QS_ii_ProductSC_DGV2_Column2,
+            this.QS_ii_ProductSC_DGV2_Column3,
+            this.QS_ii_ProductSC_DGV2_Column4});
             this.QS_ii_ProductSC_DGV2.Location = new System.Drawing.Point(1, 1);
             this.QS_ii_ProductSC_DGV2.Name = "QS_ii_ProductSC_DGV2";
+            this.QS_ii_ProductSC_DGV2.ReadOnly = true;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QS_ii_ProductSC_DGV2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.QS_ii_ProductSC_DGV2.RowTemplate.Height = 24;
             this.QS_ii_ProductSC_DGV2.Size = new System.Drawing.Size(661, 313);
             this.QS_ii_ProductSC_DGV2.TabIndex = 0;
+            this.QS_ii_ProductSC_DGV2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QS_ii_ProductSC_DGV2_CellContentClick);
+            // 
+            // QS_ii_ProductSC_DGV2_Column1
+            // 
+            this.QS_ii_ProductSC_DGV2_Column1.FalseValue = "0";
+            this.QS_ii_ProductSC_DGV2_Column1.HeaderText = "選取";
+            this.QS_ii_ProductSC_DGV2_Column1.Name = "QS_ii_ProductSC_DGV2_Column1";
+            this.QS_ii_ProductSC_DGV2_Column1.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV2_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QS_ii_ProductSC_DGV2_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.QS_ii_ProductSC_DGV2_Column1.TrueValue = "1";
+            this.QS_ii_ProductSC_DGV2_Column1.Width = 80;
+            // 
+            // QS_ii_ProductSC_DGV2_Column2
+            // 
+            this.QS_ii_ProductSC_DGV2_Column2.HeaderText = "員工編號";
+            this.QS_ii_ProductSC_DGV2_Column2.Name = "QS_ii_ProductSC_DGV2_Column2";
+            this.QS_ii_ProductSC_DGV2_Column2.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV2_Column2.Width = 110;
+            // 
+            // QS_ii_ProductSC_DGV2_Column3
+            // 
+            this.QS_ii_ProductSC_DGV2_Column3.HeaderText = "員工姓名";
+            this.QS_ii_ProductSC_DGV2_Column3.Name = "QS_ii_ProductSC_DGV2_Column3";
+            this.QS_ii_ProductSC_DGV2_Column3.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV2_Column3.Width = 120;
+            // 
+            // QS_ii_ProductSC_DGV2_Column4
+            // 
+            this.QS_ii_ProductSC_DGV2_Column4.HeaderText = "起始日";
+            this.QS_ii_ProductSC_DGV2_Column4.Name = "QS_ii_ProductSC_DGV2_Column4";
+            this.QS_ii_ProductSC_DGV2_Column4.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV2_Column4.Width = 120;
             // 
             // tabPage3
             // 
@@ -512,6 +566,10 @@
         private System.Windows.Forms.Button QS_ii_ProductSC多選USER;
         private System.Windows.Forms.Button QS_ii_ProductSC刪除USER;
         private System.Windows.Forms.Button QS_ii_ProductSC新增USER;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_ProductSC_DGV2_Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column4;
 
     }
 }

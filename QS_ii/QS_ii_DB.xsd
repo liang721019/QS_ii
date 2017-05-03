@@ -191,6 +191,26 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="QS_ii_ProductSC_SALES" msprop:Generator_TableClassName="QS_ii_ProductSC_SALESDataTable" msprop:Generator_TableVarName="tableQS_ii_ProductSC_SALES" msprop:Generator_RowChangedName="QS_ii_ProductSC_SALESRowChanged" msprop:Generator_TablePropName="QS_ii_ProductSC_SALES" msprop:Generator_RowDeletingName="QS_ii_ProductSC_SALESRowDeleting" msprop:Generator_RowChangingName="QS_ii_ProductSC_SALESRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_ProductSC_SALESRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_ProductSC_SALESRowDeleted" msprop:Generator_RowClassName="QS_ii_ProductSC_SALESRow" msprop:Generator_UserTableName="QS_ii_ProductSC_SALES" msprop:Generator_RowEvArgName="QS_ii_ProductSC_SALESRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Check" msprop:Generator_ColumnVarNameInTable="columnCheck" msprop:Generator_ColumnPropNameInRow="Check" msprop:Generator_ColumnPropNameInTable="CheckColumn" msprop:Generator_UserColumnName="Check" type="xs:string" minOccurs="0" />
+              <xs:element name="CHAIN_NO" msprop:Generator_ColumnVarNameInTable="columnCHAIN_NO" msprop:Generator_ColumnPropNameInRow="CHAIN_NO" msprop:Generator_ColumnPropNameInTable="CHAIN_NOColumn" msprop:Generator_UserColumnName="CHAIN_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="SALESMAN" msprop:Generator_ColumnVarNameInTable="columnSALESMAN" msprop:Generator_ColumnPropNameInRow="SALESMAN" msprop:Generator_ColumnPropNameInTable="SALESMANColumn" msprop:Generator_UserColumnName="SALESMAN" type="xs:string" minOccurs="0" />
+              <xs:element name="SALESMAN_NAME" msprop:Generator_ColumnVarNameInTable="columnSALESMAN_NAME" msprop:Generator_ColumnPropNameInRow="SALESMAN_NAME" msprop:Generator_ColumnPropNameInTable="SALESMAN_NAMEColumn" msprop:Generator_UserColumnName="SALESMAN_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="START_DATE" msprop:Generator_ColumnVarNameInTable="columnSTART_DATE" msprop:Generator_ColumnPropNameInRow="START_DATE" msprop:Generator_ColumnPropNameInTable="START_DATEColumn" msprop:Generator_UserColumnName="START_DATE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QS_ii_ProductSC_Employees" msprop:Generator_TableClassName="QS_ii_ProductSC_EmployeesDataTable" msprop:Generator_TableVarName="tableQS_ii_ProductSC_Employees" msprop:Generator_TablePropName="QS_ii_ProductSC_Employees" msprop:Generator_RowDeletingName="QS_ii_ProductSC_EmployeesRowDeleting" msprop:Generator_RowChangingName="QS_ii_ProductSC_EmployeesRowChanging" msprop:Generator_RowEvHandlerName="QS_ii_ProductSC_EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="QS_ii_ProductSC_EmployeesRowDeleted" msprop:Generator_UserTableName="QS_ii_ProductSC_Employees" msprop:Generator_RowChangedName="QS_ii_ProductSC_EmployeesRowChanged" msprop:Generator_RowEvArgName="QS_ii_ProductSC_EmployeesRowChangeEvent" msprop:Generator_RowClassName="QS_ii_ProductSC_EmployeesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Check" msprop:Generator_ColumnVarNameInTable="columnCheck" msprop:Generator_ColumnPropNameInRow="Check" msprop:Generator_ColumnPropNameInTable="CheckColumn" msprop:Generator_UserColumnName="Check" type="xs:string" minOccurs="0" />
+              <xs:element name="員工編號" msprop:Generator_ColumnVarNameInTable="column員工編號" msprop:Generator_ColumnPropNameInRow="員工編號" msprop:Generator_ColumnPropNameInTable="員工編號Column" msprop:Generator_UserColumnName="員工編號" type="xs:string" minOccurs="0" />
+              <xs:element name="員工姓名" msprop:Generator_ColumnVarNameInTable="column員工姓名" msprop:Generator_ColumnPropNameInRow="員工姓名" msprop:Generator_ColumnPropNameInTable="員工姓名Column" msprop:Generator_UserColumnName="員工姓名" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
