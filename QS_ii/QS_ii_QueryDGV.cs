@@ -23,23 +23,53 @@ namespace QS_ii
 
         private void QS_ii_QueryDGV_Load(object sender, EventArgs e)
         {
-            this.Text = "查詢";
-            this.MaximizeBox = false;       //最大化
-            this.MinimizeBox = false;       //最小化
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
-            this.AutoSize = false;          //自動調整大小   
-            //this.QS_ii_加入button.Visible = false;
-
+            default_status();            //預設狀態
         }
 
         #region 變數
         //===========================================
+        public string NOID_Value        //設定or得QS_ii_NOID_LB值的變數
+        {
+            set
+            {
+                QS_ii_NOID_LB.Text = value;
+            }
+            get
+            {
+                return QS_ii_NOID_LB.Text;
+            }
+        }
+
+        public bool 加入button_visible        //設定or取得<加入>這個button是否顯示的值
+        {
+            set
+            {
+                QS_ii_加入button.Visible = value;
+            }
+            get
+            {
+                return QS_ii_加入button.Visible;
+            }
+        }
 
         //===========================================
         #endregion
 
         #region 方法
         //===========================================
+
+        private void default_status()            //預設狀態
+        {
+            #region 內容
+            this.Text = "查詢";
+            this.MaximizeBox = false;       //最大化
+            this.MinimizeBox = false;       //最小化
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
+            this.AutoSize = false;          //自動調整大小  
+            
+
+            #endregion
+        }
         public virtual void QS_ii_QueryDGV_QueryButton()        //查詢Button
         {
 
@@ -108,6 +138,7 @@ namespace QS_ii
         private void QS_ii_加入button_Click(object sender, EventArgs e)
         {
             QS_ii_QueryDGV_加入button();
+            this.Close();
         }
 
         //===========================================

@@ -936,6 +936,7 @@ namespace QS_ii
         
         public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button//
         {
+            #region 內容
             QS_iiQ_add.QS_ii_PriceDataBinding(QS_iiQ_add.QSiiDB.QS_ii_QProduct);           //datatable的欄位與Text綁定資料
             QS_iiQ_add.DataTable_SETColumnExpression();                 //設定DataTable的Column.Expression
             DataView QS_ii_DView = new DataView(QS_iiQ_add.QSiiDB.QS_ii_Product);
@@ -968,10 +969,9 @@ namespace QS_ii
                 //QS_ii_dr["UNIT"] = DView["單位"];
                 //QS_ii_dr["QTY"] = 1;
                 //QS_ii_dr["UNIT_PRICE"] = DView["單價"];
-                //QS_ii_dr.EndEdit();               
-          
+                //QS_ii_dr.EndEdit();
             }
-            this.Close();
+            #endregion
         }
     }
 

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.QS_ii_DGView1 = new System.Windows.Forms.DataGridView();
             this.QS_ii_QueryDGV_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.QS_ii_查詢button = new System.Windows.Forms.Button();
             this.QS_ii_QueryDGv_PID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.QS_ii_NOID_LB = new System.Windows.Forms.Label();
             this.init_panel = new System.Windows.Forms.Panel();
             this.QS_ii_加入button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_DGView1)).BeginInit();
@@ -47,8 +47,8 @@
             // 
             this.QS_ii_DGView1.AllowUserToAddRows = false;
             this.QS_ii_DGView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.QS_ii_DGView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.QS_ii_DGView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.QS_ii_DGView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.QS_ii_DGView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QS_ii_DGView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -58,8 +58,8 @@
             this.QS_ii_DGView1.Margin = new System.Windows.Forms.Padding(5);
             this.QS_ii_DGView1.Name = "QS_ii_DGView1";
             this.QS_ii_DGView1.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.QS_ii_DGView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QS_ii_DGView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.QS_ii_DGView1.RowTemplate.Height = 24;
             this.QS_ii_DGView1.Size = new System.Drawing.Size(618, 376);
             this.QS_ii_DGView1.TabIndex = 0;
@@ -107,14 +107,14 @@
             this.QS_ii_QueryDGv_PID.Size = new System.Drawing.Size(160, 29);
             this.QS_ii_QueryDGv_PID.TabIndex = 3;
             // 
-            // label1
+            // QS_ii_NOID_LB
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "商品編號:";
+            this.QS_ii_NOID_LB.AutoSize = true;
+            this.QS_ii_NOID_LB.Location = new System.Drawing.Point(17, 12);
+            this.QS_ii_NOID_LB.Name = "QS_ii_NOID_LB";
+            this.QS_ii_NOID_LB.Size = new System.Drawing.Size(77, 20);
+            this.QS_ii_NOID_LB.TabIndex = 4;
+            this.QS_ii_NOID_LB.Text = "商品編號:";
             // 
             // init_panel
             // 
@@ -122,7 +122,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.init_panel.Controls.Add(this.QS_ii_加入button);
             this.init_panel.Controls.Add(this.QS_ii_查詢button);
-            this.init_panel.Controls.Add(this.label1);
+            this.init_panel.Controls.Add(this.QS_ii_NOID_LB);
             this.init_panel.Controls.Add(this.QS_ii_QueryDGv_PID);
             this.init_panel.Location = new System.Drawing.Point(12, 13);
             this.init_panel.Name = "init_panel";
@@ -164,11 +164,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button QS_ii_查詢button;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel init_panel;
         public System.Windows.Forms.TextBox QS_ii_QueryDGv_PID;
         public System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_QueryDGV_Column1;
         internal System.Windows.Forms.DataGridView QS_ii_DGView1;
         internal System.Windows.Forms.Button QS_ii_加入button;
+        public System.Windows.Forms.Label QS_ii_NOID_LB;
     }
 }

@@ -95,7 +95,7 @@ namespace QS_ii
             this.AutoSize = false;          //自動調整大小
             QS_ii_ProductSC_DGV1_SetColumns();      //ProductSC_DGV1自定顯示欄位
             QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
-            dataGridView1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
+            //dataGridView1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
             fun.EoD_Panel_btn(ProductSC_panel1, true);
 
             QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
@@ -277,17 +277,15 @@ namespace QS_ii
         private void QS_ii_ProductSC_Query()         //查詢
         {
             #region 內容
-            QS_ii_ProductSC_Head ProductSC_Query = new QS_ii_ProductSC_Head(this);            
+            QS_ii_ProductSC_Head ProductSC_Query = new QS_ii_ProductSC_Head(this);
+            ProductSC_Query.QS_ii_加入button.Visible = false;     //不顯示<加入>Button
+            ProductSC_Query.NOID_Value = "通路編號:";
             GetSQL("查詢通路");
             fun.xxx_DB(this.QueryDB, ProductSC_Query.QS_ii_DGView1);
             //設定init_Staff 新視窗的相對位置#############
             ProductSC_Query.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            //############################################            
+            //############################################
             ProductSC_Query.ShowDialog();
-            
-
-            //fun.xxx_DB(this.QueryDB,);
-
             #endregion
         }
 
@@ -377,7 +375,6 @@ namespace QS_ii
             QS_ii_ProductSC_DGV1_Column5.DataPropertyName = "EN_NAME";
             QS_ii_ProductSC_DGV1_Column6.DataPropertyName = "SPEC";
 
-
         }
 
         public void QS_ii_ProductSC_DataBinding(DataTable x)     //datatable的欄位與Text綁定資料-通路編號&通路名稱
@@ -413,8 +410,8 @@ namespace QS_ii
 
         private void QS_ii_ProductSC_查詢Button_Click(object sender, EventArgs e)
         {
-            start_status(QS_ii_ProductSC_查詢Button);
-            QS_ii_ProductSC_Query();        //查詢
+            start_status(QS_ii_ProductSC_查詢Button);            
+            QS_ii_ProductSC_Query();        //查詢                  
         }
 
         private void QS_ii_ProductSC_儲存Button_Click(object sender, EventArgs e)
@@ -484,20 +481,26 @@ namespace QS_ii
             this.QSiiSC = x;
         }
 
-        public override void QS_ii_QueryDGV_DGView1()       //把選取資料對應到TextBox
+        public override void QS_ii_QueryDGV_DGView1()       //DataGridView雙擊後把選取資料對應到datatable
         {
             #region 內容
             try
             {
-                DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.NewRow();
-                QS_ii_dr["Check"] = "0";
-                QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
-                QS_ii_dr["CHAIN_NAME"] = QSiiSC.QS_ii_ProductSC_CHAIN_NAME.Text;
-                QS_ii_dr["item_NO"] = QS_ii_DGView1.CurrentRow.Cells["商品編號"].Value.ToString();
-                QS_ii_dr["item_NAME"] = QS_ii_DGView1.CurrentRow.Cells["商品名稱"].Value.ToString();
-                QS_ii_dr["EN_NAME"] = QS_ii_DGView1.CurrentRow.Cells["英文名稱"].Value.ToString();
-                QS_ii_dr["SPEC"] = QS_ii_DGView1.CurrentRow.Cells["規格"].Value.ToString();
-                QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
+                DataView QS_ii_QDViewPSC = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                QS_ii_QDViewPSC.RowFilter = "item_NO = '" + QS_ii_DGView1.CurrentRow.Cells["商品編號"].Value.ToString() + "'";
+                if (QS_ii_QDViewPSC.Count == 0)
+                {
+                    DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.NewRow();
+                    QS_ii_dr["Check"] = "0";
+                    QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
+                    QS_ii_dr["CHAIN_NAME"] = QSiiSC.QS_ii_ProductSC_CHAIN_NAME.Text;
+                    QS_ii_dr["item_NO"] = QS_ii_DGView1.CurrentRow.Cells["商品編號"].Value.ToString();
+                    QS_ii_dr["item_NAME"] = QS_ii_DGView1.CurrentRow.Cells["商品名稱"].Value.ToString();
+                    QS_ii_dr["EN_NAME"] = QS_ii_DGView1.CurrentRow.Cells["英文名稱"].Value.ToString();
+                    QS_ii_dr["SPEC"] = QS_ii_DGView1.CurrentRow.Cells["規格"].Value.ToString();
+                    QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
+                }
+                
             }
             catch (Exception x)
             {
@@ -516,8 +519,9 @@ namespace QS_ii
             
         }
 
-        public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button
+        public override void QS_ii_QueryDGV_加入button()      //明細檔多選的加入button
         {
+            #region 內容
             DataView QS_ii_DViewPSC = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_Product);
             DataView QS_ii_QDViewPSC = new DataView(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
             QS_ii_DViewPSC.RowFilter = "Check = '1'";
@@ -537,7 +541,7 @@ namespace QS_ii
                     QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Rows.Add(QS_ii_dr);
                 }
             }
-            this.Close();
+            #endregion
         }        
     }
 
@@ -551,7 +555,7 @@ namespace QS_ii
             this.QSiiSC = x;
         }
 
-        public override void QS_ii_QueryDGV_DGView1()       //DGV雙擊左鍵二下
+        public override void QS_ii_QueryDGV_DGView1()       //DataGridView雙擊後把選取資料對應到datatable
         {
 
             QSiiSC.PSC_ID = QS_ii_DGView1.CurrentRow.Cells["通路編號"].Value.ToString();
@@ -562,9 +566,17 @@ namespace QS_ii
             
             //@"distinct [CHAIN_NO]	AS 通路編號,[CHAIN_NAME]	AS 通路名稱 FROM [TEST_SLSYHI].[dbo].[SLS_ItemCH]";
         }
+
         public override void QS_ii_QueryDGV_QueryButton()        //查詢Button
         {
             #region 內容
+            //MessageBox.Show(NOID_Value);
+            QSiiSC.GetSQL("查詢通路");
+            if (QS_ii_QueryDGv_PID.Text != "")
+            {
+                QSiiSC.QueryDB += @"where [CHAIN_NO] = '" + QS_ii_QueryDGv_PID.Text + "' order by 1";
+            }
+            QSiiSC.fun.xxx_DB(QSiiSC.QueryDB, QS_ii_DGView1);
 
             #endregion
         }
