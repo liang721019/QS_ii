@@ -13,7 +13,7 @@ namespace QS_ii
             public override void V_login_Default()      //設定LOGIN變數
             {
                 base.V_login_Default();
-                base.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_Asset_Login] '" +
+                base.Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Login] '" +
                                 ID_Login + @"','" + App_LoginPW + "'";
             }
 
