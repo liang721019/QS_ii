@@ -50,16 +50,28 @@ namespace QS_ii
 
         internal void GetSQL(string x)
         {
-            if (x == "新增")
+            if (x == "通路商品<新增>")
             {
                 #region 內容
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Insert] '"+PSC_ID+"','" + QS_ii_ProductSC_CHAIN_NAME.Text.Trim() +
-                               @"',@ITEM_NO,'"+USER_ID.Text + "'";
+                               @"',@ITEM_NO,'" + USER_ID.Text + "'";
                 #endregion
+            }
+            else if (x == "通路員工檔<新增>")
+            {
+                this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSCU_Insert] '" + PSC_ID + "',@SALESMAN,@START_DATE,'" + USER_ID.Text + "'";
             }
             else if(x == "取得通路編號")
             {
                 this.QueryDB = @"select [TEST_SLSYHI].[dbo].[GETSLS_QS_itemCH_NO]() AS 'CHAIN_NO'";
+            }
+            else if(x == "")
+            {
+
+            }
+            else if (x == "查詢員工主檔")
+            {
+                this.QueryDB = @"select [Check] = '0',[SALESMAN] AS 員工編號 , [SALESMAN_NAME] AS 員工姓名 from [TEST_SLSYHI].[dbo].[SLS_QS_Employees]()";
             }
             else if(x == "查詢通路")
             {                
@@ -78,29 +90,26 @@ namespace QS_ii
             {
                 this.QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
             }
-            else if (x == "表身修改")
+            else if (x == "<修改>表身修改")
             {
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Update] '" + QS_ii_ProductSC_CHAIN_NO.Text + 
                                 @"','"+QS_ii_ProductSC_CHAIN_NAME.Text.Trim()+"','"+USER_ID.Text+"'";
             }
-            else if (x == "表身刪除")
+            else if (x == "<修改>表身刪除")
             {
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Delete] '" + QS_ii_ProductSC_CHAIN_NO.Text + "',@ITEM_NO";
             }
-            else if (x == "表身新增")
+            else if (x == "<修改>表身新增")
             {
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Insert] '" + QS_ii_ProductSC_CHAIN_NO.Text + "','" + QS_ii_ProductSC_CHAIN_NAME.Text.Trim() +
                                @"',@ITEM_NO,'" + USER_ID.Text + "'";
             }
-            else if (x == "查詢員工主檔")
-            {
-                this.QueryDB = @"select [Check] = '0',[SALESMAN] AS 員工編號 , [SALESMAN_NAME] AS 員工姓名 from [TEST_SLSYHI].[dbo].[SLS_QS_Employees]()";
-            }
-            else if(x == "修改通路員工檔新增")
+
+            else if (x == "<修改>通路員工檔新增")
             {
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSCU_Insert] @CHAIN_NO,@SALESMAN,@START_DATE,'" + USER_ID.Text + "'";
             }
-            else if (x == "修改通路員工檔刪除")
+            else if (x == "<修改>通路員工檔刪除")
             {
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSCU_Delete] @CHAIN_NO,@SALESMAN";
             }
@@ -279,12 +288,12 @@ namespace QS_ii
                 PSC_ID = fun.Temp_ds.Tables[0].Rows[0]["CHAIN_NO"].ToString();
                 if (!fun.Check_error)
                 {
-                    GetSQL("新增");
+                    GetSQL("通路商品<新增>");
                     fun.QS_ii_PSC_ITEMCHADD_ds(this.QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
                 }
                 if (!fun.Check_error)
                 {
-                    GetSQL("通路員工檔新增");
+                    GetSQL("通路員工檔<新增>");
                     fun.QS_ii_PSC_SALESADD_ds(this.QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES);
                 }
                 if (fun.Check_error == false)
@@ -308,20 +317,20 @@ namespace QS_ii
                 if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     fun.Check_error = false;                    
-                    GetSQL("表身刪除");
+                    GetSQL("<修改>表身刪除");
                     fun.ProductSC_DEL = QueryDB;
                     //fun.QS_ii_ModifyProductSCDEL_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
-                    GetSQL("表身新增");
+                    GetSQL("<修改>表身新增");
                     fun.ProductSC_ADD = QueryDB;
                     //fun.QS_ii_ModifyProductSCADD_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
-                    fun.QS_ii_ModifyITEMCH_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
-                    GetSQL("表身修改");
+                    fun.QS_ii_ModifyITEMCH_ds(QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                    GetSQL("<修改>表身修改");
                     fun.QS_ii_ModifyQT01_ds(QueryDB);
                     if(!fun.Check_error)
                     {
-                        GetSQL("修改通路員工檔新增");
+                        GetSQL("<修改>通路員工檔新增");
                         fun.ProductSC_ADD = QueryDB;
-                        GetSQL("修改通路員工檔刪除");
+                        GetSQL("<修改>通路員工檔刪除");
                         fun.ProductSC_DEL = QueryDB;
                         fun.QS_ii_ModifySALES_ds(QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES);
                     }
