@@ -14,7 +14,7 @@ namespace QS_ii
 
     public partial class QS_ii_Customer : Form
     {
-        QS_ii_function fun = new QS_ii_function();
+        internal QS_ii_function fun = new QS_ii_function();
         
 
         public QS_ii_Customer()
@@ -25,7 +25,7 @@ namespace QS_ii
 
         #region 變數
         //=====================================================================
-        private string QueryDB
+        public string QueryDB
         {
             set;
             get;
@@ -65,7 +65,7 @@ namespace QS_ii
 
         #region 方法
 
-        private void GetSQL(string x)        //DB語法
+        public void GetSQL(string x)        //DB語法
         {
             QueryDB = "";
             if (x == "新增")
@@ -119,14 +119,16 @@ namespace QS_ii
         private void default_status()       //預設
         {
             this.Text = "客戶主檔";
-            Customer_Status_info.Text = "";     //狀態文字
+            Customer_Status_info.Text = "瀏覽";     //狀態文字
             //this.MaximizeBox = true;       //最大化
             //this.MinimizeBox = true;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
             this.AutoSize = false;          //自動調整大小
             //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小            
             fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);     //QS_ii_Head_panel內的TextBox設定唯讀
+            fun.EoD_Panel_txt(QS_ii_Customer_panel2, true);      //QS_ii_Customer_panel2內的TextBox設定唯讀  
             fun.EoD_Panel_btnVisible(QS_ii_Customer_panel1, true);      //QS_ii_Customer_panel1內的button設定顯示
+                      
             QS_ii_Customer_儲存Button.Visible = false;
             QS_ii_Customer_取消Button.Visible = false;
             Customer_Status_info.Visible = false;
@@ -179,6 +181,7 @@ namespace QS_ii
             }
             else if (x == QS_ii_Customer_查詢Button)
             {
+                
                 fun.clearAir(QS_ii_Customer_panel2);
                 fun.clearAir(QS_ii_Customer_panel3);
                 tb_CUST_NO.Focus();
@@ -186,13 +189,12 @@ namespace QS_ii
             }
             else if (x == QS_ii_Customer_儲存Button)
             {
-                Customer_Status_info.Text = "";
+                Customer_Status_info.Text = "瀏覽";
                 Customer_Status_info.Visible = false;
                 fun.clearAir(QS_ii_Customer_panel2);
                 fun.clearAir(QS_ii_Customer_panel3);
                 fun.EoD_Panel_txt(QS_ii_Customer_panel2, false);         //QS_ii_Customer_panel2內的TextBox設定可讀寫
-                fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);         //QS_ii_Customer_panel3內的TextBox設定唯讀
-                tb_CUST_NO.ReadOnly = false;
+                fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);         //QS_ii_Customer_panel3內的TextBox設定唯讀                
 
                 QS_ii_Customer_新增Button.Enabled = true;
                 QS_ii_Customer_修改Button.Enabled = true;
@@ -206,7 +208,7 @@ namespace QS_ii
             }
             else if (x == QS_ii_Customer_取消Button)
             {
-                Customer_Status_info.Text = "";
+                Customer_Status_info.Text = "瀏覽";
                 Customer_Status_info.Visible = false;                
                 fun.EoD_Panel_txt(QS_ii_Customer_panel2, false);     //QS_ii_Customer_panel2內的TextBox設定可讀寫  
                 fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);     //QS_ii_Customer_panel3內的TextBox設定唯讀                
@@ -279,7 +281,12 @@ namespace QS_ii
             GetSQL("查詢");    //語法丟進QueryDB
             Customer_Query_conditions();      //查詢客戶主檔的條件
             fun.xxx_DB(QueryDB + QueryOLOD, dgv);         //連接DB-執行DB指令
-
+        }
+        public void Customer_Query1(DataGridView dgv)           //客戶主檔查詢
+        {
+            GetSQL("查詢");    //語法丟進QueryDB
+            Customer_Query_conditions();      //查詢客戶主檔的條件
+            fun.xxx_DB(QueryDB + QueryOLOD, dgv);         //連接DB-執行DB指令
         }
 
         private void Customer_Query_conditions()      //查詢客戶主檔的條件
@@ -309,6 +316,8 @@ namespace QS_ii
         {
             #region  按enter之後執行
             QS_ii_Customer_T QSQDGV = new QS_ii_Customer_T(this);
+            QSQDGV.QS_ii_NOID_LB.Text = "客戶編號:";
+            QSQDGV.QS_ii_加入button.Visible = false;
             //設定init_Staff 新視窗的相對位置#############
             QSQDGV.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
@@ -387,7 +396,7 @@ namespace QS_ii
         //=====================================================================
         private void tb_CUST_NO_KeyDown(object sender, KeyEventArgs e)      //客戶編號按enter後的查詢事件
         {
-            if (Customer_Status_info.Text == "")
+            if (Customer_Status_info.Text == "瀏覽")
             {
                 if (e.KeyCode == Keys.Enter)
                 {
@@ -399,7 +408,7 @@ namespace QS_ii
 
         private void tb_CUST_NAME_KeyDown(object sender, KeyEventArgs e)        //客戶名稱按enter後的查詢事件
         {
-            if (Customer_Status_info.Text == "")
+            if (Customer_Status_info.Text == "瀏覽")
             {
                 if (e.KeyCode == Keys.Enter)
                 {
@@ -411,7 +420,7 @@ namespace QS_ii
 
         private void tb_VAT_NO_KeyDown(object sender, KeyEventArgs e)           //統一編號按enter後的查詢事件
         {
-            if (Customer_Status_info.Text == "")
+            if (Customer_Status_info.Text == "瀏覽")
             {
                 if (e.KeyCode == Keys.Enter)
                 {
@@ -450,6 +459,19 @@ namespace QS_ii
             QSii.tb_CUST_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["客戶地址"].Value.ToString();
             QSii.tb_DELI_ADDR_NO.Text = QS_ii_DGView1.CurrentRow.Cells["送貨郵地區號"].Value.ToString();
             QSii.tb_DELI_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["送貨地址"].Value.ToString();
+
+        }
+
+        public override void QS_ii_QueryDGV_QueryButton()        //查詢Button
+        {
+            #region 內容
+            QSii.GetSQL("查詢");    //語法丟進QueryDB
+            if (QS_ii_QueryDGv_PID.Text != "")
+            {
+                QSii.QueryDB += @"and [客戶編號] = N'" + QS_ii_QueryDGv_PID.Text.Trim() + "'";
+            }
+            QSii.fun.xxx_DB(QSii.QueryDB, QS_ii_DGView1);         //連接DB-執行DB指令           
+            #endregion
 
         }
 

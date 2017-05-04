@@ -110,10 +110,11 @@ namespace QS_ii
             //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小            
             fun.Format_Panel_dTP(Product_Detail_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(Product_Detail_panel, true);     //Product_Detail_panel內的TextBox設定唯讀
-            fun.EoD_Panel_btnVisible(Product_panel1, true);      //Product_panel1內的button設定顯示
-            tb_item_NO.ReadOnly = false;     //商品編號
-            tb_item_TYPE.ReadOnly = false;      //商品類型
-            tb_item_NAME.ReadOnly = false;      //商品名稱
+            fun.EoD_Panel_txt(Product_panel2, true);     //Product_panel2內的TextBox設定唯讀
+            fun.EoD_Panel_btnVisible(Product_panel1, true);      //Product_panel1內的button設定顯示            
+            //tb_item_NO.ReadOnly = true;     //商品編號
+            //tb_item_TYPE.ReadOnly = true;      //商品類型
+            //tb_item_NAME.ReadOnly = true;      //商品名稱
 
             tb_UNIT_PRICE.TextAlign = HorizontalAlignment.Right;            //TextBox靠右對齊
 
@@ -186,7 +187,7 @@ namespace QS_ii
                 Product_Status_info.Text = "";
                 fun.clearAir(Product_panel2);
                 fun.clearAir(Product_Detail_panel);
-                fun.EoD_Panel_txt(Product_panel2, false);     //Product_panel2內的TextBox設定可讀寫
+                fun.EoD_Panel_txt(Product_panel2, true);     //Product_panel2內的TextBox設定可讀寫
                 fun.EoD_Panel_txt(Product_Detail_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀
 
                 //tb_item_NO.ReadOnly = true;     //商品編號
@@ -207,9 +208,9 @@ namespace QS_ii
                 #region 取消
                 Product_Status_info.Visible = false;
                 Product_Status_info.Text = "";
-                fun.EoD_Panel_txt(Product_panel2, false);     //Product_panel2內的TextBox設定可讀寫
+                fun.EoD_Panel_txt(Product_panel2, true);     //Product_panel2內的TextBox設定可讀寫
                 fun.EoD_Panel_txt(Product_Detail_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀                
-                tb_item_NO.ReadOnly = true;     //商品編號                
+                      
 
                 QS_ii_Product_新增Button.Enabled = true;
                 QS_ii_Product_修改Button.Enabled = true;

@@ -82,7 +82,7 @@ namespace QS_ii
 
         public void GetSQL(string x)
         {
-            if (x == "新增")
+            if (x == "新增-表頭新增")
             {
                 #region 內容
                 ALL_RB();
@@ -108,6 +108,10 @@ namespace QS_ii
                          "',@QS_ii_QuotesNO  output";                 //報價單號
                 #endregion
             }
+            else if(x == "新增-表身新增")
+            {
+                QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Insert_Detail] '"+QS_ii_QuotesNO+"',@item_NO,@item_NAME,@SPEC,@UNIT,@QTY,@UNIT_PRICE,@AMOUNT,'" + USER_ID.Text + "'";
+            }
             else if(x== "表頭修改")
             {
                 #region 內容
@@ -124,12 +128,12 @@ namespace QS_ii
                 #endregion
 
             }
-            else if(x == "表身新增")
+            else if(x == "修改-表身新增")
             {
                 QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Insert_Detail] @QT_NO,@item_NO,@item_NAME,@SPEC,@UNIT,@QTY,@UNIT_PRICE,@AMOUNT,'" + USER_ID.Text + "'";
                 //fun.QS_ii_QDetailADD = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Insert_Detail] @QT_NO,@item_NO,@item_NAME,@SPEC,@UNIT,@QTY,@UNIT_PRICE,@AMOUNT,'" + USER_ID.Text + "'";   
             }
-            else if (x == "表身修改")
+            else if (x == "修改-表身修改")
             {
                 #region 內容
 
@@ -137,7 +141,7 @@ namespace QS_ii
                 //fun.QS_ii_QDetailMOD = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Update_Detail] @QT_NO,@item_NO,@QTY,@AMOUNT,'" + USER_ID.Text + "'";
                 #endregion
             }
-            else if(x == "表身刪除")
+            else if (x == "修改-表身刪除")
             {
                 #region 內容
                 QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Delete_Detail] @QT_NO,@item_NO";
@@ -183,13 +187,16 @@ namespace QS_ii
             else if(x == "多選商品主檔")
             {
                 #region 內容
-                QueryDB = @"select [Check] = '0',* from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
+                //QueryDB = @"select [Check] = '0',* from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
+                QueryDB = @"select [Check] = '0',* from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp1](" + USER_ID.Text+ ") where [DEL_FALG] = 'N'";
+
                 #endregion
             }
             else if(x == "商品主檔查詢")
             {
                 #region 內容
-                QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
+                //QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
+                QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp1](" + USER_ID.Text + ") where [DEL_FALG] = 'N'";
                 #endregion
             }
             
@@ -391,9 +398,9 @@ namespace QS_ii
             if (MessageBox.Show("確定要新增？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 fun.Check_error = false;
-                GetSQL("新增");
+                GetSQL("新增-表頭新增");
                 fun.QS_ii_QT01_insert(QueryDB);
-                GetSQL("表身新增");
+                GetSQL("新增-表身新增");
                 fun.QS_ii_Product_ds(QueryDB, QSiiDB.QS_ii_QProduct);
                 
                 if (fun.Check_error == false)
@@ -411,12 +418,12 @@ namespace QS_ii
             #region 內容
             if (MessageBox.Show("確定要修改？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                fun.Check_error = false;                
-                GetSQL("表身修改");
+                fun.Check_error = false;
+                GetSQL("修改-表身修改");
                 fun.QS_ii_ModifyProductMODIFY_ds(QueryDB, QSiiDB.QS_ii_QProduct);
-                GetSQL("表身刪除");
+                GetSQL("修改-表身刪除");
                 fun.QS_ii_ModifyProductDEL_ds(QueryDB, QSiiDB.QS_ii_QProduct);
-                GetSQL("表身新增");
+                GetSQL("修改-表身新增");
                 fun.QS_ii_ModifyProductADD_ds(QueryDB, QSiiDB.QS_ii_QProduct);
                 GetSQL("表頭修改");
                 fun.QS_ii_ModifyQT01_ds(QueryDB);

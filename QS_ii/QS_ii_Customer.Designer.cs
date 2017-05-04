@@ -525,7 +525,7 @@
             this.Customer_Status_info.Name = "Customer_Status_info";
             this.Customer_Status_info.Size = new System.Drawing.Size(41, 20);
             this.Customer_Status_info.TabIndex = 92;
-            this.Customer_Status_info.Text = "測試";
+            this.Customer_Status_info.Text = "瀏覽";
             // 
             // QS_ii_Customer
             // 
