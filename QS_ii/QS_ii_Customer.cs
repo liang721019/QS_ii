@@ -184,6 +184,7 @@ namespace QS_ii
                 
                 fun.clearAir(QS_ii_Customer_panel2);
                 fun.clearAir(QS_ii_Customer_panel3);
+                fun.EoD_Panel_txt(QS_ii_Customer_panel2, false);     //QS_ii_Customer_panel2內的TextBox設定可讀寫  
                 tb_CUST_NO.Focus();
 
             }
@@ -281,13 +282,7 @@ namespace QS_ii
             GetSQL("查詢");    //語法丟進QueryDB
             Customer_Query_conditions();      //查詢客戶主檔的條件
             fun.xxx_DB(QueryDB + QueryOLOD, dgv);         //連接DB-執行DB指令
-        }
-        public void Customer_Query1(DataGridView dgv)           //客戶主檔查詢
-        {
-            GetSQL("查詢");    //語法丟進QueryDB
-            Customer_Query_conditions();      //查詢客戶主檔的條件
-            fun.xxx_DB(QueryDB + QueryOLOD, dgv);         //連接DB-執行DB指令
-        }
+        }       
 
         private void Customer_Query_conditions()      //查詢客戶主檔的條件
         {
@@ -367,8 +362,6 @@ namespace QS_ii
             else if (Customer_Status_info.Text == "修改")
             {
                 Customer_Modify();        //客戶主檔修改
-                
-
             }
             
         }
@@ -459,7 +452,6 @@ namespace QS_ii
             QSii.tb_CUST_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["客戶地址"].Value.ToString();
             QSii.tb_DELI_ADDR_NO.Text = QS_ii_DGView1.CurrentRow.Cells["送貨郵地區號"].Value.ToString();
             QSii.tb_DELI_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["送貨地址"].Value.ToString();
-
         }
 
         public override void QS_ii_QueryDGV_QueryButton()        //查詢Button

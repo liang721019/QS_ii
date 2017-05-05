@@ -126,9 +126,6 @@
             this.QS_ii_Product_DGV_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QS_ii_Product_DGV_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.QS_ii_HQuery_DGV = new System.Windows.Forms.DataGridView();
             this.QS_ii_HQuery_DGV_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,10 +156,6 @@
             this.QS_ii_tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).BeginInit();
             this.panel7.SuspendLayout();
@@ -1054,42 +1047,12 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tabPage2.Controls.Add(this.dataGridView3);
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1112, 326);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "其他";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(7, 173);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(557, 147);
-            this.dataGridView3.TabIndex = 2;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(589, 7);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(509, 313);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(558, 160);
-            this.dataGridView1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -1298,10 +1261,6 @@
             this.QS_ii_tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -1401,7 +1360,6 @@
         public System.Windows.Forms.TextBox tb_CUST_ADDR;
         public System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
         public System.Windows.Forms.DataGridView QS_ii_Product_DGV;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker QT_EFF_DATE_dTP;
         internal System.Windows.Forms.TextBox tb_TAX_AMT;
         internal System.Windows.Forms.TextBox tb_TOT_AMT;
@@ -1420,7 +1378,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column9;
-        private System.Windows.Forms.DataGridView dataGridView2;
         internal System.Windows.Forms.TextBox tb_QT_NO;
         private System.Windows.Forms.Button QS_ii_通路button;
         private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_Product_DGV_Column1;
@@ -1430,6 +1387,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column7;
-        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }

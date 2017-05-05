@@ -110,7 +110,7 @@ namespace QS_ii
             }
             else if(x == "新增-表身新增")
             {
-                QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Insert_Detail] '"+QS_ii_QuotesNO+"',@item_NO,@item_NAME,@SPEC,@UNIT,@QTY,@UNIT_PRICE,@AMOUNT,'" + USER_ID.Text + "'";
+                QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Insert_Detail] @QT_NO,@item_NO,@item_NAME,@SPEC,@UNIT,@QTY,@UNIT_PRICE,@AMOUNT,'" + USER_ID.Text + "'";
             }
             else if(x== "表頭修改")
             {
@@ -225,14 +225,11 @@ namespace QS_ii
 
             QS_ii_Product_DGV_Column1.Visible = false;      //報價單明細<選取>關閉
             QS_ii_Product_DGV_Column6.ReadOnly = true;      //報價單明細<數量>唯讀
-
             tb_REMARK.ReadOnly = true;
-
             QS_ii_查詢button.Visible = false;
             Product_多選button.Visible = false;
             Product_新增button.Visible = false;
             Product_刪除button.Visible = false;
-
             QS_ii_新增button.Enabled = true;
             QS_ii_產品button.Enabled = true;
             QS_ii_刪除button.Enabled = true;
@@ -392,17 +389,19 @@ namespace QS_ii
 
         }
                 
-        private void Quotes_Add()       //報價單新增
+        private void Quotes_Add()           //報價單新增
         {
             #region 內容
             if (MessageBox.Show("確定要新增？", "警告!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 fun.Check_error = false;
                 GetSQL("新增-表頭新增");
-                fun.QS_ii_QT01_insert(QueryDB);
+                fun.Quotes_ADD = QueryDB;
+                //fun.QS_ii_QT01_insert(QueryDB);           
                 GetSQL("新增-表身新增");
-                fun.QS_ii_Product_ds(QueryDB, QSiiDB.QS_ii_QProduct);
-                
+                //fun.QS_ii_Product_ds(QueryDB, QSiiDB.QS_ii_QProduct);
+                fun.Quotes_Detail_ADD = QueryDB;
+                fun.QS_ii_QT01_insert(QSiiDB.QS_ii_QProduct);
                 if (fun.Check_error == false)
                 {
                     start_status(QS_ii_儲存button);
@@ -444,7 +443,7 @@ namespace QS_ii
 
         }
 
-        private void Quotes_HQueryDoubleClick()         //報價單查詢==>QS_ii_HQuery_DGV雙擊二下
+        private void Quotes_HQueryDoubleClick()             //報價單查詢==>QS_ii_HQuery_DGV雙擊二下
         {
             #region 內容
             tb_QT_NO.Text = QT_NO;
@@ -477,16 +476,14 @@ namespace QS_ii
             if (x == Product_新增button)
             {
                 ProductADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
-                ProductADD.QS_ii_加入button.Visible = false;
-                //Product_Query(ProductADD.QS_ii_DGView1);        //商品主檔查詢
-                Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
+                ProductADD.QS_ii_加入button.Visible = false;                
             }
             else if (x == Product_多選button)
             {
                 ProductADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
-                ProductADD.QS_ii_加入button.Visible = true;
-                Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
+                ProductADD.QS_ii_加入button.Visible = true;                
             }
+            Product_Query(ProductADD.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Product, ProductADD.QS_ii_DGView1);        //商品主檔查詢
             //設定init_Staff 新視窗的相對位置#############
             ProductADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################            
@@ -584,7 +581,7 @@ namespace QS_ii
             #endregion
         }
 
-        private void Quotes_import_Head()         //報價單主檔表頭與TextBox對應
+        private void Quotes_import_Head()           //報價單主檔表頭與TextBox對應
         {
             #region 內容
             //tb_QT_NO.Text = QSiiDB.Tables["QS_ii_HQT01"].Rows[0]["QT_NO"].ToString();                   //報價單編號

@@ -24,10 +24,10 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\192.168.100.210\exe_update\QS_ii\PRD\</UpdateUrl>
     <PublisherName>SLS</PublisherName>
-    <MinimumRequiredVersion>1.0.0.14</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.16</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
