@@ -65,9 +65,9 @@ namespace QS_ii
             {
                 this.QueryDB = @"select [TEST_SLSYHI].[dbo].[GETSLS_QS_itemCH_NO]() AS 'CHAIN_NO'";
             }
-            else if(x == "")
+            else if (x == "查詢通路主檔")
             {
-
+                this.QueryDB = @"select [CHAIN_NO],[CHAIN_NAME] from [TEST_SLSYHI].[dbo].[SLS_CHAIN] where [CHAIN_NO] = '" + PSC_ID + "'";
             }
             else if (x == "查詢員工主檔")
             {
@@ -84,13 +84,13 @@ namespace QS_ii
             }
             else if (x == "查詢通路員工檔明細")
             {
-                this.QueryDB = @"SELECT [Check] = '0', * FROM [TEST_SLSYHI].[dbo].[SLS_QS_ProductSCU_QueryTemp]() where [CHAIN_NO] = '" + PSC_ID + "'";
+                this.QueryDB = @"select [Check] = '0', * FROM [TEST_SLSYHI].[dbo].[SLS_QS_ProductSCU_QueryTemp]() where [CHAIN_NO] = '" + PSC_ID + "'";
             }
             else if(x == "商品主檔查詢")
             {
                 this.QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
             }
-            else if (x == "<修改>表身修改")
+            else if (x == "<修改>通路主檔修改")
             {
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSC_Update] '" + QS_ii_ProductSC_CHAIN_NO.Text + 
                                 @"','"+QS_ii_ProductSC_CHAIN_NAME.Text.Trim()+"','"+USER_ID.Text+"'";
@@ -107,7 +107,7 @@ namespace QS_ii
 
             else if (x == "<修改>通路員工檔新增")
             {
-                this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSCU_Insert] @CHAIN_NO,@SALESMAN,@START_DATE,'" + USER_ID.Text + "'";
+                this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSCU_Insert] @CHAIN_NO,@SALESMAN,@STARTDATE,'" + USER_ID.Text + "'";
             }
             else if (x == "<修改>通路員工檔刪除")
             {
@@ -123,18 +123,20 @@ namespace QS_ii
             this.MinimizeBox = false;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小            
             this.AutoSize = false;          //自動調整大小
+
+            QS_ii_ProductSC_DGV1_Column1.Visible = false;
+            QS_ii_ProductSC_DGV2_Column1.Visible = false;
             QS_ii_ProductSC_DGV1_SetColumns();      //ProductSC_DGV1自定顯示欄位
             QS_ii_ProductSC_DGV2_SetColumns();      //ProductSC_DGV2自定顯示欄位
             QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
             QS_ii_ProductSC_DGV2.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES;
+            //dataGridView1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES;
             //dataGridView1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
-            //dataGridView2.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CHAIN;
-            fun.EoD_Panel_btn(ProductSC_panel1, true);
-
+            //dataGridView2.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CHAIN;            
+            fun.EoD_Panel_btn(ProductSC_panel1, true);           
             QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
             QS_ii_ProductSC_CHAIN_NAME.ReadOnly = true;
-            QS_ii_ProductSC_DGV1_Column1.Visible = false;
-            QS_ii_ProductSC_DGV2_Column1.Visible = false;
+            
             ProductSC_Status_info.Visible = false;
             QS_ii_ProductSC_儲存Button.Visible = false;
             QS_ii_ProductSC_取消Button.Visible = false;
@@ -181,11 +183,10 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "修改";
                 ProductSC_Status_info.Visible = true;
                 fun.EoD_Panel_btn(ProductSC_panel1, false);
-                
-                QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
-                QS_ii_ProductSC_CHAIN_NAME.ReadOnly = false;
                 QS_ii_ProductSC_DGV1_Column1.Visible = true;
                 QS_ii_ProductSC_DGV2_Column1.Visible = true;
+                QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
+                QS_ii_ProductSC_CHAIN_NAME.ReadOnly = false;                
                 QS_ii_ProductSC_儲存Button.Visible = true;
                 QS_ii_ProductSC_儲存Button.Enabled = true;
                 QS_ii_ProductSC_取消Button.Visible = true;
@@ -205,6 +206,9 @@ namespace QS_ii
             }
             else if (x == QS_ii_ProductSC_查詢Button)
             {
+                ProductSC_Status_info.Text = "瀏覽";
+                QS_ii_ProductSC_DGV1_Column1.Visible = false;
+                QS_ii_ProductSC_DGV2_Column1.Visible = false;
 
             }
             else if (x == QS_ii_ProductSC_儲存Button)
@@ -318,13 +322,11 @@ namespace QS_ii
                 {
                     fun.Check_error = false;                    
                     GetSQL("<修改>表身刪除");
-                    fun.ProductSC_DEL = QueryDB;
-                    //fun.QS_ii_ModifyProductSCDEL_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                    fun.ProductSC_DEL = QueryDB;                    
                     GetSQL("<修改>表身新增");
-                    fun.ProductSC_ADD = QueryDB;
-                    //fun.QS_ii_ModifyProductSCADD_ds(QueryDB, QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
+                    fun.ProductSC_ADD = QueryDB;                    
                     fun.QS_ii_ModifyITEMCH_ds(QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
-                    GetSQL("<修改>表身修改");
+                    GetSQL("<修改>通路主檔修改");
                     fun.QS_ii_ModifyQT01_ds(QueryDB);
                     if(!fun.Check_error)
                     {
@@ -536,7 +538,7 @@ namespace QS_ii
             QS_ii_ProductSC_DGV2_Column1.DataPropertyName = "Check";
             QS_ii_ProductSC_DGV2_Column2.DataPropertyName = "SALESMAN";
             QS_ii_ProductSC_DGV2_Column3.DataPropertyName = "SALESMAN_NAME";
-            QS_ii_ProductSC_DGV2_Column4.DataPropertyName = "START_DATE";
+            QS_ii_ProductSC_DGV2_Column4.DataPropertyName = "STARTDATE";
 
             #endregion
         }
@@ -564,7 +566,15 @@ namespace QS_ii
 
         private void QS_ii_ProductSC_修改Button_Click(object sender, EventArgs e)
         {
-            start_status(QS_ii_ProductSC_修改Button);
+            if (QS_ii_ProductSC_CHAIN_NO.Text.Trim().Length != 0)
+            {
+                start_status(QS_ii_ProductSC_修改Button);
+            }
+            else
+            {
+                MessageBox.Show("沒有通路編號!!", this.Text);
+            }
+            
         }
 
         private void QS_ii_ProductSC_刪除Button_Click(object sender, EventArgs e)
@@ -585,7 +595,7 @@ namespace QS_ii
 
         private void QS_ii_ProductSC_取消Button_Click(object sender, EventArgs e)
         {
-            QS_ii_ProductSC_Cancel();            
+            QS_ii_ProductSC_Cancel();
         }
 
         private void QS_ii_ProductSC多選_Click(object sender, EventArgs e)
@@ -663,6 +673,28 @@ namespace QS_ii
             }
         }
 
+        private void QS_ii_ProductSC_FormClosing(object sender, FormClosingEventArgs e)         //QS_ii_ProductSC關閉form的事件
+        {
+            QS_ii_ProductSC_Cancel();
+            QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Clear();
+            QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Clear();
+            QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CHAIN.Clear();
+        }
+
+        private void ProductSC_tabControl1_SelectedIndexChanged(object sender, EventArgs e)     //ProductSC_tabControl1分頁改變的事件
+        {
+            //******重要*******
+            if (ProductSC_tabControl1.SelectedIndex == 1)
+            {
+                if (ProductSC_Status_info.Text == "瀏覽")
+                {
+                    QS_ii_ProductSC_DGV1_Column1.Visible = false;
+                    QS_ii_ProductSC_DGV2_Column1.Visible = false;
+                }
+            }           
+
+        }
+
         
 
         //====================================================
@@ -692,8 +724,7 @@ namespace QS_ii
                 {
                     DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.NewRow();
                     QS_ii_dr["Check"] = "0";
-                    QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
-                    QS_ii_dr["CHAIN_NAME"] = QSiiSC.QS_ii_ProductSC_CHAIN_NAME.Text;
+                    QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;                    
                     QS_ii_dr["item_NO"] = QS_ii_DGView1.CurrentRow.Cells["商品編號"].Value.ToString();
                     QS_ii_dr["item_NAME"] = QS_ii_DGView1.CurrentRow.Cells["商品名稱"].Value.ToString();
                     QS_ii_dr["EN_NAME"] = QS_ii_DGView1.CurrentRow.Cells["英文名稱"].Value.ToString();
@@ -733,7 +764,7 @@ namespace QS_ii
                     DataRow QS_ii_dr = QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC.NewRow();
                     QS_ii_dr["Check"] = "0";
                     QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
-                    QS_ii_dr["CHAIN_NAME"] = QSiiSC.QS_ii_ProductSC_CHAIN_NAME.Text;  //QS_ii_ProductSC_CHAIN_NAME
+                    //QS_ii_dr["CHAIN_NAME"] = QSiiSC.QS_ii_ProductSC_CHAIN_NAME.Text;  //QS_ii_ProductSC_CHAIN_NAME
                     QS_ii_dr["item_NO"] = DViewPSC["商品編號"];
                     QS_ii_dr["item_NAME"] = DViewPSC["商品名稱"];
                     QS_ii_dr["EN_NAME"] = DViewPSC["英文名稱"];
@@ -769,7 +800,7 @@ namespace QS_ii
                     QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
                     QS_ii_dr["SALESMAN"] = QS_ii_DGView1.CurrentRow.Cells["員工編號"].Value.ToString();
                     QS_ii_dr["SALESMAN_NAME"] = QS_ii_DGView1.CurrentRow.Cells["員工姓名"].Value.ToString();
-                    QS_ii_dr["START_DATE"] = DateTime.Now.ToString("yyyy-MM-dd");                   
+                    QS_ii_dr["STARTDATE"] = DateTime.Now.ToString("yyyy-MM-dd");                   
                     QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Rows.Add(QS_ii_dr);
                 }
 
@@ -807,7 +838,7 @@ namespace QS_ii
                     QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
                     QS_ii_dr["SALESMAN"] = DViewPSC["員工編號"];
                     QS_ii_dr["SALESMAN_NAME"] = DViewPSC["員工姓名"];
-                    QS_ii_dr["START_DATE"] = DateTime.Now.ToString("yyyy-MM-dd");
+                    QS_ii_dr["STARTDATE"] = DateTime.Now.ToString("yyyy-MM-dd");
                     QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Rows.Add(QS_ii_dr);
                 }
             }
@@ -827,14 +858,16 @@ namespace QS_ii
 
         public override void QS_ii_QueryDGV_DGView1()       //DataGridView雙擊後把選取資料對應到datatable
         {
-            QSiiSC.PSC_ID = QS_ii_DGView1.CurrentRow.Cells["通路編號"].Value.ToString();
-            //QS_ii_QueryDGV_Column1.DataPropertyName = "Check";            
+            QSiiSC.PSC_ID = QS_ii_DGView1.CurrentRow.Cells["通路編號"].Value.ToString();            
+            //QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+            QSiiSC.GetSQL("查詢通路主檔");
+            QSiiSC.fun.QS_ii_ProductSC_Query_ds(QSiiSC.QueryDB, QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CHAIN);
             QSiiSC.GetSQL("查詢通路明細");
             QSiiSC.fun.QS_ii_ProductSC_Query_ds(QSiiSC.QueryDB, QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);
             QSiiSC.GetSQL("查詢通路員工檔明細");
             QSiiSC.fun.QS_ii_ProductSC_Query_ds(QSiiSC.QueryDB, QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES);
-            QSiiSC.QS_ii_ProductSC_DataBinding(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC);     //datatable的欄位與Text綁定資料-通路編號&通路名稱            
-            //@"distinct [CHAIN_NO]	AS 通路編號,[CHAIN_NAME]	AS 通路名稱 FROM [TEST_SLSYHI].[dbo].[SLS_ItemCH]";
+            QSiiSC.QS_ii_ProductSC_DataBinding(QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CHAIN);     //datatable的欄位與Text綁定資料-通路編號&通路名稱            
+            //@"distinct [CHAIN_NO]	AS 通路編號,[CHAIN_NAME]	AS 通路名稱 FROM [TEST_SLSYHI].[dbo].[SLS_ItemCH]";            
         }
 
         public override void QS_ii_QueryDGV_QueryButton()        //查詢Button

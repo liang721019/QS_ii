@@ -4590,7 +4590,6 @@ namespace QS_ii {
                 base.Columns.Add(this.columnEN_NAME);
                 this.columnSPEC = new global::System.Data.DataColumn("SPEC", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSPEC);
-                this.columnCHAIN_NO.Caption = "QT_NO";
                 this.columnitem_NO.AllowDBNull = false;
             }
             
@@ -4733,7 +4732,7 @@ namespace QS_ii {
             
             private global::System.Data.DataColumn columnSALESMAN_NAME;
             
-            private global::System.Data.DataColumn columnSTART_DATE;
+            private global::System.Data.DataColumn columnSTARTDATE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -4802,9 +4801,9 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn START_DATEColumn {
+            public global::System.Data.DataColumn STARTDATEColumn {
                 get {
-                    return this.columnSTART_DATE;
+                    return this.columnSTARTDATE;
                 }
             }
             
@@ -4845,14 +4844,14 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QS_ii_ProductSC_SALESRow AddQS_ii_ProductSC_SALESRow(string Check, string CHAIN_NO, string SALESMAN, string SALESMAN_NAME, string START_DATE) {
+            public QS_ii_ProductSC_SALESRow AddQS_ii_ProductSC_SALESRow(string Check, string CHAIN_NO, string SALESMAN, string SALESMAN_NAME, string STARTDATE) {
                 QS_ii_ProductSC_SALESRow rowQS_ii_ProductSC_SALESRow = ((QS_ii_ProductSC_SALESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Check,
                         CHAIN_NO,
                         SALESMAN,
                         SALESMAN_NAME,
-                        START_DATE};
+                        STARTDATE};
                 rowQS_ii_ProductSC_SALESRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowQS_ii_ProductSC_SALESRow);
                 return rowQS_ii_ProductSC_SALESRow;
@@ -4879,7 +4878,7 @@ namespace QS_ii {
                 this.columnCHAIN_NO = base.Columns["CHAIN_NO"];
                 this.columnSALESMAN = base.Columns["SALESMAN"];
                 this.columnSALESMAN_NAME = base.Columns["SALESMAN_NAME"];
-                this.columnSTART_DATE = base.Columns["START_DATE"];
+                this.columnSTARTDATE = base.Columns["STARTDATE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4893,8 +4892,8 @@ namespace QS_ii {
                 base.Columns.Add(this.columnSALESMAN);
                 this.columnSALESMAN_NAME = new global::System.Data.DataColumn("SALESMAN_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSALESMAN_NAME);
-                this.columnSTART_DATE = new global::System.Data.DataColumn("START_DATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTART_DATE);
+                this.columnSTARTDATE = new global::System.Data.DataColumn("STARTDATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTARTDATE);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9057,17 +9056,17 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string START_DATE {
+            public string STARTDATE {
                 get {
                     try {
-                        return ((string)(this[this.tableQS_ii_ProductSC_SALES.START_DATEColumn]));
+                        return ((string)(this[this.tableQS_ii_ProductSC_SALES.STARTDATEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_ProductSC_SALES\' 中資料行 \'START_DATE\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'QS_ii_ProductSC_SALES\' 中資料行 \'STARTDATE\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableQS_ii_ProductSC_SALES.START_DATEColumn] = value;
+                    this[this.tableQS_ii_ProductSC_SALES.STARTDATEColumn] = value;
                 }
             }
             
@@ -9121,14 +9120,14 @@ namespace QS_ii {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSTART_DATENull() {
-                return this.IsNull(this.tableQS_ii_ProductSC_SALES.START_DATEColumn);
+            public bool IsSTARTDATENull() {
+                return this.IsNull(this.tableQS_ii_ProductSC_SALES.STARTDATEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSTART_DATENull() {
-                this[this.tableQS_ii_ProductSC_SALES.START_DATEColumn] = global::System.Convert.DBNull;
+            public void SetSTARTDATENull() {
+                this[this.tableQS_ii_ProductSC_SALES.STARTDATEColumn] = global::System.Convert.DBNull;
             }
         }
         

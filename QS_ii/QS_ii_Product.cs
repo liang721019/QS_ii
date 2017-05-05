@@ -354,7 +354,15 @@ namespace QS_ii
 
         private void QS_ii_Product_修改Button_Click(object sender, EventArgs e)
         {
-            start_status(QS_ii_Product_修改Button);
+            if (tb_item_NO.Text.Trim().Length != 0)
+            {
+                start_status(QS_ii_Product_修改Button);
+            }
+            else
+            {
+                MessageBox.Show("沒有商品編號!!", this.Text);
+            }
+            
         }
 
         private void QS_ii_Product_刪除Button_Click(object sender, EventArgs e)

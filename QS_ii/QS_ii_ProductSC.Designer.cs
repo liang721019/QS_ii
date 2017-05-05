@@ -95,6 +95,7 @@
             this.ProductSC_tabControl1.SelectedIndex = 0;
             this.ProductSC_tabControl1.Size = new System.Drawing.Size(723, 352);
             this.ProductSC_tabControl1.TabIndex = 7;
+            this.ProductSC_tabControl1.SelectedIndexChanged += new System.EventHandler(this.ProductSC_tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -513,6 +514,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "QS_ii_ProductSC";
             this.Text = "QS_ii_ProductSC";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QS_ii_ProductSC_FormClosing);
             this.Load += new System.EventHandler(this.QS_ii_ProductSC_Load);
             this.ProductSC_tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

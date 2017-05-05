@@ -993,7 +993,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.QS_ii_Product_DGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.QS_ii_Product_DGV.RowTemplate.Height = 24;
-            this.QS_ii_Product_DGV.Size = new System.Drawing.Size(823, 314);
+            this.QS_ii_Product_DGV.Size = new System.Drawing.Size(823, 307);
             this.QS_ii_Product_DGV.TabIndex = 0;
             this.QS_ii_Product_DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QS_ii_Product_DGV_CellContentClick);
             // 

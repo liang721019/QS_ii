@@ -337,7 +337,15 @@ namespace QS_ii
 
         private void QS_ii_Customer_修改Button_Click(object sender, EventArgs e)
         {
-            start_status(QS_ii_Customer_修改Button);
+            if (tb_CUST_NO.Text.Trim().Length != 0)
+            {
+                start_status(QS_ii_Customer_修改Button);
+            }
+            else
+            {
+                MessageBox.Show("沒有客戶編號!!", this.Text);
+            }
+            
 
         }
 
