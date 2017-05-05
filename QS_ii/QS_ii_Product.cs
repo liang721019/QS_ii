@@ -111,7 +111,8 @@ namespace QS_ii
             fun.Format_Panel_dTP(Product_Detail_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(Product_Detail_panel, true);     //Product_Detail_panel內的TextBox設定唯讀
             fun.EoD_Panel_txt(Product_panel2, true);     //Product_panel2內的TextBox設定唯讀
-            fun.EoD_Panel_btnVisible(Product_panel1, true);      //Product_panel1內的button設定顯示            
+            fun.EoD_Panel_btnVisible(Product_panel1, true);      //Product_panel1內的button設定顯示 
+            tb_EFF_DATE_dTP1.Enabled = false;
             //tb_item_NO.ReadOnly = true;     //商品編號
             //tb_item_TYPE.ReadOnly = true;      //商品類型
             //tb_item_NAME.ReadOnly = true;      //商品名稱
