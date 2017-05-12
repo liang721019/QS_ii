@@ -66,10 +66,12 @@ namespace QS_ii
             this.MinimizeBox = false;       //最小化
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小
             this.AutoSize = false;          //自動調整大小  
+            QS_ii_Combobox_Content();       //combobox設定
             
 
             #endregion
         }
+
         public virtual void QS_ii_QueryDGV_QueryButton()        //查詢Button
         {
 
@@ -88,6 +90,11 @@ namespace QS_ii
         public virtual void QS_ii_QueryComboBox()
         {
             
+        }
+
+        public virtual void QS_ii_Combobox_Content()        //combobox設定
+        {
+
         }
 
         //===========================================

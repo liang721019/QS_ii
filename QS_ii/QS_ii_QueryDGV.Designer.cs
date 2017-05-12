@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.QS_ii_DGView1 = new System.Windows.Forms.DataGridView();
             this.QS_ii_QueryDGV_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,8 +47,8 @@
             // 
             this.QS_ii_DGView1.AllowUserToAddRows = false;
             this.QS_ii_DGView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.QS_ii_DGView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.QS_ii_DGView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.QS_ii_DGView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.QS_ii_DGView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QS_ii_DGView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -58,8 +58,8 @@
             this.QS_ii_DGView1.Margin = new System.Windows.Forms.Padding(5);
             this.QS_ii_DGView1.Name = "QS_ii_DGView1";
             this.QS_ii_DGView1.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.QS_ii_DGView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QS_ii_DGView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.QS_ii_DGView1.RowTemplate.Height = 24;
             this.QS_ii_DGView1.Size = new System.Drawing.Size(618, 376);
             this.QS_ii_DGView1.TabIndex = 0;

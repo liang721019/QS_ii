@@ -60,7 +60,13 @@ namespace QS_ii
         {
             set;
             get;
-        }        
+        }
+
+        public string DATE_value       //取得DB的日期
+        {
+            set;
+            get;
+        }
         
         //==============================================================================================================
         #endregion
@@ -199,6 +205,12 @@ namespace QS_ii
                 QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp1](" + USER_ID.Text + ") where [DEL_FALG] = 'N'";
                 #endregion
             }
+            else if (x == "取得日期")
+            {
+                #region 內容
+                QueryDB = @"select replace(CONVERT(date,GETDATE(),111) , '/' , '-')";
+                #endregion
+            }
             
             
         }
@@ -222,7 +234,11 @@ namespace QS_ii
             //fun.EoD_Panel_txt(QS_ii_Check_panel, true);             //QS_ii_Check_panel內的TextBox設定唯讀
             fun.EoD_Panel_RadioButton(QS_ii_Check_panel, false);    //QS_ii_Check_panel內的RadioButton設定唯讀
             fun.EoD_Panel_txt(QS_ii_money_panel, true);     //QS_ii_money_panel內的TextBox設定唯讀
-
+            #region 取得DB日期
+            GetSQL("取得日期");
+            fun.ProductDB_ds(QueryDB);
+            DATE_value = fun.ds_index.Tables[0].Rows[0][0].ToString();      //取得DB的日期
+            #endregion
             QS_ii_Product_DGV_Column1.Visible = false;      //報價單明細<選取>關閉
             QS_ii_Product_DGV_Column6.ReadOnly = true;      //報價單明細<數量>唯讀
             tb_REMARK.ReadOnly = true;
@@ -275,6 +291,9 @@ namespace QS_ii
                 QS_ii_取消button.Visible = true;
                 QS_ii_儲存button.Enabled = true;
                 QS_ii_取消button.Enabled = true;
+
+                QT_DATE_dTP.Text = DATE_value;
+                QT_EFF_DATE_dTP.Text = DATE_value;
                 //******清除DataTable******
                 QSiiDB.QS_ii_QProduct.Clear();      //清除DataTable
 
@@ -880,7 +899,7 @@ namespace QS_ii
         
     }
 
-    public class QS_ii_TQueryDGV : QS_ii_QueryDGV       //查詢
+    public class QS_ii_TQueryDGV : QS_ii_QueryDGV       //報價單新增商品-查詢
     {
         QS_ii_Quotes_add QS_iiQ_add;
 

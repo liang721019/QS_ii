@@ -773,7 +773,30 @@ namespace QS_ii
                 }
             }
             #endregion
-        }        
+        }
+
+        public override void QS_ii_Combobox_Content()       //combobox設定
+        {
+            #region 內容
+            DataTable dt_Com = new DataTable();
+            DataColumn SDC = new DataColumn("ID", System.Type.GetType("System.String"));
+            DataColumn SDC1 = new DataColumn("Value", System.Type.GetType("System.String"));
+            string columnsValue = QS_ii_DGView1.Columns[0].HeaderText;
+            dt_Com.Columns.Add(SDC);
+            dt_Com.Columns.Add(SDC1);            
+            for (int i = 0; i < QS_ii_DGView1.Columns.Count; i++)
+            {
+                DataRow dr = dt_Com.NewRow();
+                dr["ID"] = QS_ii_DGView1.Columns[i].HeaderText;
+                dr["Value"] = QS_ii_DGView1.Columns[i].HeaderText;
+                dt_Com.Rows.Add(dr);
+            }
+            //comboBox1.DisplayMember = "ID";
+            //comboBox1.ValueMember = "Value";
+            //comboBox1.DataSource = dt_Com;
+
+            #endregion
+        }
     }
 
     public class QS_ii_ProductSC_SALESDetail : QS_ii_QueryDGV         //員工明細
@@ -800,7 +823,8 @@ namespace QS_ii
                     QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
                     QS_ii_dr["SALESMAN"] = QS_ii_DGView1.CurrentRow.Cells["員工編號"].Value.ToString();
                     QS_ii_dr["SALESMAN_NAME"] = QS_ii_DGView1.CurrentRow.Cells["員工姓名"].Value.ToString();
-                    QS_ii_dr["STARTDATE"] = DateTime.Now.ToString("yyyy-MM-dd");                   
+                    QS_ii_dr["STARTDATE"] = QSiiSC.QS_iiQ_add.DATE_value;
+                    //QS_ii_dr["STARTDATE"] =DateTime.Now.ToString("yyyy-MM-dd");                   
                     QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Rows.Add(QS_ii_dr);
                 }
 
@@ -838,7 +862,8 @@ namespace QS_ii
                     QS_ii_dr["CHAIN_NO"] = QSiiSC.QS_ii_ProductSC_CHAIN_NO.Text;
                     QS_ii_dr["SALESMAN"] = DViewPSC["員工編號"];
                     QS_ii_dr["SALESMAN_NAME"] = DViewPSC["員工姓名"];
-                    QS_ii_dr["STARTDATE"] = DateTime.Now.ToString("yyyy-MM-dd");
+                    QS_ii_dr["STARTDATE"] = QSiiSC.QS_iiQ_add.DATE_value;
+                    //QS_ii_dr["STARTDATE"] = DateTime.Now.ToString("yyyy-MM-dd");
                     QSiiSC.QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Rows.Add(QS_ii_dr);
                 }
             }
