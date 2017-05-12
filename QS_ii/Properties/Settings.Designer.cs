@@ -22,15 +22,5 @@ namespace QS_ii.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.100.191;Initial Catalog=TEST_SLSYHI;User ID=eric")]
-        public string TEST_SLSYHIConnectionString {
-            get {
-                return ((string)(this["TEST_SLSYHIConnectionString"]));
-            }
-        }
     }
 }
