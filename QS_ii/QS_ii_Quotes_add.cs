@@ -62,7 +62,13 @@ namespace QS_ii
             get;
         }
 
-        public string DATE_value       //取得DB的日期
+        public string DATE_value       //報價日期
+        {
+            set;
+            get;
+        }
+
+        public string DATE_END_value    //報價有效日期
         {
             set;
             get;
@@ -208,10 +214,15 @@ namespace QS_ii
             else if (x == "取得日期")
             {
                 #region 內容
-                QueryDB = @"select replace(CONVERT(date,GETDATE(),111) , '/' , '-')";
+                QueryDB = @"select replace(CONVERT(nvarchar(10),GETDATE(),111),'/','-'),replace(CONVERT(nvarchar(10),GETDATE()+7,111),'/','-')";
                 #endregion
             }
-            
+            else if (x == "取得有效日期")
+            {
+                #region 內容
+                QueryDB = @"select CONVERT(date,GETDATE()+7,111)";
+                #endregion
+            }           
             
         }
         
@@ -237,7 +248,8 @@ namespace QS_ii
             #region 取得DB日期
             GetSQL("取得日期");
             fun.ProductDB_ds(QueryDB);
-            DATE_value = fun.ds_index.Tables[0].Rows[0][0].ToString();      //取得DB的日期
+            DATE_value = fun.ds_index.Tables[0].Rows[0][0].ToString();      //設定報價日期
+            DATE_END_value = fun.ds_index.Tables[0].Rows[0][1].ToString();      //設定報價有效日期
             #endregion
             QS_ii_Product_DGV_Column1.Visible = false;      //報價單明細<選取>關閉
             QS_ii_Product_DGV_Column6.ReadOnly = true;      //報價單明細<數量>唯讀
@@ -270,8 +282,7 @@ namespace QS_ii
                 #region 內容
                 Status_info.Text = "新增";
                 Status_info.Visible = true;
-                tb_QT_NO.Text = "";
-
+                tb_QT_NO.Text = "";                
                 //fun.EoD_Panel_txt(QS_ii_Head_panel, false);                 //QS_ii_Head_panel內的TextBox設定可讀寫
                 //fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, true);      //QS_ii_Head_panel內的DateTimePicker設定可讀寫
                 tb_REMARK.ReadOnly = false;
@@ -293,7 +304,7 @@ namespace QS_ii
                 QS_ii_取消button.Enabled = true;
 
                 QT_DATE_dTP.Text = DATE_value;
-                QT_EFF_DATE_dTP.Text = DATE_value;
+                QT_EFF_DATE_dTP.Text = DATE_END_value;
                 //******清除DataTable******
                 QSiiDB.QS_ii_QProduct.Clear();      //清除DataTable
 

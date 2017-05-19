@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -144,8 +143,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.Status_info = new System.Windows.Forms.Label();
-            this.qS_ii_DB = new QS_ii.QS_ii_DB();
-            this.qSiiQProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.QS_ii_Head_panel.SuspendLayout();
@@ -159,8 +156,6 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -461,7 +456,7 @@
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(93, 20);
             this.label25.TabIndex = 42;
-            this.label25.Text = "連絡人職稱:";
+            this.label25.Text = "聯絡人職稱:";
             // 
             // tb_FAX
             // 
@@ -493,7 +488,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(77, 20);
             this.label23.TabIndex = 38;
-            this.label23.Text = "連絡電話:";
+            this.label23.Text = "聯絡電話:";
             // 
             // label1
             // 
@@ -1221,16 +1216,6 @@
             this.Status_info.TabIndex = 5;
             this.Status_info.Text = "瀏覽";
             // 
-            // qS_ii_DB
-            // 
-            this.qS_ii_DB.DataSetName = "QS_ii_DB";
-            this.qS_ii_DB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // qSiiQProductBindingSource
-            // 
-            this.qSiiQProductBindingSource.DataMember = "QS_ii_QProduct";
-            this.qSiiQProductBindingSource.DataSource = this.qS_ii_DB;
-            // 
             // QS_ii_Quotes_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1265,8 +1250,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qS_ii_DB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qSiiQProductBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1364,8 +1347,6 @@
         internal System.Windows.Forms.TextBox tb_TAX_AMT;
         internal System.Windows.Forms.TextBox tb_TOT_AMT;
         internal System.Windows.Forms.TextBox tb_AMT_NOTAX;
-        private System.Windows.Forms.BindingSource qSiiQProductBindingSource;
-        private QS_ii_DB qS_ii_DB;
         private System.Windows.Forms.DataGridView QS_ii_HQuery_DGV;
         internal System.Windows.Forms.TextBox tb_HQuery_item_NO;
         internal System.Windows.Forms.TextBox tb_HQuery_CUST_NO;

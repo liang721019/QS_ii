@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ProductSC_tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.QS_ii_ProductSC多選 = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC刪除 = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC新增 = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC_DGV1 = new System.Windows.Forms.DataGridView();
@@ -47,7 +46,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.QS_ii_ProductSC刪除USER = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC新增USER = new System.Windows.Forms.Button();
-            this.QS_ii_ProductSC多選USER = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC_DGV2 = new System.Windows.Forms.DataGridView();
             this.QS_ii_ProductSC_DGV2_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.QS_ii_ProductSC_DGV2_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,7 +99,6 @@
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage1.Controls.Add(this.QS_ii_ProductSC多選);
             this.tabPage1.Controls.Add(this.QS_ii_ProductSC刪除);
             this.tabPage1.Controls.Add(this.QS_ii_ProductSC新增);
             this.tabPage1.Controls.Add(this.QS_ii_ProductSC_DGV1);
@@ -112,22 +109,12 @@
             this.tabPage1.Size = new System.Drawing.Size(715, 319);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "通路資訊";
-            // 
-            // QS_ii_ProductSC多選
-            // 
-            this.QS_ii_ProductSC多選.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC多選.Location = new System.Drawing.Point(668, 1);
-            this.QS_ii_ProductSC多選.Name = "QS_ii_ProductSC多選";
-            this.QS_ii_ProductSC多選.Size = new System.Drawing.Size(35, 35);
-            this.QS_ii_ProductSC多選.TabIndex = 7;
-            this.QS_ii_ProductSC多選.Text = "...";
-            this.QS_ii_ProductSC多選.UseVisualStyleBackColor = true;
-            this.QS_ii_ProductSC多選.Click += new System.EventHandler(this.QS_ii_ProductSC多選_Click);
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // QS_ii_ProductSC刪除
             // 
             this.QS_ii_ProductSC刪除.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC刪除.Location = new System.Drawing.Point(668, 83);
+            this.QS_ii_ProductSC刪除.Location = new System.Drawing.Point(668, 42);
             this.QS_ii_ProductSC刪除.Name = "QS_ii_ProductSC刪除";
             this.QS_ii_ProductSC刪除.Size = new System.Drawing.Size(35, 35);
             this.QS_ii_ProductSC刪除.TabIndex = 6;
@@ -138,7 +125,7 @@
             // QS_ii_ProductSC新增
             // 
             this.QS_ii_ProductSC新增.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC新增.Location = new System.Drawing.Point(668, 42);
+            this.QS_ii_ProductSC新增.Location = new System.Drawing.Point(668, 1);
             this.QS_ii_ProductSC新增.Name = "QS_ii_ProductSC新增";
             this.QS_ii_ProductSC新增.Size = new System.Drawing.Size(35, 35);
             this.QS_ii_ProductSC新增.TabIndex = 5;
@@ -225,7 +212,6 @@
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage2.Controls.Add(this.QS_ii_ProductSC刪除USER);
             this.tabPage2.Controls.Add(this.QS_ii_ProductSC新增USER);
-            this.tabPage2.Controls.Add(this.QS_ii_ProductSC多選USER);
             this.tabPage2.Controls.Add(this.QS_ii_ProductSC_DGV2);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -236,7 +222,7 @@
             // QS_ii_ProductSC刪除USER
             // 
             this.QS_ii_ProductSC刪除USER.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC刪除USER.Location = new System.Drawing.Point(668, 83);
+            this.QS_ii_ProductSC刪除USER.Location = new System.Drawing.Point(668, 42);
             this.QS_ii_ProductSC刪除USER.Name = "QS_ii_ProductSC刪除USER";
             this.QS_ii_ProductSC刪除USER.Size = new System.Drawing.Size(35, 35);
             this.QS_ii_ProductSC刪除USER.TabIndex = 10;
@@ -247,24 +233,13 @@
             // QS_ii_ProductSC新增USER
             // 
             this.QS_ii_ProductSC新增USER.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC新增USER.Location = new System.Drawing.Point(668, 42);
+            this.QS_ii_ProductSC新增USER.Location = new System.Drawing.Point(668, 1);
             this.QS_ii_ProductSC新增USER.Name = "QS_ii_ProductSC新增USER";
             this.QS_ii_ProductSC新增USER.Size = new System.Drawing.Size(35, 35);
             this.QS_ii_ProductSC新增USER.TabIndex = 9;
             this.QS_ii_ProductSC新增USER.Text = "+";
             this.QS_ii_ProductSC新增USER.UseVisualStyleBackColor = true;
             this.QS_ii_ProductSC新增USER.Click += new System.EventHandler(this.QS_ii_ProductSC新增USER_Click);
-            // 
-            // QS_ii_ProductSC多選USER
-            // 
-            this.QS_ii_ProductSC多選USER.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.QS_ii_ProductSC多選USER.Location = new System.Drawing.Point(668, 1);
-            this.QS_ii_ProductSC多選USER.Name = "QS_ii_ProductSC多選USER";
-            this.QS_ii_ProductSC多選USER.Size = new System.Drawing.Size(35, 35);
-            this.QS_ii_ProductSC多選USER.TabIndex = 8;
-            this.QS_ii_ProductSC多選USER.Text = "...";
-            this.QS_ii_ProductSC多選USER.UseVisualStyleBackColor = true;
-            this.QS_ii_ProductSC多選USER.Click += new System.EventHandler(this.QS_ii_ProductSC多選USER_Click);
             // 
             // QS_ii_ProductSC_DGV2
             // 
@@ -548,7 +523,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button QS_ii_ProductSC刪除;
         private System.Windows.Forms.Button QS_ii_ProductSC新增;
-        private System.Windows.Forms.Button QS_ii_ProductSC多選;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         public System.Windows.Forms.ToolStripStatusLabel Server_ENV;
         public System.Windows.Forms.ToolStripStatusLabel USER_ID;
@@ -565,7 +539,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView QS_ii_ProductSC_DGV2;
-        private System.Windows.Forms.Button QS_ii_ProductSC多選USER;
         private System.Windows.Forms.Button QS_ii_ProductSC刪除USER;
         private System.Windows.Forms.Button QS_ii_ProductSC新增USER;
         private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_ProductSC_DGV2_Column1;

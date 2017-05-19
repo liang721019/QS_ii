@@ -139,14 +139,11 @@ namespace QS_ii
             
             ProductSC_Status_info.Visible = false;
             QS_ii_ProductSC_儲存Button.Visible = false;
-            QS_ii_ProductSC_取消Button.Visible = false;
-            QS_ii_ProductSC多選.Visible = false;
+            QS_ii_ProductSC_取消Button.Visible = false;            
             QS_ii_ProductSC新增.Visible = false;
-            QS_ii_ProductSC刪除.Visible = false;
-            QS_ii_ProductSC多選USER.Visible = false;
+            QS_ii_ProductSC刪除.Visible = false;            
             QS_ii_ProductSC新增USER.Visible = false;
             QS_ii_ProductSC刪除USER.Visible = false;
-
         }
 
         private void start_status(Button x)      //啟動狀態
@@ -168,11 +165,9 @@ namespace QS_ii
                 QS_ii_ProductSC_儲存Button.Visible = true;
                 QS_ii_ProductSC_儲存Button.Enabled = true;
                 QS_ii_ProductSC_取消Button.Visible = true;
-                QS_ii_ProductSC_取消Button.Enabled = true;
-                QS_ii_ProductSC多選.Visible = true;
+                QS_ii_ProductSC_取消Button.Enabled = true;                
                 QS_ii_ProductSC新增.Visible = true;
-                QS_ii_ProductSC刪除.Visible = true;
-                QS_ii_ProductSC多選USER.Visible = true;
+                QS_ii_ProductSC刪除.Visible = true;                
                 QS_ii_ProductSC新增USER.Visible = true;
                 QS_ii_ProductSC刪除USER.Visible = true;
 
@@ -190,11 +185,9 @@ namespace QS_ii
                 QS_ii_ProductSC_儲存Button.Visible = true;
                 QS_ii_ProductSC_儲存Button.Enabled = true;
                 QS_ii_ProductSC_取消Button.Visible = true;
-                QS_ii_ProductSC_取消Button.Enabled = true;
-                QS_ii_ProductSC多選.Visible = true;
+                QS_ii_ProductSC_取消Button.Enabled = true;                
                 QS_ii_ProductSC新增.Visible = true;
-                QS_ii_ProductSC刪除.Visible = true;
-                QS_ii_ProductSC多選USER.Visible = true;
+                QS_ii_ProductSC刪除.Visible = true;                
                 QS_ii_ProductSC新增USER.Visible = true;
                 QS_ii_ProductSC刪除USER.Visible = true;
 
@@ -218,11 +211,8 @@ namespace QS_ii
                 fun.EoD_Panel_btn(ProductSC_panel1, true);
                 QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Clear();      //清空DATATable
                 QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Clear();      //清空DATATable
-
-
                 QS_ii_ProductSC_CHAIN_NO.Text = "";         //通路編號
-                QS_ii_ProductSC_CHAIN_NAME.Text = "";       //通路名稱
-                                
+                QS_ii_ProductSC_CHAIN_NAME.Text = "";       //通路名稱                                
                 QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
                 QS_ii_ProductSC_CHAIN_NAME.ReadOnly = true;
                 QS_ii_ProductSC_DGV1_Column1.Visible = false;
@@ -230,23 +220,17 @@ namespace QS_ii
                 QS_ii_ProductSC_儲存Button.Visible = false;
                 QS_ii_ProductSC_儲存Button.Enabled = false;
                 QS_ii_ProductSC_取消Button.Visible = false;
-                QS_ii_ProductSC_取消Button.Enabled = false;
-                QS_ii_ProductSC多選.Visible = false;
+                QS_ii_ProductSC_取消Button.Enabled = false;                
                 QS_ii_ProductSC新增.Visible = false;
-                QS_ii_ProductSC刪除.Visible = false;
-                QS_ii_ProductSC多選USER.Visible = false;
+                QS_ii_ProductSC刪除.Visible = false;                
                 QS_ii_ProductSC新增USER.Visible = false;
                 QS_ii_ProductSC刪除USER.Visible = false;
-
-                                
-
             }
             else if (x == QS_ii_ProductSC_取消Button)
             {
                 ProductSC_Status_info.Text = "瀏覽";
                 ProductSC_Status_info.Visible = false;
-                fun.EoD_Panel_btn(ProductSC_panel1, true);
-                
+                fun.EoD_Panel_btn(ProductSC_panel1, true);                
                 QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
                 QS_ii_ProductSC_CHAIN_NAME.ReadOnly = true;
                 QS_ii_ProductSC_DGV1_Column1.Visible = false;
@@ -254,11 +238,9 @@ namespace QS_ii
                 QS_ii_ProductSC_儲存Button.Visible = false;
                 QS_ii_ProductSC_儲存Button.Enabled = false;
                 QS_ii_ProductSC_取消Button.Visible = false;
-                QS_ii_ProductSC_取消Button.Enabled = false;
-                QS_ii_ProductSC多選.Visible = false;
+                QS_ii_ProductSC_取消Button.Enabled = false;                
                 QS_ii_ProductSC新增.Visible = false;
-                QS_ii_ProductSC刪除.Visible = false;
-                QS_ii_ProductSC多選USER.Visible = false;
+                QS_ii_ProductSC刪除.Visible = false;                
                 QS_ii_ProductSC新增USER.Visible = false;
                 QS_ii_ProductSC刪除USER.Visible = false;
                 QS_iiQ_add.QSiiDB.QS_ii_ProductSC.RejectChanges();
@@ -409,16 +391,8 @@ namespace QS_ii
             #region 內容
             QS_ii_ProductSC_ProductDetail ProductSC_ADD = new QS_ii_ProductSC_ProductDetail(this);            
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
-            if (x == QS_ii_ProductSC多選)
-            {
-                ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
-                ProductSC_ADD.QS_ii_加入button.Visible = true;
-            }
-            else if (x == QS_ii_ProductSC新增)
-            {
-                ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
-                ProductSC_ADD.QS_ii_加入button.Visible = false;
-            }
+            ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;        //自訂DGV欄位設定顯示or隱藏
+            ProductSC_ADD.QS_ii_加入button.Visible = true;              //加入button設定顯示or隱藏
 
             Product_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢
             //QS_iiQ_add.Product_Query(ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢  
@@ -436,19 +410,10 @@ namespace QS_ii
             ProductSC_ADD.QS_ii_NOID_LB.Text = "員工編號:";
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
 
-            if (x == QS_ii_ProductSC多選USER)
-            {
-                ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;           //自訂DGV欄位設定顯示or隱藏
-                ProductSC_ADD.QS_ii_加入button.Visible = true;
-            }
-            else if (x == QS_ii_ProductSC新增USER)
-            {
-                ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = false;           //自訂DGV欄位設定顯示or隱藏
-                ProductSC_ADD.QS_ii_加入button.Visible = false;
-            }
+            ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;          //自訂DGV欄位設定顯示or隱藏
+            ProductSC_ADD.QS_ii_加入button.Visible = true;                //加入button設定顯示or隱藏                        
 
-            SALES_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_ProductSC_Employees, ProductSC_ADD.QS_ii_DGView1);        //員工主檔查詢
-            //QS_iiQ_add.Product_Query(ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢  
+            SALES_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_ProductSC_Employees, ProductSC_ADD.QS_ii_DGView1);        //員工主檔查詢            
             //設定init_Staff 新視窗的相對位置#############
             ProductSC_ADD.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################            
@@ -479,15 +444,7 @@ namespace QS_ii
             }            
 
             #endregion
-        }
-
-        private void QS_ii_ProductSC多選_Open()         //明細多選的方法
-        {
-            #region 內容
-            QS_ii_ProductSC_Detail_Modify(QS_ii_ProductSC多選);
-
-            #endregion
-        }
+        }        
 
         private void QS_ii_ProductSC新增USER_Open()       //通路業務新增的方法
         {
@@ -510,14 +467,7 @@ namespace QS_ii
             }
 
             #endregion
-        }
-
-        private void QS_ii_ProductSC多選USER_Open()       //通路業務多選的方法
-        {
-            #region 內容
-            QS_ii_ProductSC_inSALES_Modify(QS_ii_ProductSC多選USER);          //通路業務新增資料的方法(多選or單選)
-            #endregion
-        }
+        }                
 
         private void QS_ii_ProductSC_DGV1_SetColumns()      //ProductSC_DGV1自定顯示欄位
         {
@@ -596,12 +546,7 @@ namespace QS_ii
         private void QS_ii_ProductSC_取消Button_Click(object sender, EventArgs e)
         {
             QS_ii_ProductSC_Cancel();
-        }
-
-        private void QS_ii_ProductSC多選_Click(object sender, EventArgs e)
-        {
-            QS_ii_ProductSC多選_Open();
-        }
+        }        
 
         private void QS_ii_ProductSC新增_Click_1(object sender, EventArgs e)
         {
@@ -614,12 +559,7 @@ namespace QS_ii
         private void QS_ii_ProductSC刪除_Click(object sender, EventArgs e)
         {
             QS_ii_ProductSC刪除_Open();
-        }
-
-        private void QS_ii_ProductSC多選USER_Click(object sender, EventArgs e)
-        {
-            QS_ii_ProductSC多選USER_Open();       //通路業務多選的方法
-        }
+        }               
 
         private void QS_ii_ProductSC新增USER_Click(object sender, EventArgs e)
         {
@@ -692,6 +632,11 @@ namespace QS_ii
                     QS_ii_ProductSC_DGV2_Column1.Visible = false;
                 }
             }           
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
 
         }
 

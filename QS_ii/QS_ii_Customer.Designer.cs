@@ -420,7 +420,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 76;
-            this.label6.Text = "連絡人職稱:";
+            this.label6.Text = "聯絡人職稱:";
             // 
             // tb_CONT_TITLE
             // 
@@ -443,7 +443,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 20);
             this.label4.TabIndex = 73;
-            this.label4.Text = "連絡人:";
+            this.label4.Text = "聯絡人:";
             // 
             // tabControl1
             // 
