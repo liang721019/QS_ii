@@ -57,6 +57,9 @@
             this.QS_ii_ProductSC刪除CUST = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC新增CUST = new System.Windows.Forms.Button();
             this.QS_ii_ProductSC_DGV3 = new System.Windows.Forms.DataGridView();
+            this.QS_ii_ProductSC_DGV3_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.QS_ii_ProductSC_DGV3_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_ProductSC_DGV3_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.QS_ii_ProductSC_CHAIN_NAME = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,9 +78,6 @@
             this.USER_ID = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProductSC_Status_info = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.QS_ii_ProductSC_DGV3_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.QS_ii_ProductSC_DGV3_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QS_ii_ProductSC_DGV3_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductSC_tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_ProductSC_DGV1)).BeginInit();
@@ -121,7 +121,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage1.Size = new System.Drawing.Size(715, 319);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "通路-商品";            
+            this.tabPage1.Text = "通路-商品";
             // 
             // QS_ii_ProductSC刪除
             // 
@@ -365,6 +365,32 @@
             this.QS_ii_ProductSC_DGV3.TabIndex = 0;
             this.QS_ii_ProductSC_DGV3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QS_ii_ProductSC_DGV3_CellContentClick);
             // 
+            // QS_ii_ProductSC_DGV3_Column1
+            // 
+            this.QS_ii_ProductSC_DGV3_Column1.FalseValue = "0";
+            this.QS_ii_ProductSC_DGV3_Column1.HeaderText = "選項";
+            this.QS_ii_ProductSC_DGV3_Column1.Name = "QS_ii_ProductSC_DGV3_Column1";
+            this.QS_ii_ProductSC_DGV3_Column1.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV3_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QS_ii_ProductSC_DGV3_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.QS_ii_ProductSC_DGV3_Column1.TrueValue = "1";
+            this.QS_ii_ProductSC_DGV3_Column1.Visible = false;
+            this.QS_ii_ProductSC_DGV3_Column1.Width = 80;
+            // 
+            // QS_ii_ProductSC_DGV3_Column2
+            // 
+            this.QS_ii_ProductSC_DGV3_Column2.HeaderText = "客戶編號";
+            this.QS_ii_ProductSC_DGV3_Column2.Name = "QS_ii_ProductSC_DGV3_Column2";
+            this.QS_ii_ProductSC_DGV3_Column2.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV3_Column2.Width = 110;
+            // 
+            // QS_ii_ProductSC_DGV3_Column3
+            // 
+            this.QS_ii_ProductSC_DGV3_Column3.HeaderText = "客戶名稱";
+            this.QS_ii_ProductSC_DGV3_Column3.Name = "QS_ii_ProductSC_DGV3_Column3";
+            this.QS_ii_ProductSC_DGV3_Column3.ReadOnly = true;
+            this.QS_ii_ProductSC_DGV3_Column3.Width = 130;
+            // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -540,31 +566,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(723, 43);
             this.panel1.TabIndex = 10;
-            // 
-            // QS_ii_ProductSC_DGV3_Column1
-            // 
-            this.QS_ii_ProductSC_DGV3_Column1.FalseValue = "0";
-            this.QS_ii_ProductSC_DGV3_Column1.HeaderText = "選項";
-            this.QS_ii_ProductSC_DGV3_Column1.Name = "QS_ii_ProductSC_DGV3_Column1";
-            this.QS_ii_ProductSC_DGV3_Column1.ReadOnly = true;
-            this.QS_ii_ProductSC_DGV3_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QS_ii_ProductSC_DGV3_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.QS_ii_ProductSC_DGV3_Column1.TrueValue = "1";
-            this.QS_ii_ProductSC_DGV3_Column1.Width = 80;
-            // 
-            // QS_ii_ProductSC_DGV3_Column2
-            // 
-            this.QS_ii_ProductSC_DGV3_Column2.HeaderText = "客戶編號";
-            this.QS_ii_ProductSC_DGV3_Column2.Name = "QS_ii_ProductSC_DGV3_Column2";
-            this.QS_ii_ProductSC_DGV3_Column2.ReadOnly = true;
-            this.QS_ii_ProductSC_DGV3_Column2.Width = 110;
-            // 
-            // QS_ii_ProductSC_DGV3_Column3
-            // 
-            this.QS_ii_ProductSC_DGV3_Column3.HeaderText = "客戶名稱";
-            this.QS_ii_ProductSC_DGV3_Column3.Name = "QS_ii_ProductSC_DGV3_Column3";
-            this.QS_ii_ProductSC_DGV3_Column3.ReadOnly = true;
-            this.QS_ii_ProductSC_DGV3_Column3.Width = 130;
             // 
             // QS_ii_ProductSC
             // 

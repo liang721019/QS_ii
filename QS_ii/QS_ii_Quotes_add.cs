@@ -273,7 +273,7 @@ namespace QS_ii
             QS_ii_PriceDataBinding(QSiiDB.QS_ii_QProduct);     //datatable的欄位與Text綁定資料-金額欄位
 
             #endregion
-        }        
+        }
 
         public void start_status(Button x)      //啟動狀態
         {
