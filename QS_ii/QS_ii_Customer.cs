@@ -24,7 +24,7 @@ namespace QS_ii
         }
 
         #region 變數
-        //=====================================================================
+        //=====================================================================        
         public string QueryDB
         {
             set;
@@ -33,6 +33,10 @@ namespace QS_ii
 
         public string CUST_NO       //客戶編號
         {
+            set
+            {
+                tb_CUST_NO.Text = value;
+            }
             get
             {
                 return tb_CUST_NO.Text;
@@ -41,6 +45,10 @@ namespace QS_ii
 
         public string CUST_NAME     //客戶名稱
         {
+            set
+            {
+                tb_CUST_NAME.Text = value;
+            }
             get
             {
                 return tb_CUST_NAME.Text;
@@ -49,10 +57,152 @@ namespace QS_ii
 
         public string VAT_NO        //統一編號
         {
+            set
+            {
+                tb_VAT_NO.Text = value;
+            }
             get
             {
                 return tb_VAT_NO.Text;
             }
+        }
+
+        public string CUST_TYPE         //客戶類別
+        {
+            set
+            {
+                tb_CUST_TYPE.Text = value;
+            }
+            get
+            {
+                return tb_CUST_TYPE.Text;
+            }
+        }
+
+        public string CHAIN_NAME        //主要通路
+        {
+            set
+            {
+                tb_CHAIN_NAME.Text = value;
+            }
+            get
+            {
+                return tb_CHAIN_NAME.Text;
+            }
+        }
+
+        public string CONT_TITLE        //聯絡人職稱
+        {
+            set
+            {
+                tb_CONT_TITLE.Text = value;
+            }
+            get
+            {
+                return tb_CONT_TITLE.Text;
+            }
+        }
+
+        public string CONTACT           //聯絡人
+        {
+            set
+            {
+                tb_CONTACT.Text = value;
+            }
+            get
+            {
+                return tb_CONTACT.Text;
+            }
+        }
+
+        public string CONT_TEL          //聯絡人電話
+        {
+            set
+            {
+                tb_CONT_TEL.Text = value;
+            }
+            get
+            {
+                return tb_CONT_TEL.Text;
+            }
+        }
+
+        public string FAX               //傳真
+        {
+            set
+            {
+                tb_FAX.Text = value;
+            }
+            get
+            {
+                return tb_FAX.Text;
+            }
+        }
+
+        public string PAY_METH          //付款方式
+        {
+            set
+            {
+                tb_PAY_METH.Text = value;
+            }
+            get
+            {
+                return tb_PAY_METH.Text;
+            }
+        }
+
+        public string CUST_MAIL         //客戶MAIL
+        {
+            set
+            {
+                tb_CUST_MAIL.Text = value;
+            }
+            get
+            {
+                return tb_CUST_MAIL.Text;
+            }
+        }
+
+        public string CUST_ADDR         //客戶地址
+        {
+            set
+            {
+                tb_CUST_ADDR.Text = value;
+            }
+            get
+            {
+                return tb_CUST_ADDR.Text;
+            }
+        }
+
+        public string DELI_ADDR_NO          //送貨郵地區號
+        {
+            set
+            {
+                tb_DELI_ADDR_NO.Text = value;
+            }
+            get
+            {
+                return tb_DELI_ADDR_NO.Text;
+            }
+        }
+
+        public string DELI_ADDR             //送貨地址
+        {
+            set
+            {
+                tb_DELI_ADDR.Text = value;
+            }
+            get
+            {
+                return tb_DELI_ADDR.Text;
+            }
+        }
+
+        public bool 引入Button_ToF        //設定QS_ii_Customer_引入Button顯示or隱藏
+        {
+            set;
+            get;
         }
 
         private string QueryOLOD        //查詢條件變數
@@ -128,7 +278,7 @@ namespace QS_ii
             fun.EoD_Panel_txt(QS_ii_Customer_panel3, true);     //QS_ii_Head_panel內的TextBox設定唯讀
             fun.EoD_Panel_txt(QS_ii_Customer_panel2, true);      //QS_ii_Customer_panel2內的TextBox設定唯讀  
             fun.EoD_Panel_btnVisible(QS_ii_Customer_panel1, true);      //QS_ii_Customer_panel1內的button設定顯示
-                      
+            QS_ii_Customer_引入Button.Visible = 引入Button_ToF;
             QS_ii_Customer_儲存Button.Visible = false;
             QS_ii_Customer_取消Button.Visible = false;
             Customer_Status_info.Visible = false;
@@ -446,20 +596,20 @@ namespace QS_ii
 
         public override void QS_ii_QueryDGV_DGView1()       //把選取資料對應到TextBox
         {
-            QSii.tb_CUST_NO.Text = QS_ii_DGView1.CurrentRow.Cells["客戶編號"].Value.ToString();
-            QSii.tb_CUST_NAME.Text = QS_ii_DGView1.CurrentRow.Cells["客戶名稱"].Value.ToString();
-            QSii.tb_VAT_NO.Text = QS_ii_DGView1.CurrentRow.Cells["統一編號"].Value.ToString();
-            QSii.tb_CUST_TYPE.Text = QS_ii_DGView1.CurrentRow.Cells["客戶類別"].Value.ToString();
-            QSii.tb_CHAIN_NAME.Text = QS_ii_DGView1.CurrentRow.Cells["主要通路"].Value.ToString();
-            QSii.tb_CONT_TITLE.Text = QS_ii_DGView1.CurrentRow.Cells["連絡人職稱"].Value.ToString();
-            QSii.tb_CONTACT.Text = QS_ii_DGView1.CurrentRow.Cells["連絡人"].Value.ToString();
-            QSii.tb_CONT_TEL.Text = QS_ii_DGView1.CurrentRow.Cells["連絡人電話"].Value.ToString();
-            QSii.tb_FAX.Text = QS_ii_DGView1.CurrentRow.Cells["傳真"].Value.ToString();
-            QSii.tb_PAY_METH.Text = QS_ii_DGView1.CurrentRow.Cells["付款方式"].Value.ToString();
-            QSii.tb_CUST_MAIL.Text = QS_ii_DGView1.CurrentRow.Cells["客戶MAIL"].Value.ToString();
-            QSii.tb_CUST_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["客戶地址"].Value.ToString();
-            QSii.tb_DELI_ADDR_NO.Text = QS_ii_DGView1.CurrentRow.Cells["送貨郵地區號"].Value.ToString();
-            QSii.tb_DELI_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["送貨地址"].Value.ToString();
+            QSii.CUST_NO = QS_ii_DGView1.CurrentRow.Cells["客戶編號"].Value.ToString();
+            QSii.CUST_NAME = QS_ii_DGView1.CurrentRow.Cells["客戶名稱"].Value.ToString();
+            QSii.VAT_NO = QS_ii_DGView1.CurrentRow.Cells["統一編號"].Value.ToString();
+            QSii.CUST_TYPE = QS_ii_DGView1.CurrentRow.Cells["客戶類別"].Value.ToString();
+            QSii.CHAIN_NAME = QS_ii_DGView1.CurrentRow.Cells["主要通路"].Value.ToString();
+            QSii.CONT_TITLE = QS_ii_DGView1.CurrentRow.Cells["聯絡人職稱"].Value.ToString();
+            QSii.CONTACT = QS_ii_DGView1.CurrentRow.Cells["聯絡人"].Value.ToString();
+            QSii.CONT_TEL = QS_ii_DGView1.CurrentRow.Cells["聯絡人電話"].Value.ToString();
+            QSii.FAX = QS_ii_DGView1.CurrentRow.Cells["傳真"].Value.ToString();
+            QSii.PAY_METH = QS_ii_DGView1.CurrentRow.Cells["付款方式"].Value.ToString();
+            QSii.CUST_MAIL = QS_ii_DGView1.CurrentRow.Cells["客戶MAIL"].Value.ToString();
+            QSii.CUST_ADDR = QS_ii_DGView1.CurrentRow.Cells["客戶地址"].Value.ToString();
+            QSii.DELI_ADDR_NO = QS_ii_DGView1.CurrentRow.Cells["送貨郵地區號"].Value.ToString();
+            QSii.DELI_ADDR = QS_ii_DGView1.CurrentRow.Cells["送貨地址"].Value.ToString();
         }
 
         public override void QS_ii_QueryDGV_QueryButton()        //查詢Button
@@ -472,9 +622,7 @@ namespace QS_ii
             }
             QSii.fun.xxx_DB(QSii.QueryDB, QS_ii_DGView1);         //連接DB-執行DB指令           
             #endregion
-
         }
-
 
     }
 

@@ -585,26 +585,26 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button QS_ii_Customer_引入Button;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Label Customer_Status_info;
         public System.Windows.Forms.ToolStripStatusLabel Server_ENV;
         public System.Windows.Forms.ToolStripStatusLabel USER_ID;
-        public System.Windows.Forms.TextBox tb_CUST_NO;
-        public System.Windows.Forms.TextBox tb_CUST_NAME;
-        public System.Windows.Forms.TextBox tb_VAT_NO;
-        public System.Windows.Forms.TextBox tb_CUST_TYPE;
-        public System.Windows.Forms.TextBox tb_CHAIN_NAME;
-        public System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
-        public System.Windows.Forms.TextBox tb_PAY_METH;
-        public System.Windows.Forms.TextBox tb_DELI_ADDR;
-        public System.Windows.Forms.TextBox tb_CUST_MAIL;
-        public System.Windows.Forms.TextBox tb_FAX;
-        public System.Windows.Forms.TextBox tb_CONT_TEL;
-        public System.Windows.Forms.TextBox tb_CUST_ADDR;
-        public System.Windows.Forms.TextBox tb_CONT_TITLE;
-        public System.Windows.Forms.TextBox tb_CONTACT;
         private System.Windows.Forms.Button QS_ii_Customer_清空Button;
+        private System.Windows.Forms.Button QS_ii_Customer_引入Button;
+        private System.Windows.Forms.TextBox tb_CUST_TYPE;
+        private System.Windows.Forms.TextBox tb_CHAIN_NAME;
+        private System.Windows.Forms.TextBox tb_DELI_ADDR_NO;
+        private System.Windows.Forms.TextBox tb_PAY_METH;
+        private System.Windows.Forms.TextBox tb_DELI_ADDR;
+        private System.Windows.Forms.TextBox tb_CUST_MAIL;
+        private System.Windows.Forms.TextBox tb_FAX;
+        private System.Windows.Forms.TextBox tb_CONT_TEL;
+        private System.Windows.Forms.TextBox tb_CUST_ADDR;
+        private System.Windows.Forms.TextBox tb_CONT_TITLE;
+        private System.Windows.Forms.TextBox tb_CONTACT;
+        private System.Windows.Forms.TextBox tb_CUST_NO;
+        private System.Windows.Forms.TextBox tb_CUST_NAME;
+        private System.Windows.Forms.TextBox tb_VAT_NO;
 
     }
 }

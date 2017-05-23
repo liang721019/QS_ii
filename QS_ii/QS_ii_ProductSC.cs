@@ -148,11 +148,13 @@ namespace QS_ii
             this.FormBorderStyle = FormBorderStyle.FixedSingle;     //限制使用者改變form大小            
             this.AutoSize = false;          //自動調整大小
 
-            QS_ii_ProductSC_DGV1_Column1.Visible = false;
-            QS_ii_ProductSC_DGV2_Column1.Visible = false;
+            
             QS_ii_ProductSC_DGV1_SetColumns();      //ProductSC_DGV1自定顯示欄位
             QS_ii_ProductSC_DGV2_SetColumns();      //ProductSC_DGV2自定顯示欄位
             QS_ii_ProductSC_DGV3_SetColumns();      //ProductSC_DGV3自定顯示欄位
+            QS_ii_ProductSC_DGV1_Column1.Visible = false;
+            QS_ii_ProductSC_DGV2_Column1.Visible = false;
+            QS_ii_ProductSC_DGV3_Column1.Visible = false;
             QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
             QS_ii_ProductSC_DGV2.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES;
             QS_ii_ProductSC_DGV3.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CUSTCH;
@@ -778,15 +780,15 @@ namespace QS_ii
         private void ProductSC_tabControl1_SelectedIndexChanged(object sender, EventArgs e)     //ProductSC_tabControl1分頁改變的事件
         {
             //******重要*******
-            if (ProductSC_tabControl1.SelectedIndex == 1)
-            {
-                if (ProductSC_Status_info.Text == "瀏覽")
-                {
-                    QS_ii_ProductSC_DGV1_Column1.Visible = false;
-                    QS_ii_ProductSC_DGV2_Column1.Visible = false;
-                }
-            }           
-
+            //if (ProductSC_tabControl1.SelectedIndex == 1)
+            //{
+            //    if (ProductSC_Status_info.Text == "瀏覽")
+            //    {
+            //        QS_ii_ProductSC_DGV1_Column1.Visible = false;
+            //        QS_ii_ProductSC_DGV2_Column1.Visible = false;
+            //        QS_ii_ProductSC_DGV3_Column1.Visible = false;
+            //    }
+            //}
         }
 
         //====================================================

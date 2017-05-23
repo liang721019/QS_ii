@@ -199,16 +199,14 @@ namespace QS_ii
             else if(x == "多選商品主檔")
             {
                 #region 內容
-                //QueryDB = @"select [Check] = '0',* from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
-                QueryDB = @"select [Check] = '0',* from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp1](" + USER_ID.Text+ ") where [DEL_FALG] = 'N'";
+                QueryDB = @"select [Check] = '0',* from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp_ADD](" + USER_ID.Text+ ") where [DEL_FALG] = 'N'";
 
                 #endregion
             }
             else if(x == "商品主檔查詢")
             {
                 #region 內容
-                //QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp]() where [DEL_FALG] = 'N'";
-                QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp1](" + USER_ID.Text + ") where [DEL_FALG] = 'N'";
+                QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Product_QueryTemp_ADD](" + USER_ID.Text + ") where [DEL_FALG] = 'N'";
                 #endregion
             }
             else if (x == "取得日期")
@@ -523,7 +521,8 @@ namespace QS_ii
 
         private void QS_ii_客戶_Open()       //客戶主檔開窗
         {
-            QS_ii_TCustomer inSea = new QS_ii_TCustomer(this);
+            QS_ii_TCustomer inSea = new QS_ii_TCustomer(this);            
+            inSea.引入Button_ToF = Status_info.Text == "新增" ? true : false;            
             //設定init_Staff 新視窗的相對位置#############
             inSea.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
@@ -847,21 +846,22 @@ namespace QS_ii
 
         public override void Customer_import_Head()         //引入到報價單主檔表頭
         {
-            QS_iiQ_add.tb_PROD_TYPE.Text = tb_CUST_TYPE.Text;       //客戶類別
-            QS_iiQ_add.tb_CUST_NO.Text = tb_CUST_NO.Text;           //客戶編號
-            QS_iiQ_add.tb_CUST_NAME.Text = tb_CUST_NAME.Text;       //客戶名稱
-            QS_iiQ_add.tb_VAT_NO.Text = tb_VAT_NO.Text;             //統一編號
-            QS_iiQ_add.tb_CHAIN_NO.Text = tb_CHAIN_NAME.Text;       //通路名稱
-            QS_iiQ_add.tb_CONT_TITLE.Text = tb_CONT_TITLE.Text;     //連絡人職稱
-            QS_iiQ_add.tb_CONTACT.Text = tb_CONTACT.Text;           //連絡人
-            QS_iiQ_add.tb_CONT_TEL.Text = tb_CONT_TEL.Text;         //連絡人電話
-            QS_iiQ_add.tb_FAX.Text = tb_FAX.Text;                   //傳真
-            QS_iiQ_add.tb_CUST_MAIL.Text = tb_CUST_MAIL.Text;       //客戶MAIL
-            QS_iiQ_add.tb_CUST_ADDR.Text = tb_CUST_ADDR.Text;       //公司地址
-            QS_iiQ_add.tb_DELI_ADDR_NO.Text = tb_DELI_ADDR_NO.Text;       //郵地區號
-            QS_iiQ_add.tb_DELI_ADDR.Text = tb_DELI_ADDR.Text;             //送貨地址
-            QS_iiQ_add.tb_PAY_METH.Text = tb_PAY_METH.Text;             //付款方式
-            QS_iiQ_add.tb_HQuery_CUST_NO.Text = tb_CUST_NO.Text;           //負責業務
+            //QS_iiQ_add.tb_PROD_TYPE.Text = tb_CUST_TYPE.Text;       //客戶類別
+            QS_iiQ_add.tb_PROD_TYPE.Text = CUST_TYPE;       //客戶類別
+            QS_iiQ_add.tb_CUST_NO.Text = CUST_NO;           //客戶編號
+            QS_iiQ_add.tb_CUST_NAME.Text = CUST_NAME;       //客戶名稱
+            QS_iiQ_add.tb_VAT_NO.Text = VAT_NO;             //統一編號            
+            QS_iiQ_add.tb_CHAIN_NO.Text = CHAIN_NAME;       //通路名稱
+            QS_iiQ_add.tb_CONT_TITLE.Text = CONT_TITLE;     //連絡人職稱
+            QS_iiQ_add.tb_CONTACT.Text = CONTACT;           //連絡人
+            QS_iiQ_add.tb_CONT_TEL.Text = CONT_TEL;         //連絡人電話
+            QS_iiQ_add.tb_FAX.Text = FAX;                   //傳真
+            QS_iiQ_add.tb_CUST_MAIL.Text = CUST_MAIL;       //客戶MAIL
+            QS_iiQ_add.tb_CUST_ADDR.Text = CUST_ADDR;       //公司地址
+            QS_iiQ_add.tb_DELI_ADDR_NO.Text = DELI_ADDR_NO;       //郵地區號
+            QS_iiQ_add.tb_DELI_ADDR.Text = DELI_ADDR;             //送貨地址
+            QS_iiQ_add.tb_PAY_METH.Text = PAY_METH;               //付款方式
+            QS_iiQ_add.tb_HQuery_CUST_NO.Text = CUST_NO;           //客戶編號
         }
     }
 
@@ -955,17 +955,9 @@ namespace QS_ii
         {
             //DataTable ProductM_dt = new DataTable();
             //ProductM_dt.Columns.Add("Check");
-            //QS_ii_QueryDGV_Column1.Visible = true;
-            if (QS_ii_QueryDGV_Column1.Visible)
-            {
-                QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
-                QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
-            }
-            else
-            {
-                QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
-                QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢
-            }
+            //QS_ii_QueryDGV_Column1.Visible = true;            
+            QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+            QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //商品主檔查詢            
         }       
         
         public override void QS_ii_QueryDGV_加入button()      //報價單明細檔多選的加入button//

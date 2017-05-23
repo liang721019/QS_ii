@@ -374,7 +374,6 @@
             this.QS_ii_ProductSC_DGV3_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.QS_ii_ProductSC_DGV3_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.QS_ii_ProductSC_DGV3_Column1.TrueValue = "1";
-            this.QS_ii_ProductSC_DGV3_Column1.Visible = false;
             this.QS_ii_ProductSC_DGV3_Column1.Width = 80;
             // 
             // QS_ii_ProductSC_DGV3_Column2
@@ -636,10 +635,6 @@
         private System.Windows.Forms.DataGridView QS_ii_ProductSC_DGV2;
         private System.Windows.Forms.Button QS_ii_ProductSC刪除USER;
         private System.Windows.Forms.Button QS_ii_ProductSC新增USER;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_ProductSC_DGV2_Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column4;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView QS_ii_ProductSC_DGV3;
         private System.Windows.Forms.Button QS_ii_ProductSC刪除CUST;
@@ -647,6 +642,10 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_ProductSC_DGV3_Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV3_Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV3_Column3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_ProductSC_DGV2_Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_ProductSC_DGV2_Column4;
 
     }
 }
