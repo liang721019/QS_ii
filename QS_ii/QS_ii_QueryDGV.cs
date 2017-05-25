@@ -40,7 +40,7 @@ namespace QS_ii
             }
         }
 
-        public bool 加入button_visible        //設定or取得<加入>這個button是否顯示的值
+        public bool 加入button_Visible        //設定or取得<加入>這個button是否顯示的值
         {
             set
             {
@@ -51,6 +51,7 @@ namespace QS_ii
                 return QS_ii_加入button.Visible;
             }
         }
+
 
         //===========================================
         #endregion
@@ -82,6 +83,7 @@ namespace QS_ii
 
 
         }
+
         public virtual void QS_ii_QueryDGV_加入button()           //加入Button
         {
 

@@ -14,8 +14,7 @@ namespace QS_ii
 
     public partial class QS_ii_Customer : Form
     {
-        internal QS_ii_function fun = new QS_ii_function();
-        
+        internal QS_ii_function fun = new QS_ii_function();        
 
         public QS_ii_Customer()
         {
@@ -79,7 +78,7 @@ namespace QS_ii
             }
         }
 
-        public string CHAIN_NAME        //主要通路
+        public string CHAIN_NO        //主要通路
         {
             set
             {
@@ -462,7 +461,7 @@ namespace QS_ii
             #region  按enter之後執行
             QS_ii_Customer_T QSQDGV = new QS_ii_Customer_T(this);
             QSQDGV.QS_ii_NOID_LB.Text = "客戶編號:";
-            QSQDGV.QS_ii_加入button.Visible = false;
+            QSQDGV.加入button_Visible = false;
             //設定init_Staff 新視窗的相對位置#############
             QSQDGV.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
@@ -597,19 +596,19 @@ namespace QS_ii
         public override void QS_ii_QueryDGV_DGView1()       //把選取資料對應到TextBox
         {
             QSii.CUST_NO = QS_ii_DGView1.CurrentRow.Cells["客戶編號"].Value.ToString();
-            QSii.CUST_NAME = QS_ii_DGView1.CurrentRow.Cells["客戶名稱"].Value.ToString();
-            QSii.VAT_NO = QS_ii_DGView1.CurrentRow.Cells["統一編號"].Value.ToString();
+            QSii.CUST_NAME = QS_ii_DGView1.CurrentRow.Cells["客戶名稱"].Value.ToString();            
             QSii.CUST_TYPE = QS_ii_DGView1.CurrentRow.Cells["客戶類別"].Value.ToString();
-            QSii.CHAIN_NAME = QS_ii_DGView1.CurrentRow.Cells["主要通路"].Value.ToString();
-            QSii.CONT_TITLE = QS_ii_DGView1.CurrentRow.Cells["聯絡人職稱"].Value.ToString();
             QSii.CONTACT = QS_ii_DGView1.CurrentRow.Cells["聯絡人"].Value.ToString();
+            QSii.CONT_TITLE = QS_ii_DGView1.CurrentRow.Cells["聯絡人職稱"].Value.ToString();            
             QSii.CONT_TEL = QS_ii_DGView1.CurrentRow.Cells["聯絡人電話"].Value.ToString();
             QSii.FAX = QS_ii_DGView1.CurrentRow.Cells["傳真"].Value.ToString();
-            QSii.PAY_METH = QS_ii_DGView1.CurrentRow.Cells["付款方式"].Value.ToString();
-            QSii.CUST_MAIL = QS_ii_DGView1.CurrentRow.Cells["客戶MAIL"].Value.ToString();
+            QSii.VAT_NO = QS_ii_DGView1.CurrentRow.Cells["統一編號"].Value.ToString();
             QSii.CUST_ADDR = QS_ii_DGView1.CurrentRow.Cells["客戶地址"].Value.ToString();
+            QSii.CUST_MAIL = QS_ii_DGView1.CurrentRow.Cells["客戶MAIL"].Value.ToString();            
             QSii.DELI_ADDR_NO = QS_ii_DGView1.CurrentRow.Cells["送貨郵地區號"].Value.ToString();
             QSii.DELI_ADDR = QS_ii_DGView1.CurrentRow.Cells["送貨地址"].Value.ToString();
+            QSii.PAY_METH = QS_ii_DGView1.CurrentRow.Cells["付款方式"].Value.ToString();            
+            QSii.CHAIN_NO = QS_ii_DGView1.CurrentRow.Cells["主要通路"].Value.ToString();
         }
 
         public override void QS_ii_QueryDGV_QueryButton()        //查詢Button

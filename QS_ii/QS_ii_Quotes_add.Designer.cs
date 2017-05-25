@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QS_ii_Quotes_add));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.QS_ii_Server_ENV = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -47,6 +48,9 @@
             this.QS_ii_修改button = new System.Windows.Forms.Button();
             this.QS_ii_新增button = new System.Windows.Forms.Button();
             this.QS_ii_Head_panel = new System.Windows.Forms.Panel();
+            this.QS_ii_Query_VAT_NO = new System.Windows.Forms.Button();
+            this.QS_ii_Query_CUST_NO = new System.Windows.Forms.Button();
+            this.QS_ii_Query_CUST_NAME = new System.Windows.Forms.Button();
             this.QT_EFF_DATE_dTP = new System.Windows.Forms.DateTimePicker();
             this.QT_DATE_dTP = new System.Windows.Forms.DateTimePicker();
             this.tb_CUST_MAIL = new System.Windows.Forms.TextBox();
@@ -117,14 +121,9 @@
             this.QS_ii_tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.QS_ii_Product_DGV = new System.Windows.Forms.DataGridView();
-            this.QS_ii_Product_DGV_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.QS_ii_Product_DGV_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QS_ii_Product_DGV_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QS_ii_Product_DGV_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QS_ii_Product_DGV_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QS_ii_Product_DGV_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QS_ii_Product_DGV_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.QS_ii_HQuery_DGV = new System.Windows.Forms.DataGridView();
             this.QS_ii_HQuery_DGV_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,6 +142,15 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.Status_info = new System.Windows.Forms.Label();
+            this.QS_ii_HQuery_CUST_NO = new System.Windows.Forms.Button();
+            this.QS_ii_HQuery_item_NO = new System.Windows.Forms.Button();
+            this.QS_ii_Product_DGV_Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.QS_ii_Product_DGV_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_Product_DGV_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_Product_DGV_Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_Product_DGV_Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_Product_DGV_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QS_ii_Product_DGV_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.QS_ii_Head_panel.SuspendLayout();
@@ -153,6 +161,9 @@
             this.QS_ii_tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).BeginInit();
             this.panel7.SuspendLayout();
@@ -164,7 +175,7 @@
             this.QS_ii_Server_ENV,
             this.toolStripStatusLabel2,
             this.USER_ID});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 878);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 949);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1205, 22);
             this.statusStrip1.Stretch = false;
@@ -308,6 +319,9 @@
             // QS_ii_Head_panel
             // 
             this.QS_ii_Head_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.QS_ii_Head_panel.Controls.Add(this.QS_ii_Query_VAT_NO);
+            this.QS_ii_Head_panel.Controls.Add(this.QS_ii_Query_CUST_NO);
+            this.QS_ii_Head_panel.Controls.Add(this.QS_ii_Query_CUST_NAME);
             this.QS_ii_Head_panel.Controls.Add(this.QT_EFF_DATE_dTP);
             this.QS_ii_Head_panel.Controls.Add(this.QT_DATE_dTP);
             this.QS_ii_Head_panel.Controls.Add(this.tb_CUST_MAIL);
@@ -356,6 +370,36 @@
             this.QS_ii_Head_panel.Name = "QS_ii_Head_panel";
             this.QS_ii_Head_panel.Size = new System.Drawing.Size(1181, 234);
             this.QS_ii_Head_panel.TabIndex = 2;
+            // 
+            // QS_ii_Query_VAT_NO
+            // 
+            this.QS_ii_Query_VAT_NO.Image = ((System.Drawing.Image)(resources.GetObject("QS_ii_Query_VAT_NO.Image")));
+            this.QS_ii_Query_VAT_NO.Location = new System.Drawing.Point(269, 154);
+            this.QS_ii_Query_VAT_NO.Name = "QS_ii_Query_VAT_NO";
+            this.QS_ii_Query_VAT_NO.Size = new System.Drawing.Size(29, 29);
+            this.QS_ii_Query_VAT_NO.TabIndex = 57;
+            this.QS_ii_Query_VAT_NO.UseVisualStyleBackColor = true;
+            this.QS_ii_Query_VAT_NO.Click += new System.EventHandler(this.QS_ii_Query_VAT_NO_Click);
+            // 
+            // QS_ii_Query_CUST_NO
+            // 
+            this.QS_ii_Query_CUST_NO.Image = ((System.Drawing.Image)(resources.GetObject("QS_ii_Query_CUST_NO.Image")));
+            this.QS_ii_Query_CUST_NO.Location = new System.Drawing.Point(269, 84);
+            this.QS_ii_Query_CUST_NO.Name = "QS_ii_Query_CUST_NO";
+            this.QS_ii_Query_CUST_NO.Size = new System.Drawing.Size(29, 29);
+            this.QS_ii_Query_CUST_NO.TabIndex = 55;
+            this.QS_ii_Query_CUST_NO.UseVisualStyleBackColor = true;
+            this.QS_ii_Query_CUST_NO.Click += new System.EventHandler(this.QS_ii_Query_CUST_NO_Click);
+            // 
+            // QS_ii_Query_CUST_NAME
+            // 
+            this.QS_ii_Query_CUST_NAME.Image = ((System.Drawing.Image)(resources.GetObject("QS_ii_Query_CUST_NAME.Image")));
+            this.QS_ii_Query_CUST_NAME.Location = new System.Drawing.Point(269, 119);
+            this.QS_ii_Query_CUST_NAME.Name = "QS_ii_Query_CUST_NAME";
+            this.QS_ii_Query_CUST_NAME.Size = new System.Drawing.Size(29, 29);
+            this.QS_ii_Query_CUST_NAME.TabIndex = 56;
+            this.QS_ii_Query_CUST_NAME.UseVisualStyleBackColor = true;
+            this.QS_ii_Query_CUST_NAME.Click += new System.EventHandler(this.QS_ii_Query_CUST_NAME_Click);
             // 
             // QT_EFF_DATE_dTP
             // 
@@ -613,7 +657,7 @@
             // 
             // tb_DELI_MODE
             // 
-            this.tb_DELI_MODE.Location = new System.Drawing.Point(717, 82);
+            this.tb_DELI_MODE.Location = new System.Drawing.Point(717, 121);
             this.tb_DELI_MODE.Name = "tb_DELI_MODE";
             this.tb_DELI_MODE.Size = new System.Drawing.Size(135, 29);
             this.tb_DELI_MODE.TabIndex = 29;
@@ -628,7 +672,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(634, 87);
+            this.label15.Location = new System.Drawing.Point(634, 126);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(77, 20);
             this.label15.TabIndex = 28;
@@ -874,7 +918,7 @@
             this.QS_ii_Other_panel.Controls.Add(this.tb_REMARK);
             this.QS_ii_Other_panel.Controls.Add(this.QS_ii_Check_panel);
             this.QS_ii_Other_panel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.QS_ii_Other_panel.Location = new System.Drawing.Point(12, 703);
+            this.QS_ii_Other_panel.Location = new System.Drawing.Point(12, 774);
             this.QS_ii_Other_panel.Name = "QS_ii_Other_panel";
             this.QS_ii_Other_panel.Size = new System.Drawing.Size(1181, 172);
             this.QS_ii_Other_panel.TabIndex = 3;
@@ -907,7 +951,7 @@
             this.QS_ii_Detail_panel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.QS_ii_Detail_panel.Location = new System.Drawing.Point(12, 302);
             this.QS_ii_Detail_panel.Name = "QS_ii_Detail_panel";
-            this.QS_ii_Detail_panel.Size = new System.Drawing.Size(1181, 395);
+            this.QS_ii_Detail_panel.Size = new System.Drawing.Size(1181, 466);
             this.QS_ii_Detail_panel.TabIndex = 4;
             // 
             // Product_多選button
@@ -951,7 +995,7 @@
             this.QS_ii_tabControl1.Location = new System.Drawing.Point(45, 16);
             this.QS_ii_tabControl1.Name = "QS_ii_tabControl1";
             this.QS_ii_tabControl1.SelectedIndex = 0;
-            this.QS_ii_tabControl1.Size = new System.Drawing.Size(1120, 359);
+            this.QS_ii_tabControl1.Size = new System.Drawing.Size(1120, 431);
             this.QS_ii_tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -961,7 +1005,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1112, 326);
+            this.tabPage1.Size = new System.Drawing.Size(1112, 398);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "商品明細";
             // 
@@ -969,8 +1013,8 @@
             // 
             this.QS_ii_Product_DGV.AllowUserToAddRows = false;
             this.QS_ii_Product_DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.QS_ii_Product_DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.QS_ii_Product_DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.QS_ii_Product_DGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -983,71 +1027,44 @@
             this.QS_ii_Product_DGV_Column5,
             this.QS_ii_Product_DGV_Column6,
             this.QS_ii_Product_DGV_Column7});
-            this.QS_ii_Product_DGV.Location = new System.Drawing.Point(6, 6);
+            this.QS_ii_Product_DGV.Location = new System.Drawing.Point(6, 3);
             this.QS_ii_Product_DGV.Name = "QS_ii_Product_DGV";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.QS_ii_Product_DGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QS_ii_Product_DGV.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.QS_ii_Product_DGV.RowTemplate.Height = 24;
-            this.QS_ii_Product_DGV.Size = new System.Drawing.Size(823, 307);
+            this.QS_ii_Product_DGV.Size = new System.Drawing.Size(995, 392);
             this.QS_ii_Product_DGV.TabIndex = 0;
             this.QS_ii_Product_DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QS_ii_Product_DGV_CellContentClick);
-            // 
-            // QS_ii_Product_DGV_Column1
-            // 
-            this.QS_ii_Product_DGV_Column1.FalseValue = "0";
-            this.QS_ii_Product_DGV_Column1.HeaderText = "選取";
-            this.QS_ii_Product_DGV_Column1.Name = "QS_ii_Product_DGV_Column1";
-            this.QS_ii_Product_DGV_Column1.ReadOnly = true;
-            this.QS_ii_Product_DGV_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QS_ii_Product_DGV_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.QS_ii_Product_DGV_Column1.TrueValue = "1";
-            // 
-            // QS_ii_Product_DGV_Column2
-            // 
-            this.QS_ii_Product_DGV_Column2.HeaderText = "商品編號";
-            this.QS_ii_Product_DGV_Column2.Name = "QS_ii_Product_DGV_Column2";
-            this.QS_ii_Product_DGV_Column2.ReadOnly = true;
-            this.QS_ii_Product_DGV_Column2.Width = 120;
-            // 
-            // QS_ii_Product_DGV_Column3
-            // 
-            this.QS_ii_Product_DGV_Column3.HeaderText = "商品名稱";
-            this.QS_ii_Product_DGV_Column3.Name = "QS_ii_Product_DGV_Column3";
-            this.QS_ii_Product_DGV_Column3.ReadOnly = true;
-            this.QS_ii_Product_DGV_Column3.Width = 150;
-            // 
-            // QS_ii_Product_DGV_Column4
-            // 
-            this.QS_ii_Product_DGV_Column4.HeaderText = "規格";
-            this.QS_ii_Product_DGV_Column4.Name = "QS_ii_Product_DGV_Column4";
-            this.QS_ii_Product_DGV_Column4.ReadOnly = true;
-            // 
-            // QS_ii_Product_DGV_Column5
-            // 
-            this.QS_ii_Product_DGV_Column5.HeaderText = "單位";
-            this.QS_ii_Product_DGV_Column5.Name = "QS_ii_Product_DGV_Column5";
-            this.QS_ii_Product_DGV_Column5.ReadOnly = true;
-            // 
-            // QS_ii_Product_DGV_Column6
-            // 
-            this.QS_ii_Product_DGV_Column6.HeaderText = "數量";
-            this.QS_ii_Product_DGV_Column6.Name = "QS_ii_Product_DGV_Column6";
-            // 
-            // QS_ii_Product_DGV_Column7
-            // 
-            this.QS_ii_Product_DGV_Column7.HeaderText = "單價";
-            this.QS_ii_Product_DGV_Column7.Name = "QS_ii_Product_DGV_Column7";
-            this.QS_ii_Product_DGV_Column7.ReadOnly = true;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1112, 326);
+            this.tabPage2.Size = new System.Drawing.Size(1112, 411);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "其他";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(589, 6);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(517, 375);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(571, 375);
+            this.dataGridView1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -1056,7 +1073,7 @@
             this.tabPage3.Controls.Add(this.panel7);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1112, 326);
+            this.tabPage3.Size = new System.Drawing.Size(1112, 398);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "歷史報價記錄";
             // 
@@ -1064,8 +1081,8 @@
             // 
             this.QS_ii_HQuery_DGV.AllowUserToAddRows = false;
             this.QS_ii_HQuery_DGV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.QS_ii_HQuery_DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.QS_ii_HQuery_DGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.QS_ii_HQuery_DGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1083,10 +1100,10 @@
             this.QS_ii_HQuery_DGV.Location = new System.Drawing.Point(3, 51);
             this.QS_ii_HQuery_DGV.Name = "QS_ii_HQuery_DGV";
             this.QS_ii_HQuery_DGV.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.QS_ii_HQuery_DGV.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QS_ii_HQuery_DGV.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.QS_ii_HQuery_DGV.RowTemplate.Height = 24;
-            this.QS_ii_HQuery_DGV.Size = new System.Drawing.Size(995, 272);
+            this.QS_ii_HQuery_DGV.Size = new System.Drawing.Size(1009, 344);
             this.QS_ii_HQuery_DGV.TabIndex = 1;
             this.QS_ii_HQuery_DGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.QS_ii_HQuery_DGV_CellDoubleClick);
             // 
@@ -1152,6 +1169,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.QS_ii_HQuery_item_NO);
+            this.panel7.Controls.Add(this.QS_ii_HQuery_CUST_NO);
             this.panel7.Controls.Add(this.QS_ii_歷史查詢button);
             this.panel7.Controls.Add(this.tb_HQuery_item_NO);
             this.panel7.Controls.Add(this.tb_HQuery_CUST_NO);
@@ -1164,7 +1183,7 @@
             // 
             // QS_ii_歷史查詢button
             // 
-            this.QS_ii_歷史查詢button.Location = new System.Drawing.Point(512, 2);
+            this.QS_ii_歷史查詢button.Location = new System.Drawing.Point(600, 3);
             this.QS_ii_歷史查詢button.Name = "QS_ii_歷史查詢button";
             this.QS_ii_歷史查詢button.Size = new System.Drawing.Size(80, 29);
             this.QS_ii_歷史查詢button.TabIndex = 4;
@@ -1174,7 +1193,7 @@
             // 
             // tb_HQuery_item_NO
             // 
-            this.tb_HQuery_item_NO.Location = new System.Drawing.Point(326, 3);
+            this.tb_HQuery_item_NO.Location = new System.Drawing.Point(373, 3);
             this.tb_HQuery_item_NO.Name = "tb_HQuery_item_NO";
             this.tb_HQuery_item_NO.Size = new System.Drawing.Size(147, 29);
             this.tb_HQuery_item_NO.TabIndex = 3;
@@ -1199,7 +1218,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(243, 6);
+            this.label31.Location = new System.Drawing.Point(290, 6);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(77, 20);
             this.label31.TabIndex = 0;
@@ -1210,18 +1229,85 @@
             this.Status_info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Status_info.AutoSize = true;
             this.Status_info.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Status_info.Location = new System.Drawing.Point(1144, 880);
+            this.Status_info.Location = new System.Drawing.Point(1144, 951);
             this.Status_info.Name = "Status_info";
             this.Status_info.Size = new System.Drawing.Size(41, 20);
             this.Status_info.TabIndex = 5;
             this.Status_info.Text = "瀏覽";
+            // 
+            // QS_ii_HQuery_CUST_NO
+            // 
+            this.QS_ii_HQuery_CUST_NO.Image = ((System.Drawing.Image)(resources.GetObject("QS_ii_HQuery_CUST_NO.Image")));
+            this.QS_ii_HQuery_CUST_NO.Location = new System.Drawing.Point(234, 3);
+            this.QS_ii_HQuery_CUST_NO.Name = "QS_ii_HQuery_CUST_NO";
+            this.QS_ii_HQuery_CUST_NO.Size = new System.Drawing.Size(29, 29);
+            this.QS_ii_HQuery_CUST_NO.TabIndex = 58;
+            this.QS_ii_HQuery_CUST_NO.UseVisualStyleBackColor = true;
+            this.QS_ii_HQuery_CUST_NO.Click += new System.EventHandler(this.QS_ii_HQuery_CUST_NO_Click);
+            // 
+            // QS_ii_HQuery_item_NO
+            // 
+            this.QS_ii_HQuery_item_NO.Image = ((System.Drawing.Image)(resources.GetObject("QS_ii_HQuery_item_NO.Image")));
+            this.QS_ii_HQuery_item_NO.Location = new System.Drawing.Point(526, 3);
+            this.QS_ii_HQuery_item_NO.Name = "QS_ii_HQuery_item_NO";
+            this.QS_ii_HQuery_item_NO.Size = new System.Drawing.Size(29, 29);
+            this.QS_ii_HQuery_item_NO.TabIndex = 59;
+            this.QS_ii_HQuery_item_NO.UseVisualStyleBackColor = true;
+            this.QS_ii_HQuery_item_NO.Click += new System.EventHandler(this.QS_ii_HQuery_item_NO_Click);
+            // 
+            // QS_ii_Product_DGV_Column1
+            // 
+            this.QS_ii_Product_DGV_Column1.FalseValue = "0";
+            this.QS_ii_Product_DGV_Column1.HeaderText = "選取";
+            this.QS_ii_Product_DGV_Column1.Name = "QS_ii_Product_DGV_Column1";
+            this.QS_ii_Product_DGV_Column1.ReadOnly = true;
+            this.QS_ii_Product_DGV_Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QS_ii_Product_DGV_Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.QS_ii_Product_DGV_Column1.TrueValue = "1";
+            // 
+            // QS_ii_Product_DGV_Column2
+            // 
+            this.QS_ii_Product_DGV_Column2.HeaderText = "商品編號";
+            this.QS_ii_Product_DGV_Column2.Name = "QS_ii_Product_DGV_Column2";
+            this.QS_ii_Product_DGV_Column2.ReadOnly = true;
+            this.QS_ii_Product_DGV_Column2.Width = 120;
+            // 
+            // QS_ii_Product_DGV_Column3
+            // 
+            this.QS_ii_Product_DGV_Column3.HeaderText = "商品名稱";
+            this.QS_ii_Product_DGV_Column3.Name = "QS_ii_Product_DGV_Column3";
+            this.QS_ii_Product_DGV_Column3.ReadOnly = true;
+            this.QS_ii_Product_DGV_Column3.Width = 180;
+            // 
+            // QS_ii_Product_DGV_Column4
+            // 
+            this.QS_ii_Product_DGV_Column4.HeaderText = "規格";
+            this.QS_ii_Product_DGV_Column4.Name = "QS_ii_Product_DGV_Column4";
+            this.QS_ii_Product_DGV_Column4.ReadOnly = true;
+            // 
+            // QS_ii_Product_DGV_Column5
+            // 
+            this.QS_ii_Product_DGV_Column5.HeaderText = "單位";
+            this.QS_ii_Product_DGV_Column5.Name = "QS_ii_Product_DGV_Column5";
+            this.QS_ii_Product_DGV_Column5.ReadOnly = true;
+            // 
+            // QS_ii_Product_DGV_Column6
+            // 
+            this.QS_ii_Product_DGV_Column6.HeaderText = "數量";
+            this.QS_ii_Product_DGV_Column6.Name = "QS_ii_Product_DGV_Column6";
+            // 
+            // QS_ii_Product_DGV_Column7
+            // 
+            this.QS_ii_Product_DGV_Column7.HeaderText = "單價";
+            this.QS_ii_Product_DGV_Column7.Name = "QS_ii_Product_DGV_Column7";
+            this.QS_ii_Product_DGV_Column7.ReadOnly = true;
             // 
             // QS_ii_Quotes_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1205, 900);
+            this.ClientSize = new System.Drawing.Size(1205, 971);
             this.Controls.Add(this.Status_info);
             this.Controls.Add(this.QS_ii_Detail_panel);
             this.Controls.Add(this.QS_ii_Other_panel);
@@ -1246,6 +1332,9 @@
             this.QS_ii_tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -1361,6 +1450,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_HQuery_DGV_Column9;
         internal System.Windows.Forms.TextBox tb_QT_NO;
         private System.Windows.Forms.Button QS_ii_通路button;
+        private System.Windows.Forms.Button QS_ii_Query_CUST_NAME;
+        private System.Windows.Forms.Button QS_ii_Query_CUST_NO;
+        private System.Windows.Forms.Button QS_ii_Query_VAT_NO;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button QS_ii_HQuery_item_NO;
+        private System.Windows.Forms.Button QS_ii_HQuery_CUST_NO;
         private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_Product_DGV_Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column3;

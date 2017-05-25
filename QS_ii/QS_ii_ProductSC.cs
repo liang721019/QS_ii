@@ -393,7 +393,7 @@ namespace QS_ii
         {
             #region 內容
             QS_ii_ProductSC_Head ProductSC_Query = new QS_ii_ProductSC_Head(this);
-            ProductSC_Query.QS_ii_加入button.Visible = false;     //不顯示<加入>Button
+            ProductSC_Query.加入button_Visible = false;     //不顯示<加入>Button
             ProductSC_Query.NOID_Value = "通路編號:";
             GetSQL("查詢通路");
             fun.xxx_DB(this.QueryDB, ProductSC_Query.QS_ii_DGView1);
@@ -467,7 +467,7 @@ namespace QS_ii
             QS_ii_ProductSC_ProductDetail ProductSC_ADD = new QS_ii_ProductSC_ProductDetail(this);            
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
             ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;        //自訂DGV欄位設定顯示or隱藏
-            ProductSC_ADD.QS_ii_加入button.Visible = true;              //加入button設定顯示or隱藏
+            ProductSC_ADD.加入button_Visible = true;              //加入button設定顯示or隱藏
 
             Product_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢
             //QS_iiQ_add.Product_Query(ProductSC_ADD.QS_ii_DGView1);        //商品主檔查詢  
@@ -486,7 +486,7 @@ namespace QS_ii
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
 
             ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;          //自訂DGV欄位設定顯示or隱藏
-            ProductSC_ADD.QS_ii_加入button.Visible = true;                //加入button設定顯示or隱藏                        
+            ProductSC_ADD.加入button_Visible = true;                //加入button設定顯示or隱藏                        
 
             SALES_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_ProductSC_Employees, ProductSC_ADD.QS_ii_DGView1);        //員工主檔查詢            
             //設定init_Staff 新視窗的相對位置#############
@@ -495,7 +495,6 @@ namespace QS_ii
             ProductSC_ADD.ShowDialog();
 
             #endregion
-
         }
 
         private void QS_ii_ProductSC_inCUST_Modify()       //通路客戶新增資料的方法(多選or單選)
@@ -505,7 +504,7 @@ namespace QS_ii
             ProductSC_ADD.QS_ii_NOID_LB.Text = "客戶編號:";
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
             ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;          //自訂DGV欄位設定顯示or隱藏
-            ProductSC_ADD.QS_ii_加入button.Visible = true;                //加入button設定顯示or隱藏
+            ProductSC_ADD.加入button_Visible = true;                //加入button設定顯示or隱藏
 
             CUST_Query(ProductSC_ADD.QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CUST, ProductSC_ADD.QS_ii_DGView1);        //員工主檔查詢
             //設定init_Staff 新視窗的相對位置#############
@@ -779,16 +778,14 @@ namespace QS_ii
 
         private void ProductSC_tabControl1_SelectedIndexChanged(object sender, EventArgs e)     //ProductSC_tabControl1分頁改變的事件
         {
-            //******重要*******
-            //if (ProductSC_tabControl1.SelectedIndex == 1)
-            //{
-            //    if (ProductSC_Status_info.Text == "瀏覽")
-            //    {
-            //        QS_ii_ProductSC_DGV1_Column1.Visible = false;
-            //        QS_ii_ProductSC_DGV2_Column1.Visible = false;
-            //        QS_ii_ProductSC_DGV3_Column1.Visible = false;
-            //    }
-            //}
+            //******重要*******            
+            if (ProductSC_Status_info.Text == "瀏覽")
+            {
+                QS_ii_ProductSC_DGV1_Column1.Visible = false;
+                QS_ii_ProductSC_DGV2_Column1.Visible = false;
+                QS_ii_ProductSC_DGV3_Column1.Visible = false;
+            }
+            
         }
 
         //====================================================
