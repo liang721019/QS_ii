@@ -13,7 +13,7 @@ namespace QS_ii
 {
     public partial class QS_ii_Quotes_add : Form 
     {
-        QS_ii_function fun = new QS_ii_function();
+        QS_ii_function QSfun = new QS_ii_function();
 
         public QS_ii_DB QSiiDB = new QS_ii_DB();        
 
@@ -72,6 +72,14 @@ namespace QS_ii
         {
             set;
             get;
+        }
+
+        public QS_ii_function fun
+        {
+            get
+            {
+                return this.QSfun;
+            }
         }
         
         //==============================================================================================================
@@ -167,11 +175,11 @@ namespace QS_ii
                 QueryDB = @"select * from [TEST_SLSYHI].[dbo].[SLS_QS_Query_HQT]() where [QT_NO] is not null ";
                 if (tb_HQuery_CUST_NO.Text != "")
                 {
-                    QueryDB += "and CUST_NO = '" + tb_HQuery_CUST_NO.Text + "'";
+                    QueryDB += "and CUST_NO = '" + tb_HQuery_CUST_NO.Text + "'";        //客戶編號
                 }
                 if (tb_HQuery_item_NO.Text != "")
                 {
-                    QueryDB += "and item_NO = '" + tb_HQuery_item_NO.Text + "'";
+                    QueryDB += "and item_NO = '" + tb_HQuery_item_NO.Text + "'";        //商品編號
                 }
                 QueryDB += "order by 1";
                 #endregion
@@ -297,6 +305,11 @@ namespace QS_ii
                 tb_QT_NO.Text = "";                
                 //fun.EoD_Panel_txt(QS_ii_Head_panel, false);                 //QS_ii_Head_panel內的TextBox設定可讀寫
                 //fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, true);      //QS_ii_Head_panel內的DateTimePicker設定可讀寫
+                fun.clearAir(QS_ii_Head_panel);     //清空報價單-表頭
+                fun.clearAir(QS_ii_Other_panel);     //清空報價單-其他
+                fun.clearAir(QS_ii_Check_panel);     //清空報價單-簽核
+                fun.clearAir(QS_ii_money_panel);     //清空報價單-金額
+
                 tb_REMARK.ReadOnly = false;
                 Product_多選button.Visible = true;
                 Product_新增button.Visible = true;
@@ -494,7 +507,15 @@ namespace QS_ii
 
         private void Quotes_Delete()        //報價單刪除
         {
-
+            if (tb_QT_NO.Text != "")
+            {
+                MessageBox.Show("目前無權限刪除!!", this.Text);
+            }
+            else
+            {
+                MessageBox.Show("沒有報價單號!!",this.Text);
+            }
+            
         }
 
         private void Quotes_HQueryDoubleClick()             //報價單查詢==>QS_ii_HQuery_DGV雙擊二下
@@ -503,13 +524,11 @@ namespace QS_ii
             tb_QT_NO.Text = QT_NO;
             GetSQL("歷史表頭");
             fun.QS_ii_HQTQuery_ds(QueryDB, QSiiDB.QS_ii_HQT01);
-            //GetSQL("客戶主檔查詢");
-            //fun.QS_ii_HQTQuery_ds(QueryDB, QSiiDB.QS_ii_HQCustomer);
-            importDT_HQCustomer();           //把DATASET中QS_ii_QCustomer新增到QS_ii_HQCustomer
+            GetSQL("客戶主檔查詢");
+            fun.QS_ii_HQTQuery_ds(QueryDB, QSiiDB.QS_ii_HQCustomer);            
             Quotes_import_Head();                //報價單主檔表頭與TextBox對應
             GetSQL("歷史表身");
-            fun.QS_ii_HQTQuery_ds(QueryDB, QSiiDB.QS_ii_QProduct);
-            //QS_ii_DataBinding(QSiiDB.QS_ii_QProduct);
+            fun.QS_ii_HQTQuery_ds(QueryDB, QSiiDB.QS_ii_QProduct);            
             QS_ii_tabControl1.SelectedIndex = 0;
             #endregion
         }
@@ -592,7 +611,7 @@ namespace QS_ii
             CUSTQuery.加入button_Visible = false;
             CUSTQuery.QS_ii_QueryDGV_Column1.Visible = false;
             CUSTQuery.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
-            CUSTQuery.QS_ii_NOID_LB.Text = x + ":";
+            CUSTQuery.NOID_Value = x + ":";
             CUST_Query(x, CUSTQuery.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Customer, CUSTQuery.QS_ii_DGView1);          //依客戶編號-查詢客戶主檔            
             CUSTQuery.ShowDialog();
             #endregion
@@ -602,15 +621,31 @@ namespace QS_ii
         {
             //QS_ii_THQuery_CUST
             #region 內容
-            QS_ii_THQuery_CUST HCUSTQuery = new QS_ii_THQuery_CUST(this);
+            QS_ii_THQuery HCUSTQuery = new QS_ii_THQuery(this);
             //設定init_Staff 新視窗的相對位置#############
             HCUSTQuery.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             //############################################
             HCUSTQuery.加入button_Visible = false;
             HCUSTQuery.QS_ii_QueryDGV_Column1.Visible = false;
             HCUSTQuery.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
-            HCUSTQuery.QS_ii_NOID_LB.Text = x + ":";
+            HCUSTQuery.NOID_Value = x + ":";
             CUST_Query(x, HCUSTQuery.QS_ii_QueryDGv_PID, QSiiDB.QS_ii_Customer, HCUSTQuery.QS_ii_DGView1);          //依客戶編號-查詢客戶主檔            
+            HCUSTQuery.ShowDialog();
+            #endregion
+        }
+
+        private void HQuery_Item_NO(string x)       //歷史記錄查詢-商品編號查詢
+        {
+            #region 內容
+            QS_ii_THQuery HCUSTQuery = new QS_ii_THQuery(this);
+            //設定init_Staff 新視窗的相對位置#############
+            HCUSTQuery.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################
+            HCUSTQuery.加入button_Visible = false;
+            HCUSTQuery.QS_ii_QueryDGV_Column1.Visible = false;
+            HCUSTQuery.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+            HCUSTQuery.NOID_Value = x + ":";
+            Product_Query(tb_HQuery_item_NO, QSiiDB.QS_ii_Product, HCUSTQuery.QS_ii_DGView1);          //依客戶編號-查詢客戶主檔            
             HCUSTQuery.ShowDialog();
             #endregion
         }
@@ -635,8 +670,6 @@ namespace QS_ii
             Query_CUST("統一編號");        //客戶查詢
             #endregion
         }
-
-        
 
         public void Product_Query(TextBox tx, DataTable Dx, DataGridView dgv)        //依商品編號-查詢商品主檔
         {
@@ -751,32 +784,6 @@ namespace QS_ii
             #endregion
         }
 
-        public void importDT_HQCustomer()           //把DATASET中QS_ii_QCustomer新增到QS_ii_HQCustomer
-        {
-            #region 內容
-            QSiiDB.QS_ii_HQCustomer.Clear();
-            DataRow QS_ii_dr = QSiiDB.QS_ii_HQCustomer.NewRow();
-            //QSiiDB.Tables["QS_ii_HQT01"].Rows[0]["CUST_NO"].ToString();
-            QS_ii_dr["CUST_NO"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CUST_NO"].ToString();
-            QS_ii_dr["CUST_NAME"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CUST_NAME"].ToString();
-            QS_ii_dr["CUST_TYPE"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CUST_TYPE"].ToString();
-            QS_ii_dr["CONTACT"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CONTACT"].ToString();
-            QS_ii_dr["CONT_TITLE"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CONT_TITLE"].ToString();
-            QS_ii_dr["CONT_TEL"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CONT_TEL"].ToString();
-            QS_ii_dr["FAX"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["FAX"].ToString();
-            QS_ii_dr["VAT_NO"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["VAT_NO"].ToString();
-            QS_ii_dr["CUST_ADDR"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CUST_ADDR"].ToString();
-            QS_ii_dr["CUST_MAIL"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CUST_MAIL"].ToString();
-            QS_ii_dr["DELI_ADDR_NO"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["DELI_ADDR_NO"].ToString();
-            QS_ii_dr["DELI_ADDR"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["DELI_ADDR"].ToString();
-            QS_ii_dr["PAY_METH"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["PAY_METH"].ToString();
-            QS_ii_dr["CHAIN_NO"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["CHAIN_NO"].ToString();
-            QS_ii_dr["DEL_FALG"] = QSiiDB.Tables["QS_ii_QCustomer"].Rows[0]["DEL_FALG"].ToString();
-            QSiiDB.QS_ii_HQCustomer.Rows.Add(QS_ii_dr);
-
-            #endregion
-        }
-        
         public void Product_DGV_SetColumns()        //QS_ii_Product_DGV自定顯示欄位
         {
             QS_ii_Product_DGV.AutoGenerateColumns = false;
@@ -843,6 +850,12 @@ namespace QS_ii
         private void QS_ii_通路button_Click(object sender, EventArgs e)
         {
             QS_ii_通路_Open();       //通路主檔開窗
+        }
+
+        private void QS_ii_刪除button_Click(object sender, EventArgs e)
+        {
+            start_status(QS_ii_刪除button);
+            Quotes_Delete();        //報價單刪除
         }
 
         private void QS_ii_查詢button_Click(object sender, EventArgs e)
@@ -935,8 +948,10 @@ namespace QS_ii
 
         private void QS_ii_HQuery_item_NO_Click(object sender, EventArgs e)         //歷史查詢-商品編號查詢
         {
-
+            HQuery_Item_NO("商品編號");       //歷史記錄查詢-商品編號查詢
         }
+
+        
 
         //==============================================================================================================
         #endregion
@@ -997,6 +1012,8 @@ namespace QS_ii
                 
             }
         }
+
+        
         
         //==============================================================================================================
         #endregion
@@ -1087,7 +1104,7 @@ namespace QS_ii
             this.QS_iiQ_add = x;
         }
 
-        public override void QS_ii_QueryDGV_DGView1()       //把選取資料對應到TextBox
+        public override void QS_ii_QueryDGV_DGView1()         //把選取資料對應到TextBox
         {
             #region 內容
             try
@@ -1211,8 +1228,8 @@ namespace QS_ii
             QS_iiQ_add.tb_CONT_TEL.Text = QS_ii_DGView1.CurrentRow.Cells["聯絡人電話"].Value.ToString();        //聯絡人電話
             QS_iiQ_add.tb_FAX.Text = QS_ii_DGView1.CurrentRow.Cells["傳真"].Value.ToString();                   //傳真
             QS_iiQ_add.tb_VAT_NO.Text = QS_ii_DGView1.CurrentRow.Cells["統一編號"].Value.ToString();            //統一編號
-            QS_iiQ_add.tb_CUST_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["客戶地址"].Value.ToString(); ;       //客戶地址
-            QS_iiQ_add.tb_CUST_MAIL.Text = QS_ii_DGView1.CurrentRow.Cells["客戶MAIL"].Value.ToString(); ;       //客戶MAIL
+            QS_iiQ_add.tb_CUST_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["客戶地址"].Value.ToString();         //客戶地址
+            QS_iiQ_add.tb_CUST_MAIL.Text = QS_ii_DGView1.CurrentRow.Cells["客戶MAIL"].Value.ToString();         //客戶MAIL
             QS_iiQ_add.tb_DELI_ADDR_NO.Text = QS_ii_DGView1.CurrentRow.Cells["送貨郵地區號"].Value.ToString();  //送貨郵地區號
             QS_iiQ_add.tb_DELI_ADDR.Text = QS_ii_DGView1.CurrentRow.Cells["送貨地址"].Value.ToString();         //送貨地址
             QS_iiQ_add.tb_PAY_METH.Text = QS_ii_DGView1.CurrentRow.Cells["付款方式"].Value.ToString();          //付款方式            
@@ -1226,16 +1243,16 @@ namespace QS_ii
             #region 內容
             //QS_ii_QueryDGV_Column1.Visible = false;
             //QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
-            if (QS_ii_NOID_LB.Text == "客戶編號:")
+            if (NOID_Value == "客戶編號:")
             {
                 
                 QS_iiQ_add.CUST_Query("客戶編號", QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Customer, QS_ii_DGView1);          //依客戶編號-查詢客戶主檔
             }
-            else if (QS_ii_NOID_LB.Text == "客戶名稱:")
+            else if (NOID_Value == "客戶名稱:")
             {
                 QS_iiQ_add.CUST_Query("客戶名稱", QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Customer, QS_ii_DGView1);          //依客戶名稱-查詢客戶主檔
             }
-            else if (QS_ii_NOID_LB.Text == "統一編號:")
+            else if (NOID_Value == "統一編號:")
             {
                 QS_iiQ_add.CUST_Query("統一編號", QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Customer, QS_ii_DGView1);          //依統一編號-查詢客戶主檔
             }
@@ -1244,11 +1261,11 @@ namespace QS_ii
         }       
     }
 
-    public class QS_ii_THQuery_CUST : QS_ii_QueryDGV
+    public class QS_ii_THQuery : QS_ii_QueryDGV
     {
         QS_ii_Quotes_add QS_iiQ_add;
 
-        public QS_ii_THQuery_CUST(QS_ii_Quotes_add x)
+        public QS_ii_THQuery(QS_ii_Quotes_add x)
         {
             this.QS_iiQ_add = x;
         }
@@ -1256,31 +1273,14 @@ namespace QS_ii
         public override void QS_ii_QueryDGV_DGView1()       //把選取資料對應到TextBox
         {
             #region 內容
-            #region 加到DataTable=>QS_ii_QCustomer
-            QS_iiQ_add.QSiiDB.QS_ii_QCustomer.Clear();
-            DataRow QS_ii_dr = QS_iiQ_add.QSiiDB.QS_ii_QCustomer.NewRow();
-            //QSiiDB.Tables["QS_ii_HQT01"].Rows[0]["CUST_NO"].ToString();
-            QS_ii_dr["CUST_NO"] = QS_ii_DGView1.CurrentRow.Cells["客戶編號"].Value.ToString();
-            QS_ii_dr["CUST_NAME"] = QS_ii_DGView1.CurrentRow.Cells["客戶名稱"].Value.ToString();
-            QS_ii_dr["CUST_TYPE"] = QS_ii_DGView1.CurrentRow.Cells["客戶類別"].Value.ToString();
-            QS_ii_dr["CONTACT"] = QS_ii_DGView1.CurrentRow.Cells["聯絡人"].Value.ToString();
-            QS_ii_dr["CONT_TITLE"] = QS_ii_DGView1.CurrentRow.Cells["聯絡人職稱"].Value.ToString();
-            QS_ii_dr["CONT_TEL"] = QS_ii_DGView1.CurrentRow.Cells["聯絡人電話"].Value.ToString();
-            QS_ii_dr["FAX"] = QS_ii_DGView1.CurrentRow.Cells["傳真"].Value.ToString();
-            QS_ii_dr["VAT_NO"] = QS_ii_DGView1.CurrentRow.Cells["統一編號"].Value.ToString();
-            QS_ii_dr["CUST_ADDR"] = QS_ii_DGView1.CurrentRow.Cells["客戶地址"].Value.ToString();
-            QS_ii_dr["CUST_MAIL"] = QS_ii_DGView1.CurrentRow.Cells["客戶MAIL"].Value.ToString();
-            QS_ii_dr["DELI_ADDR_NO"] = QS_ii_DGView1.CurrentRow.Cells["送貨郵地區號"].Value.ToString();
-            QS_ii_dr["DELI_ADDR"] = QS_ii_DGView1.CurrentRow.Cells["送貨地址"].Value.ToString();
-            QS_ii_dr["PAY_METH"] = QS_ii_DGView1.CurrentRow.Cells["付款方式"].Value.ToString();
-            QS_ii_dr["CHAIN_NO"] = QS_ii_DGView1.CurrentRow.Cells["主要通路"].Value.ToString();
-            QS_ii_dr["DEL_FALG"] = QS_ii_DGView1.CurrentRow.Cells["DEL_FALG"].Value.ToString();
-            QS_iiQ_add.QSiiDB.QS_ii_QCustomer.Rows.Add(QS_ii_dr);
-
-            #endregion
-            #region 加到報價單表頭
-            QS_iiQ_add.tb_HQuery_CUST_NO.Text = QS_ii_DGView1.CurrentRow.Cells["客戶編號"].Value.ToString();        //客戶編號
-            #endregion
+            if (NOID_Value == "客戶編號:")
+            {
+                QS_iiQ_add.tb_HQuery_CUST_NO.Text = QS_ii_DGView1.CurrentRow.Cells["客戶編號"].Value.ToString();        //客戶編號
+            }
+            else if (NOID_Value == "商品編號:")
+            {
+                QS_iiQ_add.tb_HQuery_item_NO.Text = QS_ii_DGView1.CurrentRow.Cells["商品編號"].Value.ToString();        //商品編號
+            }
             #endregion
         }
 
@@ -1288,20 +1288,16 @@ namespace QS_ii
         {
             #region 內容
             //QS_ii_QueryDGV_Column1.Visible = false;
-            //QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
-            if (QS_ii_NOID_LB.Text == "客戶編號:")
+            //QS_ii_QueryDGV_Column1.DataPropertyName = "Check";            
+            if (NOID_Value == "客戶編號:")
             {
-
                 QS_iiQ_add.CUST_Query("客戶編號", QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Customer, QS_ii_DGView1);          //依客戶編號-查詢客戶主檔
             }
-            else if (QS_ii_NOID_LB.Text == "客戶名稱:")
+            else if (NOID_Value == "商品編號:")
             {
-                QS_iiQ_add.CUST_Query("客戶名稱", QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Customer, QS_ii_DGView1);          //依客戶名稱-查詢客戶主檔
+                QS_iiQ_add.Product_Query(QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Product, QS_ii_DGView1);        //依商品編號-查詢商品主檔
             }
-            else if (QS_ii_NOID_LB.Text == "統一編號:")
-            {
-                QS_iiQ_add.CUST_Query("統一編號", QS_ii_QueryDGv_PID, QS_iiQ_add.QSiiDB.QS_ii_Customer, QS_ii_DGView1);          //依統一編號-查詢客戶主檔
-            }
+            
             #endregion
         }
 

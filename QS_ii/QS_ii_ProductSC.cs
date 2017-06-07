@@ -14,8 +14,8 @@ namespace QS_ii
     public partial class QS_ii_ProductSC : Form
     {
         
-        internal QS_ii_function fun = new QS_ii_function();
-        internal QS_ii_Quotes_add QS_iiQ_add;
+        QS_ii_function QSfun = new QS_ii_function();
+        public QS_ii_Quotes_add QS_iiQ_add;
 
         public QS_ii_ProductSC(QS_ii_Quotes_add x)
         {
@@ -40,6 +40,14 @@ namespace QS_ii
         {
             set;
             get;
+        }
+
+        public QS_ii_function fun
+        {
+            get 
+            {
+                return this.QSfun;
+            }
         }
         //====================================================
         #endregion
@@ -138,7 +146,7 @@ namespace QS_ii
                 this.QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_ProductSCCUST_Delete] @CHAIN_NO,@CUST_NO";
             }
 
-        }
+        }        
 
         private void default_status()            //預設狀態
         {
@@ -157,10 +165,7 @@ namespace QS_ii
             QS_ii_ProductSC_DGV3_Column1.Visible = false;
             QS_ii_ProductSC_DGV1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
             QS_ii_ProductSC_DGV2.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES;
-            QS_ii_ProductSC_DGV3.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CUSTCH;
-            //dataGridView1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES;
-            //dataGridView1.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC;
-            //dataGridView2.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CHAIN;            
+            QS_ii_ProductSC_DGV3.DataSource = QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CUSTCH;                    
             fun.EoD_Panel_btn(ProductSC_panel1, true);           
             QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
             QS_ii_ProductSC_CHAIN_NAME.ReadOnly = true;
@@ -183,8 +188,7 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "新增";
                 ProductSC_Status_info.Visible = true;
                 fun.EoD_Panel_btn(ProductSC_panel1, false);
-                QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Clear();      //清除QS_ii_ProductSC_DGV1的資料源
-                QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Clear();      //清除QS_ii_ProductSC_DGV2的資料源                
+                DataTable_clear();          //清除DataTable
                 QS_ii_ProductSC_CHAIN_NO.Text = "";         //通路編號
                 QS_ii_ProductSC_CHAIN_NAME.Text = "";       //通路名稱
                 
@@ -245,9 +249,7 @@ namespace QS_ii
                 ProductSC_Status_info.Text = "瀏覽";
                 ProductSC_Status_info.Visible = false;
                 fun.EoD_Panel_btn(ProductSC_panel1, true);
-                QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Clear();      //清空DATATable
-                QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Clear();      //清空DATATable
-                QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CUSTCH.Clear();      //清空DATATable
+                DataTable_clear();          //清除DataTable
                 QS_ii_ProductSC_CHAIN_NO.Text = "";         //通路編號
                 QS_ii_ProductSC_CHAIN_NAME.Text = "";       //通路名稱                                
                 QS_ii_ProductSC_CHAIN_NO.ReadOnly = true;
@@ -422,7 +424,16 @@ namespace QS_ii
         private void QS_ii_ProductSC_Cancel()        //取消
         {
             start_status(QS_ii_ProductSC_取消Button);
-        }               
+        }
+
+        private void DataTable_clear()          //清除DataTable
+        {
+            QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Clear();      //清除QS_ii_ProductSC_DGV1的資料源
+            QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Clear();      //清除QS_ii_ProductSC_DGV2的資料源
+            QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CUSTCH.Clear();      //清除QS_ii_ProductSC_DGV3的資料源
+            //QS_ii_ProductSC_CHAIN_NO.Text = "";         //通路編號
+            //QS_ii_ProductSC_CHAIN_NAME.Text = "";       //通路名稱
+        }
 
         public void Product_Query(TextBox tx, DataTable Dx, DataGridView dgv)        //商品主檔查詢
         {
@@ -482,7 +493,7 @@ namespace QS_ii
         {
             #region 內容
             QS_ii_ProductSC_SALESDetail ProductSC_ADD = new QS_ii_ProductSC_SALESDetail(this);
-            ProductSC_ADD.QS_ii_NOID_LB.Text = "員工編號:";
+            ProductSC_ADD.NOID_Value = "員工編號:";
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
 
             ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;          //自訂DGV欄位設定顯示or隱藏
@@ -501,7 +512,7 @@ namespace QS_ii
         {
             #region 內容
             QS_ii_ProductSC_CustDetail ProductSC_ADD = new QS_ii_ProductSC_CustDetail(this);
-            ProductSC_ADD.QS_ii_NOID_LB.Text = "客戶編號:";
+            ProductSC_ADD.NOID_Value = "客戶編號:";
             ProductSC_ADD.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
             ProductSC_ADD.QS_ii_QueryDGV_Column1.Visible = true;          //自訂DGV欄位設定顯示or隱藏
             ProductSC_ADD.加入button_Visible = true;                //加入button設定顯示or隱藏
@@ -660,8 +671,8 @@ namespace QS_ii
 
         private void QS_ii_ProductSC_查詢Button_Click(object sender, EventArgs e)
         {
-            start_status(QS_ii_ProductSC_查詢Button);            
-            QS_ii_ProductSC_Query();        //查詢                  
+            QS_ii_ProductSC_Query();        //查詢
+            start_status(QS_ii_ProductSC_查詢Button);                            
         }
 
         private void QS_ii_ProductSC_儲存Button_Click(object sender, EventArgs e)
@@ -771,20 +782,11 @@ namespace QS_ii
         private void QS_ii_ProductSC_FormClosing(object sender, FormClosingEventArgs e)         //QS_ii_ProductSC關閉form的事件
         {
             QS_ii_ProductSC_Cancel();
-            QS_iiQ_add.QSiiDB.QS_ii_ProductSC.Clear();
-            QS_iiQ_add.QSiiDB.QS_ii_ProductSC_SALES.Clear();
-            QS_iiQ_add.QSiiDB.QS_ii_ProductSC_CHAIN.Clear();
+            DataTable_clear();          //清除DataTable
         }
 
         private void ProductSC_tabControl1_SelectedIndexChanged(object sender, EventArgs e)     //ProductSC_tabControl1分頁改變的事件
-        {
-            //******重要*******            
-            if (ProductSC_Status_info.Text == "瀏覽")
-            {
-                QS_ii_ProductSC_DGV1_Column1.Visible = false;
-                QS_ii_ProductSC_DGV2_Column1.Visible = false;
-                QS_ii_ProductSC_DGV3_Column1.Visible = false;
-            }
+        {            
             
         }
 

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QS_ii_Customer));
             this.QS_ii_Customer_panel1 = new System.Windows.Forms.Panel();
-            this.QS_ii_Customer_清空Button = new System.Windows.Forms.Button();
             this.QS_ii_Customer_引入Button = new System.Windows.Forms.Button();
             this.QS_ii_Customer_取消Button = new System.Windows.Forms.Button();
             this.QS_ii_Customer_儲存Button = new System.Windows.Forms.Button();
@@ -74,6 +74,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.USER_ID = new System.Windows.Forms.ToolStripStatusLabel();
             this.Customer_Status_info = new System.Windows.Forms.Label();
+            this.QS_ii_Customer_通路查詢 = new System.Windows.Forms.Button();
             this.QS_ii_Customer_panel1.SuspendLayout();
             this.QS_ii_Customer_panel2.SuspendLayout();
             this.QS_ii_Customer_panel3.SuspendLayout();
@@ -87,7 +88,6 @@
             this.QS_ii_Customer_panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.QS_ii_Customer_panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_清空Button);
             this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_引入Button);
             this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_取消Button);
             this.QS_ii_Customer_panel1.Controls.Add(this.QS_ii_Customer_儲存Button);
@@ -100,16 +100,6 @@
             this.QS_ii_Customer_panel1.Name = "QS_ii_Customer_panel1";
             this.QS_ii_Customer_panel1.Size = new System.Drawing.Size(808, 55);
             this.QS_ii_Customer_panel1.TabIndex = 2;
-            // 
-            // QS_ii_Customer_清空Button
-            // 
-            this.QS_ii_Customer_清空Button.Location = new System.Drawing.Point(247, 3);
-            this.QS_ii_Customer_清空Button.Name = "QS_ii_Customer_清空Button";
-            this.QS_ii_Customer_清空Button.Size = new System.Drawing.Size(57, 44);
-            this.QS_ii_Customer_清空Button.TabIndex = 7;
-            this.QS_ii_Customer_清空Button.Text = "清空";
-            this.QS_ii_Customer_清空Button.UseVisualStyleBackColor = true;
-            this.QS_ii_Customer_清空Button.Click += new System.EventHandler(this.QS_ii_Customer_清空Button_Click);
             // 
             // QS_ii_Customer_引入Button
             // 
@@ -252,6 +242,7 @@
             // 
             // QS_ii_Customer_panel3
             // 
+            this.QS_ii_Customer_panel3.Controls.Add(this.QS_ii_Customer_通路查詢);
             this.QS_ii_Customer_panel3.Controls.Add(this.tb_CUST_TYPE);
             this.QS_ii_Customer_panel3.Controls.Add(this.label2);
             this.QS_ii_Customer_panel3.Controls.Add(this.tb_CHAIN_NAME);
@@ -527,6 +518,16 @@
             this.Customer_Status_info.TabIndex = 92;
             this.Customer_Status_info.Text = "瀏覽";
             // 
+            // QS_ii_Customer_通路查詢
+            // 
+            this.QS_ii_Customer_通路查詢.Image = ((System.Drawing.Image)(resources.GetObject("QS_ii_Customer_通路查詢.Image")));
+            this.QS_ii_Customer_通路查詢.Location = new System.Drawing.Point(516, 7);
+            this.QS_ii_Customer_通路查詢.Name = "QS_ii_Customer_通路查詢";
+            this.QS_ii_Customer_通路查詢.Size = new System.Drawing.Size(29, 29);
+            this.QS_ii_Customer_通路查詢.TabIndex = 91;
+            this.QS_ii_Customer_通路查詢.UseVisualStyleBackColor = true;
+            this.QS_ii_Customer_通路查詢.Click += new System.EventHandler(this.QS_ii_Customer_通路查詢_Click);
+            // 
             // QS_ii_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -589,7 +590,6 @@
         private System.Windows.Forms.Label Customer_Status_info;
         public System.Windows.Forms.ToolStripStatusLabel Server_ENV;
         public System.Windows.Forms.ToolStripStatusLabel USER_ID;
-        private System.Windows.Forms.Button QS_ii_Customer_清空Button;
         private System.Windows.Forms.Button QS_ii_Customer_引入Button;
         private System.Windows.Forms.TextBox tb_CUST_TYPE;
         private System.Windows.Forms.TextBox tb_CHAIN_NAME;
@@ -605,6 +605,7 @@
         private System.Windows.Forms.TextBox tb_CUST_NO;
         private System.Windows.Forms.TextBox tb_CUST_NAME;
         private System.Windows.Forms.TextBox tb_VAT_NO;
+        private System.Windows.Forms.Button QS_ii_Customer_通路查詢;
 
     }
 }

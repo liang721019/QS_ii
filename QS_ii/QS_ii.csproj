@@ -26,10 +26,10 @@
     <SupportUrl>http://www.naturalbiokey.com</SupportUrl>
     <ErrorReportUrl>http://www.naturalbiokey.com</ErrorReportUrl>
     <PublisherName>SLS</PublisherName>
-    <MinimumRequiredVersion>1.0.0.25</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.28</MinimumRequiredVersion>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

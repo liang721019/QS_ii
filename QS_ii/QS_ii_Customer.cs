@@ -263,6 +263,12 @@ namespace QS_ii
 
                 #endregion
             }
+            else if (x == "通路查詢")
+            {
+                #region 內容
+                QueryDB = @"select [Check] = '0' ,* from [TEST_SLSYHI].[dbo].[SLS_QS_CUST_QueryCHAIN](" + USER_ID + ")" ;
+                #endregion
+            }
         }
 
         private void default_status()       //預設
@@ -460,7 +466,7 @@ namespace QS_ii
         {
             #region  按enter之後執行
             QS_ii_Customer_T QSQDGV = new QS_ii_Customer_T(this);
-            QSQDGV.QS_ii_NOID_LB.Text = "客戶編號:";
+            QSQDGV.NOID_Value = "客戶編號:";
             QSQDGV.加入button_Visible = false;
             //設定init_Staff 新視窗的相對位置#############
             QSQDGV.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -468,6 +474,24 @@ namespace QS_ii
             Customer_Query(QSQDGV.QS_ii_DGView1);           //客戶主檔查詢
             QSQDGV.ShowDialog();
             #endregion           
+        }
+
+        private void QS_ii_Customer_Query_CHAIN()            //通路查詢
+        {
+            #region 內容
+            QS_ii_Customer_TQuery_CHAIN CUSTQuery = new QS_ii_Customer_TQuery_CHAIN(this);
+            //設定init_Staff 新視窗的相對位置#############
+            CUSTQuery.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            //############################################
+            CUSTQuery.加入button_Visible = false;
+            CUSTQuery.QS_ii_QueryDGV_Column1.Visible = false;
+            CUSTQuery.QS_ii_QueryDGV_Column1.DataPropertyName = "Check";
+            CUSTQuery.NOID_Value = "通路編號:";
+            GetSQL("通路查詢");    //語法丟進QueryDB            
+            fun.xxx_DB(QueryDB, CUSTQuery.QS_ii_DGView1);         //連接DB-執行DB指令
+            CUSTQuery.ShowDialog();
+
+            #endregion
         }
 
         #endregion
@@ -540,6 +564,11 @@ namespace QS_ii
             fun.clearAir(QS_ii_Customer_panel3);
         }
 
+        private void QS_ii_Customer_通路查詢_Click(object sender, EventArgs e)
+        {
+            QS_ii_Customer_Query_CHAIN();            //通路查詢
+        }
+
         #endregion
 
         #region 事件
@@ -579,6 +608,8 @@ namespace QS_ii
             }
 
         }
+
+        
         //=====================================================================
         #endregion
         
@@ -623,6 +654,29 @@ namespace QS_ii
             #endregion
         }
 
+    }
+
+    public class QS_ii_Customer_TQuery_CHAIN : QS_ii_QueryDGV
+    {
+        QS_ii_Customer QSii;
+        public QS_ii_Customer_TQuery_CHAIN(QS_ii_Customer x)
+        {
+            this.QSii = x;
+        }
+
+        public override void QS_ii_QueryDGV_DGView1()       //把選取資料對應到TextBox
+        {
+            QSii.CHAIN_NO = QS_ii_DGView1.CurrentRow.Cells["通路編號"].Value.ToString();
+            
+        }
+
+        public override void QS_ii_QueryDGV_QueryButton()        //查詢Button
+        {
+            #region 內容
+            QSii.GetSQL("通路查詢");    //語法丟進QueryDB            
+            QSii.fun.xxx_DB(QSii.QueryDB, QS_ii_DGView1);         //連接DB-執行DB指令           
+            #endregion
+        }
     }
 
    
