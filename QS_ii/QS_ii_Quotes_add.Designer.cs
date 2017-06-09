@@ -129,8 +129,6 @@
             this.QS_ii_Product_DGV_Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QS_ii_Product_DGV_Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.QS_ii_HQuery_DGV = new System.Windows.Forms.DataGridView();
             this.QS_ii_HQuery_DGV_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -161,9 +159,6 @@
             this.QS_ii_tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).BeginInit();
             this.panel7.SuspendLayout();
@@ -1087,32 +1082,12 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1112, 398);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "其他";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(589, 6);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(517, 375);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(571, 375);
-            this.dataGridView1.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -1333,9 +1308,6 @@
             this.QS_ii_tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_Product_DGV)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QS_ii_HQuery_DGV)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -1454,8 +1426,6 @@
         private System.Windows.Forms.Button QS_ii_Query_CUST_NAME;
         private System.Windows.Forms.Button QS_ii_Query_CUST_NO;
         private System.Windows.Forms.Button QS_ii_Query_VAT_NO;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button QS_ii_HQuery_item_NO;
         private System.Windows.Forms.Button QS_ii_HQuery_CUST_NO;
         private System.Windows.Forms.DataGridViewCheckBoxColumn QS_ii_Product_DGV_Column1;

@@ -252,8 +252,8 @@ namespace QS_ii
             HQuery_DGV_SetColumns();            //QS_ii_HQuery_DGV自定顯示欄位
             //DataView QProduct = new DataView(QSiiDB.QS_ii_QProduct);
             QS_ii_Product_DGV.DataSource = QSiiDB.QS_ii_QProduct;       //DGV綁定DataSource
-            dataGridView1.DataSource = QSiiDB.QS_ii_Customer;          //DGV綁定DataSource
-            dataGridView2.DataSource = QSiiDB.QS_ii_QCustomer;          //DGV綁定DataSource
+            //dataGridView1.DataSource = QSiiDB.QS_ii_Customer;          //DGV綁定DataSource
+            //dataGridView2.DataSource = QSiiDB.QS_ii_QCustomer;          //DGV綁定DataSource
 
             fun.Format_Panel_dTP(QS_ii_Head_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(QS_ii_Head_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀
