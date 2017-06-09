@@ -119,6 +119,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="QS_ii_LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QS_ii_Product.cs">
       <SubType>Form</SubType>
     </Compile>
