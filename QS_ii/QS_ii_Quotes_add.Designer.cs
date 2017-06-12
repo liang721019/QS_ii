@@ -37,6 +37,8 @@
             this.QS_ii_Server_ENV = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.USER_ID = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Local_MAC = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Local_IP = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.QS_ii_通路button = new System.Windows.Forms.Button();
             this.QS_ii_產品button = new System.Windows.Forms.Button();
@@ -169,7 +171,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.QS_ii_Server_ENV,
             this.toolStripStatusLabel2,
-            this.USER_ID});
+            this.USER_ID,
+            this.Local_MAC,
+            this.Local_IP});
             this.statusStrip1.Location = new System.Drawing.Point(0, 949);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1205, 22);
@@ -199,6 +203,20 @@
             this.USER_ID.Name = "USER_ID";
             this.USER_ID.Size = new System.Drawing.Size(56, 17);
             this.USER_ID.Text = "USER_ID";
+            // 
+            // Local_MAC
+            // 
+            this.Local_MAC.Name = "Local_MAC";
+            this.Local_MAC.Size = new System.Drawing.Size(71, 17);
+            this.Local_MAC.Text = "Local_MAC";
+            this.Local_MAC.Visible = false;
+            // 
+            // Local_IP
+            // 
+            this.Local_IP.Name = "Local_IP";
+            this.Local_IP.Size = new System.Drawing.Size(53, 17);
+            this.Local_IP.Text = "Local_IP";
+            this.Local_IP.Visible = false;
             // 
             // panel1
             // 
@@ -1435,5 +1453,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn QS_ii_Product_DGV_Column7;
+        private System.Windows.Forms.ToolStripStatusLabel Local_MAC;
+        private System.Windows.Forms.ToolStripStatusLabel Local_IP;
     }
 }

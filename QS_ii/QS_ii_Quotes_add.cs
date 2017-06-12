@@ -36,15 +36,15 @@ namespace QS_ii
         {
             set;
             get;
-        }        
+        }
 
-        public string QT_NO         //報價單號
+        private string QT_NO         //報價單號
         {
             set;
             get;
         }
 
-        public string CUST_NO       //客戶編號
+        private string CUST_NO       //客戶編號
         {
             set;
             get;
@@ -56,7 +56,7 @@ namespace QS_ii
             get;
         }
 
-        public string QS_ii_QuotesNO       //報價單號變數
+        private string QS_ii_QuotesNO       //報價單號變數
         {
             set;
             get;
@@ -68,7 +68,35 @@ namespace QS_ii
             get;
         }
 
-        public string DATE_END_value    //報價有效日期
+        private string DATE_END_value    //報價有效日期
+        {
+            set;
+            get;
+        }
+
+        private string Local_PCNAME          //取得本機電腦名稱
+        {           
+            get
+            {
+                return Environment.MachineName;
+            }
+        }
+
+        private string Local_USERNAME        //取得登入win使用者名稱
+        {
+            get
+            {
+                return Environment.UserName;
+            }
+        }
+
+        public string Local_MYMAC             //取得本機MAC位置
+        {
+            set;
+            get;
+        }
+
+        public string Local_MYIP              //取得本機IP
         {
             set;
             get;
@@ -253,14 +281,15 @@ namespace QS_ii
             //DataView QProduct = new DataView(QSiiDB.QS_ii_QProduct);
             QS_ii_Product_DGV.DataSource = QSiiDB.QS_ii_QProduct;       //DGV綁定DataSource
             //dataGridView1.DataSource = QSiiDB.QS_ii_Customer;          //DGV綁定DataSource
-            //dataGridView2.DataSource = QSiiDB.QS_ii_QCustomer;          //DGV綁定DataSource
-
+            //dataGridView2.DataSource = QSiiDB.QS_ii_QCustomer;          //DGV綁定DataSource            
             fun.Format_Panel_dTP(QS_ii_Head_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(QS_ii_Head_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀
             fun.EoD_Panel_DateTimePicker(QS_ii_Head_panel, false);       //QS_ii_Head_panel內的DateTimePicker設定唯讀
             //fun.EoD_Panel_txt(QS_ii_Check_panel, true);             //QS_ii_Check_panel內的TextBox設定唯讀
             fun.EoD_Panel_RadioButton(QS_ii_Check_panel, false);    //QS_ii_Check_panel內的RadioButton設定唯讀
             fun.EoD_Panel_txt(QS_ii_money_panel, true);     //QS_ii_money_panel內的TextBox設定唯讀
+            fun.ReMAC(Local_MAC, Local_IP);         //取得本機MAC及IP 
+            Login_log("登入成功");             //在DB記錄登入狀態
             
             #region 取得DB日期
             GetSQL("取得日期");
@@ -291,9 +320,23 @@ namespace QS_ii
             //*****在綁定資料後的敘述不會啟動*****
             QS_ii_Head_DataBinding(QSiiDB.QS_ii_HQT01);           //datatable的欄位與Text綁定資料-報價單表頭            
             QS_ii_PriceDataBinding(QSiiDB.QS_ii_QProduct);     //datatable的欄位與Text綁定資料-金額欄位
-
+            QS_ii_USERIDDataBinding(QSiiDB.QS_ii_LOGIN);     //datatable的欄位與Text綁定資料-USERID
             #endregion
         }
+
+        private void Login_log(string x)        //在DB記錄登入狀態
+        {             
+            QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_LOGIN_Log] '"+ USER_ID.Text +
+                        "','" + this.Text +         //使用程式
+                        "','" + x +                 //使用狀態
+                        "','" + Local_IP.Text +          //使用者IP
+                        "','" + Local_MAC.Text +         //使用者MAC
+                        "','" + QS_ii_Server_ENV.Text +    //SERVER_NAME
+                        "','" + Local_PCNAME +      //Client電腦名稱
+                        "','" + Local_USERNAME+     //Client登入使用者名稱;
+                        "'"; 
+            fun.QS_ii_insert(QueryDB);
+        }                
 
         public void start_status(Button x)      //啟動狀態
         {
@@ -744,6 +787,11 @@ namespace QS_ii
             #endregion
         }
 
+        private void QS_ii_USERIDDataBinding(DataTable x)     //datatable的欄位與Text綁定資料-USERID
+        {
+            QT_DATE_dTP.DataBindings.Add("Text", x, "EMP_ID", true);
+        }
+
         public void DataTable_SETColumnExpression()            //設定DataTable的Column.Expression
         {
             #region 內容
@@ -951,8 +999,6 @@ namespace QS_ii
             HQuery_Item_NO("商品編號");       //歷史記錄查詢-商品編號查詢
         }
 
-        
-
         //==============================================================================================================
         #endregion
 
@@ -1013,7 +1059,6 @@ namespace QS_ii
             }
         }
 
-        
         
         //==============================================================================================================
         #endregion
@@ -1186,7 +1231,7 @@ namespace QS_ii
         }
     }
 
-    public class QS_ii_TQuery_CUST : QS_ii_QueryDGV
+    public class QS_ii_TQuery_CUST : QS_ii_QueryDGV     //報價單-客戶查詢 
     {
         QS_ii_Quotes_add QS_iiQ_add;
 
@@ -1261,11 +1306,11 @@ namespace QS_ii
         }       
     }
 
-    public class QS_ii_THQuery : QS_ii_QueryDGV
+    public class QS_ii_THQuery : QS_ii_QueryDGV         //歷史記錄查詢
     {
         QS_ii_Quotes_add QS_iiQ_add;
 
-        public QS_ii_THQuery(QS_ii_Quotes_add x)
+        public QS_ii_THQuery(QS_ii_Quotes_add x)        
         {
             this.QS_iiQ_add = x;
         }
