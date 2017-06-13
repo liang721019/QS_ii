@@ -334,7 +334,7 @@ namespace QS_ii
                         "','" + Local_PCNAME +      //Client電腦名稱
                         "','" + Local_USERNAME+     //Client登入使用者名稱;
                         "'";
-            fun.QS_ii_insert(QueryDB);
+            fun.DB_insert(QueryDB);
         }
 
         private void start_status(Button x)      //啟動狀態
