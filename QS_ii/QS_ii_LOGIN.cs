@@ -5,24 +5,32 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace QS_ii
 {
     class QS_ii_LOGIN : Login_main
-    {
-        //LOD_DT = LOD.SLS_QS_LOGIN;
+    {        
+        private DataTable QS_LOGIN_DT
+        {            
+            get
+            {
+                return new DataTable();
+            }
+        }
+
         public override void V_login_SetENV()      //設定LOGIN變數
         {
             base.V_login_SetENV();
             //Query_DB = @"exec [TEST_SLSYHI].[dbo].[SLS_QS_Login] '" +
             //                ID_Login + @"','" + App_LoginPW + "'";
-            Query_DB = @"select * from [dbo].[SLS_QS_LOGINTemp]('" + ID_Login + "','"+App_LoginPW+"')";
-            LOD_DT = LOD.SLS_QS_LOGIN;
+            Query_DB = @"select * from [dbo].[SLS_QS_LOGINTemp]('" + ID_Login + "','"+App_LoginPW+"')";            
+            LOD_DT = QS_LOGIN_DT;
+
         }
 
         public override void V_login_open()      //開窗
         {
-
             DataView DV = new DataView(LOD_DT);
             DV.RowFilter = "QS_Login = 'Y'";
             if (DV.Count == 1)
@@ -58,7 +66,7 @@ namespace QS_ii
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("您沒有權限登入!!\n請找資訊部門協助",this.Text);
+                MessageBox.Show("您沒有權限登入!!\n請找資訊部門協助",this.Text);
             }
         }
     }

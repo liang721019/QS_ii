@@ -277,10 +277,9 @@ namespace QS_ii
             this.AutoSize = false;          //自動調整大小
             //this.Size = new System.Drawing.Size(1249, 882);      //設定Form大小            
             Product_DGV_SetColumns();           //QS_ii_Product_DGV自定顯示欄位
-            HQuery_DGV_SetColumns();            //QS_ii_HQuery_DGV自定顯示欄位
-            //DataView QProduct = new DataView(QSiiDB.QS_ii_QProduct);
+            HQuery_DGV_SetColumns();            //QS_ii_HQuery_DGV自定顯示欄位           
             QS_ii_Product_DGV.DataSource = QSiiDB.QS_ii_QProduct;       //DGV綁定DataSource
-            //dataGridView1.DataSource = QSiiDB.QS_ii_Customer;          //DGV綁定DataSource
+            //dataGridView1.DataSource = QSiiDB.QS_ii_LOGIN;          //DGV綁定DataSource
             //dataGridView2.DataSource = QSiiDB.QS_ii_QCustomer;          //DGV綁定DataSource            
             fun.Format_Panel_dTP(QS_ii_Head_panel, "yyyy-MM-dd");     //自訂日期格式
             fun.EoD_Panel_txt(QS_ii_Head_panel, true);     //QS_ii_Head_panel內的TextBox設定唯讀
@@ -325,20 +324,20 @@ namespace QS_ii
         }
 
         private void Login_log(string x)        //在DB記錄登入狀態
-        {             
-            QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_LOGIN_Log] '"+ USER_ID.Text +
+        {            
+            QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_LOGIN_Log] '"+ USER_ID.Text +     //帳號
                         "','" + this.Text +         //使用程式
                         "','" + x +                 //使用狀態
-                        "','" + Local_IP.Text +          //使用者IP
-                        "','" + Local_MAC.Text +         //使用者MAC
+                        "','***內網****" + Local_IP.Text.Substring(Local_IP.Text.Length-4,4) +          //使用者IP
+                        "','" +                          //使用者MAC
                         "','" + QS_ii_Server_ENV.Text +    //SERVER_NAME
                         "','" + Local_PCNAME +      //Client電腦名稱
                         "','" + Local_USERNAME+     //Client登入使用者名稱;
-                        "'"; 
+                        "'";
             fun.QS_ii_insert(QueryDB);
-        }                
+        }
 
-        public void start_status(Button x)      //啟動狀態
+        private void start_status(Button x)      //啟動狀態
         {
             if (x == QS_ii_新增button)
             {
@@ -693,14 +692,14 @@ namespace QS_ii
             #endregion
         }
 
-        public void Query_CUST_NO()        //客戶編號快速查詢
+        private void Query_CUST_NO()        //客戶編號快速查詢
         {
             #region 內容
             Query_CUST("客戶編號");        //客戶查詢
             #endregion
         }
 
-        public void Query_CUST_NAME()      //客戶名稱快速查詢
+        private void Query_CUST_NAME()      //客戶名稱快速查詢
         {
             #region 內容
             Query_CUST("客戶名稱");        //客戶查詢
@@ -1057,6 +1056,16 @@ namespace QS_ii
                 }
                 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //string exs = "192.168.15.100";
+            //string x = exs.Substring(exs.Length - 4, 4);
+
+            fun.ReMAC(Local_MYMAC, Local_MYIP);           //取得網路卡MAC的方法
+            MessageBox.Show(Local_MYMAC + " : " + Local_MYIP);
+                
         }
 
         
