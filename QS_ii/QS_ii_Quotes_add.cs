@@ -459,6 +459,7 @@ namespace QS_ii
 
         private void SYS_log(string x)        //在DB記錄執行狀態
         {
+            #region 內容
             int N = Local_IP.Text.LastIndexOf(".");
             int Q = Local_IP.Text.Length;
             fun.Local_ID = USER_ID.Text;
@@ -470,6 +471,7 @@ namespace QS_ii
             fun.Local_PCNAME = Environment.MachineName;
             fun.Local_USERNAME = Environment.UserName;
             fun.Login_log();
+            #endregion
         }
                 
         private void Quotes_Add()           //報價單新增
