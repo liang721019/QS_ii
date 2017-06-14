@@ -32,6 +32,15 @@ namespace QS_ii
 
         #region 變數
         //==============================================================================================================
+
+        public QS_ii_function fun
+        {
+            get
+            {
+                return this.QSfun;
+            }
+        }
+
         public string QueryDB       //DB連線字串
         {
             set;
@@ -72,43 +81,7 @@ namespace QS_ii
         {
             set;
             get;
-        }
-
-        private string Local_PCNAME          //取得本機電腦名稱
-        {           
-            get
-            {
-                return Environment.MachineName;
-            }
-        }
-
-        private string Local_USERNAME        //取得登入win使用者名稱
-        {
-            get
-            {
-                return Environment.UserName;
-            }
-        }
-
-        public string Local_MYMAC             //取得本機MAC位置
-        {
-            set;
-            get;
-        }
-
-        public string Local_MYIP              //取得本機IP
-        {
-            set;
-            get;
-        }
-
-        public QS_ii_function fun
-        {
-            get
-            {
-                return this.QSfun;
-            }
-        }
+        }        
         
         //==============================================================================================================
         #endregion
@@ -287,8 +260,9 @@ namespace QS_ii
             //fun.EoD_Panel_txt(QS_ii_Check_panel, true);             //QS_ii_Check_panel內的TextBox設定唯讀
             fun.EoD_Panel_RadioButton(QS_ii_Check_panel, false);    //QS_ii_Check_panel內的RadioButton設定唯讀
             fun.EoD_Panel_txt(QS_ii_money_panel, true);     //QS_ii_money_panel內的TextBox設定唯讀
+            USER_ID.Text = QSiiDB.QS_ii_LOGIN.Rows[0]["EMP_ID"].ToString();
             fun.ReMAC(Local_MAC, Local_IP);         //取得本機MAC及IP 
-            Login_log("登入成功");             //在DB記錄登入狀態
+            SYS_log("登入成功");             //在DB記錄登入狀態
             
             #region 取得DB日期
             GetSQL("取得日期");
@@ -319,22 +293,7 @@ namespace QS_ii
             //*****在綁定資料後的敘述不會啟動*****
             QS_ii_Head_DataBinding(QSiiDB.QS_ii_HQT01);           //datatable的欄位與Text綁定資料-報價單表頭            
             QS_ii_PriceDataBinding(QSiiDB.QS_ii_QProduct);     //datatable的欄位與Text綁定資料-金額欄位
-            QS_ii_USERIDDataBinding(QSiiDB.QS_ii_LOGIN);     //datatable的欄位與Text綁定資料-USERID
             #endregion
-        }
-
-        private void Login_log(string x)        //在DB記錄登入狀態
-        {            
-            QueryDB = @"exec [TEST_SLSYHI].[dbo].[SLS_LOGIN_Log] '"+ USER_ID.Text +     //帳號
-                        "','" + this.Text +         //使用程式
-                        "','" + x +                 //使用狀態
-                        "','***內網****" + Local_IP.Text.Substring(Local_IP.Text.Length-4,4) +          //使用者IP
-                        "','" +                          //使用者MAC
-                        "','" + QS_ii_Server_ENV.Text +    //SERVER_NAME
-                        "','" + Local_PCNAME +      //Client電腦名稱
-                        "','" + Local_USERNAME+     //Client登入使用者名稱;
-                        "'";
-            fun.DB_insert(QueryDB);
         }
 
         private void start_status(Button x)      //啟動狀態
@@ -497,6 +456,21 @@ namespace QS_ii
             }
 
         }
+
+        private void SYS_log(string x)        //在DB記錄執行狀態
+        {
+            int N = Local_IP.Text.LastIndexOf(".");
+            int Q = Local_IP.Text.Length;
+            fun.Local_ID = USER_ID.Text;
+            fun.Local_SYS = this.Text;
+            fun.Local_PROC_NAME = x;
+            fun.Local_MYIP = Local_IP.Text.Substring(N,Q-N);
+            fun.Local_MYMAC = "";
+            fun.Local_HOST_NAME = QS_ii_Server_ENV.Text;
+            fun.Local_PCNAME = Environment.MachineName;
+            fun.Local_USERNAME = Environment.UserName;
+            fun.Login_log();
+        }
                 
         private void Quotes_Add()           //報價單新增
         {
@@ -505,16 +479,15 @@ namespace QS_ii
             {
                 fun.Check_error = false;
                 GetSQL("新增-表頭新增");
-                fun.Quotes_ADD = QueryDB;
-                //fun.QS_ii_QT01_insert(QueryDB);           
-                GetSQL("新增-表身新增");
-                //fun.QS_ii_Product_ds(QueryDB, QSiiDB.QS_ii_QProduct);
+                fun.Quotes_ADD = QueryDB;                           
+                GetSQL("新增-表身新增");                
                 fun.Quotes_Detail_ADD = QueryDB;
                 fun.QS_ii_QT01_insert(QSiiDB.QS_ii_QProduct);
                 if (fun.Check_error == false)
-                {
+                {                    
                     start_status(QS_ii_儲存button);
                     QSiiDB.QS_ii_QProduct.AcceptChanges();      //****重要****要加這行才算是更新DataTable
+                    SYS_log("新增報價單");          //在DB記錄執行狀態
                     MessageBox.Show("資料《新增》成功!!", this.Text);
                 }
             }
@@ -540,6 +513,7 @@ namespace QS_ii
                 {
                     start_status(QS_ii_儲存button);
                     QSiiDB.QS_ii_QProduct.AcceptChanges();      //****重要****要加這行才算是更新DataTable
+                    SYS_log("修改報價單");          //在DB記錄執行狀態
                     MessageBox.Show("資料《修改》成功!!", this.Text);
                 }
             }
@@ -1058,17 +1032,6 @@ namespace QS_ii
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //string exs = "192.168.15.100";
-            //string x = exs.Substring(exs.Length - 4, 4);
-
-            fun.ReMAC(Local_MYMAC, Local_MYIP);           //取得網路卡MAC的方法
-            MessageBox.Show(Local_MYMAC + " : " + Local_MYIP);
-                
-        }
-
-        
         //==============================================================================================================
         #endregion
 
