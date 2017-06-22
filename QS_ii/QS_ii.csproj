@@ -62,7 +62,7 @@
     <StartupObject>QS_ii.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F7B1C03056B4CF7A9627F4D0AAA4638BBC09FB79</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B871C1CF11DC50FED5DDDD5539C42D01168B544B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>QS_ii_TemporaryKey.pfx</ManifestKeyFile>
@@ -71,7 +71,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LOGIN, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -190,6 +190,7 @@
     <None Include="QS_ii_DB.xss">
       <DependentUpon>QS_ii_DB.xsd</DependentUpon>
     </None>
+    <None Include="QS_ii_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
