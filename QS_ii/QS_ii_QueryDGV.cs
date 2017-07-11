@@ -28,7 +28,7 @@ namespace QS_ii
 
         #region 變數
         //===========================================
-        public string NOID_Value        //設定or得QS_ii_NOID_LB值的變數
+        public string NOID_Value        //設定or取得QS_ii_NOID_LB值的變數
         {
             set
             {

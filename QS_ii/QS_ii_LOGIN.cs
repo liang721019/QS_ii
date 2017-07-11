@@ -56,7 +56,7 @@ namespace QS_ii
                 QiQDR["Create_Time"] = LOD_DT.Rows[0]["Create_Time"];
                 QiQ.QSiiDB.QS_ii_LOGIN.Rows.Add(QiQDR);
                 QiQ.QSiiDB.QS_ii_LOGIN.AcceptChanges();
-                QiQ.QS_ii_Server_ENV.Text = ServerName;
+                QiQ.QS_ii_Server_ENV.Text = GETServerName;
                 QiQ.USER_ID.Text = UID;
                 this.Hide();
                 QiQ.ShowDialog(this);

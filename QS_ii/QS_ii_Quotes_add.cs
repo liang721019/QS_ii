@@ -908,7 +908,6 @@ namespace QS_ii
         private void QS_ii_取消button_Click(object sender, EventArgs e)
         {
             start_status(QS_ii_取消button);
-
         }
 
         private void Product_新增button_Click(object sender, EventArgs e)
