@@ -19,6 +19,13 @@ namespace QS_ii
             }
         }
 
+        public override void DEV_login()        //DEV LOGIN-虛擬判斷方法
+        {
+            #region 內容
+            MessageBox.Show("伺服器目前沒開放!!\n請選擇其他伺服器", this.Text);
+            #endregion
+        }
+
         public override void V_login_SetENV()      //設定LOGIN變數
         {
             base.V_login_SetENV();
