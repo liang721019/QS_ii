@@ -216,12 +216,6 @@
     <Folder Include="lib\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Liang_function\function\function.csproj">
-      <Project>{9dfd315f-87ba-4ea3-809d-1d349f464278}</Project>
-      <Name>function</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
